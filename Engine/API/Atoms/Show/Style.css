@@ -1,11 +1,6 @@
-#dashboard-show {
-  padding: 10px;
-  font-size: x-large;
+#atoms-show .wrap-title {
   text-align: center;
 }
-#dashboard-show .wrap-title {
-  color: black;
-}
-#dashboard-show .error {
-  color: red;
+#atoms-show .seeds {
+  text-align: center;
 }
