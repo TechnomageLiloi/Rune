@@ -20,6 +20,9 @@
             <td>
                 <a href="<?php echo $child->getUrl(); ?>"><?php echo $child->getTitle(); ?></a>
             </td>
+            <td>
+                <?php echo $child->getTypeTitle(); ?>
+            </td>
         </tr>
         <?php endforeach; ?>
     </table>
