@@ -10,7 +10,13 @@
 
     <hr/>
 
-    <div id="game-maps-collection">
-        <script></script>
-    </div>
+    <table>
+        <?php foreach($children as $child): ?>
+        <tr>
+            <td>
+                <a href="<?php echo $child->getUrl(); ?>"><?php echo $child->getTitle(); ?></a>
+            </td>
+        </tr>
+        <?php endforeach; ?>
+    </table>
 </div>
