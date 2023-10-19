@@ -4,25 +4,23 @@
         <link rel="shortcut icon" type="image/png" href="/Signum.png">
 
         <!-- @todo: add function to link scripts and styles -->
-        <script src="<?php echo ROOT_URL; ?>/vendor/technomage-liloi/rune-framework/Frontside/Library/Jquery.min.js"></script>
-        <script src="<?php echo ROOT_URL; ?>/vendor/technomage-liloi/rune-framework/Frontside/Library/Underscore.min.js"></script>
-        <script src="<?php echo ROOT_URL; ?>/vendor/technomage-liloi/rune-framework/Frontside/Library/Backbone.min.js"></script>
-        <script src="<?php echo ROOT_URL; ?>/vendor/technomage-liloi/rune-api/Client/API.js"></script>
+        <script src="/vendor/technomage-liloi/rune-framework/Frontside/Library/Jquery.min.js"></script>
+        <script src="/vendor/technomage-liloi/rune-framework/Frontside/Library/Underscore.min.js"></script>
+        <script src="/vendor/technomage-liloi/rune-framework/Frontside/Library/Backbone.min.js"></script>
+        <script src="/vendor/technomage-liloi/rune-api/Client/API.js"></script>
+        <script src="/vendor/technomage-liloi/stylo/Source/Stylo.js"></script>
 
-        <link href="<?php echo ROOT_URL; ?>/vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-        <script src="<?php echo ROOT_URL; ?>/vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <link href="/vendor/technomage-liloi/rune/Engine/Style.css" rel="stylesheet" />
+        <link href="/vendor/technomage-liloi/rune/Engine/API/Style.css" rel="stylesheet" />
 
-        <script src="<?php echo ROOT_URL; ?>/vendor/technomage-liloi/stylo/Source/Stylo.js"></script>
-        <link href="<?php echo ROOT_URL; ?>/Engine/Style.css" rel="stylesheet" />
-        <link href="<?php echo ROOT_URL; ?>/Engine/API/Style.css" rel="stylesheet" />
-
-        <script src="<?php echo ROOT_URL; ?>/Engine/API/Requests.js"></script>
+        <script src="/vendor/technomage-liloi/rune/Engine/API/Requests.js"></script>
+        <script src="/vendor/technomage-liloi/rune/Engine/API/Atoms/Requests.js"></script>
 
         <title>Rune</title>
     </head>
     <body>
         <script>
-
+            Rune.Atoms.show();
         </script>
     </body>
 </html>
