@@ -9,6 +9,8 @@ class Types
     public const VERSION = 3;
     public const LINK = 4;
     public const ARCHIVE = 5;
+    public const GOOGLE_DOCUMENT = 6;
+    public const GOOGLE_SPREADSHEET = 7;
 
     static public array $list = [
         self::DIRECTORY => 'Directory',
@@ -16,6 +18,8 @@ class Types
         self::VERSION => 'Version',
         self::LINK => 'Link',
         self::ARCHIVE => 'Archive',
+        self::GOOGLE_DOCUMENT => 'Google Document',
+        self::GOOGLE_SPREADSHEET => 'Google Spreadsheet',
     ];
 
     // @todo: move this method to more abstract level.
