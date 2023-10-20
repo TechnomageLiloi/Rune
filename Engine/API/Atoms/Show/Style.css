@@ -4,3 +4,12 @@
 #atoms-show .seeds {
   text-align: center;
 }
+#atoms-show table {
+  width: 100%;
+}
+#atoms-show table th {
+  text-align: left;
+}
+#atoms-show table td {
+  border-bottom: gray 1px dashed;
+}

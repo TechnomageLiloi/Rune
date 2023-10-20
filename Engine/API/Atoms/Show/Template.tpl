@@ -18,16 +18,22 @@
 
     <hr/>
 
-    <table>
-        <?php foreach($children as $child): ?>
-        <tr>
-            <td>
-                <?php echo $child->getTile(); ?>
-            </td>
-            <td>
-                <?php echo $child->getTypeTitle(); ?>
-            </td>
-        </tr>
-        <?php endforeach; ?>
-    </table>
+    <?php if($children->count()): ?>
+        <table>
+            <tr>
+                <th>Plate</th>
+                <th>Type</th>
+            </tr>
+            <?php foreach($children as $child): ?>
+            <tr>
+                <td>
+                    <?php echo $child->getTile(); ?>
+                </td>
+                <td>
+                    <?php echo $child->getTypeTitle(); ?>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+    <?php endif; ?>
 </div>
