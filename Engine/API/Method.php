@@ -5,6 +5,8 @@ namespace Liloi\Rune\API;
 use Liloi\Config\Pool;
 use Liloi\Judex\Assert;
 use Liloi\API\Response;
+use Liloi\Rune\Security;
+use Liloi\Rune\Exceptions\AccessException;
 
 abstract class Method
 {
@@ -88,5 +90,20 @@ abstract class Method
     public static function setConfig(Pool $config): void
     {
         static::$config = $config;
+    }
+
+    public static function accessGet(): bool
+    {
+        return Security::check();
+    }
+
+    public static function accessCheck(): void
+    {
+        if(Security::check())
+        {
+            return;
+        }
+
+        throw new AccessException();
     }
 }

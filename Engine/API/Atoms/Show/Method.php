@@ -5,6 +5,7 @@ namespace Liloi\Rune\API\Atoms\Show;
 use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
 use Liloi\Rune\Domain\Atoms\Manager as AtomsManager;
+use Liloi\Rune\Security;
 
 class Method extends SuperMethod
 {
@@ -19,6 +20,7 @@ class Method extends SuperMethod
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
             'children' => $children,
             'entity' => $entity,
+            'admin' => Security::check()
         ]));
         return $response;
     }
