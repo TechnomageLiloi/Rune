@@ -62,6 +62,11 @@ class Entity extends AbstractEntity
         return json_decode($this->getData(), true);
     }
 
+    public function getDataElement(string $key)
+    {
+        return $this->getDataParse()[$key];
+    }
+
     public function save(): void
     {
         Manager::save($this);
@@ -115,6 +120,14 @@ class Entity extends AbstractEntity
 
     public function getTile(): string
     {
+        $type = $this->getType();
+
+        if($type == Types::LINK)
+        {
+            return sprintf('<a target="_blank" href="%s">%s</a> &diams; ', $this->getDataElement('link'), $this->getTitle())
+                . sprintf('<a href="%s">Show Atom</a>', $this->getUrl());
+        }
+
         return sprintf('<a href="%s">%s</a>', $this->getUrl(), $this->getTitle());
     }
 }

@@ -7,11 +7,13 @@ class Types
     public const DIRECTORY = 1;
     public const PROJECT = 2;
     public const VERSION = 3;
+    public const LINK = 4;
 
     static public array $list = [
         self::DIRECTORY => 'Directory',
         self::PROJECT => 'Project',
         self::VERSION => 'Version',
+        self::LINK => 'Link',
     ];
 
     // @todo: move this method to more abstract level.
