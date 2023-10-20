@@ -1,0 +1,11 @@
+#game-security-password-show {
+  padding: 10px;
+  font-size: x-large;
+  text-align: center;
+}
+#game-security-password-show .wrap-title {
+  color: black;
+}
+#game-security-password-show .error {
+  color: red;
+}

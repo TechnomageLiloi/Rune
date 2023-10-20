@@ -15,6 +15,7 @@
 
         <script src="/vendor/technomage-liloi/rune/Engine/API/Requests.js"></script>
         <script src="/vendor/technomage-liloi/rune/Engine/API/Atoms/Requests.js"></script>
+        <script src="/vendor/technomage-liloi/rune/Engine/API/Security/Password/Requests.js"></script>
 
         <title>Rune</title>
     </head>
