@@ -6,6 +6,8 @@
 
     <div class="seeds">
         <?php echo $entity->getSeeds(); ?>
+        <br/>
+        <a href="javascript:void(0)" onclick="Rune.Atoms.edit();">Edit</a>
     </div>
 
     <hr/>

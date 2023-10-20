@@ -19,7 +19,7 @@
 
         <title>Rune</title>
     </head>
-    <body>
+    <body id="page">
         <script>
             Rune.Atoms.show();
         </script>
