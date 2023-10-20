@@ -22,7 +22,7 @@
         <?php foreach($children as $child): ?>
         <tr>
             <td>
-                <a href="<?php echo $child->getUrl(); ?>"><?php echo $child->getTitle(); ?></a>
+                <?php echo $child->getTile(); ?>
             </td>
             <td>
                 <?php echo $child->getTypeTitle(); ?>

@@ -112,4 +112,9 @@ class Entity extends AbstractEntity
 
         return implode(' &#9654; ', $seeds);
     }
+
+    public function getTile(): string
+    {
+        return sprintf('<a href="%s">%s</a>', $this->getUrl(), $this->getTitle());
+    }
 }
