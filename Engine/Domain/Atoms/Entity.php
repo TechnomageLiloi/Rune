@@ -134,6 +134,13 @@ class Entity extends AbstractEntity
                 . sprintf('<a href="%s">Show Atom</a>', $this->getUrl());
         }
 
+        if($type == Types::GOOGLE_DOCUMENT)
+        {
+            $token = $this->getDataElement('token');
+            return sprintf('%s (<a target="_blank" href="http://docs.google.com/document/d/%s/export?format=pdf">PDF</a>/<a target="_blank" href="http://docs.google.com/document/d/%s/export?format=epub">ePub</a>) &diams; ', $this->getTitle(), $token, $token)
+                . sprintf('<a href="%s">Show Atom</a>', $this->getUrl());
+        }
+
         return sprintf('<a href="%s">%s</a>', $this->getUrl(), $this->getTitle());
     }
 }
