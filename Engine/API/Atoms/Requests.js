@@ -1,4 +1,38 @@
 Rune.Atoms = {
+
+    RID: {
+        edit: function ()
+        {
+            API.request('Rune.Atoms.RID.Edit', {
+
+            }, function (data) {
+                const wrap = $('#page');
+                wrap.html(data.render);
+                wrap.show();
+            }, function () {
+
+            });
+        },
+
+        save: function (ridOld)
+        {
+            if(!confirm('Are you sure?'))
+            {
+                return;
+            }
+
+            const jq_block = $('#game-maps-edit');
+            API.request('Rune.Atoms.RID.Save', {
+                rid_old: ridOld,
+                rid_new: jq_block.find('[name=rid_new]').val()
+            }, function (data) {
+                Rune.Atoms.show();
+            }, function () {
+
+            });
+        }
+    },
+
     show: function ()
     {
         API.request('Rune.Atoms.Show', {

@@ -119,4 +119,15 @@ class Manager extends DomainManager
         $lower = strtolower(str_replace('rune:', '', $keyAtom));
         return '/' . str_replace(':', '/', $lower);
     }
+
+    public static function ridChange(string $ridOld, string $ridNew): void
+    {
+        $nameTable = self::getTableName();
+        self::getAdapter()->request(sprintf(
+            'update %s set key_atom = "%s" where key_atom = "%s"',
+            $nameTable,
+            $ridNew,
+            $ridOld
+        ));
+    }
 }

@@ -9,6 +9,7 @@
         <br/>
         <?php if($admin): ?>
             <a href="javascript:void(0)" onclick="Rune.Atoms.edit();">Edit</a> &diams;
+            <a href="javascript:void(0)" onclick="Rune.Atoms.RID.edit();">Change RID</a> &diams;
             <a href="javascript:void(0)" onclick="Rune.Atoms.create();">Create child</a>
         <?php endif; ?>
     </div>
