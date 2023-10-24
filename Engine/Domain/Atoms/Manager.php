@@ -17,12 +17,12 @@ class Manager extends DomainManager
     }
 
     // @todo: rise this method to more abstract level.
-    public static function create(string $keyAtom): void
+    public static function create(string $keySuperAtom): void
     {
         $name = self::getTableName();
 
         self::getAdapter()->insert($name, [
-            'key_atom' => $keyAtom,
+            'key_atom' => $keySuperAtom . ':date-' . gmdate('Y-m-d-H-i-s'),
             'title' => 'Enter the title',
             'status' => Statuses::TODO,
             'type' => Types::DIRECTORY,

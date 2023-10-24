@@ -23,6 +23,22 @@ Rune.Atoms = {
         });
     },
 
+    create: function ()
+    {
+        if(!confirm('Are you sure?'))
+        {
+            return;
+        }
+
+        API.request('Rune.Atoms.Create', {
+
+        }, function (data) {
+            Rune.Atoms.show();
+        }, function () {
+
+        });
+    },
+
     save: function (keyAtom)
     {
         if(!confirm('Are you sure?'))

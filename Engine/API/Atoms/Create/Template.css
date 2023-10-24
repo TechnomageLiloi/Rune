@@ -1,0 +1,20 @@
+#game-maps-edit
+{
+    padding: 10px;
+}
+
+#game-maps-edit table
+{
+    width: 100%;
+}
+
+#game-maps-edit input,
+#game-maps-edit textarea
+{
+    width: 100%;
+}
+
+#game-maps-edit textarea
+{
+    height: 300px;
+}
