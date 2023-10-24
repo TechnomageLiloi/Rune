@@ -22,11 +22,13 @@ Rune.Atoms = {
             }
 
             const jq_block = $('#game-maps-edit');
+            const rid_new = jq_block.find('[name=rid_new]').val();
+
             API.request('Rune.Atoms.RID.Save', {
                 rid_old: ridOld,
-                rid_new: jq_block.find('[name=rid_new]').val()
+                rid_new: rid_new
             }, function (data) {
-                Rune.Atoms.show();
+                window.location.href = rid_new.replace('rune:', '/').replaceAll(':', '/');
             }, function () {
 
             });
