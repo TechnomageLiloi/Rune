@@ -1,5 +1,5 @@
 {
-    "name": "technomage-liloi/rune",
+    "name": "technomage-liloi/place-of-power",
     "keywords": [
     ],
     "minimum-stability": "dev",
@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Liloi\\Rune\\": ["Engine", "Tests"]
+            "Liloi\\PoP\\": ["Engine", "Tests"]
         }
     }
 }
