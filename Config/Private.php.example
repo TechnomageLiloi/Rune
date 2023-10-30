@@ -6,8 +6,11 @@ use Liloi\Config\Sparkle;
 // Root application URL.
 define('ROOT_URL', '');
 
+// Password hash
+(function () {Pool::getSingleton()->set(new Sparkle('admin', function () {return '[[hash]]';}));})();
+
 // Database table-name prefix.
-(function () {Pool::getSingleton()->set(new Sparkle('prefix', function () {return 'I60_';}));})();
+(function () {Pool::getSingleton()->set(new Sparkle('prefix', function () {return 'rune_';}));})();
 
 (function() {
     // Database connection parameters.
