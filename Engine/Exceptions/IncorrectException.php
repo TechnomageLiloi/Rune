@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\Rune\Exceptions;
+namespace Liloi\PoP\Exceptions;
 
 class IncorrectException extends RuneException
 {

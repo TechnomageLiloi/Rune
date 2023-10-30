@@ -1,8 +1,8 @@
 <?php
 
-namespace Liloi\Rune\Domain\Atoms;
+namespace Liloi\PoP\Domain\Atoms;
 
-use Liloi\Rune\Domain\Manager as DomainManager;
+use Liloi\PoP\Domain\Manager as DomainManager;
 
 class Manager extends DomainManager
 {

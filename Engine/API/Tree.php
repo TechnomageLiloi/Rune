@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\Rune\API;
+namespace Liloi\PoP\API;
 
 use Liloi\API\Manager;
 use Liloi\API\Method;
@@ -25,17 +25,17 @@ class Tree
         {
             $manager = new Manager();
 
-            $manager->add(new Method('Rune.Atoms.Show', '\Liloi\Rune\API\Atoms\Show\Method::execute'));
-            $manager->add(new Method('Rune.Atoms.Edit', '\Liloi\Rune\API\Atoms\Edit\Method::execute'));
-            $manager->add(new Method('Rune.Atoms.Save', '\Liloi\Rune\API\Atoms\Save\Method::execute'));
-            $manager->add(new Method('Rune.Atoms.Create', '\Liloi\Rune\API\Atoms\Create\Method::execute'));
+            $manager->add(new Method('Rune.Atoms.Show', '\Liloi\PoP\API\Atoms\Show\Method::execute'));
+            $manager->add(new Method('Rune.Atoms.Edit', '\Liloi\PoP\API\Atoms\Edit\Method::execute'));
+            $manager->add(new Method('Rune.Atoms.Save', '\Liloi\PoP\API\Atoms\Save\Method::execute'));
+            $manager->add(new Method('Rune.Atoms.Create', '\Liloi\PoP\API\Atoms\Create\Method::execute'));
 
-            $manager->add(new Method('Rune.Atoms.RID.Edit', '\Liloi\Rune\API\Atoms\RID\Edit\Method::execute'));
-            $manager->add(new Method('Rune.Atoms.RID.Save', '\Liloi\Rune\API\Atoms\RID\Save\Method::execute'));
+            $manager->add(new Method('Rune.Atoms.RID.Edit', '\Liloi\PoP\API\Atoms\RID\Edit\Method::execute'));
+            $manager->add(new Method('Rune.Atoms.RID.Save', '\Liloi\PoP\API\Atoms\RID\Save\Method::execute'));
 
-            $manager->add(new Method('Rune.Security.Password.Show', '\Liloi\Rune\API\Security\Password\Show\Method::execute'));
-            $manager->add(new Method('Rune.Security.Password.Check', '\Liloi\Rune\API\Security\Password\Check\Method::execute'));
-            $manager->add(new Method('Rune.Security.Password.Logout', '\Liloi\Rune\API\Security\Password\Logout\Method::execute'));
+            $manager->add(new Method('Rune.Security.Password.Show', '\Liloi\PoP\API\Security\Password\Show\Method::execute'));
+            $manager->add(new Method('Rune.Security.Password.Check', '\Liloi\PoP\API\Security\Password\Check\Method::execute'));
+            $manager->add(new Method('Rune.Security.Password.Logout', '\Liloi\PoP\API\Security\Password\Logout\Method::execute'));
 
             self::$instance = new self($manager);
         }

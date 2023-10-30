@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\Rune;
+namespace Liloi\PoP;
 
 /**
  * Security manager.

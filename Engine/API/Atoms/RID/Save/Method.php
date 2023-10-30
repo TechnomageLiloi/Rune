@@ -1,10 +1,10 @@
 <?php
 
-namespace Liloi\Rune\API\Atoms\RID\Save;
+namespace Liloi\PoP\API\Atoms\RID\Save;
 
 use Liloi\API\Response;
-use Liloi\Rune\API\Method as SuperMethod;
-use Liloi\Rune\Domain\Atoms\Manager as AtomsManager;
+use Liloi\PoP\API\Method as SuperMethod;
+use Liloi\PoP\Domain\Atoms\Manager as AtomsManager;
 
 /**
  * Rune API: Blueprint.Blueprints.Show

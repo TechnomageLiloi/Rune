@@ -1,9 +1,9 @@
 <?php
 
-namespace Liloi\Rune\API\Security\Password\Show;
+namespace Liloi\PoP\API\Security\Password\Show;
 
 use Liloi\API\Response;
-use Liloi\Rune\API\Method as SuperMethod;
+use Liloi\PoP\API\Method as SuperMethod;
 
 class Method extends SuperMethod
 {

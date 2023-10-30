@@ -1,9 +1,9 @@
 <?php
 
-namespace Liloi\Rune\API\Security\Error;
+namespace Liloi\PoP\API\Security\Error;
 
 use Liloi\API\Response;
-use Liloi\Rune\API\Method as SuperMethod;
+use Liloi\PoP\API\Method as SuperMethod;
 
 class Method extends SuperMethod
 {

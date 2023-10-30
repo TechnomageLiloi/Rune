@@ -1,10 +1,10 @@
 <?php
 
-namespace Liloi\Rune\API\Security\Password\Logout;
+namespace Liloi\PoP\API\Security\Password\Logout;
 
 use Liloi\API\Response;
-use Liloi\Rune\API\Method as SuperMethod;
-use Liloi\Rune\Security;
+use Liloi\PoP\API\Method as SuperMethod;
+use Liloi\PoP\Security;
 
 class Method extends SuperMethod
 {
