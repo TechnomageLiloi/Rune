@@ -7,9 +7,12 @@
 #atoms-show table {
   width: 100%;
 }
+#atoms-show table td {
+  width: 50%;
+}
 #atoms-show table th {
   text-align: left;
 }
-#atoms-show table td {
+#atoms-show table .tree td {
   border-bottom: gray 1px dashed;
 }
