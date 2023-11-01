@@ -1,4 +1,4 @@
-<link href="/vendor/technomage-liloi/rune/Engine/API/Atoms/Edit/Template.css" rel="stylesheet" />
+<link href="<?php echo ROOT_URL; ?>/Engine/API/Atoms/Edit/Template.css" rel="stylesheet" />
 
 <div id="game-maps-edit">
     <a href="javascript:void(0)" onclick="Rune.Atoms.save('<?php echo $entity->getKey(); ?>');">Save</a>
