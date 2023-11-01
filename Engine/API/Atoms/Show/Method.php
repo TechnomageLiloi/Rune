@@ -15,6 +15,7 @@ class Method extends SuperMethod
         $URL = $_SERVER['REQUEST_URI'];
         $keyAtom = AtomsManager::URLtoATOM($URL);
         $entity = AtomsManager::load($keyAtom);
+        $news = AtomsManager::loadNews($keyAtom);
 
         $isAdmin = self::accessGet();
 
@@ -27,9 +28,10 @@ class Method extends SuperMethod
 
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
+            'admin' => Security::check(),
             'children' => $children,
             'entity' => $entity,
-            'admin' => Security::check()
+            'news' => $news
         ]));
         return $response;
     }

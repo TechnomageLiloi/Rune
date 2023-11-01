@@ -51,21 +51,26 @@ class Manager extends DomainManager
         return Entity::create($row);
     }
 
-    public static function loadNews(string $keyAtom): Entity
+    public static function loadNews(string $keyAtom): Collection
     {
         $name = self::getTableName();
 
-        $row = self::getAdapter()->getRow(sprintf(
+        $rows = self::getAdapter()->getArray(sprintf(
             'select * from %s where status = %s and type != %s and key_atom like "%s:%%" order by ts desc limit 7;',
             $name, Statuses::PUBLISHED, Types::DIRECTORY, $keyAtom
         ));
 
-        if(!$row)
+        $collection = new Collection();
+
+        if($rows)
         {
-            throw new \Exception('Not found.');
+            foreach($rows as $row)
+            {
+                $collection[] = Entity::create($row);
+            }
         }
 
-        return Entity::create($row);
+        return $collection;
     }
 
     public static function loadFiles(string $keyAtom, bool $onlyPublished = false): Collection
