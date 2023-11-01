@@ -49,16 +49,16 @@
                 <h1>News</h1>
                 <table class="tree">
                     <tr>
+                        <th>Timestamp</th>
                         <th>Title</th>
-                        <th>Type</th>
                     </tr>
                     <?php foreach($news as $child): ?>
                     <tr>
-                        <td>
-                            <?php echo $child->getTile(); ?>
+                        <td style="width: 10%;">
+                            <?php echo $child->getTimestamp(); ?>
                         </td>
                         <td>
-                            <?php echo $child->getTypeTitle(); ?>
+                            <?php echo $child->getTile(); ?>
                         </td>
                     </tr>
                     <?php endforeach; ?>

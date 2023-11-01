@@ -9,6 +9,7 @@
 }
 #atoms-show table td {
   width: 50%;
+  vertical-align: top;
 }
 #atoms-show table th {
   text-align: left;

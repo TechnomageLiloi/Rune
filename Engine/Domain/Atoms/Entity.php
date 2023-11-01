@@ -150,4 +150,9 @@ class Entity extends AbstractEntity
 
         return sprintf('<a href="%s">%s</a>', $this->getUrl(), $this->getTitle());
     }
+
+    public function getTimestamp(): string
+    {
+        return date('Y-m-d H:i', strtotime($this->getTs()));
+    }
 }
