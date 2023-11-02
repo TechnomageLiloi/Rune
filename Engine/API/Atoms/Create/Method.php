@@ -1,10 +1,10 @@
 <?php
 
-namespace Liloi\PoP\API\Atoms\Create;
+namespace Liloi\Rune\API\Atoms\Create;
 
 use Liloi\API\Response;
-use Liloi\PoP\API\Method as SuperMethod;
-use Liloi\PoP\Domain\Atoms\Manager as AtomsManager;
+use Liloi\Rune\API\Method as SuperMethod;
+use Liloi\Rune\Domain\Atoms\Manager as AtomsManager;
 
 /**
  * Rune API: Blueprint.Blueprints.Show

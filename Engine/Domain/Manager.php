@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\PoP\Domain;
+namespace Liloi\Rune\Domain;
 
 use Liloi\Config\Pool;
 use Liloi\Tools\Data\MySql\Adapter;

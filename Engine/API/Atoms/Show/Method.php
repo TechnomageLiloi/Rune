@@ -1,12 +1,12 @@
 <?php
 
-namespace Liloi\PoP\API\Atoms\Show;
+namespace Liloi\Rune\API\Atoms\Show;
 
 use Liloi\API\Response;
-use Liloi\PoP\API\Method as SuperMethod;
-use Liloi\PoP\Domain\Atoms\Manager as AtomsManager;
-use Liloi\PoP\Security;
-use Liloi\PoP\Exceptions\AccessException;
+use Liloi\Rune\API\Method as SuperMethod;
+use Liloi\Rune\Domain\Atoms\Manager as AtomsManager;
+use Liloi\Rune\Security;
+use Liloi\Rune\Exceptions\AccessException;
 
 class Method extends SuperMethod
 {

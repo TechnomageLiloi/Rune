@@ -1,12 +1,12 @@
 <?php
 
-namespace Liloi\PoP\API;
+namespace Liloi\Rune\API;
 
 use Liloi\Config\Pool;
 use Liloi\Judex\Assert;
 use Liloi\API\Response;
-use Liloi\PoP\Security;
-use Liloi\PoP\Exceptions\AccessException;
+use Liloi\Rune\Security;
+use Liloi\Rune\Exceptions\AccessException;
 
 abstract class Method
 {

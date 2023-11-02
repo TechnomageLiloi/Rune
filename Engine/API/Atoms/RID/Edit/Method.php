@@ -1,12 +1,12 @@
 <?php
 
-namespace Liloi\PoP\API\Atoms\RID\Edit;
+namespace Liloi\Rune\API\Atoms\RID\Edit;
 
 use Liloi\API\Response;
-use Liloi\PoP\API\Method as SuperMethod;
-use Liloi\PoP\Domain\Atoms\Manager as AtomsManager;
-use Liloi\PoP\Domain\Atoms\Statuses as AtomsStatuses;
-use Liloi\PoP\Domain\Atoms\Types as AtomsTypes;
+use Liloi\Rune\API\Method as SuperMethod;
+use Liloi\Rune\Domain\Atoms\Manager as AtomsManager;
+use Liloi\Rune\Domain\Atoms\Statuses as AtomsStatuses;
+use Liloi\Rune\Domain\Atoms\Types as AtomsTypes;
 
 /**
  * Rune API: Blueprint.Blueprints.Show

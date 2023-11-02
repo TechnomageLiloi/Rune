@@ -6,4 +6,4 @@ session_start();
 include_once __DIR__ . '/vendor/autoload.php';
 
 $config = include __DIR__ . '/Config/Block.php';
-echo (new Liloi\PoP\Application($config))->compile();
+echo (new Liloi\Rune\Application($config))->compile();
