@@ -9,8 +9,7 @@ use Liloi\Rune\Domain\Atoms\Statuses as AtomsStatuses;
 use Liloi\Rune\Domain\Atoms\Types as AtomsTypes;
 
 /**
- * Rune API: Blueprint.Blueprints.Show
- * @package Liloi\Librarium\API\Blueprints\Show
+ * API: Rune.Atoms.Edit
  */
 class Method extends SuperMethod
 {

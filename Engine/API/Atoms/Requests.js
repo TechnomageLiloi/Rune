@@ -1,5 +1,4 @@
 Rune.Atoms = {
-
     RID: {
         edit: function ()
         {

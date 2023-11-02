@@ -92,11 +92,21 @@ abstract class Method
         static::$config = $config;
     }
 
+    /**
+     * Get access.
+     *
+     * @return bool `true` if admin access allowed, `false` if it is denied.
+     */
     public static function accessGet(): bool
     {
         return Security::check();
     }
 
+    /**
+     * Check access. If admin access is denied, {@link AccessException} would be rose.
+     *
+     * @throws AccessException
+     */
     public static function accessCheck(): void
     {
         if(Security::check())

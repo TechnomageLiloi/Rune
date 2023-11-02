@@ -5,16 +5,21 @@ namespace Liloi\Rune\API\Atoms\Create;
 use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
 use Liloi\Rune\Domain\Atoms\Manager as AtomsManager;
+use Liloi\Rune\Exceptions\AccessException;
 
 /**
- * Rune API: Blueprint.Blueprints.Show
- * @package Liloi\Librarium\API\Blueprints\Show
+ * API: Rune.Atoms.Create
  */
 class Method extends SuperMethod
 {
+    /**
+     * @return Response
+     * @throws AccessException
+     */
     public static function execute(): Response
     {
         self::accessCheck();
+
         $URL = $_SERVER['REQUEST_URI'];
         $ridSuper = AtomsManager::URLtoATOM($URL);
         AtomsManager::create($ridSuper);
