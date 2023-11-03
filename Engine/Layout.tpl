@@ -19,7 +19,7 @@
 
         <script src="<?php echo ROOT_URL; ?>/Engine/Bootstrap.js"></script>
 
-        <title>Place of Power</title>
+        <title>Rune</title>
     </head>
     <body id="page">
         <script>
