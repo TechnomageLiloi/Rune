@@ -16,7 +16,7 @@
 
     <hr/>
 
-    <?php echo $entity->parseProgram(); ?>
+    <?php echo $entity->parseArticle(); ?>
 
     <hr/>
 

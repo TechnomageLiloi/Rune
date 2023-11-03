@@ -89,6 +89,7 @@ Rune.Atoms = {
             type: jq_block.find('[name=type]').val(),
             summary: jq_block.find('[name=summary]').val(),
             program: jq_block.find('[name=program]').val(),
+            article: jq_block.find('[name=article]').val(),
             data: jq_block.find('[name=data]').val(),
             tags: jq_block.find('[name=tags]').val(),
             ts: jq_block.find('[name=ts]').val()

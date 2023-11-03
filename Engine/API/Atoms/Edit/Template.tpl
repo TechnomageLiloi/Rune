@@ -25,6 +25,8 @@
 
         <tr><td>Summary</td><td><textarea name="summary"><?php echo $entity->getSummary(); ?></textarea></td></tr>
 
+        <tr><td>Article</td><td><textarea name="article"><?php echo $entity->getArticle(); ?></textarea></td></tr>
+
         <tr><td>Program</td><td><textarea name="program"><?php echo $entity->getProgram(); ?></textarea></td></tr>
 
         <tr><td>Data</td><td><textarea name="data"><?php echo $entity->getData(); ?></textarea></td></tr>

@@ -23,6 +23,7 @@ class Method extends SuperMethod
         $entity->setType(self::getParameter('type'));
         $entity->setSummary(self::getParameter('summary'));
         $entity->setProgram(self::getParameter('program'));
+        $entity->setArticle(self::getParameter('article'));
         $entity->setData(self::getParameter('data'));
         $entity->setTags(self::getParameter('tags'));
         $entity->setTs(self::getParameter('ts'));

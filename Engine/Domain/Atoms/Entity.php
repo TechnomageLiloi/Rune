@@ -21,6 +21,9 @@ use Liloi\Tools\Entity as AbstractEntity;
  * @method string getProgram()
  * @method void setProgram(string $value)
  *
+ * @method string getArticle()
+ * @method void setArticle(string $value)
+ *
  * @method string getTags()
  * @method void setTags(string $value)
  *
@@ -45,6 +48,11 @@ class Entity extends AbstractEntity
     public function parseProgram(): string
     {
         return Parser::parseString($this->getProgram());
+    }
+
+    public function parseArticle(): string
+    {
+        return Parser::parseString($this->getArticle());
     }
 
     public function getTypeTitle(): string
