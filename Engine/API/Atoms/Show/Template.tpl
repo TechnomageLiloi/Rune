@@ -17,7 +17,11 @@
     <hr/>
 
     <div class="stylo">
-        <?php echo $entity->parseArticle(); ?>
+        <?php if($admin): ?>
+            <?php echo $entity->parseProgram(); ?>
+        <?php else: ?>
+            <?php echo $entity->parseArticle(); ?>
+        <?php endif; ?>
     </div>
 
     <hr/>
