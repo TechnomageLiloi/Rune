@@ -16,7 +16,9 @@
 
     <hr/>
 
-    <?php echo $entity->parseArticle(); ?>
+    <div class="stylo">
+        <?php echo $entity->parseArticle(); ?>
+    </div>
 
     <hr/>
 

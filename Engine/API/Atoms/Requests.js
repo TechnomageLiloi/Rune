@@ -40,6 +40,7 @@ Rune.Atoms = {
 
         }, function (data) {
             $('body').html(data.render);
+            Rune.Trigger.initialize();
         }, function () {
 
         });
