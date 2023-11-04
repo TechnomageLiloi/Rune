@@ -20,10 +20,13 @@ class Method extends SuperMethod
     {
         $degree = DegreesManager::loadCurrent();
         $problems = ProblemsManager::loadForPlan($degree->getKey());
+        $types = ProblemsTypes::$list;
 
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
-            'problems' => $problems
+            'degree' => $degree,
+            'problems' => $problems,
+            'types' => $types,
         ]));
 
         return $response;
