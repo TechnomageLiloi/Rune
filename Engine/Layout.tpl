@@ -26,9 +26,19 @@
 
         <title>Rune</title>
     </head>
-    <body id="page">
-        <script>
-            Rune.Atoms.show();
-        </script>
+    <body>
+        <?php if($admin): ?>
+            <div id="head">
+                <a href="javascript:void(0)" class="butn" onclick="window.location.reload();">Reload</a>
+                <a href="javascript:void(0)" class="butn" onclick="Tardis.Degrees.getCollection();">Degrees</a>
+                <a href="javascript:void(0)" class="butn" onclick="Tardis.Lessons.schedule('<?php echo gmdate('Y-m-d'); ?>');">Schedule</a>
+                <a href="javascript:void(0)" class="butn" onclick="Tardis.Lessons.timetable();">Timetable</a>
+            </div>
+        <?php endif; ?>
+        <div id="page">
+            <script>
+                Rune.Atoms.show();
+            </script>
+        </div>
     </body>
 </html>
