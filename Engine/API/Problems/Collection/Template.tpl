@@ -19,7 +19,7 @@
     <a href="javascript:void(0)" class="butn" onclick="Tardis.Degrees.show('<?php echo $uid; ?>');">Show degree</a>
     <h1>Subjects:</h1>
     <?php foreach($group as $id_type => $collection): ?>
-        <h2>&blacktriangleright; <?php echo $types[$id_type]; ?></h2>
+        <h2><?php echo $id_type; ?>. <?php echo $types[$id_type]; ?></h2>
         <a href="javascript:void(0)" onclick="Tardis.Problems.create('<?php echo $degree->getKey(); ?>', '<?php echo $id_type; ?>', '<?php echo $uid; ?>')">Create</a>
         <table>
             <?php foreach($collection as $key_problem => $entity): ?>
