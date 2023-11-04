@@ -46,6 +46,45 @@ class Manager extends DomainManager
     }
 
     /**
+     * Load collection of problems by degree uid for plan.
+     *
+     * @param string $keyDegree
+     * @return array
+     */
+    public static function loadForPlan(string $keyDegree): array
+    {
+        $name = self::getTableName();
+
+        $rows = self::getAdapter()->getArray(sprintf(
+            'select * from %s where key_degree=%s order by key_problem desc;',
+            $name, $keyDegree
+        ));
+
+        $collection = new Collection();
+
+        foreach($rows as $row)
+        {
+            $collection[] = Entity::create($row);
+        }
+
+        $types = Types::$list;
+
+        $group = [];
+        foreach(array_keys($types) as $id)
+        {
+            $group[$id] = [];
+        }
+
+        /** @var Entity $entity */
+        foreach ($collection as $entity)
+        {
+            $group[$entity->getType()][] = $entity;
+        }
+
+        return $group;
+    }
+
+    /**
      * Load problem from database.
      *
      * @param string $key_problem
