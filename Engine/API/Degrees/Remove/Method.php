@@ -14,6 +14,7 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
+        self::accessCheck();
         $uid = self::getParameter('uid');
         $entity = Manager::load($uid);
         $entity->remove();

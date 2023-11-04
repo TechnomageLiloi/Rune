@@ -14,6 +14,7 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
+        self::accessCheck();
         $entityDiary = DiaryManager::loadCurrent();
         $entityLesson = LessonsManager::loadCurrent();
 

@@ -16,6 +16,7 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
+        self::accessCheck();
         $uid = self::getParameter('uid');
         $key_problem = self::getParameter('key_problem');
         $entity = Manager::load($key_problem);
