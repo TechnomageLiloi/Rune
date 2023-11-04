@@ -22,6 +22,8 @@
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Problems/Requests.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Lessons/Requests.js"></script>
 
+        <script src="<?php echo ROOT_URL; ?>/Engine/API/Plan/Requests.js"></script>
+
         <script src="<?php echo ROOT_URL; ?>/Engine/Bootstrap.js"></script>
 
         <title>Rune</title>
@@ -29,6 +31,7 @@
     <body>
         <?php if($admin): ?>
             <div id="head">
+                <a href="javascript:void(0)" class="butn" onclick="Rune.Plan.show();">Plan</a>
                 <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.show();">Atoms</a>
                 <a href="javascript:void(0)" class="butn" onclick="Tardis.Application.Diary.show();">Diary</a>
                 <a href="javascript:void(0)" class="butn" onclick="Tardis.Degrees.getCollection();">Degrees</a>
