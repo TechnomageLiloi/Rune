@@ -12,8 +12,8 @@ use Liloi\Tools\Entity as AbstractEntity;
  * @method string getUid()
  * @method void setUid(string $value)
  *
- * @method string getPlan()
- * @method void setPlan(string $value)
+ * @method string getProgram()
+ * @method void setProgram(string $value)
  *
  * @method string getStatus()
  * @method void setStatus(string $value)
@@ -25,9 +25,9 @@ class Entity extends AbstractEntity
         return $this->getField('key_degree');
     }
 
-    public function parse(): string
+    public function getParse(): string
     {
-        return Parser::parseString($this->getPlan());
+        return Parser::parseString($this->getProgram());
     }
 
     public function save(): void

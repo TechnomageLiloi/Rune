@@ -63,6 +63,7 @@ create table rune_problems
     title varchar(250) not null,
     program text not null,
     type tinyint unsigned not null,
+    status tinyint unsigned default 1 not null,
     mark tinyint unsigned default 0 not null,
     constraint rune_problems_pk
         primary key (key_problem),
