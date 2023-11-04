@@ -29,6 +29,7 @@
     <body>
         <?php if($admin): ?>
             <div id="head">
+                <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.show();">Atoms</a>
                 <a href="javascript:void(0)" class="butn" onclick="Tardis.Application.Diary.show();">Diary</a>
                 <a href="javascript:void(0)" class="butn" onclick="Tardis.Degrees.getCollection();">Degrees</a>
                 <a href="javascript:void(0)" class="butn" onclick="Tardis.Lessons.schedule('<?php echo gmdate('Y-m-d'); ?>');">Schedule</a>
