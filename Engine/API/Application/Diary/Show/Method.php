@@ -16,13 +16,17 @@ class Method extends SuperMethod
     public static function execute(): Response
     {
         self::accessCheck();
-        $entityDiary = DiaryManager::loadCurrent();
-        $collectionLesson = LessonsManager::loadByDate(date('Y-m-d'));
+
+        $dt = self::getParameter('dt');
+
+        $entityDiary = DiaryManager::load($dt);
+        $collectionLesson = LessonsManager::loadByDate($dt);
 
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
             'entity' => $entityDiary,
             'lessons' => $collectionLesson,
+            'dt' => $dt,
             'statuses' => Status::$list
         ]));
 

@@ -1,6 +1,12 @@
 <link href="<?php echo ROOT_URL; ?>/Engine/API/Application/Diary/Show/Style.css" rel="stylesheet" />
 
 <div id="application-diary-show" class="stylo">
+
+    <div class="controls">
+        <input id="dt" type="date" value="<?php echo $dt; ?>" />
+        <a href="javascript:void(0)" onclick="Tardis.Application.Diary.show($('#dt').val());">Diary</a>
+    </div>
+
     <h1 class="wrap-title">
         <?php echo $entity->getTitle(); ?>
     </h1>

@@ -21,10 +21,10 @@ Tardis.Application = {
             });
         },
 
-        show: function ()
+        show: function (dt)
         {
             API.request('Tardis.Application.Diary.Show', {
-
+                dt: dt
             }, function (data) {
                 $('#page').html(data.render);
             }, function () {
