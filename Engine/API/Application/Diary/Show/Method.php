@@ -16,12 +16,10 @@ class Method extends SuperMethod
     {
         self::accessCheck();
         $entityDiary = DiaryManager::loadCurrent();
-        $entityLesson = LessonsManager::loadCurrent();
 
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
-            'entity' => $entityDiary,
-            'lesson' => $entityLesson
+            'entity' => $entityDiary
         ]));
 
         return $response;

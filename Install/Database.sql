@@ -29,7 +29,7 @@ CREATE TABLE `rune_config` (
 );
 
 CREATE TABLE `rune_diary` (
-                              `key_day` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+                              `key_day` date NOT NULL,
                               `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
                               `program` text COLLATE utf8mb4_unicode_ci NOT NULL,
                               `data` json NOT NULL,

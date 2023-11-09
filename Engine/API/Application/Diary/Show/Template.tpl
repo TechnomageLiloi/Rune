@@ -17,7 +17,7 @@
     <hr/>
 
     <div class="lesson">
-        <?php echo $lesson->getComment(); ?>
+
     </div>
 
     <hr/>

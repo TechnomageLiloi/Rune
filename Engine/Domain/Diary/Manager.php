@@ -47,15 +47,16 @@ class Manager extends DomainManager
     public static function loadCurrent(): Entity
     {
         $name = self::getTableName();
+        $keyDay = date('Y-m-d');
 
         $row = self::getAdapter()->getRow(sprintf(
-            'select * from %s order by key_day desc limit 1;',
-            $name
+            'select * from %s where key_day="%s" limit 1;',
+            $name, $keyDay
         ));
 
         if(!$row)
         {
-            $row = self::create();
+            $row = self::create($keyDay);
         }
 
         return Entity::create($row);
@@ -77,19 +78,21 @@ class Manager extends DomainManager
 
     /**
      * Create new day.
+     *
+     * @param string $keyDay
+     * @return array
      */
-    public static function create(): array
+    public static function create(string $keyDay): array
     {
-        $key = date('Y-m-d');
         $data = [
-            'key_day' => $key,
-            'title' => 'Date key: ' . $key,
+            'key_day' => $keyDay,
+            'title' => 'Date key: ' . $keyDay,
             'program' => '-',
             'data' => '{}',
             'status' => Statuses::TODO,
             'type' => Types::BIOTECH,
-            'start' => date('Y-m-d 00:00:00'),
-            'finish' => date('Y-m-d 23:59:59')
+            'start' => $keyDay . '00:00:00',
+            'finish' => $keyDay . '23:59:59'
         ];
 
         self::getAdapter()->insert(self::getTableName(), $data);
