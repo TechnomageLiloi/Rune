@@ -87,6 +87,25 @@ class Manager extends DomainManager
         return $collection;
     }
 
+    public static function loadByDate(string $d): Collection
+    {
+        $name = self::getTableName();
+
+        $rows = self::getAdapter()->getArray(sprintf(
+            'select * from %s where start between "%s" and "%s" order by start desc;',
+            $name, $d . ' 00:00:00', $d . ' 23:59:59'
+        ));
+
+        $collection = new Collection();
+
+        foreach($rows as $row)
+        {
+            $collection[$row['key_lesson']] = Entity::create($row);
+        }
+
+        return $collection;
+    }
+
     public static function load(string $key): Entity
     {
         $name = self::getTableName();
