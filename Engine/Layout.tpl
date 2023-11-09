@@ -29,21 +29,19 @@
         <title>Rune</title>
     </head>
     <body>
-
-            <div id="head">
-                <?php if($admin): ?>
-                    <a href="javascript:void(0)" class="butn" onclick="Rune.Plan.show();">Plan</a>
-                    <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.show();">Atoms</a>
-                    <a href="javascript:void(0)" class="butn" onclick="Tardis.Application.Diary.show();">Diary</a>
-                    <a href="javascript:void(0)" class="butn" onclick="Tardis.Degrees.getCollection();">Degrees</a>
-                    <a href="javascript:void(0)" class="butn" onclick="Tardis.Lessons.schedule('<?php echo gmdate('Y-m-d'); ?>');">Schedule</a>
-                    <a href="javascript:void(0)" class="butn" onclick="Tardis.Lessons.timetable();">Timetable</a>
-                    <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.logout();">Logout</a>
-                <?php else: ?>
-                    <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.show();">Login</a>
-                <?php endif; ?>
-            </div>
-
+        <div id="head">
+            <?php if($admin): ?>
+                <a href="javascript:void(0)" class="butn" onclick="Rune.Plan.show();">Plan</a>
+                <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.show();">Atoms</a>
+                <a href="javascript:void(0)" class="butn" onclick="Tardis.Application.Diary.show();">Diary</a>
+                <a href="javascript:void(0)" class="butn" onclick="Tardis.Degrees.getCollection();">Degrees</a>
+                <a href="javascript:void(0)" class="butn" onclick="Tardis.Lessons.schedule('<?php echo gmdate('Y-m-d'); ?>');">Schedule</a>
+                <a href="javascript:void(0)" class="butn" onclick="Tardis.Lessons.timetable();">Timetable</a>
+                <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.logout();">Logout</a>
+            <?php else: ?>
+                <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.show();">Login</a>
+            <?php endif; ?>
+        </div>
         <div id="page">
             <script>
                 Rune.Atoms.show();
