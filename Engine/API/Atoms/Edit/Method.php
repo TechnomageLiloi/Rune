@@ -16,10 +16,19 @@ class Method extends SuperMethod
     public static function execute(): Response
     {
         self::accessCheck();
-        $URL = $_SERVER['REQUEST_URI'];
-        $RID = AtomsManager::URLtoATOM($URL);
 
-        $entity = AtomsManager::load($RID);
+        $last = filter_var(self::getParameter('last'), FILTER_VALIDATE_BOOLEAN);
+
+        if(!$last)
+        {
+            $URL = $_SERVER['REQUEST_URI'];
+            $RID = AtomsManager::URLtoATOM($URL);
+            $entity = AtomsManager::load($RID);
+        }
+        else
+        {
+            $entity = AtomsManager::loadLast();
+        }
 
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [

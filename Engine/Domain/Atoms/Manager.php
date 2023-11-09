@@ -51,6 +51,23 @@ class Manager extends DomainManager
         return Entity::create($row);
     }
 
+    public static function loadLast(): Entity
+    {
+        $name = self::getTableName();
+
+        $row = self::getAdapter()->getRow(sprintf(
+            'select * from %s order by ts desc limit 1;',
+            $name
+        ));
+
+        if(!$row)
+        {
+            throw new \Exception('Not found.');
+        }
+
+        return Entity::create($row);
+    }
+
     public static function loadNews(string $keyAtom): Collection
     {
         $name = self::getTableName();

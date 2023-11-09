@@ -46,10 +46,15 @@ Rune.Atoms = {
         });
     },
 
-    edit: function ()
+    edit: function (last)
     {
-        API.request('Rune.Atoms.Edit', {
+        if(typeof(last) == "undefined")
+        {
+            last = false;
+        }
 
+        API.request('Rune.Atoms.Edit', {
+            last: last
         }, function (data) {
             const wrap = $('#page');
             wrap.html(data.render);
