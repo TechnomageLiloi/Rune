@@ -14,7 +14,7 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-        self::accessCheck();
+
         $key_blueprint = self::getParameter('key_blueprint');
         $id_type = self::getParameter('id_type');
         Manager::create($key_blueprint, $id_type);

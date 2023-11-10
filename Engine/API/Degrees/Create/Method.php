@@ -14,7 +14,7 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-        self::accessCheck();
+
         Manager::create();
         return new Response();
     }

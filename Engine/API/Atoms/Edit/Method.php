@@ -15,7 +15,7 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-        self::accessCheck();
+
 
         $last = filter_var(self::getParameter('last'), FILTER_VALIDATE_BOOLEAN);
 

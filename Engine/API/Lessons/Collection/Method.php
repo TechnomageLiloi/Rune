@@ -15,7 +15,7 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-        self::accessCheck();
+
         $key_problem = self::getParameter('key_problem');
         $collection = Manager::loadCollection($key_problem);
 

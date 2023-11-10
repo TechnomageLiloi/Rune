@@ -14,7 +14,7 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-        self::accessCheck();
+
         $date_now = self::getParameter('date_now');
         $schedule = Manager::schedule($date_now);
 

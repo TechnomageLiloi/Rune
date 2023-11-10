@@ -14,7 +14,7 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-        self::accessCheck();
+
         $keyAtom = self::getParameter('key_atom');
         $entity = AtomsManager::load($keyAtom);
 

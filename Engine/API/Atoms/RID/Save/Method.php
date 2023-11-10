@@ -14,7 +14,7 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-        self::accessCheck();
+
         $ridOld = self::getParameter('rid_old');
         $ridNew = self::getParameter('rid_new');
 

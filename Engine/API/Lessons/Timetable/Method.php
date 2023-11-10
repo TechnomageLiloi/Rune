@@ -15,7 +15,7 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-        self::accessCheck();
+
         $collection = Manager::loadTimetable();
 
         $response = new Response();

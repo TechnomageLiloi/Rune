@@ -4,6 +4,7 @@ namespace Liloi\Rune\API;
 
 use Liloi\API\Manager;
 use Liloi\API\Method;
+use Liloi\Rune\API\Method as RuneMethod;
 
 /**
  * @inheritDoc
@@ -77,6 +78,11 @@ class Tree
 
     public function execute(): string
     {
+        if(strpos($_POST['method'], 'Rune.Security.') === false)
+        {
+            RuneMethod::accessCheck();
+        }
+
         $response = $this->manager->search($_POST['method'])->execute($_POST['parameters'] ?? []);
         return $response->asJson();
     }

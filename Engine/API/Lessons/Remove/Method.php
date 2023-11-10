@@ -14,7 +14,7 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-        self::accessCheck();
+
         $key_lesson = self::getParameter('key_lesson');
         $entity = Manager::load($key_lesson);
         $entity->remove();
