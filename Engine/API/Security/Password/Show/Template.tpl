@@ -1,8 +1,11 @@
 <link href="/Engine/API/Security/Password/Show/Style.css" rel="stylesheet" />
 <div id="game-security-password-show" class="stylo">
     <h1 class="wrap-title">
-        Enter the password
+        Welcome to the Rune system!
     </h1>
+    <h2 class="wrap-title">
+        Please, enter the password.
+    </h2>
     <hr/>
     <input type="password" name="pass" />
     <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.check();">Check</a>
