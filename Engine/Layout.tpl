@@ -21,8 +21,9 @@
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Degrees/Requests.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Problems/Requests.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Lessons/Requests.js"></script>
-
+        <script src="<?php echo ROOT_URL; ?>/Engine/API/Exams/Questions/Requests.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Plan/Requests.js"></script>
+        <script src="<?php echo ROOT_URL; ?>/Engine/API/Exams/Questions/Test/Testing.js"></script>
 
         <script src="<?php echo ROOT_URL; ?>/Engine/Bootstrap.js"></script>
 
