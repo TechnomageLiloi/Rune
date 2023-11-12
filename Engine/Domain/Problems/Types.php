@@ -11,7 +11,7 @@ class Types
 {
     public const FREEDOM = 1;
     public const BIOTECH = 2;
-    public const EXAMS = 3;
+    public const THEORY = 3;
     public const CODEX = 4;
     public const PROJECTS = 5;
     public const ARTIFACTS = 6;
@@ -20,7 +20,7 @@ class Types
     public static $list = [
         self::FREEDOM => 'Freedom',
         self::BIOTECH => 'Biotech',
-        self::EXAMS => 'Exams',
+        self::THEORY => 'Theory',
         self::CODEX => 'Codex',
         self::PROJECTS => 'Projects',
         self::ARTIFACTS => 'Artifacts',
