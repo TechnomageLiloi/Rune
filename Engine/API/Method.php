@@ -52,6 +52,12 @@ abstract class Method
         return $_POST['parameters'];
     }
 
+
+    public static function getParameterExist(string $name): bool
+    {
+        return isset($_POST['parameters'][$name]);
+    }
+
     /**
      * Render templates.
      *

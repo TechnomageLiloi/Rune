@@ -17,7 +17,15 @@ class Method extends SuperMethod
     {
 
         $key_lesson = self::getParameter('key_lesson');
-        $entity = Manager::load($key_lesson);
+
+        if((int)$key_lesson)
+        {
+            $entity = Manager::load($key_lesson);
+        }
+        else
+        {
+            $entity = Manager::loadCurrent();
+        }
 
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [

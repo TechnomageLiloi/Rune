@@ -124,13 +124,17 @@ class Manager extends DomainManager
         return Entity::create($row);
     }
 
+    /**
+     * @return Entity
+     * @throws Exception
+     */
     public static function loadCurrent(): Entity
     {
         $name = self::getTableName();
 
         $row = self::getAdapter()->getRow(sprintf(
-            'select * from %s order by start desc limit 1',
-            $name
+            'select * from %s where status=%s order by start desc limit 1',
+            $name, Status::IN_HAND
         ));
 
         if(!$row)

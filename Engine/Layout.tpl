@@ -36,7 +36,8 @@
             <a href="javascript:void(0)" class="butn" onclick="Tardis.Degrees.getCollection();">Degrees</a>
             <a href="javascript:void(0)" class="butn" onclick="Tardis.Lessons.schedule('<?php echo gmdate('Y-m-d'); ?>');">Schedule</a>
             <a href="javascript:void(0)" class="butn" onclick="Tardis.Lessons.timetable();">Timetable</a>
-            <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.edit(true);">Write</a>
+            <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.edit(true);">Article</a>
+            <a href="javascript:void(0)" class="butn" onclick="Tardis.Lessons.edit(0)">Task</a>
             <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.logout();">Logout</a>
         </div>
         <div id="page">
