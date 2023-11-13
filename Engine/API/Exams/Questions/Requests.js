@@ -4,7 +4,7 @@ API.Questions = {
         API.request('Exams.Questions.Collection', {
             
         }, function (data) {
-            $('#map').html(data.render);
+            $('#page').html(data.render);
         }, function () {
 
         });
@@ -15,7 +15,7 @@ API.Questions = {
         API.request('Exams.Questions.Show', {
             'key_question': key_question
         }, function (data) {
-            $('#map').html(data.render);
+            $('#page').html(data.render);
         }, function () {
 
         });
@@ -58,7 +58,7 @@ API.Questions = {
         API.request('Exams.Questions.Edit', {
             'key_question': key_question
         }, function (data) {
-            $('#map').html(data.render);
+            $('#page').html(data.render);
         }, function () {
 
         });
@@ -69,7 +69,7 @@ API.Questions = {
         API.request('Exams.Questions.Test', {
             'key_question': key_question
         }, function (data) {
-            $('#map').html(data.render);
+            $('#page').html(data.render);
         }, function () {
 
         });
@@ -80,7 +80,7 @@ API.Questions = {
         API.request('Exams.Questions.Suite', {
             'tags': $('#tags').val()
         }, function (data) {
-            $('#map').html(data.render);
+            $('#page').html(data.render);
         }, function () {
 
         });

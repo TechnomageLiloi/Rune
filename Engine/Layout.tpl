@@ -40,6 +40,11 @@
             <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.edit(true);">Article</a>
             <a href="javascript:void(0)" class="butn" onclick="Tardis.Lessons.edit(0)">Task</a>
             <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.logout();">Logout</a>
+            <br/>
+            <br/>
+            <a href="javascript:void(0)" onclick="API.Questions.collection();">Questions</a>
+            <input type="text" id="tags" value="">
+            <a href="javascript:void(0)" onclick="API.Questions.suite();">Run</a>
         </div>
         <div id="page">
             <script>

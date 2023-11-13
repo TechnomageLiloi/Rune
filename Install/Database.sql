@@ -26,6 +26,7 @@ create table rune_questions
     tags varchar(100) not null,
     dt timestamp not null,
     data json not null,
+    power tinyint unsigned default 1 not null,
     constraint artifacts_questions_pk
         primary key (key_question)
 );
