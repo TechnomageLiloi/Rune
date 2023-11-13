@@ -81,6 +81,20 @@ class Tree
             $manager->add(new Method('Exams.Questions.Test', '\Liloi\Rune\API\Exams\Questions\Test\Method::execute'));
             $manager->add(new Method('Exams.Questions.Suite', '\Liloi\Rune\API\Exams\Questions\Suite\Method::execute'));
 
+            //
+
+            $manager->add(new Method('Stones.Projects.Collection', '\Liloi\Rune\API\Projects\Collection\Method::execute'));
+            $manager->add(new Method('Stones.Projects.Show', '\Liloi\Rune\API\Projects\Show\Method::execute'));
+            $manager->add(new Method('Stones.Projects.Edit', '\Liloi\Rune\API\Projects\Edit\Method::execute'));
+            $manager->add(new Method('Stones.Projects.Save', '\Liloi\Rune\API\Projects\Save\Method::execute'));
+            $manager->add(new Method('Stones.Projects.Create', '\Liloi\Rune\API\Projects\Create\Method::execute'));
+
+            $manager->add(new Method('Stones.Tickets.Collection', '\Liloi\Rune\API\Tickets\Collection\Method::execute'));
+            $manager->add(new Method('Stones.Tickets.Show', '\Liloi\Rune\API\Tickets\Show\Method::execute'));
+            $manager->add(new Method('Stones.Tickets.Edit', '\Liloi\Rune\API\Tickets\Edit\Method::execute'));
+            $manager->add(new Method('Stones.Tickets.Save', '\Liloi\Rune\API\Tickets\Save\Method::execute'));
+            $manager->add(new Method('Stones.Tickets.Create', '\Liloi\Rune\API\Tickets\Create\Method::execute'));
+
             self::$instance = new self($manager);
         }
 

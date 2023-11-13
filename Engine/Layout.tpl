@@ -47,6 +47,8 @@
             <a href="javascript:void(0)" onclick="API.Questions.collection();">Questions</a>
             <input type="text" id="tags" value="">
             <a href="javascript:void(0)" onclick="API.Questions.suite();">Run</a>
+            &diams;
+            <a href="javascript:void(0)" onclick="Stones.API.Projects.getCollection();">Artifacts</a>
         </div>
         <div id="page">
             <script>
