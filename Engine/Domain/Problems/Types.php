@@ -13,7 +13,7 @@ class Types
     public const BIOTECH = 2;
     public const THEORY = 3;
     public const CODEX = 4;
-    public const SYSTEMS = 5;
+    public const PROJECTS = 5;
     public const ARTIFACTS = 6;
     public const FAMILY = 7;
 
@@ -22,7 +22,7 @@ class Types
         self::BIOTECH => 'Biotech',
         self::THEORY => 'Theory',
         self::CODEX => 'Codex',
-        self::SYSTEMS => 'Systems',
+        self::PROJECTS => 'Projects',
         self::ARTIFACTS => 'Artifacts',
         self::FAMILY => 'Family',
     ];
