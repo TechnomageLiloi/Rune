@@ -105,4 +105,31 @@ create table rune_lessons
     constraint rune_lessons_rune_problems_key_problem_fk
         foreign key (key_problem) references rune_problems (key_problem)
             on update cascade on delete cascade
-)
+);
+
+-- STONES
+
+create table rune_projects
+(
+    key_project bigint unsigned auto_increment,
+    title varchar(100) not null,
+    program text not null,
+    status tinyint unsigned default 1 not null,
+    constraint rune_projects_pk
+        primary key (key_project)
+);
+
+create table rune_tickets
+(
+    key_ticket bigint unsigned auto_increment,
+    key_project bigint unsigned not null,
+    title varchar(1000) not null,
+    dt timestamp not null,
+    data json not null,
+    constraint rune_tickets_pk
+        primary key (key_ticket),
+    constraint rune_tickets_rune_projects_key_project_fk
+        foreign key (key_project) references rune_projects (key_project)
+            on update cascade on delete cascade
+);
+
