@@ -70,6 +70,17 @@ class Tree
             $manager->add(new Method('Tardis.Problems.Save', '\Liloi\Rune\API\Problems\Save\Method::execute'));
             $manager->add(new Method('Tardis.Problems.Show', '\Liloi\Rune\API\Problems\Show\Method::execute'));
 
+            //
+
+            $manager->add(new Method('Exams.Questions.Collection', '\Liloi\Rune\API\Exams\Questions\Collection\Method::execute'));
+            $manager->add(new Method('Exams.Questions.Create', '\Liloi\Rune\API\Exams\Questions\Create\Method::execute'));
+            $manager->add(new Method('Exams.Questions.Remove', '\Liloi\Rune\API\Exams\Questions\Remove\Method::execute'));
+            $manager->add(new Method('Exams.Questions.Edit', '\Liloi\Rune\API\Exams\Questions\Edit\Method::execute'));
+            $manager->add(new Method('Exams.Questions.Save', '\Liloi\Rune\API\Exams\Questions\Save\Method::execute'));
+            $manager->add(new Method('Exams.Questions.Show', '\Liloi\Rune\API\Exams\Questions\Show\Method::execute'));
+            $manager->add(new Method('Exams.Questions.Test', '\Liloi\Rune\API\Exams\Questions\Test\Method::execute'));
+            $manager->add(new Method('Exams.Questions.Suite', '\Liloi\Rune\API\Exams\Questions\Suite\Method::execute'));
+
             self::$instance = new self($manager);
         }
 
