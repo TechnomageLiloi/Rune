@@ -64,7 +64,7 @@ Tardis.Lessons = {
         API.request('Tardis.Lessons.Create', {
 
         }, function (data) {
-            Tardis.Degrees.getCollection();
+            Tardis.Application.Diary.show('now');
         }, function () {
 
         });
@@ -114,7 +114,7 @@ Tardis.Lessons = {
             'finish': jq_block.find('[name="finish"]').val(),
             'data': jq_block.find('[name="data"]').val()
         }, function (data) {
-            Tardis.Degrees.getCollection();
+            Tardis.Application.Diary.show('now');
         }, function () {
 
         });

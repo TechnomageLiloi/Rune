@@ -15,9 +15,12 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-
-
         $dt = self::getParameter('dt');
+
+        if($dt === 'now')
+        {
+            $dt = date('Y-m-d');
+        }
 
         $entityDiary = DiaryManager::load($dt);
         $collectionLesson = LessonsManager::loadByDate($dt);
