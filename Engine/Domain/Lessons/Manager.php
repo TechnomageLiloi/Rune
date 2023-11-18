@@ -49,25 +49,6 @@ class Manager extends DomainManager
         return $schedule;
     }
 
-    public static function loadCollection(string $key_problem): Collection
-    {
-        $name = self::getTableName();
-
-        $rows = self::getAdapter()->getArray(sprintf(
-            'select * from %s where key_problem=%s order by key_lesson desc;',
-            $name, $key_problem
-        ));
-
-        $collection = new Collection();
-
-        foreach($rows as $row)
-        {
-            $collection[$row['key_lesson']] = Entity::create($row);
-        }
-
-        return $collection;
-    }
-
     public static function loadTimetable(): Collection
     {
         $name = self::getTableName();
@@ -173,11 +154,10 @@ class Manager extends DomainManager
     }
 
     // @todo: rise this method to more abstract level.
-    public static function create($key_problem): void
+    public static function create(): void
     {
         $name = self::getTableName();
         $data = [
-            'key_problem' => $key_problem,
             'comment' => 'Enter the comment',
             'mark' => '0',
             'status' => Status::TODO,

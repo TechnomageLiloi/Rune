@@ -54,7 +54,6 @@ class Tree
             $manager->add(new Method('Tardis.Degrees.Edit', '\Liloi\Rune\API\Degrees\Edit\Method::execute'));
             $manager->add(new Method('Tardis.Degrees.Save', '\Liloi\Rune\API\Degrees\Save\Method::execute'));
 
-            $manager->add(new Method('Tardis.Lessons.Collection', '\Liloi\Rune\API\Lessons\Collection\Method::execute'));
             $manager->add(new Method('Tardis.Lessons.Create', '\Liloi\Rune\API\Lessons\Create\Method::execute'));
             $manager->add(new Method('Tardis.Lessons.Edit', '\Liloi\Rune\API\Lessons\Edit\Method::execute'));
             $manager->add(new Method('Tardis.Lessons.Save', '\Liloi\Rune\API\Lessons\Save\Method::execute'));

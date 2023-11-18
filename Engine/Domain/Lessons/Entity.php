@@ -41,11 +41,6 @@ class Entity extends AbstractEntity
         return (int)date('G', strtotime($this->getStart()));
     }
 
-    public function getKeyProblem(): string
-    {
-        return $this->getField('key_problem');
-    }
-
     public function save(): void
     {
         Manager::save($this);

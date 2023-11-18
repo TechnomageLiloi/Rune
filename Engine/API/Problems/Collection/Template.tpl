@@ -32,8 +32,6 @@
                 <td style="text-align: right; width: 100px;"><?php echo $entity->getStatusTitle(); ?></td>
                 <td style="text-align: right; width: 100px;"><?php echo $entity->getMark(); ?></td>
                 <td style="text-align: right; width: 300px;">
-                    <a href="javascript:void(0)" onclick="Tardis.Lessons.collection('<?php echo $key_problem; ?>')">Lessons</a>
-                    &diams;
                     <a href="javascript:void(0)" onclick="Tardis.Problems.edit('<?php echo $key_problem; ?>', '<?php echo $uid; ?>')">Edit</a>
                     &diams;
                     <a href="javascript:void(0)" onclick="Tardis.Problems.remove('<?php echo $key_problem; ?>', '<?php echo $uid; ?>')">Remove</a>

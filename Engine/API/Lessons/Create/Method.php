@@ -14,9 +14,7 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-
-        $key_problem = self::getParameter('key_problem');
-        Manager::create($key_problem);
+        Manager::create();
         return new Response();
     }
 }

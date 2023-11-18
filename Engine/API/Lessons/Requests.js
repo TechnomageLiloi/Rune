@@ -54,7 +54,7 @@ Tardis.Lessons = {
         });
     },
 
-    create: function (key_problem)
+    create: function ()
     {
         if(!confirm('Are you sure?'))
         {
@@ -62,9 +62,9 @@ Tardis.Lessons = {
         }
 
         API.request('Tardis.Lessons.Create', {
-            'key_problem': key_problem
+
         }, function (data) {
-            Tardis.Lessons.collection(key_problem);
+            Tardis.Degrees.getCollection();
         }, function () {
 
         });
@@ -97,7 +97,7 @@ Tardis.Lessons = {
         });
     },
 
-    save: function (key_lesson, key_problem)
+    save: function (key_lesson)
     {
         if(!confirm('Are you sure?'))
         {
@@ -114,7 +114,7 @@ Tardis.Lessons = {
             'finish': jq_block.find('[name="finish"]').val(),
             'data': jq_block.find('[name="data"]').val()
         }, function (data) {
-            Tardis.Lessons.collection(key_problem);
+            Tardis.Degrees.getCollection();
         }, function () {
 
         });
