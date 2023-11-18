@@ -17,6 +17,8 @@
 </style>
 <div id="problem-group">
     <a href="javascript:void(0)" class="butn" onclick="Tardis.Degrees.show('<?php echo $uid; ?>');">Show degree</a>
+    &diams;
+    <a href="javascript:void(0)" class="butn" onclick="Tardis.Lessons.create();">Create lesson</a>
     <h1>Subjects:</h1>
     <?php foreach($group as $id_type => $collection): ?>
         <h2><?php echo $id_type; ?>. <?php echo $types[$id_type]; ?></h2>

@@ -93,7 +93,6 @@ create table rune_problems
 create table rune_lessons
 (
     key_lesson bigint unsigned auto_increment,
-    key_problem bigint unsigned not null,
     comment varchar(250) not null,
     mark tinyint unsigned default 0 not null,
     status tinyint unsigned default 1 not null,
@@ -101,10 +100,7 @@ create table rune_lessons
     finish timestamp not null,
     data json not null,
     constraint rune_lessons_pk
-        primary key (key_lesson),
-    constraint rune_lessons_rune_problems_key_problem_fk
-        foreign key (key_problem) references rune_problems (key_problem)
-            on update cascade on delete cascade
+        primary key (key_lesson)
 );
 
 -- STONES
