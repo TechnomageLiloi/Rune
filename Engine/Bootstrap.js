@@ -11,3 +11,13 @@ Rune.Trigger = {
         $('.stylo-block:eq(0)').show();
     }
 };
+
+Rune.Types = {
+    Frame: {
+        show: function (link)
+        {
+            // alert(link);
+            $('#atoms-show').html('<iframe width="100%" height="500px;" src="' + link + '">');
+        }
+    }
+};

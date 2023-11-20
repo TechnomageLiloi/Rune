@@ -158,7 +158,8 @@ class Entity extends AbstractEntity
 
         if($type == Types::FRAME)
         {
-            return sprintf('<a target="_blank" href="%s">%s</a> &diams; ', $this->getDataElement('link'), $this->getTitle())
+            return sprintf('<a href="javascript:void(0)" onclick="Rune.Types.Frame.show(\'%s\');">Frame</a> &diams; ', $this->getDataElement('link'))
+                . sprintf('<a target="_blank" href="%s">New page</a> &diams; ', $this->getDataElement('link'))
                 . sprintf('<a href="%s">Show Atom</a>', $this->getUrl());
         }
 
