@@ -11,6 +11,7 @@ class Types
     public const ARCHIVE = 5;
     public const GOOGLE_DOCUMENT = 6;
     public const GOOGLE_SPREADSHEET = 7;
+    public const FRAME = 8;
 
     static public array $list = [
         self::DIRECTORY => 'Directory',
@@ -20,6 +21,7 @@ class Types
         self::ARCHIVE => 'Archive',
         self::GOOGLE_DOCUMENT => 'Google Document',
         self::GOOGLE_SPREADSHEET => 'Google Spreadsheet',
+        self::FRAME => 'Frame',
     ];
 
     // @todo: move this method to more abstract level.
