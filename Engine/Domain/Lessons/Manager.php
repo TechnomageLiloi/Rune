@@ -68,13 +68,13 @@ class Manager extends DomainManager
         return $collection;
     }
 
-    public static function loadByDate(string $d): Collection
+    public static function loadByDate(string $dt): Collection
     {
         $name = self::getTableName();
 
         $rows = self::getAdapter()->getArray(sprintf(
             'select * from %s where start between "%s" and "%s" order by start desc;',
-            $name, $d . ' 00:00:00', $d . ' 23:59:59'
+            $name, $dt . ' 00:00:00', $dt . ' 23:59:59'
         ));
 
         $collection = new Collection();
@@ -85,6 +85,16 @@ class Manager extends DomainManager
         }
 
         return $collection;
+    }
+
+    public static function loadKarma(string $dt): int
+    {
+        $name = self::getTableName();
+
+        return (int)self::getAdapter()->getSingle(sprintf(
+            'select sum(mark) from %s where status=%s and start between "%s" and "%s";',
+            $name, Status::COMPLETE, $dt . ' 00:00:00', $dt . ' 23:59:59'
+        ));
     }
 
     public static function load(string $key): Entity

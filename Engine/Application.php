@@ -7,6 +7,7 @@ use Liloi\Rune\API\Method;
 use Liloi\Rune\API\Tree;
 use Liloi\Rune\Domain\Manager;
 use Rune\Application\Conceptual as ConceptualApplication;
+use Liloi\Rune\Domain\Lessons\Manager as LessonsManager;
 
 /**
  * @inheritDoc
@@ -53,8 +54,11 @@ class Application extends ConceptualApplication
             return Tree::getInstance()->execute();
         }
 
+        $karma = LessonsManager::loadKarma(date('Y-m-d'));
+
         return $this->render(__DIR__ . '/Layout.tpl', [
-            'admin' => Security::check()
+            'admin' => Security::check(),
+            'karma' => $karma
         ]);
     }
 }

@@ -49,6 +49,8 @@
             <a href="javascript:void(0)" onclick="API.Questions.suite();">Run</a>
             &diams;
             <a href="javascript:void(0)" onclick="Stones.API.Projects.getCollection();">Artifacts</a>
+            &diams;
+            Karma: <?php echo $karma; ?>
         </div>
         <div id="page">
             <script>
