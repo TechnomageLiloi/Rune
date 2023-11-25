@@ -17,3 +17,7 @@
 #atoms-show table .tree td {
   border-bottom: gray 1px dashed;
 }
+#atoms-show .stylo img {
+  float: left;
+  margin-right: 10px;
+}
