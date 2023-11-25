@@ -152,7 +152,7 @@ class Manager extends DomainManager
     {
         if($keyAtom === 'rune')
         {
-            return '/';
+            return '/rune';
         }
 
         $lower = strtolower(str_replace('rune:', '', $keyAtom));
