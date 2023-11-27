@@ -13,7 +13,8 @@
 
     <div class="controls">
         <a href="javascript:void(0)" onclick="Tardis.Application.Diary.show();">Show</a> &diams;
-        <a href="javascript:void(0)" onclick="Tardis.Application.Diary.edit();">Edit</a>
+        <a href="javascript:void(0)" onclick="Tardis.Application.Diary.edit();">Edit</a> &diams;
+        <a href="javascript:void(0)" onclick="Tardis.Lessons.create();">Create lesson</a>
     </div>
 
     <div class="data">
