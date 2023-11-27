@@ -5,9 +5,9 @@ namespace Liloi\Rune;
 use Liloi\Config\Pool;
 use Liloi\Rune\API\Method;
 use Liloi\Rune\API\Tree;
+use Liloi\Rune\Domain\Lessons\Manager as LessonsManager;
 use Liloi\Rune\Domain\Manager;
 use Rune\Application\Conceptual as ConceptualApplication;
-use Liloi\Rune\Domain\Lessons\Manager as LessonsManager;
 
 /**
  * @inheritDoc
@@ -48,7 +48,7 @@ class Application extends ConceptualApplication
      */
     public function compile(): string
     {
-        // If API requested.
+        // If API requested, then 'method' post parameter would be set.
         if(isset($_POST['method']))
         {
             return Tree::getInstance()->execute();

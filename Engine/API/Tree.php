@@ -20,6 +20,11 @@ class Tree
         $this->manager = $manager;
     }
 
+    /**
+     * @obsolete It is centralized, which is incorrect.
+     * @todo Add general API Pool.
+     * @return static
+     */
     public static function getInstance(): self
     {
         if(self::$instance === null)
