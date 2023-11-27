@@ -1,4 +1,4 @@
-<link href="<?php echo ROOT_URL; ?>/Source/API/Questions/Test/Style.css" rel="stylesheet" />
+<link href="<?php echo ROOT_URL; ?>/Engine/API/Exams/Questions/Test/Style.css" rel="stylesheet" />
 <div id="testing-<?php echo $entity->getKey(); ?>" class="testing-sentence">
     <div class="theory" style="display: none;">
         <?php echo $entity->getParseTheory(); ?>
@@ -13,7 +13,7 @@
             <?php if(str_starts_with($block, '==')): ?>
                 <input type="text" data-correct="<?php echo str_replace('==', '', $block); ?>">
             <?php else: ?>
-                <?php echo \Liloi\Stylo\Parser::parseString($block); ?>
+                <?php echo $block; ?>
             <?php endif; ?>
         <?php endforeach; ?>
     </div>
