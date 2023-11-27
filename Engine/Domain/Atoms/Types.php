@@ -12,10 +12,12 @@ class Types
     public const GOOGLE_DOCUMENT = 6;
     public const GOOGLE_SPREADSHEET = 7;
     public const FRAME = 8;
+    public const ARTIFACT = 9;
 
     static public array $list = [
         self::DIRECTORY => 'Directory',
         self::PROJECT => 'Project',
+        self::ARTIFACT => 'Artifact',
         self::VERSION => 'Version',
         self::LINK => 'Link',
         self::ARCHIVE => 'Archive',
