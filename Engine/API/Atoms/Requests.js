@@ -46,6 +46,17 @@ Rune.Atoms = {
         });
     },
 
+    dump: function ()
+    {
+        API.request('Rune.Atoms.Dump', {
+
+        }, function (data) {
+            $('#page').html(data.render);
+        }, function () {
+
+        });
+    },
+
     edit: function (last)
     {
         if(typeof(last) == "undefined")

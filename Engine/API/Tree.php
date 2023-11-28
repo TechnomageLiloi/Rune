@@ -34,6 +34,7 @@ class Tree
             $manager->add(new Method('Rune.Atoms.Show', '\Liloi\Rune\API\Atoms\Show\Method::execute'));
             $manager->add(new Method('Rune.Atoms.Edit', '\Liloi\Rune\API\Atoms\Edit\Method::execute'));
             $manager->add(new Method('Rune.Atoms.Save', '\Liloi\Rune\API\Atoms\Save\Method::execute'));
+            $manager->add(new Method('Rune.Atoms.Dump', '\Liloi\Rune\API\Atoms\Dump\Method::execute'));
             $manager->add(new Method('Rune.Atoms.Create', '\Liloi\Rune\API\Atoms\Create\Method::execute'));
 
             $manager->add(new Method('Rune.Atoms.RID.Edit', '\Liloi\Rune\API\Atoms\RID\Edit\Method::execute'));

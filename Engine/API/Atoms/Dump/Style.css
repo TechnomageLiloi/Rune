@@ -1,0 +1,23 @@
+#atoms-dump .wrap-title {
+  text-align: center;
+}
+#atoms-dump .seeds {
+  text-align: center;
+}
+#atoms-dump table {
+  width: 100%;
+}
+#atoms-dump table td {
+  width: 50%;
+  vertical-align: top;
+}
+#atoms-dump table th {
+  text-align: left;
+}
+#atoms-dump table .tree td {
+  border-bottom: gray 1px dashed;
+}
+#atoms-dump .stylo img {
+  float: left;
+  margin-right: 10px;
+}

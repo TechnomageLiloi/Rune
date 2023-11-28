@@ -42,6 +42,7 @@
             <a href="javascript:void(0)" class="butn" onclick="Tardis.Lessons.timetable();">Timetable</a>
             <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.edit(true);">Article</a>
             <a href="javascript:void(0)" class="butn" onclick="Tardis.Lessons.edit(0)">Task</a>
+            <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.dump();">Dump</a>
             <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.logout();">Logout</a>
             &diams;
             <a href="javascript:void(0)" onclick="API.Questions.collection();">Questions</a>
