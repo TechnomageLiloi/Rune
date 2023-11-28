@@ -169,4 +169,9 @@ class Manager extends DomainManager
             $ridOld
         ));
     }
+
+    public static function dump(string $filDump): void
+    {
+
+    }
 }
