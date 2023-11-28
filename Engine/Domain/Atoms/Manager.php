@@ -170,8 +170,25 @@ class Manager extends DomainManager
         ));
     }
 
-    public static function dump(string $filDump): void
+    public static function dump(string $dirMeta): void
     {
+        $name = self::getTableName();
+        $request = self::getAdapter()->request(sprintf('select * from %s order by key_atom asc;', $name));
 
+        if(!$request) {
+            return;
+        }
+
+        while($row = $request->fetch_assoc()) {
+            $entity = Entity::create($row);
+            $dump = $entity->dump();
+
+            if(!$dump)
+            {
+                continue;
+            }
+
+            file_put_contents($dirMeta . $entity->getUrl() . '.atom', json_encode($dump), JSON_UNESCAPED_UNICODE);
+        }
     }
 }

@@ -75,6 +75,11 @@ class Entity extends AbstractEntity
         return $this->getDataParse()[$key];
     }
 
+    public function isDataElement(string $key)
+    {
+        return isset($this->getDataParse()[$key]);
+    }
+
     public function save(): void
     {
         Manager::save($this);
@@ -169,5 +174,51 @@ class Entity extends AbstractEntity
     public function getTimestamp(): string
     {
         return date('Y-m-d H:i', strtotime($this->getTs()));
+    }
+
+    public function dump(): array
+    {
+        $f = function ($title, $description, $global, $local) {
+            return [
+                "title" => $title,
+                "description" => $description,
+                "type" => "file",
+                "global" => $global,
+                "local" => $local
+            ];
+        };
+
+        $type = $this->getType();
+        $local = $this->isDataElement('local') ? $this->getDataElement('local') : Manager::ATOMtoURL($this->getKey());
+
+        $dump = [];
+
+        if($type == Types::ARCHIVE)
+        {
+            $dump[] = $f($this->getTitle(), $this->getSummary(), $this->getDataElement('global'), $local);
+        }
+
+        if($type == Types::GOOGLE_DOCUMENT)
+        {
+            $token = $this->getDataElement('token');
+
+            $dump[] = $f($this->getTitle(), $this->getSummary(), sprintf('http://docs.google.com/document/d/%s/export?format=pdf', $token), $local . '.pdf');
+            $dump[] = $f($this->getTitle(), $this->getSummary(), sprintf('http://docs.google.com/document/d/%s/export?format=epub', $token), $local . '.epub');
+            $dump[] = $f($this->getTitle(), $this->getSummary(), sprintf('http://docs.google.com/document/d/%s/export?format=docx', $token), $local . '.docx');
+            $dump[] = $f($this->getTitle(), $this->getSummary(), sprintf('http://docs.google.com/document/d/%s/export?format=odt', $token), $local . '.odt');
+        }
+
+        if($type == Types::GOOGLE_SPREADSHEET)
+        {
+            $token = $this->getDataElement('token');
+
+            $dump[] = $f($this->getTitle(), $this->getSummary(), sprintf('http://docs.google.com/spreadsheets/d/%s/export?format=pdf', $token), $local . '.pdf');
+            $dump[] = $f($this->getTitle(), $this->getSummary(), sprintf('http://docs.google.com/spreadsheets/d/%s/export?format=csv', $token), $local . '.csv');
+            $dump[] = $f($this->getTitle(), $this->getSummary(), sprintf('http://docs.google.com/spreadsheets/d/%s/export?format=tsv', $token), $local . '.tsv');
+            $dump[] = $f($this->getTitle(), $this->getSummary(), sprintf('http://docs.google.com/spreadsheets/d/%s/export?format=xlsx', $token), $local . '.xlsx');
+            $dump[] = $f($this->getTitle(), $this->getSummary(), sprintf('http://docs.google.com/spreadsheets/d/%s/export?format=ods', $token), $local . '.ods');
+        }
+
+        return $dump;
     }
 }
