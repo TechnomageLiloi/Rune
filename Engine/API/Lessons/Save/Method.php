@@ -24,6 +24,7 @@ class Method extends SuperMethod
         $entity->setFinish(self::getParameter('finish'));
         $entity->setStatus(self::getParameter('status'));
         $entity->setData(self::getParameter('data'));
+        $entity->setKeyAtom(self::getParameter('key_atom'));
 
         $entity->save();
 
