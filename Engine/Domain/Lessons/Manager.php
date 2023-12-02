@@ -183,10 +183,11 @@ class Manager extends DomainManager
     }
 
     // @todo: rise this method to more abstract level.
-    public static function create(): void
+    public static function create(string $keyAtom): void
     {
         $name = self::getTableName();
         $data = [
+            'key_atom' => $keyAtom,
             'comment' => 'Enter the comment',
             'mark' => '0',
             'status' => Status::TODO,

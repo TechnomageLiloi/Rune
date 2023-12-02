@@ -15,7 +15,6 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-
         $key_lesson = self::getParameter('key_lesson');
 
         if((int)$key_lesson)
