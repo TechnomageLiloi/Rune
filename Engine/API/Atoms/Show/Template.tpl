@@ -51,24 +51,26 @@
             </td>
 
             <td>
-                <?php if($news->count()): ?>
-                <h1>News</h1>
-                <table class="tree">
-                    <tr>
-                        <th>Timestamp</th>
-                        <th>Title</th>
-                    </tr>
-                    <?php foreach($news as $child): ?>
-                    <tr>
-                        <td style="width: 10%;">
-                            <?php echo $child->getTimestamp(); ?>
-                        </td>
-                        <td>
-                            <?php echo $child->getTile(); ?>
-                        </td>
-                    </tr>
-                    <?php endforeach; ?>
-                </table>
+                <h1>Lessons</h1>
+                <?php if($lessons->count()): ?>
+                    <table class="tree">
+                        <tr>
+                            <th>Time of start</th>
+                            <th>Title</th>
+                            <th>Actions</th>
+                        </tr>
+                        <?php foreach($lessons as $child): ?>
+                        <tr>
+                            <td><?php echo $child->getStart(); ?></td>
+                            <td><?php echo $child->getComment(); ?></td>
+                            <td style="text-align: right;">
+                                <a href="javascript:void(0)" onclick="Tardis.Lessons.edit('<?php echo $child->getKey(); ?>')">Edit</a>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </table>
+                <?php else: ?>
+                    There is no any lesson.
                 <?php endif; ?>
             </td>
         </tr>

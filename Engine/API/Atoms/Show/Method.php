@@ -5,6 +5,7 @@ namespace Liloi\Rune\API\Atoms\Show;
 use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
 use Liloi\Rune\Domain\Atoms\Manager as AtomsManager;
+use Liloi\Rune\Domain\Lessons\Manager as LessonsManager;
 use Liloi\Rune\Security;
 use Liloi\Rune\Exceptions\AccessException;
 use Liloi\Rune\Domain\Config\Manager as ConfigManager;
@@ -25,7 +26,7 @@ class Method extends SuperMethod
 
         $keyAtom = AtomsManager::URLtoATOM($URL);
         $entity = AtomsManager::load($keyAtom);
-        $news = AtomsManager::loadNews($keyAtom);
+        $lessons = LessonsManager::loadByAtom($keyAtom);
 
         $isAdmin = self::accessGet();
 
@@ -43,7 +44,7 @@ class Method extends SuperMethod
             'admin' => Security::check(),
             'children' => $children,
             'entity' => $entity,
-            'news' => $news
+            'lessons' => $lessons
         ]));
         return $response;
     }

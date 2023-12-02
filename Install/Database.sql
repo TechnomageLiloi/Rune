@@ -129,3 +129,10 @@ create table rune_tickets
             on update cascade on delete cascade
 );
 
+alter table rune_lessons
+    add key_atom varchar(250) default 'rune' not null;
+
+alter table rune_lessons
+    add constraint rune_lessons_rune_atoms_key_atom_fk
+        foreign key (key_atom) references rune_atoms (key_atom)
+            on update cascade on delete cascade;
