@@ -12,7 +12,7 @@ use Liloi\Rune\Domain\Problems\Types as ProblemsTypes;
 use Liloi\Rune\Domain\Problems\Entity as ProblemsEntity;
 
 /**
- * Rune API: Tardis.Application.Diary.Show
+ * Rune API: Rune.Application.Diary.Show
  */
 class Method extends SuperMethod
 {

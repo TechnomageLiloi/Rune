@@ -36,12 +36,12 @@
         <div id="head">
             <a href="javascript:void(0)" class="butn" onclick="Rune.Plan.show();">Plan</a>
             <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.show();">Map</a>
-            <a href="javascript:void(0)" class="butn" onclick="Tardis.Application.Diary.show('<?php echo date('Y-m-d'); ?>');">Journal</a>
-            <a href="javascript:void(0)" class="butn" onclick="Tardis.Degrees.getCollection();">Degrees</a>
-            <a href="javascript:void(0)" class="butn" onclick="Tardis.Lessons.schedule('<?php echo gmdate('Y-m-d'); ?>');">Schedule</a>
-            <a href="javascript:void(0)" class="butn" onclick="Tardis.Lessons.timetable();">Timetable</a>
+            <a href="javascript:void(0)" class="butn" onclick="Rune.Application.Diary.show('<?php echo date('Y-m-d'); ?>');">Journal</a>
+            <a href="javascript:void(0)" class="butn" onclick="Rune.Degrees.getCollection();">Degrees</a>
+            <a href="javascript:void(0)" class="butn" onclick="Rune.Lessons.schedule('<?php echo gmdate('Y-m-d'); ?>');">Schedule</a>
+            <a href="javascript:void(0)" class="butn" onclick="Rune.Lessons.timetable();">Timetable</a>
             <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.edit(true);">Article</a>
-            <a href="javascript:void(0)" class="butn" onclick="Tardis.Lessons.edit(0)">Task</a>
+            <a href="javascript:void(0)" class="butn" onclick="Rune.Lessons.edit(0)">Task</a>
             <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.dump();">Dump</a>
             &diams;
             <a href="javascript:void(0)" class="butn" onclick="API.Questions.collection();">Questions</a>

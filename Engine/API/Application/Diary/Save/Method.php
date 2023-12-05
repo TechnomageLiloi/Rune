@@ -7,7 +7,7 @@ use Liloi\Rune\API\Method as SuperMethod;
 use Liloi\Rune\Domain\Diary\Manager as DiaryManager;
 
 /**
- * Rune API: Tardis.Application.Diary.Save
+ * Rune API: Rune.Application.Diary.Save
  */
 class Method extends SuperMethod
 {

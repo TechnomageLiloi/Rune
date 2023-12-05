@@ -9,7 +9,7 @@ use Liloi\Rune\Domain\Lessons\Manager as LessonsManager;
 use Liloi\Rune\Domain\Lessons\Status;
 
 /**
- * Rune API: Tardis.Application.Diary.Show
+ * Rune API: Rune.Application.Diary.Show
  */
 class Method extends SuperMethod
 {

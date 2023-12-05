@@ -3,11 +3,6 @@ var Rune = {
 };
 
 // @todo: merge with Rune
-var Tardis = {
-
-};
-
-// @todo: merge with Rune
 var Stones = {
     API: {
 

@@ -48,31 +48,31 @@ class Tree
             
             //
 
-            $manager->add(new Method('Tardis.Application.Diary.Show', '\Liloi\Rune\API\Application\Diary\Show\Method::execute'));
-            $manager->add(new Method('Tardis.Application.Diary.Edit', '\Liloi\Rune\API\Application\Diary\Edit\Method::execute'));
-            $manager->add(new Method('Tardis.Application.Diary.Save', '\Liloi\Rune\API\Application\Diary\Save\Method::execute'));
+            $manager->add(new Method('Rune.Application.Diary.Show', '\Liloi\Rune\API\Application\Diary\Show\Method::execute'));
+            $manager->add(new Method('Rune.Application.Diary.Edit', '\Liloi\Rune\API\Application\Diary\Edit\Method::execute'));
+            $manager->add(new Method('Rune.Application.Diary.Save', '\Liloi\Rune\API\Application\Diary\Save\Method::execute'));
 
-            $manager->add(new Method('Tardis.Degrees.Collection', '\Liloi\Rune\API\Degrees\Collection\Method::execute'));
-            $manager->add(new Method('Tardis.Degrees.Show', '\Liloi\Rune\API\Degrees\Show\Method::execute'));
-            $manager->add(new Method('Tardis.Degrees.Create', '\Liloi\Rune\API\Degrees\Create\Method::execute'));
-            $manager->add(new Method('Tardis.Degrees.Remove', '\Liloi\Rune\API\Degrees\Remove\Method::execute'));
-            $manager->add(new Method('Tardis.Degrees.Edit', '\Liloi\Rune\API\Degrees\Edit\Method::execute'));
-            $manager->add(new Method('Tardis.Degrees.Save', '\Liloi\Rune\API\Degrees\Save\Method::execute'));
+            $manager->add(new Method('Rune.Degrees.Collection', '\Liloi\Rune\API\Degrees\Collection\Method::execute'));
+            $manager->add(new Method('Rune.Degrees.Show', '\Liloi\Rune\API\Degrees\Show\Method::execute'));
+            $manager->add(new Method('Rune.Degrees.Create', '\Liloi\Rune\API\Degrees\Create\Method::execute'));
+            $manager->add(new Method('Rune.Degrees.Remove', '\Liloi\Rune\API\Degrees\Remove\Method::execute'));
+            $manager->add(new Method('Rune.Degrees.Edit', '\Liloi\Rune\API\Degrees\Edit\Method::execute'));
+            $manager->add(new Method('Rune.Degrees.Save', '\Liloi\Rune\API\Degrees\Save\Method::execute'));
 
-            $manager->add(new Method('Tardis.Lessons.Create', '\Liloi\Rune\API\Lessons\Create\Method::execute'));
-            $manager->add(new Method('Tardis.Lessons.Edit', '\Liloi\Rune\API\Lessons\Edit\Method::execute'));
-            $manager->add(new Method('Tardis.Lessons.Save', '\Liloi\Rune\API\Lessons\Save\Method::execute'));
-            $manager->add(new Method('Tardis.Lessons.Remove', '\Liloi\Rune\API\Lessons\Remove\Method::execute'));
-            $manager->add(new Method('Tardis.Lessons.Schedule', '\Liloi\Rune\API\Lessons\Schedule\Method::execute'));
-            $manager->add(new Method('Tardis.Lessons.Timetable', '\Liloi\Rune\API\Lessons\Timetable\Method::execute'));
-            $manager->add(new Method('Tardis.Lessons.Update', '\Liloi\Rune\API\Lessons\Update\Method::execute'));
+            $manager->add(new Method('Rune.Lessons.Create', '\Liloi\Rune\API\Lessons\Create\Method::execute'));
+            $manager->add(new Method('Rune.Lessons.Edit', '\Liloi\Rune\API\Lessons\Edit\Method::execute'));
+            $manager->add(new Method('Rune.Lessons.Save', '\Liloi\Rune\API\Lessons\Save\Method::execute'));
+            $manager->add(new Method('Rune.Lessons.Remove', '\Liloi\Rune\API\Lessons\Remove\Method::execute'));
+            $manager->add(new Method('Rune.Lessons.Schedule', '\Liloi\Rune\API\Lessons\Schedule\Method::execute'));
+            $manager->add(new Method('Rune.Lessons.Timetable', '\Liloi\Rune\API\Lessons\Timetable\Method::execute'));
+            $manager->add(new Method('Rune.Lessons.Update', '\Liloi\Rune\API\Lessons\Update\Method::execute'));
 
-            $manager->add(new Method('Tardis.Problems.Collection', '\Liloi\Rune\API\Problems\Collection\Method::execute'));
-            $manager->add(new Method('Tardis.Problems.Create', '\Liloi\Rune\API\Problems\Create\Method::execute'));
-            $manager->add(new Method('Tardis.Problems.Remove', '\Liloi\Rune\API\Problems\Remove\Method::execute'));
-            $manager->add(new Method('Tardis.Problems.Edit', '\Liloi\Rune\API\Problems\Edit\Method::execute'));
-            $manager->add(new Method('Tardis.Problems.Save', '\Liloi\Rune\API\Problems\Save\Method::execute'));
-            $manager->add(new Method('Tardis.Problems.Show', '\Liloi\Rune\API\Problems\Show\Method::execute'));
+            $manager->add(new Method('Rune.Problems.Collection', '\Liloi\Rune\API\Problems\Collection\Method::execute'));
+            $manager->add(new Method('Rune.Problems.Create', '\Liloi\Rune\API\Problems\Create\Method::execute'));
+            $manager->add(new Method('Rune.Problems.Remove', '\Liloi\Rune\API\Problems\Remove\Method::execute'));
+            $manager->add(new Method('Rune.Problems.Edit', '\Liloi\Rune\API\Problems\Edit\Method::execute'));
+            $manager->add(new Method('Rune.Problems.Save', '\Liloi\Rune\API\Problems\Save\Method::execute'));
+            $manager->add(new Method('Rune.Problems.Show', '\Liloi\Rune\API\Problems\Show\Method::execute'));
 
             //
 

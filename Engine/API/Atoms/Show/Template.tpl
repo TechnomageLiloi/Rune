@@ -11,7 +11,7 @@
             <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.edit();">Edit</a>
             <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.RID.edit();">Change RID</a>
             <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.create();">Create child</a>
-            <a href="javascript:void(0)" class="butn" onclick="Tardis.Lessons.create();">Create lesson</a>
+            <a href="javascript:void(0)" class="butn" onclick="Rune.Lessons.create();">Create lesson</a>
         <?php endif; ?>
     </div>
 
@@ -65,7 +65,7 @@
                             <td><?php echo $child->getStart(); ?></td>
                             <td><?php echo $child->getComment(); ?></td>
                             <td style="text-align: right;">
-                                <a href="javascript:void(0)" class="butn" onclick="Tardis.Lessons.edit('<?php echo $child->getKey(); ?>')">Edit</a>
+                                <a href="javascript:void(0)" class="butn" onclick="Rune.Lessons.edit('<?php echo $child->getKey(); ?>')">Edit</a>
                             </td>
                         </tr>
                         <?php endforeach; ?>

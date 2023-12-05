@@ -1,7 +1,7 @@
-Tardis.Problems = {
+Rune.Problems = {
     collection: function (uid)
     {
-        API.request('Tardis.Problems.Collection', {
+        API.request('Rune.Problems.Collection', {
             'uid': uid
         }, function (data) {
             $('#page').html(data.render);
@@ -12,7 +12,7 @@ Tardis.Problems = {
 
     show: function (key_problem)
     {
-        API.request('Tardis.Problems.Show', {
+        API.request('Rune.Problems.Show', {
             'key_problem': key_problem
         }, function (data) {
             $('#page').html(data.render);
@@ -28,11 +28,11 @@ Tardis.Problems = {
             return;
         }
 
-        API.request('Tardis.Problems.Create', {
+        API.request('Rune.Problems.Create', {
             'key_blueprint': key_blueprint,
             'id_type': id_type
         }, function (data) {
-            Tardis.Problems.collection(uid);
+            Rune.Problems.collection(uid);
         }, function () {
 
         });
@@ -45,10 +45,10 @@ Tardis.Problems = {
             return;
         }
 
-        API.request('Tardis.Problems.Remove', {
+        API.request('Rune.Problems.Remove', {
             'key_problem': key_problem
         }, function (data) {
-            Tardis.Problems.collection(uid);
+            Rune.Problems.collection(uid);
         }, function () {
 
         });
@@ -56,7 +56,7 @@ Tardis.Problems = {
 
     edit: function (key_problem, uid)
     {
-        API.request('Tardis.Problems.Edit', {
+        API.request('Rune.Problems.Edit', {
             'key_problem': key_problem,
             'uid': uid
         }, function (data) {
@@ -74,7 +74,7 @@ Tardis.Problems = {
         }
 
         const jq_block = $('#blueprint-edit');
-        API.request('Tardis.Problems.Save', {
+        API.request('Rune.Problems.Save', {
             'key_problem': key_problem,
             'title': jq_block.find('[name="title"]').val(),
             'mark': jq_block.find('[name="mark"]').val(),
@@ -82,7 +82,7 @@ Tardis.Problems = {
             'type': jq_block.find('[name="type"]').val(),
             'status': jq_block.find('[name="status"]').val()
         }, function (data) {
-            Tardis.Problems.collection(uid);
+            Rune.Problems.collection(uid);
         }, function () {
 
         });

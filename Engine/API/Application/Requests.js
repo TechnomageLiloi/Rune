@@ -1,4 +1,4 @@
-Tardis.Application = {
+Rune.Application = {
     Diary: {
         create: function ()
         {
@@ -12,10 +12,10 @@ Tardis.Application = {
                 return;
             }
 
-            API.request('Tardis.Application.Diary.Create', {
+            API.request('Rune.Application.Diary.Create', {
 
             }, function (data) {
-                Tardis.Application.Diary.show();
+                Rune.Application.Diary.show();
             }, function () {
 
             });
@@ -23,7 +23,7 @@ Tardis.Application = {
 
         show: function (dt)
         {
-            API.request('Tardis.Application.Diary.Show', {
+            API.request('Rune.Application.Diary.Show', {
                 dt: dt
             }, function (data) {
                 $('#page').html(data.render);
@@ -34,7 +34,7 @@ Tardis.Application = {
 
         edit: function ()
         {
-            API.request('Tardis.Application.Diary.Edit', {
+            API.request('Rune.Application.Diary.Edit', {
 
             }, function (data) {
                 const wrap = $('#page');
@@ -53,14 +53,14 @@ Tardis.Application = {
             }
 
             const jq_block = $('#application-diary-edit');
-            API.request('Tardis.Application.Diary.Save', {
+            API.request('Rune.Application.Diary.Save', {
                 data: jq_block.find('[name=data]').val(),
                 program: jq_block.find('[name=program]').val(),
                 status: jq_block.find('[name=status]').val(),
                 title: jq_block.find('[name=title]').val(),
                 type: jq_block.find('[name=type]').val()
             }, function (data) {
-                Tardis.Application.Diary.show();
+                Rune.Application.Diary.show();
             }, function () {
 
             });
@@ -80,10 +80,10 @@ Tardis.Application = {
                 return;
             }
 
-            API.request('Tardis.Application.Plans.Create', {
+            API.request('Rune.Application.Plans.Create', {
 
             }, function (data) {
-                Tardis.Application.Plans.getCollection();
+                Rune.Application.Plans.getCollection();
             }, function () {
 
             });
@@ -91,7 +91,7 @@ Tardis.Application = {
 
         show: function (key_phan)
         {
-            API.request('Tardis.Application.Plans.Show', {
+            API.request('Rune.Application.Plans.Show', {
                 key_plan: key_phan
             }, function (data) {
                 $('#page').html(data.render);
@@ -102,7 +102,7 @@ Tardis.Application = {
 
         edit: function (key_phan)
         {
-            API.request('Tardis.Application.Plans.Edit', {
+            API.request('Rune.Application.Plans.Edit', {
                 key_plan: key_phan
             }, function (data) {
                 const wrap = $('#page');
@@ -121,13 +121,13 @@ Tardis.Application = {
             }
 
             const jq_block = $('#application-diary-edit');
-            API.request('Tardis.Application.Plans.Save', {
+            API.request('Rune.Application.Plans.Save', {
                 key_plan: key_phan,
                 title: jq_block.find('[name=title]').val(),
                 program: jq_block.find('[name=program]').val(),
                 status: jq_block.find('[name=status]').val()
             }, function (data) {
-                Tardis.Application.Plans.getCollection();
+                Rune.Application.Plans.getCollection();
             }, function () {
 
             });
@@ -135,7 +135,7 @@ Tardis.Application = {
 
         getCollection: function ()
         {
-            API.request('Tardis.Application.Plans.Collection', {
+            API.request('Rune.Application.Plans.Collection', {
 
             }, function (data) {
                 $('#page').html(data.render);
