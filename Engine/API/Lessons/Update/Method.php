@@ -20,7 +20,6 @@ class Method extends SuperMethod
 
         $entity = Manager::load($key_lesson);
         $entity->setStart(date('Y-m-d H:i:s'));
-        $entity->setStatus(Status::IN_HAND);
         $entity->save();
 
         return new Response();
