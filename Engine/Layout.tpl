@@ -35,15 +35,14 @@
     <body>
         <div id="head">
             <a href="javascript:void(0)" class="butn" onclick="Rune.Plan.show();">Plan</a>
-            <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.show();">Atoms</a>
-            <a href="javascript:void(0)" class="butn" onclick="Tardis.Application.Diary.show('<?php echo date('Y-m-d'); ?>');">Diary</a>
+            <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.show();">Map</a>
+            <a href="javascript:void(0)" class="butn" onclick="Tardis.Application.Diary.show('<?php echo date('Y-m-d'); ?>');">Journal</a>
             <a href="javascript:void(0)" class="butn" onclick="Tardis.Degrees.getCollection();">Degrees</a>
             <a href="javascript:void(0)" class="butn" onclick="Tardis.Lessons.schedule('<?php echo gmdate('Y-m-d'); ?>');">Schedule</a>
             <a href="javascript:void(0)" class="butn" onclick="Tardis.Lessons.timetable();">Timetable</a>
             <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.edit(true);">Article</a>
             <a href="javascript:void(0)" class="butn" onclick="Tardis.Lessons.edit(0)">Task</a>
             <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.dump();">Dump</a>
-            <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.logout();">Logout</a>
             &diams;
             <a href="javascript:void(0)" onclick="API.Questions.collection();">Questions</a>
             <input type="text" id="tags" value="">
@@ -52,6 +51,7 @@
             <a href="javascript:void(0)" onclick="Stones.API.Projects.getCollection();">Artifacts</a>
             &diams;
             Karma: <?php echo $karma; ?>
+            <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.logout();">Logout</a>
         </div>
         <div id="page">
             <script>
