@@ -188,7 +188,15 @@ class Manager extends DomainManager
                 continue;
             }
 
-            file_put_contents($dirMeta . $entity->getUrl() . '.atom', json_encode($dump), JSON_UNESCAPED_UNICODE);
+            $filMeta = $dirMeta . $entity->getUrl() . '.atom';
+            $dirMeta = dirname($filMeta);
+
+            if(!is_dir($dirMeta))
+            {
+                mkdir($dirMeta, 0777, true);
+            }
+
+            file_put_contents($filMeta, json_encode($dump), JSON_UNESCAPED_UNICODE);
         }
     }
 }
