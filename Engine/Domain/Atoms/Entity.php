@@ -112,14 +112,16 @@ class Entity extends AbstractEntity
         return isset($this->getDataParse()[$key]);
     }
 
-    public function save(): void
+    public function save(): self
     {
         Manager::save($this);
+        return $this;
     }
 
-    public function remove(): void
+    public function remove(): self
     {
         Manager::remove($this);
+        return $this;
     }
 
     public function getUrl(): string
@@ -169,6 +171,7 @@ class Entity extends AbstractEntity
 
         if($type == Types::LINK)
         {
+            // @todo: add trait to Liloi\Tools\Entity
             return sprintf('<a target="_blank" href="%s">%s</a> &diams; ', $this->getDataElement('link'), $this->getTitle())
                 . sprintf('<a href="%s">Show Atom</a>', $this->getUrl());
         }

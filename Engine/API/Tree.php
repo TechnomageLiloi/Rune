@@ -113,6 +113,7 @@ class Tree
             RuneMethod::accessCheck();
         }
 
+        // @todo: add dynamic API search (by namespace).
         $response = $this->manager->search($_POST['method'])->execute($_POST['parameters'] ?? []);
         return $response->asJson();
     }
