@@ -51,7 +51,6 @@ class Tree
             $manager->add(new Method('Tardis.Application.Diary.Show', '\Liloi\Rune\API\Application\Diary\Show\Method::execute'));
             $manager->add(new Method('Tardis.Application.Diary.Edit', '\Liloi\Rune\API\Application\Diary\Edit\Method::execute'));
             $manager->add(new Method('Tardis.Application.Diary.Save', '\Liloi\Rune\API\Application\Diary\Save\Method::execute'));
-            $manager->add(new Method('Tardis.Application.Diary.Create', '\Liloi\Rune\API\Application\Diary\Create\Method::execute'));
 
             $manager->add(new Method('Tardis.Degrees.Collection', '\Liloi\Rune\API\Degrees\Collection\Method::execute'));
             $manager->add(new Method('Tardis.Degrees.Show', '\Liloi\Rune\API\Degrees\Show\Method::execute'));
