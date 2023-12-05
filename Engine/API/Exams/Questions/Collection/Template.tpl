@@ -16,7 +16,7 @@
 
 </style>
 <div id="problem-group">
-    <a href="javascript:void(0)" onclick="API.Questions.create();">Create</a>
+    <a href="javascript:void(0)" class="butn" onclick="API.Questions.create();">Create</a>
     <hr/>
     <table>
         <?php foreach($collection as $entity): ?>
@@ -26,11 +26,9 @@
             <td><?php echo $entity->getTypeTitle(); ?></td>
             <td><?php echo $entity->getStatusTitle(); ?></td>
             <td style="text-align: right; width: 300px;">
-                <a href="javascript:void(0)" onclick="API.Questions.test('<?php echo $entity->getKey(); ?>');">Test</a>
-                &diams;
-                <a href="javascript:void(0)" onclick="API.Questions.edit('<?php echo $entity->getKey(); ?>');">Edit</a>
-                &diams;
-                <a href="javascript:void(0)" onclick="API.Questions.remove('<?php echo $entity->getKey(); ?>');">Make obsolete</a>
+                <a href="javascript:void(0)" class="butn" onclick="API.Questions.test('<?php echo $entity->getKey(); ?>');">Test</a>
+                <a href="javascript:void(0)" class="butn" onclick="API.Questions.edit('<?php echo $entity->getKey(); ?>');">Edit</a>
+                <a href="javascript:void(0)" class="butn" onclick="API.Questions.remove('<?php echo $entity->getKey(); ?>');">Make obsolete</a>
             </td>
         </tr>
         <?php endforeach; ?>
