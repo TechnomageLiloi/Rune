@@ -17,7 +17,7 @@ class Method extends SuperMethod
         }
 
         $dirDumper = ROOT_DIR . '/vendor/technomage-liloi/dumper';
-        $dirMeta = $dirDumper . '/Meta';
+        $dirMeta = $dirDumper . '/Source/Meta';
 
         AtomsManager::dump($dirMeta);
 
