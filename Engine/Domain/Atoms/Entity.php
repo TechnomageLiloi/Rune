@@ -118,7 +118,7 @@ class Entity extends AbstractEntity
             else
             {
                 $seed = sprintf(
-                    '<a href="%s">%s</a>',
+                    '<a href="%s" class="butn">%s</a>',
                     Manager::ATOMtoURL($rid_seed),
                     ucfirst(str_replace('-', ' ', end($rid)))
                 );

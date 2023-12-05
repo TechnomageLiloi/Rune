@@ -9,12 +9,12 @@ body #head {
   padding: 5px;
   text-align: center;
 }
-body #head a {
+body a.butn {
   border: red 1px solid;
   padding: 2px;
   background-color: #ffebeb;
   border-radius: 5px;
 }
-body #head a:hover {
+body a.butn:hover {
   background-color: #ffffeb;
 }

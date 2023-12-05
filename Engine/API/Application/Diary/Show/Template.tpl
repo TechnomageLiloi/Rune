@@ -4,22 +4,16 @@
 
     <div class="controls">
         <input id="dt" type="date" value="<?php echo $dt; ?>" />
-        <a href="javascript:void(0)" onclick="Tardis.Application.Diary.show($('#dt').val());">Diary</a>
+        <a href="javascript:void(0)" class="butn" onclick="Tardis.Application.Diary.show($('#dt').val());">Diary</a>
+        &diams;
+        <a href="javascript:void(0)" class="butn" onclick="Tardis.Application.Diary.show();">Show</a>
+        <a href="javascript:void(0)" class="butn" onclick="Tardis.Application.Diary.edit();">Edit</a>
+        <a href="javascript:void(0)" class="butn" onclick="Tardis.Lessons.create();">Create lesson</a>
     </div>
 
     <h1 class="wrap-title">
         <?php echo $entity->getTitle(); ?>
     </h1>
-
-    <div class="controls">
-        <a href="javascript:void(0)" onclick="Tardis.Application.Diary.show();">Show</a> &diams;
-        <a href="javascript:void(0)" onclick="Tardis.Application.Diary.edit();">Edit</a> &diams;
-        <a href="javascript:void(0)" onclick="Tardis.Lessons.create();">Create lesson</a>
-    </div>
-
-    <div class="data">
-        <?php echo $entity->getID(); ?>
-    </div>
 
     <hr/>
 
@@ -40,9 +34,9 @@
                 <td><?php echo $statuses[$entity->getStatus()]; ?></td>
                 <td><?php echo $entity->getMark(); ?></td>
                 <td style="text-align: right;">
-                    <a href="javascript:void(0)" onclick="Tardis.Lessons.edit('<?php echo $key_lesson; ?>')">Edit</a>
+                    <a href="javascript:void(0)" class="butn" onclick="Tardis.Lessons.edit('<?php echo $key_lesson; ?>')">Edit</a>
                     &diams;
-                    <a href="javascript:void(0)" onclick="Tardis.Lessons.remove('<?php echo $key_lesson; ?>')">Remove</a>
+                    <a href="javascript:void(0)" class="butn" onclick="Tardis.Lessons.remove('<?php echo $key_lesson; ?>')">Remove</a>
                 </td>
             </tr>
             <?php endforeach; ?>

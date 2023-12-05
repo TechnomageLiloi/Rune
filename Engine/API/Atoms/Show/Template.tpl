@@ -6,12 +6,12 @@
 
     <div class="seeds">
         <?php echo $entity->getSeeds(); ?>
-        <br/>
+        <br/><br/>
         <?php if($admin): ?>
-            <a href="javascript:void(0)" onclick="Rune.Atoms.edit();">Edit</a> &diams;
-            <a href="javascript:void(0)" onclick="Rune.Atoms.RID.edit();">Change RID</a> &diams;
-            <a href="javascript:void(0)" onclick="Rune.Atoms.create();">Create child</a> &diams;
-            <a href="javascript:void(0)" onclick="Tardis.Lessons.create();">Create lesson</a>
+            <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.edit();">Edit</a>
+            <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.RID.edit();">Change RID</a>
+            <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.create();">Create child</a>
+            <a href="javascript:void(0)" class="butn" onclick="Tardis.Lessons.create();">Create lesson</a>
         <?php endif; ?>
     </div>
 
