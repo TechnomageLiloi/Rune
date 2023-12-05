@@ -6,6 +6,8 @@ use Liloi\Stylo\Parser;
 use Liloi\Tools\Entity as AbstractEntity;
 
 /**
+ * Atoms entity.
+ *
  * @method string getTitle()
  * @method void setTitle(string $value)
  *
@@ -35,31 +37,61 @@ use Liloi\Tools\Entity as AbstractEntity;
  */
 class Entity extends AbstractEntity
 {
+    /**
+     * Gets unique key of atom.
+     *
+     * @return string
+     */
     public function getKey(): string
     {
         return $this->getField('key_atom');
     }
 
+    /**
+     * Gets Stylo parse of summary.
+     *
+     * @return string
+     */
     public function parseSummary(): string
     {
         return Parser::parseString($this->getSummary());
     }
 
+    /**
+     * Gets Stylo parse of program.
+     *
+     * @return string
+     */
     public function parseProgram(): string
     {
         return Parser::parseString($this->getProgram());
     }
 
+    /**
+     * Gets Stylo parse of article.
+     *
+     * @return string
+     */
     public function parseArticle(): string
     {
         return Parser::parseString($this->getArticle());
     }
 
+    /**
+     * Gets title of atom type.
+     *
+     * @return string
+     */
     public function getTypeTitle(): string
     {
         return Types::$list[$this->getType()];
     }
 
+    /**
+     * Gets title of atom status.
+     *
+     * @return string
+     */
     public function getStatusTitle(): string
     {
         return Statuses::$list[$this->getStatus()];
