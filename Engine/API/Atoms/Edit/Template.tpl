@@ -1,8 +1,8 @@
 <link href="<?php echo ROOT_URL; ?>/Engine/API/Atoms/Edit/Template.css" rel="stylesheet" />
 
 <div id="game-maps-edit">
-    <a href="javascript:void(0)" onclick="Rune.Atoms.save('<?php echo $entity->getKey(); ?>');">Save</a>
-    <a href="javascript:void(0)" onclick="Rune.Atoms.show();">Cancel</a>
+    <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.save('<?php echo $entity->getKey(); ?>');">Save</a>
+    <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.show();">Cancel</a>
     <hr/>
     <table>
         <tr><td>Title</td><td><input type="text" name="title" value="<?php echo $entity->getTitle(); ?>" /></td></tr>
@@ -37,11 +37,11 @@
             <td>Timestamp (used in sort)</td>
             <td>
                 <input type="text" name="ts" value="<?php echo $entity->getTs(); ?>" />
-                <a href="javascript:void(0)" onclick="$('#game-maps-edit [name=ts]').val('<?php echo gmdate("Y-m-d H:i:s"); ?>');">Now</a>
+                <a href="javascript:void(0)" class="butn" onclick="$('#game-maps-edit [name=ts]').val('<?php echo gmdate("Y-m-d H:i:s"); ?>');">Now</a>
             </td>
         </tr>
     </table>
     <hr/>
-    <a href="javascript:void(0)" onclick="Rune.Atoms.save('<?php echo $entity->getKey(); ?>');">Save</a>
-    <a href="javascript:void(0)" onclick="Rune.Atoms.show();">Cancel</a>
+    <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.save('<?php echo $entity->getKey(); ?>');">Save</a>
+    <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.show();">Cancel</a>
 </div>
