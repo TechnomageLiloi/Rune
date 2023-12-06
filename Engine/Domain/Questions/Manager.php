@@ -21,13 +21,13 @@ class Manager extends DomainManager
         return self::getTablePrefix() . 'questions';
     }
 
-    public static function loadCollection(): Collection
+    public static function loadCollection(int $limit = 100): Collection
     {
         $name = self::getTableName();
 
         $rows = self::getAdapter()->getArray(sprintf(
-            'select * from %s order by key_question desc limit 100;',
-            $name
+            'select * from %s order by key_question desc limit %s;',
+            $name, $limit
         ));
 
         $collection = new Collection();

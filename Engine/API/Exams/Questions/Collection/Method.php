@@ -12,7 +12,7 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-        $collection = Manager::loadCollection();
+        $collection = Manager::loadCollection(7);
 
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
