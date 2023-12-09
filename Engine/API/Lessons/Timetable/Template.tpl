@@ -4,6 +4,12 @@
         width: 100%;
     }
 
+    #problem-group table th,
+    #problem-group table td
+    {
+        text-align: left;
+    }
+
     #problem-group table.inner-table td
     {
         border-bottom: silver 1px dashed;
@@ -21,13 +27,23 @@
         <h1><?php echo $value; ?></h1>
         <table>
             <tr>
-                <th style="border-right: silver 1px dashed; width: 50%;">Problems</th>
-                <th>Lessons</th>
+                <th style="border-right: silver 1px dashed; width: 50%;">
+                    <h3>Problems</h3>
+                </th>
+                <th>
+                    <h3>Lessons</h3>
+                </th>
             </tr>
             <tr>
-                <td style="border-right: silver 1px dashed;">
+                <td style="border-right: silver 1px dashed;vertical-align: top;">
 
-                    <table>
+                    <table class="inner-table">
+                        <tr>
+                            <th>Problem</th>
+                            <th>Status</th>
+                            <th>Percent</th>
+                            <th style="text-align: right;">Actions</th>
+                        </tr>
                         <?php foreach($problems[$key] as $key_problem => $entity): ?>
                         <tr>
                             <td>
@@ -35,8 +51,8 @@
                                     <?php echo $entity->getTitle(); ?>
                                 </a>
                             </td>
-                            <td style="text-align: right; width: 100px;"><?php echo $entity->getStatusTitle(); ?></td>
-                            <td style="text-align: right; width: 100px;"><?php echo $entity->getMark(); ?></td>
+                            <td style="width: 100px;"><?php echo $entity->getStatusTitle(); ?></td>
+                            <td style="width: 100px;"><?php echo $entity->getMark(); ?>%</td>
                             <td style="text-align: right; width: 300px;">
                                 <a href="javascript:void(0)" onclick="Rune.Problems.edit('<?php echo $key_problem; ?>', '<?php echo $uid; ?>')">Edit</a>
                                 &diams;
@@ -47,7 +63,7 @@
                     </table>
 
                 </td>
-                <td>
+                <td style="vertical-align: top;">
 
                     <table class="inner-table">
                         <tr>

@@ -5,6 +5,7 @@ namespace Liloi\Rune\Domain\Problems;
 use Liloi\API\Errors\Exception;
 use Liloi\Rune\Domain\Manager as DomainManager;
 use Liloi\Rune\Domain\Degrees\Manager as DegreesManager;
+use Liloi\Rune\Domain\Degrees\Statuses as DegreesStatuses;
 
 class Manager extends DomainManager
 {
@@ -48,8 +49,8 @@ class Manager extends DomainManager
     public static function loadTimetable(): array
     {
         $keyDegree = self::getAdapter()->getSingle(sprintf(
-            'select key_degree from %s order by key_degree desc limit 1;',
-            self::getTableName()
+            'select key_degree from %s where status="%s" order by key_degree desc limit 1;',
+            DegreesManager::getTableName(), DegreesStatuses::IN_HAND
         ));
 
         return self::loadForPlan($keyDegree);
