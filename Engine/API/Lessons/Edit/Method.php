@@ -6,6 +6,7 @@ use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
 use Liloi\Rune\Domain\Lessons\Manager;
 use Liloi\Rune\Domain\Lessons\Status;
+use Liloi\Rune\Domain\Problems\Types;
 
 /**
  * Rune API: Blueprint.Blueprints.Edit
@@ -29,7 +30,8 @@ class Method extends SuperMethod
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
             'entity' => $entity,
-            'statuses' => Status::$list
+            'statuses' => Status::$list,
+            'types' => Types::$list,
         ]));
 
         return $response;
