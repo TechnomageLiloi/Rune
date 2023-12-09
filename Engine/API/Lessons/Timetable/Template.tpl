@@ -25,7 +25,28 @@
                 <th>Lessons</th>
             </tr>
             <tr>
-                <td style="border-right: silver 1px dashed;"></td>
+                <td style="border-right: silver 1px dashed;">
+
+                    <table>
+                        <?php foreach($problems[$key] as $key_problem => $entity): ?>
+                        <tr>
+                            <td>
+                                <a style="color: black;" href="javascript:void(0)" onclick="Rune.Problems.show('<?php echo $key_problem; ?>')">
+                                    <?php echo $entity->getTitle(); ?>
+                                </a>
+                            </td>
+                            <td style="text-align: right; width: 100px;"><?php echo $entity->getStatusTitle(); ?></td>
+                            <td style="text-align: right; width: 100px;"><?php echo $entity->getMark(); ?></td>
+                            <td style="text-align: right; width: 300px;">
+                                <a href="javascript:void(0)" onclick="Rune.Problems.edit('<?php echo $key_problem; ?>', '<?php echo $uid; ?>')">Edit</a>
+                                &diams;
+                                <a href="javascript:void(0)" onclick="Rune.Problems.remove('<?php echo $key_problem; ?>', '<?php echo $uid; ?>')">Remove</a>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </table>
+
+                </td>
                 <td>
 
                     <table class="inner-table">

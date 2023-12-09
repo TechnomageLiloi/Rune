@@ -45,6 +45,16 @@ class Manager extends DomainManager
         return $collection;
     }
 
+    public static function loadTimetable(): array
+    {
+        $keyDegree = self::getAdapter()->getSingle(sprintf(
+            'select key_degree from %s order by key_degree desc limit 1;',
+            self::getTableName()
+        ));
+
+        return self::loadForPlan($keyDegree);
+    }
+
     /**
      * Load collection of problems by degree uid for plan.
      *
