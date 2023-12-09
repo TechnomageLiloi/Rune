@@ -99,6 +99,7 @@ create table rune_lessons
     start timestamp not null,
     finish timestamp not null,
     data json not null,
+    type tinyint unsigned default 1 not null,
     constraint rune_lessons_pk
         primary key (key_lesson)
 );
