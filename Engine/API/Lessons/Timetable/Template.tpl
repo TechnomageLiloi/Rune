@@ -4,38 +4,56 @@
         width: 100%;
     }
 
-    #problem-group table td
+    #problem-group table.inner-table td
     {
         border-bottom: silver 1px dashed;
     }
 
-    #problem-group table tr:hover
+    #problem-group table.inner-table tr:hover
     {
         background-color: #ffffbd;
     }
 
 </style>
 <div id="problem-group">
-    <table>
-        <tr>
-            <th>Comment</th>
-            <th>Status</th>
-            <th>Mark</th>
-            <th style="text-align: right;">Actions</th>
-        </tr>
-        <?php foreach($collection as $key_lesson => $entity): ?>
-        <tr>
-            <td>
-                <?php echo $entity->getComment(); ?>
-            </td>
-            <td><?php echo $statuses[$entity->getStatus()]; ?></td>
-            <td><?php echo $entity->getMark(); ?></td>
-            <td style="text-align: right;">
-                <a href="javascript:void(0)" onclick="Rune.Lessons.edit('<?php echo $entity->getKey(); ?>')">Edit</a> &diams;
-                <a href="javascript:void(0)" onclick="Rune.Lessons.remove('<?php echo $key_lesson; ?>')">Remove</a> &diams;
-                <a href="javascript:void(0)" onclick="Rune.Lessons.update('<?php echo $entity->getKey(); ?>');">Enable</a>
-            </td>
-        </tr>
-        <?php endforeach; ?>
-    </table>
+
+    <?php foreach($types as $key => $value): ?>
+        <h1><?php echo $value; ?></h1>
+        <table>
+            <tr>
+                <th style="border-right: silver 1px dashed; width: 50%;">Problems</th>
+                <th>Lessons</th>
+            </tr>
+            <tr>
+                <td style="border-right: silver 1px dashed;"></td>
+                <td>
+
+                    <table class="inner-table">
+                        <tr>
+                            <th>Comment</th>
+                            <th>Status</th>
+                            <th>Karma</th>
+                            <th style="text-align: right;">Actions</th>
+                        </tr>
+                        <?php foreach($lessons[$key] as $key_lesson => $entity): ?>
+                        <tr>
+                            <td>
+                                <?php echo $entity->getComment(); ?>
+                            </td>
+                            <td><?php echo $statuses[$entity->getStatus()]; ?></td>
+                            <td><?php echo $entity->getMark(); ?></td>
+                            <td style="text-align: right;">
+                                <a href="javascript:void(0)" onclick="Rune.Lessons.edit('<?php echo $entity->getKey(); ?>')">Edit</a> &diams;
+                                <a href="javascript:void(0)" onclick="Rune.Lessons.remove('<?php echo $key_lesson; ?>')">Remove</a> &diams;
+                                <a href="javascript:void(0)" onclick="Rune.Lessons.update('<?php echo $entity->getKey(); ?>');">Enable</a>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </table>
+
+                </td>
+            </tr>
+        </table>
+    <?php endforeach; ?>
+
 </div>

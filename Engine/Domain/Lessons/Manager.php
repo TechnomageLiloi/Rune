@@ -4,6 +4,7 @@ namespace Liloi\Rune\Domain\Lessons;
 
 use Liloi\API\Errors\Exception;
 use Liloi\Rune\Domain\Manager as DomainManager;
+use Liloi\Rune\Domain\Problems\Types as ProblemsTypes;
 
 class Manager extends DomainManager
 {
@@ -49,8 +50,10 @@ class Manager extends DomainManager
         return $schedule;
     }
 
-    public static function loadTimetable(): Collection
+    public static function loadTimetable(): array
     {
+        $timetable = array_combine(array_keys(ProblemsTypes::$list), [[],[],[],[],[],[],[]]);
+
         $name = self::getTableName();
 
         $rows = self::getAdapter()->getArray(sprintf(
@@ -58,14 +61,12 @@ class Manager extends DomainManager
             $name
         ));
 
-        $collection = new Collection();
-
         foreach($rows as $row)
         {
-            $collection[$row['key_lesson']] = Entity::create($row);
+            $timetable[$row['type']][$row['key_lesson']] = Entity::create($row);
         }
 
-        return $collection;
+        return $timetable;
     }
 
     public static function loadByDate(string $dt): Collection

@@ -4,8 +4,9 @@ namespace Liloi\Rune\API\Lessons\Timetable;
 
 use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
-use Liloi\Rune\Domain\Lessons\Manager;
+use Liloi\Rune\Domain\Lessons\Manager as LessonsManager;
 use Liloi\Rune\Domain\Lessons\Status;
+use Liloi\Rune\Domain\Problems\Types as ProblemsTypes;
 
 /**
  * Rune API: Blueprint.Blueprints.Show
@@ -15,13 +16,13 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-
-        $collection = Manager::loadTimetable();
+        $timetableLessons = LessonsManager::loadTimetable();
 
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
-            'collection' => $collection,
-            'statuses' => Status::$list
+            'lessons' => $timetableLessons,
+            'statuses' => Status::$list,
+            'types' => ProblemsTypes::$list,
         ]));
 
         return $response;

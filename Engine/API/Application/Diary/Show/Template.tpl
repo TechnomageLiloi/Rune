@@ -35,7 +35,6 @@
                 <td><?php echo $entity->getMark(); ?></td>
                 <td style="text-align: right;">
                     <a href="javascript:void(0)" class="butn" onclick="Rune.Lessons.edit('<?php echo $key_lesson; ?>')">Edit</a>
-                    &diams;
                     <a href="javascript:void(0)" class="butn" onclick="Rune.Lessons.remove('<?php echo $key_lesson; ?>')">Remove</a>
                 </td>
             </tr>

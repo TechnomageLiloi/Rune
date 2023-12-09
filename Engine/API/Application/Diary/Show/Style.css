@@ -19,11 +19,15 @@
 }
 #application-diary-show table tr {
   vertical-align: top;
+  border-bottom: silver 1px dashed;
 }
 #application-diary-show table tr h1 {
   background-color: #ddffdd;
   border-left: 6px solid #04AA6D;
   padding: 10px;
+}
+#application-diary-show table tr:hover {
+  background-color: #ffffbd;
 }
 #application-diary-show .wrap-tickets {
   text-align: center;

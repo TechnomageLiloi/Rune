@@ -13,11 +13,8 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-
         $uid = self::getParameter('uid');
-
         $degree = DegreesManager::load($uid);
-
         $collection = ProblemsManager::loadCollection($uid);
         $types = ProblemsTypes::$list;
 
