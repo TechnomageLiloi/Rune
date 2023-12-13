@@ -86,8 +86,8 @@ class Manager extends DomainManager
         $name = self::getTableName();
 
         $row = self::getAdapter()->getRow(sprintf(
-            'select * from %s order by key_degree desc limit 1;',
-            $name
+            'select * from %s where status=%s order by key_degree desc limit 1;',
+            $name, Statuses::IN_HAND
         ));
 
         return Entity::create($row);

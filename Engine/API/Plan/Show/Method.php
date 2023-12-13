@@ -18,7 +18,6 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-
         $degree = DegreesManager::loadCurrent();
         $problems = ProblemsManager::loadForPlan($degree->getKey());
         $types = ProblemsTypes::$list;
