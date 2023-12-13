@@ -10,6 +10,7 @@
         <?php if($admin): ?>
             <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.edit();">Edit</a>
             <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.RID.edit();">Change RID</a>
+            <a href="javascript:void(0)" class="butn" onclick="$('#atoms-show .article').toggle();">Article</a>
             <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.create();">Create child</a>
             <a href="javascript:void(0)" class="butn" onclick="Rune.Lessons.create();">Create lesson</a>
         <?php endif; ?>
@@ -18,11 +19,12 @@
     <hr/>
 
     <div class="stylo">
-        <?php if($admin): ?>
-            <?php echo $entity->parseProgram(); ?>
-        <?php else: ?>
-            <?php echo $entity->parseArticle(); ?>
-        <?php endif; ?>
+        <?php echo $entity->parseProgram(); ?>
+    </div>
+
+    <div class="article" style="display: none;">
+        <hr/>
+        <?php echo $entity->parseArticle(); ?>
     </div>
 
     <hr/>
