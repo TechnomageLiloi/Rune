@@ -1,7 +1,14 @@
-#degrees-collection {
+#user-search {
   padding: 10px;
   font-size: x-large;
 }
-#degrees-collection table {
-  width: 100%;
+#user-search .atom {
+  border: gray 1px solid;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+#user-search .atom h2 {
+  text-align: center;
+  margin: 0;
 }

@@ -52,6 +52,8 @@
                 &diams;
                 <a href="javascript:void(0)" class="butn" onclick="Stones.API.Projects.getCollection();">Artifacts</a>
                 &diams;
+                <a href="javascript:void(0)" class="butn" onclick="Rune.User.search();">Search</a>
+                &diams;
                 Karma: <?php echo $karma; ?>
                 <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.logout();">Logout</a>
             <?php else: ?>
@@ -63,7 +65,6 @@
                 <?php if($admin): ?>
                     Rune.Atoms.show();
                 <?php else: ?>
-                    //Rune.Security.Password.show();
                     Rune.User.search();
                 <?php endif; ?>
             </script>
