@@ -5,6 +5,9 @@
             <h2>
                 <?php echo $entity->getTitle(); ?>
             </h2>
+            <div class="tech">
+                <?php echo $entity->getTimestamp(); ?> - <?php echo $entity->getTags(); ?>
+            </div>
             <?php echo $entity->parseSummary(); ?>
         </div>
     <?php endforeach; ?>
