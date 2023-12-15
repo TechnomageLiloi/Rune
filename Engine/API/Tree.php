@@ -107,6 +107,8 @@ class Tree
 
     public function execute(): string
     {
+        // @todo: optimize
+
         if(strpos($_POST['method'], 'Rune.User.') !== false)
         {
             return $this->manager->search($_POST['method'])->execute($_POST['parameters'] ?? [])->asJson();

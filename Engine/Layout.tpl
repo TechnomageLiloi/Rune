@@ -34,31 +34,35 @@
     </head>
     <body>
         <div id="head">
-            <a href="javascript:void(0)" class="butn" onclick="Rune.Plan.show();">Plan</a>
-            <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.show();">Map</a>
-            <a href="javascript:void(0)" class="butn" onclick="Rune.Application.Diary.show('<?php echo date('Y-m-d'); ?>');">Journal</a>
-            <a href="javascript:void(0)" class="butn" onclick="Rune.Degrees.getCollection();">Degrees</a>
-            <a href="javascript:void(0)" class="butn" onclick="Rune.Lessons.schedule('<?php echo gmdate('Y-m-d'); ?>');">Schedule</a>
-            <a href="javascript:void(0)" class="butn" onclick="Rune.Lessons.timetable();">Timetable</a>
-            <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.edit(true);">Article</a>
-            <a href="javascript:void(0)" class="butn" onclick="Rune.Lessons.edit(0)">Task</a>
-            <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.dump();">Dump</a>
-            &diams;
-            <a href="javascript:void(0)" class="butn" onclick="API.Questions.collection();">Questions</a>
-            <input type="text" id="tags" value="">
-            <a href="javascript:void(0)" class="butn" onclick="API.Questions.suite();">Run</a>
-            &diams;
-            <a href="javascript:void(0)" class="butn" onclick="Stones.API.Projects.getCollection();">Artifacts</a>
-            &diams;
-            Karma: <?php echo $karma; ?>
-            <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.logout();">Logout</a>
+            <?php if($admin): ?>
+                <a href="javascript:void(0)" class="butn" onclick="Rune.Plan.show();">Plan</a>
+                <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.show();">Map</a>
+                <a href="javascript:void(0)" class="butn" onclick="Rune.Application.Diary.show('<?php echo date('Y-m-d'); ?>');">Journal</a>
+                <a href="javascript:void(0)" class="butn" onclick="Rune.Degrees.getCollection();">Degrees</a>
+                <a href="javascript:void(0)" class="butn" onclick="Rune.Lessons.schedule('<?php echo gmdate('Y-m-d'); ?>');">Schedule</a>
+                <a href="javascript:void(0)" class="butn" onclick="Rune.Lessons.timetable();">Timetable</a>
+                <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.edit(true);">Article</a>
+                <a href="javascript:void(0)" class="butn" onclick="Rune.Lessons.edit(0)">Task</a>
+                <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.dump();">Dump</a>
+                &diams;
+                <a href="javascript:void(0)" class="butn" onclick="API.Questions.collection();">Questions</a>
+                <input type="text" id="tags" value="">
+                <a href="javascript:void(0)" class="butn" onclick="API.Questions.suite();">Run</a>
+                &diams;
+                <a href="javascript:void(0)" class="butn" onclick="Stones.API.Projects.getCollection();">Artifacts</a>
+                &diams;
+                Karma: <?php echo $karma; ?>
+                <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.logout();">Logout</a>
+            <?php else: ?>
+                <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.show();">Login</a>
+            <?php endif; ?>
         </div>
         <div id="page">
             <script>
                 <?php if($admin): ?>
                     Rune.Atoms.show();
                 <?php else: ?>
-                    Rune.Security.Password.show();
+                    //Rune.Security.Password.show();
                 <?php endif; ?>
             </script>
         </div>
