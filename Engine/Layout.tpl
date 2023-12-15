@@ -25,6 +25,7 @@
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Plan/Requests.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Projects/Requests.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Tickets/Requests.js"></script>
+        <script src="<?php echo ROOT_URL; ?>/Engine/API/User/Requests.js"></script>
 
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Exams/Questions/Test/Testing.js"></script>
 
@@ -63,6 +64,7 @@
                     Rune.Atoms.show();
                 <?php else: ?>
                     //Rune.Security.Password.show();
+                    Rune.User.search();
                 <?php endif; ?>
             </script>
         </div>

@@ -199,4 +199,23 @@ class Manager extends DomainManager
             file_put_contents($filMetaFile, json_encode($dump), JSON_UNESCAPED_UNICODE);
         }
     }
+
+    public static function loadCollection(): Collection
+    {
+        $name = self::getTableName();
+
+        $rows = self::getAdapter()->getArray(sprintf(
+            'select * from %s where status=%s order by ts desc;',
+            $name, Statuses::PUBLISHED
+        ));
+
+        $collection = new Collection();
+
+        foreach($rows as $row)
+        {
+            $collection[] = Entity::create($row);
+        }
+
+        return $collection;
+    }
 }

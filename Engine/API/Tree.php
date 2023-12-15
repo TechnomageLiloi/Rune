@@ -99,6 +99,8 @@ class Tree
             $manager->add(new Method('Stones.Tickets.Save', '\Liloi\Rune\API\Tickets\Save\Method::execute'));
             $manager->add(new Method('Stones.Tickets.Create', '\Liloi\Rune\API\Tickets\Create\Method::execute'));
 
+            $manager->add(new Method('Rune.User.Search', '\Liloi\Rune\API\User\Search\Method::execute'));
+
             self::$instance = new self($manager);
         }
 
