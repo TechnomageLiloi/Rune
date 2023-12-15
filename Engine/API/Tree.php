@@ -107,6 +107,11 @@ class Tree
 
     public function execute(): string
     {
+        if(strpos($_POST['method'], 'Rune.User.') !== false)
+        {
+            return $this->manager->search($_POST['method'])->execute($_POST['parameters'] ?? [])->asJson();
+        }
+
         if(strpos($_POST['method'], 'Rune.Security.') === false)
         {
             RuneMethod::accessCheck();
