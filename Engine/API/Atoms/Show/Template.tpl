@@ -43,6 +43,8 @@
                     <tr>
                         <td>
                             <?php echo $child->getTile(); ?>
+                            &diams;
+                            <a href="javascript:void(0)" onclick="Rune.Atoms.remove('<?php echo $child->getKey(); ?>');">Remove</a>
                         </td>
                         <td>
                             <?php echo $child->getTypeTitle(); ?>

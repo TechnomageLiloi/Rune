@@ -115,5 +115,26 @@ Rune.Atoms = {
         }, function () {
 
         });
+    },
+
+    remove: function (keyAtom)
+    {
+        if(!confirm('Maybe change status to obsolete? Or remove from base?'))
+        {
+            return;
+        }
+
+        if(!confirm('Removing would be unreversable. Are you sure?'))
+        {
+            return;
+        }
+
+        API.request('Rune.Atoms.Remove', {
+            key_atom: keyAtom
+        }, function (data) {
+            Rune.Atoms.show();
+        }, function () {
+
+        });
     }
 }
