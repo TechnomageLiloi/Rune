@@ -77,6 +77,12 @@ class Entity extends AbstractEntity
         return $data[$key];
     }
 
+    public function isElement(string $key): bool
+    {
+        $data = json_decode($this->getProgram(), JSON_UNESCAPED_UNICODE);
+        return array_key_exists($key, $data);
+    }
+
     /**
      * Save question to database.
      */
@@ -97,5 +103,18 @@ class Entity extends AbstractEntity
     public function getParseTheory(): string
     {
         return Parser::parseString($this->getTheory());
+    }
+
+    public function getGraphic(): string
+    {
+        // @todo: get lazy load
+        if($this->isElement('graphic'))
+        {
+            // @todo: add consts for elements
+            $sentence = $this->getElement('graphic');
+            return Parser::parseString($sentence);
+        }
+
+        return '';
     }
 }

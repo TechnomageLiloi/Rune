@@ -7,6 +7,8 @@
     <a href="javascript:void(0)" onclick="Testing.checkSentence('<?php echo $entity->getKey(); ?>');">Check</a>
     <hr/>
     <div class="sentence">
+        <?php echo $entity->getGraphic(); ?>
+
         <?php $sentence = $entity->getElement('sentence'); ?>
 
         <?php foreach($sentence as $block): ?>
