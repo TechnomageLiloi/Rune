@@ -10,6 +10,7 @@
         <a href="javascript:void(0)" onclick="Testing.checkCheck('<?php echo $entity->getKey(); ?>');">Check</a>
         <hr/>
         <?php echo \Liloi\Stylo\Parser::parseString($entity->getElement('question')); ?>
+        <?php echo $entity->getGraphic(); ?>
     </div>
 
     <div class="answer">
