@@ -31,15 +31,15 @@
 
         <tr><td>Start</td><td>
             <input type="text" name="start" value="<?php echo $entity->getStart(); ?>"/>
-            <a href="javascript:void(0)" onclick="$('#blueprint-edit [name=start]').val('0000-00-00 00:00:00');">Later</a> &diams;
-            <a href="javascript:void(0)" onclick="$('#blueprint-edit [name=start]').val('<?php echo date('Y-m-d H:i:s'); ?>');">Now</a> &diams;
-            <a href="javascript:void(0)" onclick="$('#blueprint-edit [name=start]').val('<?php echo date('Y-m-d 00:00:00'); ?>');">Today</a>
+            <a class="butn" href="javascript:void(0)" onclick="$('#blueprint-edit [name=start]').val('0000-00-00 00:00:00');">Later</a>
+            <a class="butn" href="javascript:void(0)" onclick="$('#blueprint-edit [name=start]').val('<?php echo date('Y-m-d H:i:s'); ?>');">Now</a>
+            <a class="butn" href="javascript:void(0)" onclick="$('#blueprint-edit [name=start]').val('<?php echo date('Y-m-d 00:00:00'); ?>');">Today</a>
 
         </td></tr>
         <tr><td>Finish</td><td>
             <input type="text" name="finish" value="<?php echo $entity->getFinish(); ?>"/>
-                <a href="javascript:void(0)" onclick="$('#blueprint-edit [name=finish]').val('0000-00-00 00:00:00');">Later</a> &diams;
-            <a href="javascript:void(0)" onclick="$('#blueprint-edit [name=finish]').val('<?php echo date('Y-m-d H:i:s'); ?>');">Now</a>
+            <a class="butn" href="javascript:void(0)" onclick="$('#blueprint-edit [name=finish]').val('0000-00-00 00:00:00');">Later</a>
+            <a class="butn" href="javascript:void(0)" onclick="$('#blueprint-edit [name=finish]').val('<?php echo date('Y-m-d H:i:s'); ?>');">Now</a>
         </td></tr>
 
         <tr><td>Status</td><td>
