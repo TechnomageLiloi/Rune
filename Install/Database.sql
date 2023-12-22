@@ -100,6 +100,7 @@ create table rune_lessons
     finish timestamp not null,
     data json not null,
     type tinyint unsigned default 1 not null,
+    tags varchar(100) default '' not null,
     constraint rune_lessons_pk
         primary key (key_lesson)
 );
