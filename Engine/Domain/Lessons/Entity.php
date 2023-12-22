@@ -26,6 +26,9 @@ use Liloi\Stylo\Parser;
  *
  * @method string getType()
  * @method void setType(string $value)
+ *
+ * @method string getTags()
+ * @method void setTags(string $value)
  */
 class Entity extends AbstractEntity
 {
@@ -52,6 +55,11 @@ class Entity extends AbstractEntity
     public function getTime(): int
     {
         return (int)date('G', strtotime($this->getStart()));
+    }
+
+    public function getTitle(): string
+    {
+        return $this->getComment();
     }
 
     public function save(): void

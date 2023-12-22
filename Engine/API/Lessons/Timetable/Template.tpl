@@ -75,7 +75,7 @@
                         <?php foreach($lessons[$key] as $key_lesson => $entity): ?>
                         <tr>
                             <td>
-                                <?php echo $entity->getComment(); ?>
+                                <?php echo $entity->getTitle(); ?>
                             </td>
                             <td><?php echo $statuses[$entity->getStatus()]; ?></td>
                             <td><?php echo $entity->getMark(); ?></td>
