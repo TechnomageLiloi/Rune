@@ -26,6 +26,7 @@ class Method extends SuperMethod
         $entity->setData(self::getParameter('data'));
         $entity->setKeyAtom(self::getParameter('key_atom'));
         $entity->setType(self::getParameter('type'));
+        $entity->setTags(self::getParameter('tags'));
 
         $entity->save();
 

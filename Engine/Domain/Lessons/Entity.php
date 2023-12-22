@@ -59,7 +59,15 @@ class Entity extends AbstractEntity
 
     public function getTitle(): string
     {
-        return $this->getComment();
+        $tags = $this->getTags();
+
+        if(empty($tags))
+        {
+            return $this->getComment();
+        }
+
+        $listTags = explode(' ', $tags);
+        return '[' . implode('][', $listTags) . '] ' . $this->getComment();
     }
 
     public function save(): void
