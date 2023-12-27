@@ -6,6 +6,11 @@ use Liloi\API\Errors\Exception;
 use Liloi\Rune\Domain\Manager as DomainManager;
 use Liloi\Rune\Domain\Problems\Types as ProblemsTypes;
 
+/**
+ * Lessons manager.
+ *
+ * @package Liloi\Rune\Domain\Lessons
+ */
 class Manager extends DomainManager
 {
     /**
@@ -114,6 +119,23 @@ class Manager extends DomainManager
         return (int)self::getAdapter()->getSingle(sprintf(
             'select sum(mark) from %s where status=%s and start between "%s" and "%s";',
             $name, Status::COMPLETE, $dt . ' 00:00:00', $dt . ' 23:59:59'
+        ));
+    }
+
+    /**
+     * Gets karma for period.
+     *
+     * @param string $dtFrom Start timestamp of period (inclusively).
+     * @param string $dtTo Finish timestamp of period (inclusively).
+     * @return int Result karma.
+     */
+    public static function loadKarmaForPeriod(string $dtFrom, string $dtTo): int
+    {
+        $name = self::getTableName();
+
+        return (int)self::getAdapter()->getSingle(sprintf(
+            'select sum(mark) from %s where status=%s and start between "%s" and "%s";',
+            $name, Status::COMPLETE, $dtFrom, $dtTo
         ));
     }
 

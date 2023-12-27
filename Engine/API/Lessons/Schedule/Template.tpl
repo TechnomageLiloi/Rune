@@ -39,6 +39,9 @@
     }
 </style>
 <div id="lesson-schedule">
+    <h3>
+        Week karma: <?php echo $karma; ?>
+    </h3>
     <table>
         <tr>
             <th></th>
