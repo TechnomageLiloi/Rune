@@ -48,6 +48,8 @@ class Application extends ConceptualApplication
      */
     public function compile(): string
     {
+        $this->bind();
+
         // If API requested, then 'method' post parameter would be set.
         if(isset($_POST['method']))
         {
@@ -60,5 +62,16 @@ class Application extends ConceptualApplication
             'admin' => Security::check(),
             'karma' => $karma
         ]);
+    }
+
+    /**
+     * Bind external modules.
+     *
+     * Format: Module->bind($manager, $config);`
+     */
+    public function bind(): void
+    {
+        $manager = Tree::getInstance()->getManager();
+        $config = $this->getConfig();
     }
 }

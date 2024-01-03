@@ -126,4 +126,14 @@ class Tree
         $response = $this->manager->search($_POST['method'])->execute($_POST['parameters'] ?? []);
         return $response->asJson();
     }
+
+    /**
+     * Get API manager.
+     *
+     * @return Manager
+     */
+    public function getManager(): Manager
+    {
+        return $this->manager;
+    }
 }
