@@ -2,6 +2,7 @@
 <div id="blueprint-edit">
     <a href="javascript:void(0)" class="butn" onclick="Rune.Degrees.getCollection();">&blacktriangleleft; Back</a>
     <a href="javascript:void(0)" class="butn" onclick="Rune.Degrees.save('<?php echo $entity->getKey(); ?>');">Save</a>
+    <a href="javascript:void(0)" class="butn" onclick="Rune.Degrees.save('<?php echo $entity->getKey(); ?>', true);">Apply</a>
     <hr/>
     <table style="width: 100%;">
         <tr>
@@ -22,4 +23,5 @@
     <hr/>
     <a href="javascript:void(0)" class="butn" onclick="Rune.Degrees.getCollection();">&blacktriangleleft; Back</a>
     <a href="javascript:void(0)" class="butn" onclick="Rune.Degrees.save('<?php echo $entity->getKey(); ?>');">Save</a>
+    <a href="javascript:void(0)" class="butn" onclick="Rune.Degrees.save('<?php echo $entity->getKey(); ?>', true);">Apply</a>
 </div>

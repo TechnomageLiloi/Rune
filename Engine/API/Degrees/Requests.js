@@ -64,11 +64,16 @@ Rune.Degrees = {
         });
     },
 
-    save: function (key)
+    save: function (key, apply)
     {
         if(!confirm('Are you sure?'))
         {
             return;
+        }
+
+        if(typeof apply === 'undefined')
+        {
+            apply = false;
         }
 
         const jq_block = $('#blueprint-edit');
@@ -79,7 +84,13 @@ Rune.Degrees = {
             'program': jq_block.find('[name="program"]').val(),
             'status': jq_block.find('[name="status"]').val()
         }, function (data) {
-            Rune.Degrees.show(jq_block.find('[name="uid"]').val());
+            if(!apply)
+            {
+                Rune.Degrees.show(jq_block.find('[name="uid"]').val());
+                return;
+            }
+
+            alert('Degree saved.');
         }, function () {
 
         });

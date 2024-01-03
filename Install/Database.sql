@@ -63,7 +63,7 @@ create table rune_degrees
     key_degree bigint unsigned auto_increment,
     uid varchar(100) not null,
     title varchar(250) null,
-    program text null,
+    program mediumtext null,
     status tinyint unsigned not null,
     constraint rune_degrees_pk
         primary key (key_degree)
