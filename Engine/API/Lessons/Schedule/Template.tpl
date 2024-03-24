@@ -71,11 +71,11 @@
                 <th><?php echo $hour . ':00'; ?></th>
                 <?php for($day=1;$day<=7;$day++): ?>
                     <td>
-                        <!--
+                        <?php foreach($schedule[$day][$hour] as $entity): ?>
                         <div class="lesson">
-                            TEST
+                            [<?php echo $entity->getPower(); ?>] <?php echo $entity->getTitle(); ?>
                         </div>
-                        -->
+                        <?php endforeach; ?>
                     </td>
                 <?php endfor; ?>
             </tr>

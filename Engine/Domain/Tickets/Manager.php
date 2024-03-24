@@ -171,8 +171,8 @@ class Manager extends DomainManager
 
     public static function schedule(): array
     {
-        $ts_start = date('Y-m-d', strtotime('monday this week'));
-        $ts_finish = date('Y-m-d', strtotime('sunday this week'));
+        $ts_start = date('Y-m-d 00:00:00', strtotime('monday this week'));
+        $ts_finish = date('Y-m-d 23:59:59', strtotime('sunday this week'));
 
         $name = self::getTableName();
 
@@ -186,7 +186,7 @@ class Manager extends DomainManager
         for($day=1;$day<=7;$day++)
         {
             $schedule[$day] = [];
-            for ($hour=0;$hour<24;$hour++)
+            for($hour=0;$hour<24;$hour++)
             {
                 $schedule[$day][$hour] = [];
             }
@@ -194,8 +194,8 @@ class Manager extends DomainManager
 
         foreach($rows as $row)
         {
-            //$entity = Entity::create($row);
-            //$schedule[$entity->getDateNumber()][$entity->getKeyPosition()][] = $entity;
+            $entity = Entity::create($row);
+            $schedule[$entity->getDay()][$entity->getHour()][] = $entity;
         }
 
         return $schedule;

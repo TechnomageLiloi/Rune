@@ -127,4 +127,28 @@ class Entity extends AbstractEntity
 
         return implode('', $listFlags) . $title;
     }
+
+    public function getDay(): int
+    {
+        $start = $this->getStart();
+
+        if(is_null($start))
+        {
+            return 1; // for monday
+        }
+
+        return (int)date("N", strtotime($start));
+    }
+
+    public function getHour(): int
+    {
+        $start = $this->getStart();
+
+        if(is_null($start))
+        {
+            return 0; // for midnight
+        }
+
+        return (int)date("H", strtotime($start));
+    }
 }
