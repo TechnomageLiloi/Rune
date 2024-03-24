@@ -1,15 +1,15 @@
 <?php
 
-namespace Liloi\TARDIS\API\Lessons\Edit;
+namespace Liloi\Rune\API\Lessons\Edit;
 
 use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
-use Liloi\TARDIS\Domain\Lessons\Manager;
-use Liloi\TARDIS\Domain\Lessons\Status;
-use Liloi\TARDIS\Domain\Lessons\Types;
-use Liloi\TARDIS\Domain\Degrees\Manager as DegreeManager;
-use Liloi\TARDIS\Domain\Config\Manager as ConfigManager;
-use Liloi\TARDIS\Domain\Config\Keys as ConfigKeys;
+use Liloi\Rune\Domain\Lessons\Manager;
+use Liloi\Rune\Domain\Lessons\Status;
+use Liloi\Rune\Domain\Lessons\Types;
+use Liloi\Rune\Domain\Degrees\Manager as DegreeManager;
+use Liloi\Rune\Domain\Config\Manager as ConfigManager;
+use Liloi\Rune\Domain\Config\Keys as ConfigKeys;
 
 /**
  * TARDIS API: Blueprint.Blueprints.Edit

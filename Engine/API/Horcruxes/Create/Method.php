@@ -1,10 +1,10 @@
 <?php
 
-namespace Liloi\TARDIS\API\Horcruxes\Create;
+namespace Liloi\Rune\API\Horcruxes\Create;
 
 use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
-use Liloi\TARDIS\Domain\Horcruxes\Manager;
+use Liloi\Rune\Domain\Horcruxes\Manager;
 
 /**
  * TARDIS API: Blueprint.Blueprints.Create

@@ -1,9 +1,9 @@
 <?php
 
-namespace Liloi\TARDIS\Domain\Degrees;
+namespace Liloi\Rune\Domain\Degrees;
 
-use Liloi\TARDIS\Domain\Manager as DomainManager;
-use Liloi\TARDIS\Exceptions\NoKeyException;
+use Liloi\Rune\Domain\Manager as DomainManager;
+use Liloi\Rune\Exceptions\NoKeyException;
 
 class Manager extends DomainManager
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace Liloi\TARDIS\Domain\Lessons;
+namespace Liloi\Rune\Domain\Lessons;
 
 /**
  * Lesson positions.
  *
- * @package Liloi\TARDIS\Domain\Problems
+ * @package Liloi\Rune\Domain\Problems
  */
 class Positions
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace Liloi\TARDIS\API\Plan\Show;
+namespace Liloi\Rune\API\Plan\Show;
 
 use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
-use Liloi\TARDIS\Domain\Degrees\Manager as DegreesManager;
-use Liloi\TARDIS\Domain\Problems\Manager as ProblemsManager;
+use Liloi\Rune\Domain\Degrees\Manager as DegreesManager;
+use Liloi\Rune\Domain\Problems\Manager as ProblemsManager;
 
 /**
  * Rune API: Rune.Application.Diary.Show

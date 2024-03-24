@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\TARDIS\Domain\Lessons;
+namespace Liloi\Rune\Domain\Lessons;
 
 use Liloi\Tools\Entity as AbstractEntity;
 use Liloi\Stylo\Parser;

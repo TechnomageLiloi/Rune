@@ -1,11 +1,11 @@
 <?php
 
-namespace Liloi\TARDIS\API\Lessons\Schedule;
+namespace Liloi\Rune\API\Lessons\Schedule;
 
 use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
-use Liloi\TARDIS\Domain\Lessons\Manager as LessonsManager;
-use Liloi\TARDIS\Domain\Lessons\Positions as LessonsPositions;
+use Liloi\Rune\Domain\Lessons\Manager as LessonsManager;
+use Liloi\Rune\Domain\Lessons\Positions as LessonsPositions;
 
 /**
  * TARDIS API: Blueprint.Blueprints.Show

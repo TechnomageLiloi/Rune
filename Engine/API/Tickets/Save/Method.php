@@ -1,10 +1,10 @@
 <?php
 
-namespace Liloi\TARDIS\API\Tickets\Save;
+namespace Liloi\Rune\API\Tickets\Save;
 
 use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
-use Liloi\TARDIS\Domain\Tickets\Manager;
+use Liloi\Rune\Domain\Tickets\Manager;
 
 /**
  * TARDIS API: Blueprint.Blueprints.Save

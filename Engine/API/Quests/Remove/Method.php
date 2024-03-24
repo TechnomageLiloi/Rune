@@ -1,10 +1,10 @@
 <?php
 
-namespace Liloi\TARDIS\API\Quests\Remove;
+namespace Liloi\Rune\API\Quests\Remove;
 
 use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
-use Liloi\TARDIS\Domain\Quests\Manager;
+use Liloi\Rune\Domain\Quests\Manager;
 
 /**
  * TARDIS API: Blueprint.Blueprints.Remove

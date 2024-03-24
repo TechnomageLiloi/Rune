@@ -1,11 +1,11 @@
 <?php
 
-namespace Liloi\TARDIS\API\Degrees\Edit;
+namespace Liloi\Rune\API\Degrees\Edit;
 
 use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
-use Liloi\TARDIS\Domain\Degrees\Manager;
-use Liloi\TARDIS\Domain\Degrees\Statuses;
+use Liloi\Rune\Domain\Degrees\Manager;
+use Liloi\Rune\Domain\Degrees\Statuses;
 
 /**
  * TARDIS API: Blueprint.Blueprints.Edit

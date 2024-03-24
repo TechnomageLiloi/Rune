@@ -1,9 +1,9 @@
 <?php
 
-namespace Liloi\TARDIS\Domain\Problems;
+namespace Liloi\Rune\Domain\Problems;
 
 use Liloi\API\Errors\Exception;
-use Liloi\TARDIS\Domain\Manager as DomainManager;
+use Liloi\Rune\Domain\Manager as DomainManager;
 use Liloi\Judex\Assert;
 
 class Manager extends DomainManager

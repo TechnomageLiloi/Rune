@@ -1,11 +1,11 @@
 <?php
 
-namespace Liloi\TARDIS\API\Horcruxes\Edit;
+namespace Liloi\Rune\API\Horcruxes\Edit;
 
 use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
-use Liloi\TARDIS\Domain\Horcruxes\Manager;
-use Liloi\TARDIS\Domain\Horcruxes\Statuses;
+use Liloi\Rune\Domain\Horcruxes\Manager;
+use Liloi\Rune\Domain\Horcruxes\Statuses;
 
 /**
  * TARDIS API: Blueprint.Blueprints.Edit

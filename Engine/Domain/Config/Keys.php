@@ -1,8 +1,8 @@
 <?php
 
-namespace Liloi\TARDIS\Domain\Config;
+namespace Liloi\Rune\Domain\Config;
 
-use Liloi\TARDIS\Domain\Manager as DomainManager;
+use Liloi\Rune\Domain\Manager as DomainManager;
 
 class Keys
 {

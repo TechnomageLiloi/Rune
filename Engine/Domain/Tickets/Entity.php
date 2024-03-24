@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\TARDIS\Domain\Tickets;
+namespace Liloi\Rune\Domain\Tickets;
 
 use Liloi\Tools\Entity as AbstractEntity;
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace Liloi\TARDIS\API\Lessons\Create;
+namespace Liloi\Rune\API\Lessons\Create;
 
 use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
-use Liloi\TARDIS\Domain\Lessons\Manager;
+use Liloi\Rune\Domain\Lessons\Manager;
 
 // @obsolete: Should remove in the next version.
 class Method extends SuperMethod

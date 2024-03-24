@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\TARDIS\Domain\Horcruxes;
+namespace Liloi\Rune\Domain\Horcruxes;
 
 use Liloi\Stylo\Parser;
 use Liloi\Tools\Entity as AbstractEntity;

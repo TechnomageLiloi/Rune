@@ -1,10 +1,10 @@
 <?php
 
-namespace Liloi\TARDIS\API\Degrees\Collection;
+namespace Liloi\Rune\API\Degrees\Collection;
 
 use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
-use Liloi\TARDIS\Domain\Degrees\Manager as DegreesManager;
+use Liloi\Rune\Domain\Degrees\Manager as DegreesManager;
 
 /**
  * TARDIS API: Blueprint.Blueprints.Show

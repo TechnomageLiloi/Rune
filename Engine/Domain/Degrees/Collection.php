@@ -1,13 +1,13 @@
 <?php
 
-namespace Liloi\TARDIS\Domain\Degrees;
+namespace Liloi\Rune\Domain\Degrees;
 
 use Liloi\Tools\Collection as AbstractCollection;
 
 /**
  * Degrees collection.
  *
- * @package Liloi\TARDIS\Domain\Degrees
+ * @package Liloi\Rune\Domain\Degrees
  */
 class Collection extends AbstractCollection
 {

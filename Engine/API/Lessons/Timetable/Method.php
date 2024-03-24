@@ -1,22 +1,22 @@
 <?php
 
-namespace Liloi\TARDIS\API\Lessons\Timetable;
+namespace Liloi\Rune\API\Lessons\Timetable;
 
 use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
-use Liloi\TARDIS\Domain\Config\Keys as ConfigKeys;
-use Liloi\TARDIS\Domain\Config\Manager as ConfigManager;
-use Liloi\TARDIS\Domain\Lessons\Entity as LessonsEntity;
-use Liloi\TARDIS\Domain\Lessons\Manager as LessonsManager;
-use Liloi\TARDIS\Domain\Lessons\Status as LessonsStatus;
-use Liloi\TARDIS\Domain\Lessons\Types as LessonsTypes;
-use Liloi\TARDIS\Domain\Lessons\Positions as LessonsPositions;
-use Liloi\TARDIS\Domain\Problems\Manager as ProblemsManager;
-use Liloi\TARDIS\Domain\Problems\Statuses as ProblemsStatuses;
-use Liloi\TARDIS\Domain\Tickets\Manager as TicketsManager;
-use Liloi\TARDIS\Domain\Degrees\Manager as DegreeManager;
-use Liloi\TARDIS\Domain\Quests\Manager as QuestsManager;
-use Liloi\TARDIS\Domain\Horcruxes\Manager as HorcruxesManager;
+use Liloi\Rune\Domain\Config\Keys as ConfigKeys;
+use Liloi\Rune\Domain\Config\Manager as ConfigManager;
+use Liloi\Rune\Domain\Lessons\Entity as LessonsEntity;
+use Liloi\Rune\Domain\Lessons\Manager as LessonsManager;
+use Liloi\Rune\Domain\Lessons\Status as LessonsStatus;
+use Liloi\Rune\Domain\Lessons\Types as LessonsTypes;
+use Liloi\Rune\Domain\Lessons\Positions as LessonsPositions;
+use Liloi\Rune\Domain\Problems\Manager as ProblemsManager;
+use Liloi\Rune\Domain\Problems\Statuses as ProblemsStatuses;
+use Liloi\Rune\Domain\Tickets\Manager as TicketsManager;
+use Liloi\Rune\Domain\Degrees\Manager as DegreeManager;
+use Liloi\Rune\Domain\Quests\Manager as QuestsManager;
+use Liloi\Rune\Domain\Horcruxes\Manager as HorcruxesManager;
 
 /**
  * TARDIS API: Blueprint.Blueprints.Show

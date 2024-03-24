@@ -1,11 +1,11 @@
 <?php
 
-namespace Liloi\TARDIS\API\Quests\Edit;
+namespace Liloi\Rune\API\Quests\Edit;
 
 use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
-use Liloi\TARDIS\Domain\Quests\Manager;
-use Liloi\TARDIS\Domain\Quests\Statuses;
+use Liloi\Rune\Domain\Quests\Manager;
+use Liloi\Rune\Domain\Quests\Statuses;
 
 /**
  * TARDIS API: Blueprint.Blueprints.Edit

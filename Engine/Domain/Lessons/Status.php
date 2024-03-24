@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\TARDIS\Domain\Lessons;
+namespace Liloi\Rune\Domain\Lessons;
 
 class Status
 {

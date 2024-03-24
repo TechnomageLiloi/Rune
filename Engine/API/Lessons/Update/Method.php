@@ -1,11 +1,11 @@
 <?php
 
-namespace Liloi\TARDIS\API\Lessons\Update;
+namespace Liloi\Rune\API\Lessons\Update;
 
 use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
-use Liloi\TARDIS\Domain\Lessons\Manager;
-use Liloi\TARDIS\Domain\Lessons\Status;
+use Liloi\Rune\Domain\Lessons\Manager;
+use Liloi\Rune\Domain\Lessons\Status;
 
 /**
  * TARDIS API: Blueprint.Blueprints.Save

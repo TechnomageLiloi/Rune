@@ -1,11 +1,11 @@
 <?php
 
-namespace Liloi\TARDIS\Domain\Lessons;
+namespace Liloi\Rune\Domain\Lessons;
 
 /**
  * Types of problems.
  *
- * @package Liloi\TARDIS\Domain\Problems
+ * @package Liloi\Rune\Domain\Problems
  */
 class Types
 {

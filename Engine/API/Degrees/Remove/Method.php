@@ -1,10 +1,10 @@
 <?php
 
-namespace Liloi\TARDIS\API\Degrees\Remove;
+namespace Liloi\Rune\API\Degrees\Remove;
 
 use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
-use Liloi\TARDIS\Domain\Degrees\Manager;
+use Liloi\Rune\Domain\Degrees\Manager;
 
 /**
  * TARDIS API: Blueprint.Blueprints.Remove

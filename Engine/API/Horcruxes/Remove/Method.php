@@ -1,10 +1,10 @@
 <?php
 
-namespace Liloi\TARDIS\API\Horcruxes\Remove;
+namespace Liloi\Rune\API\Horcruxes\Remove;
 
 use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
-use Liloi\TARDIS\Domain\Horcruxes\Manager;
+use Liloi\Rune\Domain\Horcruxes\Manager;
 
 /**
  * TARDIS API: Blueprint.Blueprints.Remove

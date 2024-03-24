@@ -1,12 +1,12 @@
 <?php
 
-namespace Liloi\TARDIS\API\Lessons\Calculate;
+namespace Liloi\Rune\API\Lessons\Calculate;
 
 use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
-use Liloi\TARDIS\Domain\Lessons\Manager as LessonsManager;
-use Liloi\TARDIS\Domain\Tickets\Manager as TicketsManager;
-use Liloi\TARDIS\Domain\Tickets\Entity as TicketsEntity;
+use Liloi\Rune\Domain\Lessons\Manager as LessonsManager;
+use Liloi\Rune\Domain\Tickets\Manager as TicketsManager;
+use Liloi\Rune\Domain\Tickets\Entity as TicketsEntity;
 
 // @obsolete: Should remove in the next version.
 class Method extends SuperMethod

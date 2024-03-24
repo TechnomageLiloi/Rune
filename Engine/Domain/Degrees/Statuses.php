@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\TARDIS\Domain\Degrees;
+namespace Liloi\Rune\Domain\Degrees;
 
 /**
  * Class Statuses

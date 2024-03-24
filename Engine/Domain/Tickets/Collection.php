@@ -1,13 +1,13 @@
 <?php
 
-namespace Liloi\TARDIS\Domain\Tickets;
+namespace Liloi\Rune\Domain\Tickets;
 
 use Liloi\Tools\Collection as AbstractCollection;
 
 /**
  * Tickets collection.
  *
- * @package Liloi\TARDIS\Domain\Tickets
+ * @package Liloi\Rune\Domain\Tickets
  */
 class Collection extends AbstractCollection
 {
