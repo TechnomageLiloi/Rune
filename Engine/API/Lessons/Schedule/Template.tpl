@@ -59,30 +59,26 @@
     }
 </style>
 <div id="lesson-schedule">
-    <h3>
-        Week karma: <?php echo $karma; ?>
-    </h3>
     <table>
         <tr>
             <th></th>
             <?php for($day=1;$day<=7;$day++): ?>
-            <th><?php echo $days[$day]; ?></th>
+                <th><?php echo $days[$day]; ?></th>
             <?php endfor; ?>
         </tr>
-        <?php foreach($positions as $key => $position): ?>
-            <?php if(!$key) continue; ?>
+        <?php for($hour=0;$hour<24;$hour++): ?>
             <tr>
-                <th><?php echo $position; ?></th>
+                <th><?php echo $hour . ':00'; ?></th>
                 <?php for($day=1;$day<=7;$day++): ?>
-                <td>
-                    <?php foreach($schedule[$day][$key] as $entity): ?>
-                    <div class="lesson <?php echo $entity->getStatusClass(); ?>">
-                        <?php echo $entity->getComment(); ?>
-                    </div>
-                    <?php endforeach; ?>
-                </td>
+                    <td>
+                        <!--
+                        <div class="lesson">
+                            TEST
+                        </div>
+                        -->
+                    </td>
                 <?php endfor; ?>
             </tr>
-        <?php endforeach; ?>
+        <?php endfor; ?>
     </table>
 </div>

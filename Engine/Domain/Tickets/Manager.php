@@ -168,4 +168,36 @@ class Manager extends DomainManager
 
         return $karma;
     }
+
+    public static function schedule(): array
+    {
+        $ts_start = date('Y-m-d', strtotime('monday this week'));
+        $ts_finish = date('Y-m-d', strtotime('sunday this week'));
+
+        $name = self::getTableName();
+
+        $rows = self::getAdapter()->getArray(sprintf(
+            'select * from %s where start between "%s" and "%s" order by start asc;',
+            $name, $ts_start, $ts_finish
+        ));
+
+        $schedule = [];
+
+        for($day=1;$day<=7;$day++)
+        {
+            $schedule[$day] = [];
+            for ($hour=0;$hour<24;$hour++)
+            {
+                $schedule[$day][$hour] = [];
+            }
+        }
+
+        foreach($rows as $row)
+        {
+            //$entity = Entity::create($row);
+            //$schedule[$entity->getDateNumber()][$entity->getKeyPosition()][] = $entity;
+        }
+
+        return $schedule;
+    }
 }

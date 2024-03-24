@@ -4,8 +4,7 @@ namespace Liloi\Rune\API\Lessons\Schedule;
 
 use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
-use Liloi\Rune\Domain\Lessons\Manager as LessonsManager;
-use Liloi\Rune\Domain\Lessons\Positions as LessonsPositions;
+use Liloi\Rune\Domain\Tickets\Manager as TicketsManager;
 
 /**
  * TARDIS API: Blueprint.Blueprints.Show
@@ -15,8 +14,7 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-        $date_now = self::getParameter('date_now');
-        $schedule = LessonsManager::schedule($date_now);
+        $schedule = TicketsManager::schedule();
 
         $days = [
             1 => 'Monday',
@@ -31,9 +29,7 @@ class Method extends SuperMethod
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
             'days' => $days,
-            'karma' => 0,
-            'schedule' => $schedule,
-            'positions' => LessonsPositions::$list
+            'schedule' => $schedule
         ]));
 
         return $response;
