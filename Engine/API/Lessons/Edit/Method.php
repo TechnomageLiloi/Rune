@@ -3,7 +3,7 @@
 namespace Liloi\TARDIS\API\Lessons\Edit;
 
 use Liloi\API\Response;
-use Liloi\TARDIS\API\Method as SuperMethod;
+use Liloi\Rune\API\Method as SuperMethod;
 use Liloi\TARDIS\Domain\Lessons\Manager;
 use Liloi\TARDIS\Domain\Lessons\Status;
 use Liloi\TARDIS\Domain\Lessons\Types;

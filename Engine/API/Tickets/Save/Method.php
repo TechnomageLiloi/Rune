@@ -3,7 +3,7 @@
 namespace Liloi\TARDIS\API\Tickets\Save;
 
 use Liloi\API\Response;
-use Liloi\TARDIS\API\Method as SuperMethod;
+use Liloi\Rune\API\Method as SuperMethod;
 use Liloi\TARDIS\Domain\Tickets\Manager;
 
 /**

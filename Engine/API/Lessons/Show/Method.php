@@ -3,7 +3,7 @@
 namespace Liloi\TARDIS\API\Lessons\Show;
 
 use Liloi\API\Response;
-use Liloi\TARDIS\API\Method as SuperMethod;
+use Liloi\Rune\API\Method as SuperMethod;
 use Liloi\TARDIS\Domain\Config\Manager as ConfigManager;
 use Liloi\TARDIS\Domain\Config\Keys as ConfigKeys;
 
