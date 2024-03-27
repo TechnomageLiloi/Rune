@@ -25,8 +25,7 @@
         </div>
         <div id="page">
             <script>
-                // API.Questions.collection();
-                // TARDIS.Plan.show();
+                Rune.Atoms.show();
             </script>
         </div>
     </body>
