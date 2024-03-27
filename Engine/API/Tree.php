@@ -31,6 +31,15 @@ class Tree
         {
             $manager = new Manager();
 
+            $manager->add(new Method('Exams.Questions.Collection', '\Liloi\Rune\API\Questions\Collection\Method::execute'));
+            $manager->add(new Method('Exams.Questions.Create', '\Liloi\Rune\API\Questions\Create\Method::execute'));
+            $manager->add(new Method('Exams.Questions.Remove', '\Liloi\Rune\API\Questions\Remove\Method::execute'));
+            $manager->add(new Method('Exams.Questions.Edit', '\Liloi\Rune\API\Questions\Edit\Method::execute'));
+            $manager->add(new Method('Exams.Questions.Save', '\Liloi\Rune\API\Questions\Save\Method::execute'));
+            $manager->add(new Method('Exams.Questions.Show', '\Liloi\Rune\API\Questions\Show\Method::execute'));
+            $manager->add(new Method('Exams.Questions.Test', '\Liloi\Rune\API\Questions\Test\Method::execute'));
+            $manager->add(new Method('Exams.Questions.Suite', '\Liloi\Rune\API\Questions\Suite\Method::execute'));
+
             $manager->add(new Method('Rune.Atoms.Show', '\Liloi\Rune\API\Atoms\Show\Method::execute'));
             $manager->add(new Method('Rune.Atoms.Edit', '\Liloi\Rune\API\Atoms\Edit\Method::execute'));
             $manager->add(new Method('Rune.Atoms.Save', '\Liloi\Rune\API\Atoms\Save\Method::execute'));
