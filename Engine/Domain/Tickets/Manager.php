@@ -21,6 +21,25 @@ class Manager extends DomainManager
         return self::getTablePrefix() . 'tickets';
     }
 
+    public static function loadCollection(string $keyAtom): Collection
+    {
+        $name = self::getTableName();
+
+        $rows = self::getAdapter()->getArray(sprintf(
+            'select * from %s where key_atom="%s" order by start desc;',
+            $name, $keyAtom
+        ));
+
+        $collection = new Collection();
+
+        foreach($rows as $row)
+        {
+            $collection[] = Entity::create($row);
+        }
+
+        return $collection;
+    }
+
     /**
      * Load problem from database.
      *
@@ -93,7 +112,7 @@ class Manager extends DomainManager
             'key_atom' => $key_atom,
             'title' => '-',
             'start' => date('Y-m-d H:i:s'),
-            'finish' => self::TIME_TODO,
+            'finish' => date('Y-m-d H:i:s'),
             'power' => self::POWER,
             'status' => Statuses::TODO
         ];

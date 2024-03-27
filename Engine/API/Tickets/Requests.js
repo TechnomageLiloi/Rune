@@ -1,8 +1,8 @@
 Rune.Tickets = {
-    collection: function (uid)
+    collection: function ()
     {
         API.request('TARDIS.Tickets.Collection', {
-            'uid': uid
+
         }, function (data) {
             $('#page').html(data.render);
         }, function () {
@@ -21,7 +21,7 @@ Rune.Tickets = {
         });
     },
 
-    create: function (keyLesson)
+    create: function ()
     {
         if(!confirm('Are you sure?'))
         {
@@ -29,15 +29,15 @@ Rune.Tickets = {
         }
 
         API.request('TARDIS.Tickets.Create', {
-            'key_lesson': keyLesson
+
         }, function (data) {
-            TARDIS.Lessons.timetable();
+            Rune.Tickets.collection();
         }, function () {
 
         });
     },
 
-    remove: function (keyTicket, uid)
+    remove: function (keyTicket)
     {
         if(!confirm('Are you sure?'))
         {
@@ -47,7 +47,7 @@ Rune.Tickets = {
         API.request('TARDIS.Tickets.Remove', {
             'key_ticket': keyTicket
         }, function (data) {
-            TARDIS.Tickets.collection(uid);
+            TARDIS.Tickets.collection();
         }, function () {
 
         });
@@ -74,12 +74,13 @@ Rune.Tickets = {
         const jq_block = $('#blueprint-edit');
         API.request('TARDIS.Tickets.Save', {
             'key_ticket': keyTicket,
+            'status': jq_block.find('[name="status"]').val(),
             'title': jq_block.find('[name="title"]').val(),
             'start': jq_block.find('[name="start"]').val(),
             'finish': jq_block.find('[name="finish"]').val(),
             'power': jq_block.find('[name="power"]').val()
         }, function (data) {
-            TARDIS.Lessons.timetable();
+            Rune.Tickets.collection();
         }, function () {
 
         });

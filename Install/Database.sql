@@ -42,3 +42,19 @@ alter table rune_questions
     add constraint rune_questions_rune_suites_key_suite_fk
         foreign key (key_atom) references rune_atoms (key_atom)
             on update cascade on delete cascade;
+
+create table rune_tickets
+(
+    key_ticket bigint unsigned auto_increment,
+    key_atom varchar(250) not null,
+    title varchar(250) not null,
+    start timestamp not null,
+    finish timestamp not null,
+    power smallint unsigned default 1 not null,
+    status tinyint unsigned default 1 not null,
+    constraint rune_tickets_pk
+        primary key (key_ticket),
+    constraint rune_tickets_rune_atoms_key_atom_fk
+        foreign key (key_atom) references rune_atoms (key_atom)
+            on update cascade on delete cascade
+);

@@ -17,6 +17,7 @@
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Requests.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Atoms/Requests.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Questions/Requests.js"></script>
+        <script src="<?php echo ROOT_URL; ?>/Engine/API/Tickets/Requests.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Security/Password/Requests.js"></script>
 
         <title>Rune</title>
@@ -25,6 +26,7 @@
         <div id="head">
             <a href="javascript:void(0)" class="butn" onclick="location.reload();">Reload</a>
             <?php if($admin): ?>
+                <a href="javascript:void(0)" class="butn" onclick="Rune.Tickets.collection();">Tickets</a>
                 <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.logout();">Logout</a>
             <?php else: ?>
                 <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.show();">Login</a>
