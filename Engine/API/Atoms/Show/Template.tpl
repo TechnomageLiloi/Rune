@@ -4,6 +4,8 @@
         <?php echo $entity->getSeeds(); ?>
     </div>
 
+    <hr/>
+
     <h1 class="wrap-title">
         <?php echo $entity->getTitle(); ?>
     </h1>
@@ -15,8 +17,6 @@
             <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.create();">Create child</a>
         </div>
     <?php endif; ?>
-
-    <hr/>
 
     <?php echo $entity->parseProgram(); ?>
 

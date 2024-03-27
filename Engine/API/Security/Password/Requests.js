@@ -4,7 +4,7 @@ Rune.Security.Password = {
         API.request('Rune.Security.Password.Show', {
 
         }, function (data) {
-            $('body').html(data.render);
+            $('#page').html(data.render);
         }, function () {
 
         });

@@ -105,7 +105,7 @@ class Entity extends AbstractEntity
             else
             {
                 $seed = sprintf(
-                    '<a href="%s">%s</a>',
+                    '<a href="%s" class="butn">%s</a>',
                     Manager::ATOMtoURL($rid_seed),
                     ucfirst(str_replace('-', ' ', end($rid)))
                 );
@@ -120,34 +120,6 @@ class Entity extends AbstractEntity
 
     public function getTile(): string
     {
-        $type = $this->getType();
-
-        if($type == Types::LINK)
-        {
-            return sprintf('<a target="_blank" href="%s">%s</a> &diams; ', $this->getDataElement('link'), $this->getTitle())
-                . sprintf('<a href="%s">Show Atom</a>', $this->getUrl());
-        }
-
-        if($type == Types::ARCHIVE)
-        {
-            return sprintf('<a target="_blank" href="%s">%s</a> &diams; ', $this->getDataElement('global'), $this->getTitle())
-                . sprintf('<a href="%s">Show Atom</a>', $this->getUrl());
-        }
-
-        if($type == Types::GOOGLE_DOCUMENT)
-        {
-            $token = $this->getDataElement('token');
-            return sprintf('%s (<a target="_blank" href="http://docs.google.com/document/d/%s/export?format=pdf">PDF</a>/<a target="_blank" href="http://docs.google.com/document/d/%s/export?format=epub">ePub</a>) &diams; ', $this->getTitle(), $token, $token)
-                . sprintf('<a href="%s">Show Atom</a>', $this->getUrl());
-        }
-
-        if($type == Types::GOOGLE_SPREADSHEET)
-        {
-            $token = $this->getDataElement('token');
-            return sprintf('%s (<a target="_blank" href="http://docs.google.com/spreadsheets/d/%s/export?format=pdf">PDF</a>/<a target="_blank" href="http://docs.google.com/spreadsheets/d/%s/export?format=xlsx">XLSX</a>) &diams; ', $this->getTitle(), $token, $token)
-                . sprintf('<a href="%s">Show Atom</a>', $this->getUrl());
-        }
-
         return sprintf('<a href="%s">%s</a>', $this->getUrl(), $this->getTitle());
     }
 }
