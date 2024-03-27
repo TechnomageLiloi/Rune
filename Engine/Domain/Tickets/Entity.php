@@ -18,6 +18,9 @@ use Liloi\Tools\Entity as AbstractEntity;
  *
  * @method string getPower()
  * @method void setPower(string $value)
+ *
+ * @method string getStatus()
+ * @method void setStatus(string $value)
  */
 class Entity extends AbstractEntity
 {
@@ -65,24 +68,6 @@ class Entity extends AbstractEntity
     public function remove(): void
     {
         Manager::remove($this);
-    }
-
-    public function getStatus(): int
-    {
-        $start = $this->getStart();
-        $finish = $this->getFinish();
-
-        if($start === Manager::TIME_TODO && $finish === Manager::TIME_TODO)
-        {
-            return Statuses::TODO;
-        }
-
-        if($start !== Manager::TIME_TODO && $finish === Manager::TIME_TODO)
-        {
-            return Statuses::IN_HAND;
-        }
-
-        return Statuses::SUCCESS;
     }
 
     public function getStatusTitle(): string

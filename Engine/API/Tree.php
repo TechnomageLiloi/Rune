@@ -31,6 +31,11 @@ class Tree
         {
             $manager = new Manager();
 
+            $manager->add(new Method('TARDIS.Tickets.Create', '\Liloi\Rune\API\Tickets\Create\Method::execute'));
+            $manager->add(new Method('TARDIS.Tickets.Remove', '\Liloi\Rune\API\Tickets\Remove\Method::execute'));
+            $manager->add(new Method('TARDIS.Tickets.Edit', '\Liloi\Rune\API\Tickets\Edit\Method::execute'));
+            $manager->add(new Method('TARDIS.Tickets.Save', '\Liloi\Rune\API\Tickets\Save\Method::execute'));
+
             $manager->add(new Method('Exams.Questions.Collection', '\Liloi\Rune\API\Questions\Collection\Method::execute'));
             $manager->add(new Method('Exams.Questions.Create', '\Liloi\Rune\API\Questions\Create\Method::execute'));
             $manager->add(new Method('Exams.Questions.Remove', '\Liloi\Rune\API\Questions\Remove\Method::execute'));

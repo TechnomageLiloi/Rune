@@ -86,14 +86,16 @@ class Manager extends DomainManager
     /**
      * Create problem in database.
      */
-    public static function create(): Entity
+    public static function create(string $key_atom): Entity
     {
         $name = self::getTableName();
         $data = [
+            'key_atom' => $key_atom,
             'title' => '-',
             'start' => date('Y-m-d H:i:s'),
             'finish' => self::TIME_TODO,
-            'power' => self::POWER
+            'power' => self::POWER,
+            'status' => Statuses::TODO
         ];
 
         self::getAdapter()->insert($name, $data);

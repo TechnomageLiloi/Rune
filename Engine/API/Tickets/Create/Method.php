@@ -4,6 +4,7 @@ namespace Liloi\Rune\API\Tickets\Create;
 
 use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
+use Liloi\Rune\Domain\Atoms\Manager as AtomsManager;
 use Liloi\Rune\Domain\Tickets\Manager;
 
 /**
@@ -14,7 +15,9 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-        Manager::create();
+        $URL = $_SERVER['REQUEST_URI'];
+        $keyAtom = AtomsManager::URLtoATOM($URL);
+        Manager::create($keyAtom);
         return new Response();
     }
 }
