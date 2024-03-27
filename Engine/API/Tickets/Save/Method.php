@@ -21,6 +21,7 @@ class Method extends SuperMethod
         $entity->setPower(self::getParameter('power'));
         $entity->setStart(self::getParameter('start'));
         $entity->setFinish(self::getParameter('finish'));
+        $entity->setStatus(self::getParameter('status'));
 
         $entity->save();
 
