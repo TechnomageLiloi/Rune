@@ -20,7 +20,7 @@
     </head>
     <body>
         <div id="head">
-            <!--<a href="javascript:void(0)" class="butn" onclick="TARDIS.Plan.show();">Dissertation</a>-->
+            <a href="javascript:void(0)" class="butn" onclick="">Login</a>
         </div>
         <div id="page">
             <script>

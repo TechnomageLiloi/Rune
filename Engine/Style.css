@@ -1,4 +1,10 @@
+html {
+  height: 100%;
+}
 body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
   font-family: monospace;
 }
 body a {
@@ -6,9 +12,13 @@ body a {
   color: red;
 }
 body #head {
-  padding: 5px;
+  padding: 10px;
   text-align: center;
   background-color: #ffffd0;
+}
+body #page {
+  background-color: white;
+  padding: 10px;
 }
 body a.butn {
   border: red 1px solid;
