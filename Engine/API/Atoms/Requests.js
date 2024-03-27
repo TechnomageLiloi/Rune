@@ -40,7 +40,7 @@ Rune.Atoms = {
         API.request('Rune.Atoms.Show', {
 
         }, function (data) {
-            $('body').html(data.render);
+            $('#page').html(data.render);
         }, function () {
 
         });
