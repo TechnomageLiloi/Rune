@@ -5,3 +5,12 @@ create table rune_config
     constraint rune_config_pk
         primary key (key_config)
 );
+
+create table rune_atoms
+(
+    key_atom varchar(250) not null,
+    title varchar(250) not null,
+    summary text not null,
+    constraint rune_atoms_pk
+        primary key (key_atom)
+);
