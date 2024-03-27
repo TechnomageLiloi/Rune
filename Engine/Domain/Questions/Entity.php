@@ -42,6 +42,16 @@ class Entity extends AbstractEntity
         return $this->getField('key_question');
     }
 
+    public function getKeyAtom(): string
+    {
+        return $this->getField('key_atom');
+    }
+
+    public function setKeyAtom(string $key_atom): void
+    {
+        $this->setField('key_atom', $key_atom);
+    }
+
     public function getTypeTitle(): string
     {
         return Types::$list[$this->getType()];
