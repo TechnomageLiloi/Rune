@@ -1,11 +1,11 @@
-<link href="/vendor/technomage-liloi/rune/Engine/API/Atoms/Edit/Template.css" rel="stylesheet" />
+<link href="<?php echo ROOT_URL; ?>/Engine/API/Atoms/Edit/Template.css" rel="stylesheet" />
 
 <div id="game-maps-edit">
     <a href="javascript:void(0)" onclick="Rune.Atoms.save('<?php echo $entity->getKey(); ?>');">Save</a>
     <a href="javascript:void(0)" onclick="Rune.Atoms.show();">Cancel</a>
     <hr/>
     <table>
-        <tr><td>Title</td><td><input type="text" name="title" value="<?php echo $entity->getTitle(); ?>" /></td></tr>
+        <tr><td style="width: 10%;">Title</td><td><input type="text" name="title" value="<?php echo $entity->getTitle(); ?>" /></td></tr>
 
         <tr><td>Status</td><td>
             <select name="status">

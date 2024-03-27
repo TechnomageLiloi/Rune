@@ -4,6 +4,10 @@
 #atoms-show .seeds {
   text-align: center;
 }
+#atoms-show .wrap-buttons {
+  text-align: center;
+  padding: 5px;
+}
 #atoms-show table {
   width: 100%;
 }
