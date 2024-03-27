@@ -15,6 +15,7 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
+        self::accessCheck();
         $URL = $_SERVER['REQUEST_URI'];
         $keyAtom = AtomsManager::URLtoATOM($URL);
         Manager::create($keyAtom);

@@ -15,6 +15,7 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
+        self::accessCheck();
         $keyTicket = self::getParameter('key_ticket');
         $entity = Manager::load($keyTicket);
 

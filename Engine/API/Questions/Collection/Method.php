@@ -11,6 +11,7 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
+        self::accessCheck();
         $name = SuitesManager::linkToName($_SERVER['REQUEST_URI']);
         $suite = SuitesManager::load($name);
         $subsuites = SuitesManager::loadSubsuites($name);

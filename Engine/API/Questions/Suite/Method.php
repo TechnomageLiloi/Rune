@@ -11,6 +11,7 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
+        self::accessCheck();
         $tags = self::getParameter('tags');
         $collection = Manager::loadByTags($tags);
 
