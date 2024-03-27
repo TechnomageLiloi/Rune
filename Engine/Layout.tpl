@@ -22,7 +22,12 @@
     </head>
     <body>
         <div id="head">
-            <a href="javascript:void(0)" class="butn" onclick="">Login</a>
+            <a href="javascript:void(0)" class="butn" onclick="location.reload();">Reload</a>
+            <?php if($admin): ?>
+                <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.logout();">Logout</a>
+            <?php else: ?>
+                <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.show();">Login</a>
+            <?php endif; ?>
         </div>
         <div id="page">
             <script>
