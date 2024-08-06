@@ -11,7 +11,7 @@
         "technomage-liloi/rune-framework": "dev-main",
         "technomage-liloi/rune-tools": "dev-main",
         "technomage-liloi/rune-dump": "dev-main",
-        "tec/drive/b/Runehnomage-liloi/stylo": "dev-main",
+        "technomage-liloi/stylo": "dev-main",
         "technomage-liloi/holocron": "dev-main",
         "ext-json": "*",
         "ext-mysqli": "*"
