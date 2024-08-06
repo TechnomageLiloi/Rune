@@ -47,8 +47,6 @@ class Entity extends AbstractEntity
 
         $seeds = [];
 
-
-
         while(count($rid) > 0)
         {
             $rid_seed = implode(':', $rid);

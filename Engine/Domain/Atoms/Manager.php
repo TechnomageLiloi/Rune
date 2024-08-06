@@ -121,16 +121,12 @@ class Manager extends DomainManager
 
     public static function URLtoATOM(string $URL): string
     {
-        $parts = 'rune';
-
-        if($URL === '/')
+        if($URL === '/' || $URL === '/rune')
         {
-            return $parts;
+            return 'rune';
         }
 
-        $parts .= str_replace('/', ':', rtrim($URL, '/'));
-
-        return $parts;
+        return str_replace('/', ':', trim($URL, '/'));
     }
 
     public static function ATOMtoURL(string $keyAtom): string

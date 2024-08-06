@@ -14,6 +14,7 @@ class Method extends SuperMethod
         $accessAdmin = self::accessGet();
 
         $RID = AtomsManager::URLtoATOM($_SERVER['REQUEST_URI']);
+
         $entity = AtomsManager::load($RID, !$accessAdmin);
         $children = AtomsManager::loadFiles($RID, !$accessAdmin);
 
