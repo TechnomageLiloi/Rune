@@ -18,6 +18,7 @@
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Wiki/Requests.js"></script>
 
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Teacher/Requests.js"></script>
+        <script src="<?php echo ROOT_URL; ?>/Engine/API/Atoms/Requests.js"></script>
 
         <title>Rune - <?php echo date('Y-m-d H:i:s'); ?> - <?php echo date('Y-W'); ?></title>
     </head>
@@ -25,6 +26,9 @@
         <div id="head">
             <a href="javascript:void(0)" class="butn" onclick="Rune.Teacher.show();">Teacher</a>
             &diams;
+            <a href="/" class="butn" >Root</a>
+            <a href="javascript:void(0)" class="butn" onclick="Rune.Wiki.show();">Refresh</a>
+            <a href="javascript:void(0)" class="butn" onclick="Rune.Atoms.edit();">Edit</a>
         </div>
 
         <div id="page">

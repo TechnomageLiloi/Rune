@@ -34,6 +34,9 @@ class Tree
             $manager->add(new Method('Rune.Teacher.Show', '\Liloi\Rune\API\Teacher\Show\Method::execute'));
             $manager->add(new Method('Rune.Teacher.Save', '\Liloi\Rune\API\Teacher\Save\Method::execute'));
 
+            $manager->add(new Method('Rune.Atoms.Edit', '\Liloi\Rune\API\Atoms\Edit\Method::execute'));
+            $manager->add(new Method('Rune.Atoms.Save', '\Liloi\Rune\API\Atoms\Save\Method::execute'));
+
             $manager->add(new Method('Rune.Wiki.Show', '\Liloi\Rune\API\Wiki\Show\Method::execute'));
 
             self::$instance = new self($manager);
