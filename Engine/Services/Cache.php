@@ -25,10 +25,10 @@ class Cache
             return;
         }
 
-        if(!Security::check())
-        {
-            return;
-        }
+//        if(!Security::check())
+//        {
+//            return;
+//        }
 
         $fil = self::keyToFilename($key);
 
@@ -49,10 +49,10 @@ class Cache
             throw new AccessException();
         }
 
-        if(!Security::check())
-        {
-            throw new AccessException();
-        }
+//        if(!Security::check())
+//        {
+//            throw new AccessException();
+//        }
 
         $fil = self::keyToFilename($key);
 
@@ -71,10 +71,10 @@ class Cache
             return false;
         }
 
-        if(!Security::check())
-        {
-            return false;
-        }
+//        if(!Security::check())
+//        {
+//            return false;
+//        }
 
         $fil = self::keyToFilename($key);
         return file_exists($fil);
