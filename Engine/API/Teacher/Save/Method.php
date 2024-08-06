@@ -12,7 +12,7 @@ class Method extends SuperMethod
 
     public static function execute(): Response
     {
-        self::accessCheck();
+//        self::accessCheck();
         Cache::set(self::KEY, ['words' => self::getParameter('words')]);
         return new Response();
     }

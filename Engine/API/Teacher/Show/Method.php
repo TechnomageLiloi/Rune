@@ -13,7 +13,7 @@ class Method extends SuperMethod
 
     public static function execute(): Response
     {
-        self::accessCheck();
+//        self::accessCheck();
         $words = Cache::exists(self::KEY) ? Cache::get(self::KEY)['words'] : '-';
 
         $response = new Response();
