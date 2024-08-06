@@ -50,8 +50,8 @@ class Manager extends DomainManager
 
         if(!$row)
         {
-            throw new IncorrectException();
-            //return self::create($rid);
+//            throw new IncorrectException();
+            return self::create($RID);
         }
 
         return Entity::create($row);
@@ -107,7 +107,8 @@ class Manager extends DomainManager
             'rid' => $RID,
             'title' => $RID,
             'program' => '// ' . $RID,
-            'status' => Statuses::CLOSED
+            'status' => Statuses::CLOSED,
+            'data' => '{}'
         ];
 
         self::getAdapter()->insert($name, $data);
@@ -120,7 +121,16 @@ class Manager extends DomainManager
 
     public static function URLtoATOM(string $URL): string
     {
-        return str_replace('/', ':', trim($URL, '/')) ?: 'rune';
+        $parts = 'rune';
+
+        if($URL === '/')
+        {
+            return $parts;
+        }
+
+        $parts .= str_replace('/', ':', rtrim($URL, '/'));
+
+        return $parts;
     }
 
     public static function ATOMtoURL(string $keyAtom): string

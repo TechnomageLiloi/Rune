@@ -9,6 +9,7 @@ use Liloi\Rune\Security;
 
 class Cache
 {
+    private const ENABLED = false;
     public const CACHE_DIR = ROOT_DIR . '/Cache';
 
     private static function keyToFilename(string $key, bool $block = false): string
@@ -19,6 +20,11 @@ class Cache
 
     public static function set(string $key, array $data): void
     {
+        if(!self::ENABLED)
+        {
+            return;
+        }
+
         if(!Security::check())
         {
             return;
@@ -38,6 +44,11 @@ class Cache
 
     public static function get(string $key): array
     {
+        if(!self::ENABLED)
+        {
+            throw new AccessException();
+        }
+
         if(!Security::check())
         {
             throw new AccessException();
@@ -55,6 +66,11 @@ class Cache
 
     public static function exists(string $key): bool
     {
+        if(!self::ENABLED)
+        {
+            return false;
+        }
+
         if(!Security::check())
         {
             return false;
