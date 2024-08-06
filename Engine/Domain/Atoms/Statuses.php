@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\Rune\Domain\Nodes;
+namespace Liloi\Rune\Domain\Atoms;
 
 class Statuses
 {

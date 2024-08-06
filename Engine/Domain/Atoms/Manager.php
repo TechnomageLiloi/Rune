@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\Rune\Domain\Nodes;
+namespace Liloi\Rune\Domain\Atoms;
 
 use Liloi\Rune\Domain\Manager as DomainManager;
 use Liloi\Rune\Exceptions\IncorrectException;
@@ -120,12 +120,12 @@ class Manager extends DomainManager
 
     public static function URLtoATOM(string $URL): string
     {
-        return str_replace('/', ':', trim($URL, '/')) ?: 'root';
+        return str_replace('/', ':', trim($URL, '/')) ?: 'rune';
     }
 
     public static function ATOMtoURL(string $keyAtom): string
     {
-        if($keyAtom === 'root')
+        if($keyAtom === 'rune')
         {
             return '/';
         }

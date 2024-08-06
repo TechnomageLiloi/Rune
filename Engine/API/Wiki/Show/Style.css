@@ -1,0 +1,12 @@
+#wiki-show h1.header {
+  text-align: center;
+}
+#wiki-show table {
+  width: 100%;
+}
+#wiki-show table th {
+  text-align: left;
+}
+#wiki-show .seeds {
+  text-align: center;
+}

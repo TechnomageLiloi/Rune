@@ -15,6 +15,7 @@
 
         <script src="<?php echo ROOT_URL; ?>/Engine/Bootstrap.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Requests.js"></script>
+        <script src="<?php echo ROOT_URL; ?>/Engine/API/Wiki/Requests.js"></script>
 
         <title>Rune - <?php echo date('Y-m-d H:i:s'); ?> - <?php echo date('Y-W'); ?></title>
     </head>
@@ -25,7 +26,7 @@
 
         <div id="page">
             <script>
-
+                Rune.Wiki.show();
             </script>
         </div>
     </body>

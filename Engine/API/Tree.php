@@ -31,6 +31,8 @@ class Tree
         {
             $manager = new Manager();
 
+            $manager->add(new Method('Rune.Wiki.Show', '\Liloi\Rune\API\Wiki\Show\Method::execute'));
+
             self::$instance = new self($manager);
         }
 
