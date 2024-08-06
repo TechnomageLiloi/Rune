@@ -17,11 +17,14 @@
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Requests.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Wiki/Requests.js"></script>
 
+        <script src="<?php echo ROOT_URL; ?>/Engine/API/Teacher/Requests.js"></script>
+
         <title>Rune - <?php echo date('Y-m-d H:i:s'); ?> - <?php echo date('Y-W'); ?></title>
     </head>
     <body>
         <div id="head">
-
+            <a href="javascript:void(0)" class="butn" onclick="Rune.Teacher.show();">Teacher</a>
+            &diams;
         </div>
 
         <div id="page">

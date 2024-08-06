@@ -9,7 +9,7 @@ use Liloi\Rune\Security;
 
 class Cache
 {
-    private const ENABLED = false;
+    private const ENABLED = true;
     public const CACHE_DIR = ROOT_DIR . '/Cache';
 
     private static function keyToFilename(string $key, bool $block = false): string

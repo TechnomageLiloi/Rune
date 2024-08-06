@@ -1,0 +1,13 @@
+#teacher-show table {
+  width: 100%;
+}
+#teacher-show table td {
+  text-align: left;
+  vertical-align: top;
+  width: 50%;
+}
+#teacher-show table textarea {
+  width: 100%;
+  height: 500px;
+  border: none;
+}
