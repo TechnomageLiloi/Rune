@@ -15,8 +15,8 @@ class Method extends SuperMethod
 
         $RID = AtomsManager::URLtoATOM($_SERVER['REQUEST_URI']);
 
-        $entity = AtomsManager::load($RID, !$accessAdmin);
-        $children = AtomsManager::loadFiles($RID, !$accessAdmin);
+        $entity = AtomsManager::load($RID);
+        $children = AtomsManager::loadFiles($RID);
 
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
