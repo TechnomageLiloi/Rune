@@ -9,6 +9,8 @@ create table rune
 		primary key (rid)
 );
 
+INSERT INTO rune (rid, title, program, status, data) VALUES ('rune', 'Root', '[]', DEFAULT, '{}');
+
 create table rune_logs
 (
 	key_log bigint unsigned auto_increment,
