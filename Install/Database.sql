@@ -5,11 +5,12 @@ create table rune
 	program text not null,
 	status tinyint unsigned default 1 not null,
 	data json not null,
+	teacher text not null,
 	constraint rune_pk
 		primary key (rid)
 );
 
-INSERT INTO rune (rid, title, program, status, data) VALUES ('rune', 'Root', '[]', DEFAULT, '{}');
+INSERT INTO rune (rid, title, program, status, data, teacher) VALUES ('rune', 'Root', '[]', DEFAULT, '{}', '-');
 
 create table rune_logs
 (
