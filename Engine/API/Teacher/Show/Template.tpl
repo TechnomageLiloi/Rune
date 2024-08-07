@@ -10,7 +10,7 @@
                 <hr>
                 <a href="javascript:void(0)" class="butn" onclick="Rune.Teacher.save();">Save words</a>
                 <hr>
-                <textarea><?php echo $words; ?></textarea>
+                <textarea><?php echo $entity->getTeacher(); ?></textarea>
             </td>
         </tr>
     </table>
