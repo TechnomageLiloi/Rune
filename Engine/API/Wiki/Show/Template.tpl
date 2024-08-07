@@ -3,23 +3,26 @@
 <div id="wiki-show">
     <div class="seeds">
         <?php echo $entity->getSeeds(); ?>
-        <?php $drive = $entity->getDataElement('drive'); ?>
-        <?php if($access && $drive): ?>
-            <br/>
-            Drive: <a target="_blank" href="<?php echo $drive; ?>"><?php echo $drive; ?></a>
-        <?php endif; ?>
     </div>
     <h1 class="header">
         <?php echo $entity->getTitle(); ?>
     </h1>
     <hr/>
     <?php echo $entity->parseProgram(); ?>
+
+    <?php $drive = $entity->getDataElement('drive'); ?>
+    <?php if($drive): ?>
+        <hr/>
+        <h3>Drive</h3>
+        &diams; <a target="_blank" href="<?php echo $drive; ?>"><?php echo $drive; ?></a>
+    <?php endif; ?>
+
     <?php if($children->count()): ?>
         <hr/>
-        <h3>Wiki Links</h3>
+        <h3>Sub-nodes</h3>
         <table class="tree">
             <?php foreach($children as $child): ?>
-            &diams; <a href="<?php echo $child->getPath(); ?>"><?php echo $child->getTitle(); ?></a>
+                &diams; <a href="<?php echo $child->getPath(); ?>"><?php echo $child->getTitle(); ?></a><br/>
             <?php endforeach; ?>
         </table>
     <?php endif; ?>
