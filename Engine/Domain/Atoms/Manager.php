@@ -137,7 +137,7 @@ class Manager extends DomainManager
     {
         if($keyAtom === 'rune')
         {
-            return '/';
+            return '/rune';
         }
 
         return '/' . str_replace(':', '/', $keyAtom);
