@@ -1,10 +1,12 @@
 #teacher-show table {
   width: 100%;
 }
+#teacher-show table td:first-child {
+  width: 20%;
+}
 #teacher-show table td {
   text-align: left;
   vertical-align: top;
-  width: 50%;
 }
 #teacher-show table textarea {
   width: 100%;

@@ -3,7 +3,7 @@
     <table>
         <tr>
             <td>
-                <img src="/private/Teacher.jpg">
+                <img src="/Teacher.jpg">
             </td>
             <td>
                 <h1>Teacher</h1>
