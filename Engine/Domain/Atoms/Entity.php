@@ -105,4 +105,15 @@ class Entity extends AbstractEntity
 
         return $data[$key];
     }
+
+    public function getPhotoOfTeacher(): string
+    {
+        $photo = $this->getDataElement('teacher');
+        if(!$photo)
+        {
+            $photo = 'Unknown';
+        }
+
+        return sprintf('/Teachers/%s.jpg', $photo);
+    }
 }

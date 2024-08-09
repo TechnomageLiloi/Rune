@@ -3,7 +3,7 @@
     <table>
         <tr>
             <td>
-                <img src="/Teacher.jpg">
+                <img src="<?php echo $entity->getPhotoOfTeacher(); ?>">
             </td>
             <td>
                 <h1>Teacher</h1>

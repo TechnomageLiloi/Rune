@@ -4,6 +4,9 @@
 #teacher-show table td:first-child {
   width: 20%;
 }
+#teacher-show table td:first-child img {
+  max-width: 400px;
+}
 #teacher-show table td {
   text-align: left;
   vertical-align: top;
