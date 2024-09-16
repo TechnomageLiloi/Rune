@@ -61,6 +61,8 @@ create table rune_quests
         primary key (key_quest)
 );
 
+INSERT INTO rune_quests (summary, data) VALUES ('First quest', '{}');
+
 create table rune_quests_tickets
 (
     key_ticket timestamp not null,
