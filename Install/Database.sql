@@ -32,9 +32,23 @@ create table rune_config
 
 create table rune_diary_road
 (
-    key_step timestamp not null,
+    key_step date not null,
     summary text null,
     data json not null,
     constraint rune_road_pk
         primary key (key_step)
 );
+
+create table rune_diary_jobs
+(
+    key_job time not null,
+    key_step date not null,
+    title varchar(100) not null,
+    type tinyint unsigned default 1 not null,
+    constraint rune_diary_jobs_pk
+        primary key (key_job, key_step),
+    constraint rune_diary_jobs_rune_diary_road_key_step_fk
+        foreign key (key_step) references rune_diary_road (key_step)
+            on update cascade on delete cascade
+);
+
