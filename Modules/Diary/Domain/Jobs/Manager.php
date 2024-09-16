@@ -87,7 +87,7 @@ class Manager extends DomainManager
         $data = $entity->get();
 //        unset($data['key_job']);
 
-        self::update($name, $data, sprintf('key_job="%s"', $entity->getKey()));
+        self::update($name, $data, sprintf('key_job="%s" and key_step="%s"', $entity->getKey(), $data['key_step']));
     }
 
     /**
