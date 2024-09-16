@@ -30,12 +30,11 @@
             <?php else: ?>
                 <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.show();">Login</a>
             <?php endif; ?>
-
         </div>
 
         <div id="page" class="stylo">
             <script>
-                Rune.Wiki.show();
+
             </script>
         </div>
     </body>

@@ -5,7 +5,7 @@ namespace Liloi\Rune\API;
 use Liloi\API\Manager;
 use Liloi\API\Method;
 use Liloi\Rune\API\Method as RuneMethod;
-//use Liloi\Rune\Modules\Modules;
+use Liloi\Rune\Modules\Modules;
 
 /**
  * @inheritDoc
@@ -32,7 +32,7 @@ class Tree
         {
             $manager = new Manager();
 
-            //$manager = Modules::collect($manager);
+            $manager = Modules::collect($manager);
 
             self::$instance = new self($manager);
         }
