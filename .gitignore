@@ -1,3 +1,5 @@
 /.htpasswd
 /vendor/
 /composer.lock
+/ToDo.md
+/Pool/
