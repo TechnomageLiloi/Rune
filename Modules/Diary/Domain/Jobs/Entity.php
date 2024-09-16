@@ -2,6 +2,7 @@
 
 namespace Liloi\Rune\Modules\Diary\Domain\Jobs;
 
+use Liloi\Stylo\Parser;
 use Liloi\Tools\Entity as AbstractEntity;
 
 /**
@@ -21,6 +22,11 @@ class Entity extends AbstractEntity
     public function save(): void
     {
         Manager::save($this);
+    }
+
+    public function parse(): string
+    {
+        return Parser::parseString($this->getTitle());
     }
 
     public function getTimestamp(): string

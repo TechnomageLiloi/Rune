@@ -1,6 +1,13 @@
 #modules-road-show {
   padding: 10px;
 }
-#modules-road-show table tr {
+#modules-road-show table {
+  width: 100%;
   text-align: left;
+}
+#modules-road-show table td {
+  vertical-align: top;
+}
+#modules-road-show table p {
+  margin: 0;
 }

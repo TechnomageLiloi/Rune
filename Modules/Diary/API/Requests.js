@@ -63,9 +63,9 @@ Rune.Diary = {
             });
         },
 
-        edit: function (key_step) {
+        edit: function (key_job) {
             API.request('Rune.Diary.Jobs.Edit', {
-                key_step: key_step
+                key_job: key_job
             }, function (data) {
                 const wrap = $('#page');
                 wrap.html(data.render);
@@ -75,18 +75,18 @@ Rune.Diary = {
             });
         },
 
-        save: function (key_step) {
+        save: function (key_job) {
             if (!confirm('Are you sure?')) {
                 return;
             }
 
             const jq_block = $('#application-diary-edit');
             API.request('Rune.Diary.Jobs.Save', {
-                key_step: key_step,
-                data: jq_block.find('[name=data]').val(),
-                summary: jq_block.find('[name=summary]').val()
+                key_job: key_job,
+                title: jq_block.find('[name=title]').val(),
+                type: jq_block.find('[name=type]').val()
             }, function (data) {
-                Rune.Diary.Jobs.show();
+                Rune.Diary.Road.show();
             }, function () {
 
             });
