@@ -67,10 +67,7 @@ class Manager extends DomainManager
     {
         $name = self::getTableName();
 
-        $row = self::getAdapter()->getRow(sprintf(
-            'select * from %s order by key_step desc limit 1;',
-            $name
-        ));
+        $row = self::getAdapter()->getRow(sprintf('select * from %s order by key_step desc limit 1;', $name));
 
         return Entity::create($row);
     }
