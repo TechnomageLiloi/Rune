@@ -48,5 +48,48 @@ Rune.Diary = {
 
             });
         }
+    },
+
+    Jobs: {
+        create: function () {
+            if (!confirm('Are you sure?')) {
+                return;
+            }
+
+            API.request('Rune.Diary.Jobs.Create', {}, function (data) {
+                Rune.Diary.Jobs.search();
+            }, function () {
+
+            });
+        },
+
+        edit: function (key_step) {
+            API.request('Rune.Diary.Jobs.Edit', {
+                key_step: key_step
+            }, function (data) {
+                const wrap = $('#page');
+                wrap.html(data.render);
+                wrap.show();
+            }, function () {
+
+            });
+        },
+
+        save: function (key_step) {
+            if (!confirm('Are you sure?')) {
+                return;
+            }
+
+            const jq_block = $('#application-diary-edit');
+            API.request('Rune.Diary.Jobs.Save', {
+                key_step: key_step,
+                data: jq_block.find('[name=data]').val(),
+                summary: jq_block.find('[name=summary]').val()
+            }, function (data) {
+                Rune.Diary.Jobs.show();
+            }, function () {
+
+            });
+        }
     }
 }

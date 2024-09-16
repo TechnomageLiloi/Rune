@@ -38,16 +38,17 @@ class Manager extends DomainManager
     /**
      * Load day by key.
      *
-     * @param string $keyStep
+     * @param string $keyJob
+     * @param string $keyRoad
      * @return Entity
      */
-    public static function load(string $keyStep): Entity
+    public static function load(string $keyJob, string $keyRoad): Entity
     {
         $name = self::getTableName();
 
         $row = self::getAdapter()->getRow(sprintf(
-            'select * from %s where key_job="%s";',
-            $name, $keyStep
+            'select * from %s where key_step="%s" and key_job="%s";',
+            $name, $keyRoad, $keyJob
         ));
 
         if(!$row)
