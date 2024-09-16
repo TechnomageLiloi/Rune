@@ -57,7 +57,7 @@ Rune.Diary = {
             }
 
             API.request('Rune.Diary.Jobs.Create', {}, function (data) {
-                Rune.Diary.Jobs.search();
+                Rune.Diary.Road.show();
             }, function () {
 
             });

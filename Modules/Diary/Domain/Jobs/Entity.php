@@ -23,7 +23,7 @@ class Entity extends AbstractEntity
         Manager::save($this);
     }
 
-    public function getStep(): string
+    public function getTimestamp(): string
     {
         return date('g:i a', strtotime($this->getKey()));
     }

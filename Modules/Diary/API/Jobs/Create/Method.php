@@ -18,7 +18,7 @@ class Method extends SuperMethod
 
         $road = RoadManager::loadCurrent();
 
-        JobsManager::create($road);
+        JobsManager::create($road->getKey());
         return new Response();
     }
 }

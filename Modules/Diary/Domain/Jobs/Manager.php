@@ -16,13 +16,13 @@ class Manager extends DomainManager
         return self::getTablePrefix() . 'diary_jobs';
     }
 
-    public static function loadCollection(): Collection
+    public static function loadCollection(string $keyStep): Collection
     {
         $name = self::getTableName();
 
         $rows = self::getAdapter()->getArray(sprintf(
-            'select * from %s order by key_job desc;',
-            $name
+            'select * from %s where key_step="%s" order by key_job desc;',
+            $name, $keyStep
         ));
 
         $collection = new Collection();
@@ -39,16 +39,16 @@ class Manager extends DomainManager
      * Load day by key.
      *
      * @param string $keyJob
-     * @param string $keyRoad
+     * @param string $keyStep
      * @return Entity
      */
-    public static function load(string $keyJob, string $keyRoad): Entity
+    public static function load(string $keyStep, string $keyJob): Entity
     {
         $name = self::getTableName();
 
         $row = self::getAdapter()->getRow(sprintf(
             'select * from %s where key_step="%s" and key_job="%s";',
-            $name, $keyRoad, $keyJob
+            $name, $keyStep, $keyJob
         ));
 
         if(!$row)
