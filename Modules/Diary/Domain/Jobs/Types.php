@@ -7,23 +7,23 @@ namespace Liloi\Rune\Modules\Diary\Domain\Jobs;
  */
 class Types
 {
-    public const CODEX = 1;
-    public const BIOTECH = 2;
-    public const MENTAT = 3;
-    public const PRIOR = 4;
-    public const ARTIFACTS = 5;
-    public const PROBLEMS = 6;
-    public const DREAMS = 7;
+    public const JUDGE = 1;
+    public const SPORTSMAN = 2;
+    public const SCIENTIST = 3;
+    public const JOURNALIST = 4;
+    public const RESEARCHER = 5;
+    public const TROUBLESOLVER = 6;
+    public const FATHER = 7;
 
     // @ToDo: To more abstract level with redefine.
     static public array $list = [
-        self::CODEX => 'Codex',
-        self::BIOTECH => 'Biotech',
-        self::MENTAT => 'Mentat',
-        self::PRIOR => 'Prior',
-        self::ARTIFACTS => 'Artifacts',
-        self::PROBLEMS => 'Problems',
-        self::DREAMS => 'Dreams',
+        self::JUDGE => 'Judge',
+        self::SPORTSMAN => 'Sportsman',
+        self::SCIENTIST => 'Scientist',
+        self::JOURNALIST => 'Journalist',
+        self::RESEARCHER => 'Researcher',
+        self::TROUBLESOLVER => 'Troublesolver',
+        self::FATHER => 'Father',
     ];
 
     // @todo: move this method to more abstract level.
