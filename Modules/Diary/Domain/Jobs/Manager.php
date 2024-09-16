@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\Rune\Modules\Diary\Domain\Road;
+namespace Liloi\Rune\Modules\Diary\Domain\Jobs;
 
 use Liloi\I60\Domain\Manager as DomainManager;
 
@@ -13,7 +13,7 @@ class Manager extends DomainManager
      */
     public static function getTableName(): string
     {
-        return self::getTablePrefix() . 'diary_road';
+        return self::getTablePrefix() . 'diary_jobs';
     }
 
     public static function loadCollection(): Collection
@@ -21,7 +21,7 @@ class Manager extends DomainManager
         $name = self::getTableName();
 
         $rows = self::getAdapter()->getArray(sprintf(
-            'select * from %s order by key_step desc limit 17;',
+            'select * from %s order by key_job desc;',
             $name
         ));
 
@@ -46,7 +46,7 @@ class Manager extends DomainManager
         $name = self::getTableName();
 
         $row = self::getAdapter()->getRow(sprintf(
-            'select * from %s where key_step="%s";',
+            'select * from %s where key_job="%s";',
             $name, $keyStep
         ));
 
@@ -68,7 +68,7 @@ class Manager extends DomainManager
         $name = self::getTableName();
 
         $row = self::getAdapter()->getRow(sprintf(
-            'select * from %s order by key_step desc limit 1;',
+            'select * from %s order by key_job desc limit 1;',
             $name
         ));
 
@@ -84,20 +84,23 @@ class Manager extends DomainManager
     {
         $name = self::getTableName();
         $data = $entity->get();
-        unset($data['key_step']);
+//        unset($data['key_job']);
 
-        self::update($name, $data, sprintf('key_step="%s"', $entity->getKey()));
+        self::update($name, $data, sprintf('key_job="%s"', $entity->getKey()));
     }
 
     /**
      * Create new day.
+     * @param string $key_step
+     * @return Entity
      */
-    public static function create(): Entity
+    public static function create(string $key_step): Entity
     {
         $data = [
-            'key_step' => date('Y-m-d'),
-            'summary' => '-',
-            'data' => '{}'
+            'key_job' => date('H:i:s'),
+            'key_step' => $key_step,
+            'title' => '-',
+            'type' => Types::CODEX
         ];
 
         self::getAdapter()->insert(self::getTableName(), $data);

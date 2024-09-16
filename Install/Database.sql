@@ -30,7 +30,7 @@ create table rune_config
         primary key (key_config)
 );
 
-create table rune_road
+create table rune_diary_road
 (
     key_step timestamp not null,
     summary text null,
