@@ -29,3 +29,12 @@ create table rune_config
     constraint rune_config_pk
         primary key (key_config)
 );
+
+create table rune_road
+(
+    key_step timestamp not null,
+    summary text null,
+    data json not null,
+    constraint rune_road_pk
+        primary key (key_step)
+);
