@@ -5,23 +5,15 @@ Rune.Diary = {
                 return;
             }
 
-            API.request('I60.Road.Create', {}, function (data) {
-                I60.Road.search();
-            }, function () {
-
-            });
-        },
-
-        search: function () {
-            API.request('I60.Road.Search', {}, function (data) {
-                $('#page').html(data.render);
+            API.request('Rune.Diary.Road.Create', {}, function (data) {
+                Rune.Diary.Road.search();
             }, function () {
 
             });
         },
 
         show: function () {
-            API.request('I60.Road.Show', {}, function (data) {
+            API.request('Rune.Diary.Road.Show', {}, function (data) {
                 $('#page').html(data.render);
             }, function () {
 
@@ -29,7 +21,7 @@ Rune.Diary = {
         },
 
         edit: function (key_step) {
-            API.request('I60.Road.Edit', {
+            API.request('Rune.Diary.Road.Edit', {
                 key_step: key_step
             }, function (data) {
                 const wrap = $('#page');
@@ -46,13 +38,12 @@ Rune.Diary = {
             }
 
             const jq_block = $('#application-diary-edit');
-            API.request('I60.Road.Save', {
+            API.request('Rune.Diary.Road.Save', {
                 key_step: key_step,
                 data: jq_block.find('[name=data]').val(),
-                summary: jq_block.find('[name=summary]').val(),
-                type: jq_block.find('[name=type]').val()
+                summary: jq_block.find('[name=summary]').val()
             }, function (data) {
-                I60.Road.show();
+                Rune.Diary.Road.show();
             }, function () {
 
             });

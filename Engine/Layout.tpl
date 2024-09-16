@@ -16,16 +16,22 @@
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Requests.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Engine/Bootstrap.js"></script>
 
-        <script src="<?php echo ROOT_URL; ?>/Modules/Admin/API/Requests.js"></script>
-        <script src="<?php echo ROOT_URL; ?>/Modules/API/Requests.js"></script>
-
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Security/Password/Requests.js"></script>
+
+        <?php if($admin): ?>
+
+            <script src="<?php echo ROOT_URL; ?>/Modules/Admin/API/Requests.js"></script>
+            <script src="<?php echo ROOT_URL; ?>/Modules/Diary/API/Requests.js"></script>
+
+        <?php endif; ?>
 
         <title>Rune</title>
     </head>
     <body>
         <div id="head">
             <?php if($admin): ?>
+                <a href="javascript:void(0)" onclick="Rune.Diary.Road.show();" class="butn">Diary</a>
+                &diams;
                 <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.logout();">Logout</a>
             <?php else: ?>
                 <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.show();">Login</a>

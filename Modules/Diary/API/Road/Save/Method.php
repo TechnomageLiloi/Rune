@@ -13,11 +13,11 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
+        self::accessCheck();
         $entity = DiaryManager::load(self::getParameter('key_step'));
 
         $entity->setData(self::getParameter('data'));
         $entity->setSummary(self::getParameter('summary'));
-        $entity->setType(self::getParameter('type'));
 
         $entity->save();
 

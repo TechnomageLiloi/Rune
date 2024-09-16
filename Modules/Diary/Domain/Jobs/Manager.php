@@ -2,7 +2,7 @@
 
 namespace Liloi\Rune\Modules\Diary\Domain\Jobs;
 
-use Liloi\I60\Domain\Manager as DomainManager;
+use Liloi\Rune\Domain\Manager as DomainManager;
 
 class Manager extends DomainManager
 {

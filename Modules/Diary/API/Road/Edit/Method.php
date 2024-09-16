@@ -13,6 +13,7 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
+        self::accessCheck();
         $entity = DiaryManager::load(self::getParameter('key_step'));
 
         $response = new Response();

@@ -2,7 +2,7 @@
 
 namespace Liloi\Rune\Modules\Diary\Domain\Road;
 
-use Liloi\I60\Domain\Manager as DomainManager;
+use Liloi\Rune\Domain\Manager as DomainManager;
 
 class Manager extends DomainManager
 {
@@ -68,6 +68,11 @@ class Manager extends DomainManager
         $name = self::getTableName();
 
         $row = self::getAdapter()->getRow(sprintf('select * from %s order by key_step desc limit 1;', $name));
+
+        if(empty($row))
+        {
+            return self::create();
+        }
 
         return Entity::create($row);
     }
