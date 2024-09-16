@@ -1,1 +1,3 @@
 /.htpasswd
+/vendor/
+/composer.lock
