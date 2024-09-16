@@ -52,3 +52,24 @@ create table rune_diary_jobs
             on update cascade on delete cascade
 );
 
+create table rune_quests
+(
+    key_quest bigint unsigned auto_increment,
+    summary text null,
+    data json not null,
+    constraint rune_quests_pk
+        primary key (key_quest)
+);
+
+create table rune_quests_tickets
+(
+    key_ticket timestamp not null,
+    key_quest bigint unsigned,
+    title varchar(100) not null,
+    constraint rune_quests_tickets_pk
+        primary key (key_ticket, key_quest),
+    constraint rune_quests_tickets_rune_quests_key_quest_fk
+        foreign key (key_quest) references rune_quests (key_quest)
+            on update cascade on delete cascade
+);
+
