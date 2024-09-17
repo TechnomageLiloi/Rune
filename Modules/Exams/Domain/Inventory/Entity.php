@@ -1,18 +1,13 @@
 <?php
 
-namespace Liloi\Rune\Modules\Exams\Domain\Questions;
+namespace Liloi\Rune\Modules\Exams\Domain\Inventory;
 
 use Liloi\Tools\Entity as AbstractEntity;
 use Liloi\Stylo\Parser;
 
 /**
- * Question's entity.
- *
  * @method string getTitle()
  * @method void setTitle(string $value)
- *
- * @method string getStatus()
- * @method void setStatus(string $value)
  *
  * @method string getType()
  * @method void setType(string $value)
@@ -33,34 +28,22 @@ class Entity extends AbstractEntity
 {
     public function getKey(): string
     {
-        return $this->getField('key_question');
-    }
-
-    public function getKeyItem(): string
-    {
         return $this->getField('key_item');
     }
 
-    public function setKeyItem(string $key_item): void
+    public function getKeyAtom(): string
     {
-        $this->setField('key_item', $key_item);
+        return $this->getField('key_atom');
+    }
+
+    public function setKeyAtom(string $key_atom): void
+    {
+        $this->setField('key_atom', $key_atom);
     }
 
     public function getTypeTitle(): string
     {
         return Types::$list[$this->getType()];
-    }
-
-    public function getStatusTitle(): string
-    {
-        return Statuses::$list[$this->getStatus()];
-    }
-
-    public function getStatusClass(): string
-    {
-        // @todo: string to class
-        $status = strtolower($this->getStatusCaption());
-        return str_replace(' ', '-', $status);
     }
 
     public function getParse(): string
@@ -88,7 +71,6 @@ class Entity extends AbstractEntity
      */
     public function remove(): void
     {
-        $this->setStatus(Statuses::OBSOLETE);
         $this->save();
     }
 
