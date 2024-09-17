@@ -18,6 +18,7 @@
 
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Security/Password/Requests.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Wiki/Requests.js"></script>
+        <script src="<?php echo ROOT_URL; ?>/Engine/API/Atoms/Requests.js"></script>
 
         <?php if($admin): ?>
 
@@ -32,6 +33,8 @@
     <body>
         <div id="head">
             <?php if($admin): ?>
+                <a href="javascript:void(0)" onclick="Rune.Atoms.edit();" class="butn">Edit</a>
+                &diams;
                 <a href="javascript:void(0)" onclick="Rune.Wiki.show();" class="butn">Wiki</a>
                 &diams;
                 <a href="javascript:void(0)" onclick="Rune.Diary.Road.show();" class="butn">Diary</a>

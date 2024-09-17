@@ -68,13 +68,13 @@ class Manager extends DomainManager
         $data = $entity->get();
 
         // @todo: Get param name from const.
-        $RID = $data['rid'];
+        $RID = $data['key_atom'];
 //        unset($data['rid']);
 
         self::update(
             $name,
             $data,
-            sprintf('rid = "%s"', $RID)
+            sprintf('key_atom = "%s"', $RID)
         );
 
         Cache::remove('atoms:entity:' . $RID);
