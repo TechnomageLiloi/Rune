@@ -10,6 +10,17 @@
     <hr/>
     <?php echo $entity->parseProgram(); ?>
 
+    <?php if($artifacts->count()): ?>
+        <hr/>
+        <h3>Artifact(s)</h3>
+        <?php foreach($artifacts as $key => $entity): ?>
+        <div class="block-quest">
+            <a href="javascript:void(0)" onclick="Rune.Artifacts.edit('<?php echo $entity->getKey(); ?>');" class="butn">Edit</a>
+            <?php echo $entity->getTitle(); ?>
+        </div>
+        <?php endforeach; ?>
+    <?php endif; ?>
+
     <?php if($children->count()): ?>
         <hr/>
         <h3>Sub-nodes</h3>

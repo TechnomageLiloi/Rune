@@ -22,6 +22,8 @@
 
         <?php if($admin): ?>
 
+            <script src="<?php echo ROOT_URL; ?>/Engine/API/Artifacts/Requests.js"></script>
+
             <script src="<?php echo ROOT_URL; ?>/Modules/Admin/API/Requests.js"></script>
             <script src="<?php echo ROOT_URL; ?>/Modules/Diary/API/Requests.js"></script>
             <script src="<?php echo ROOT_URL; ?>/Modules/Quests/API/Requests.js"></script>
@@ -37,6 +39,8 @@
                 <a href="javascript:void(0)" onclick="Rune.Atoms.edit();" class="butn">Edit</a>
                 &diams;
                 <a href="javascript:void(0)" onclick="Rune.Wiki.show();" class="butn">Wiki</a>
+                &diams;
+                <a href="javascript:void(0)" onclick="Rune.Artifacts.create();" class="butn">Create new artifact</a>
                 &diams;
                 <a href="javascript:void(0)" onclick="Rune.Diary.Road.show();" class="butn">Diary</a>
                 <a href="javascript:void(0)" onclick="Rune.Quests.Quest.show();" class="butn">Quest</a>

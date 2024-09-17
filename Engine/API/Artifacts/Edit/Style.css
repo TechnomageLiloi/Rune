@@ -1,0 +1,14 @@
+/* @todo: Translate to LESS */
+#application-ticket-edit {
+  padding: 10px;
+}
+#application-ticket-edit table {
+  width: 100%;
+}
+#application-ticket-edit input,
+#application-ticket-edit textarea {
+  width: 100%;
+}
+#application-ticket-edit textarea {
+  height: 300px;
+}
