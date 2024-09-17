@@ -56,7 +56,7 @@ Rune.Quests = {
                 return;
             }
 
-            API.request('Rune.Quests.Jobs.Create', {}, function (data) {
+            API.request('Rune.Quests.Tickets.Create', {}, function (data) {
                 Rune.Quests.Quest.show();
             }, function () {
 
@@ -64,7 +64,7 @@ Rune.Quests = {
         },
 
         edit: function (key_ticket) {
-            API.request('Rune.Quests.Jobs.Edit', {
+            API.request('Rune.Quests.Tickets.Edit', {
                 key_ticket: key_ticket
             }, function (data) {
                 const wrap = $('#page');
@@ -81,7 +81,7 @@ Rune.Quests = {
             }
 
             const jq_block = $('#application-Quests-edit');
-            API.request('Rune.Quests.Jobs.Save', {
+            API.request('Rune.Quests.Tickets.Save', {
                 key_ticket: key_ticket,
                 title: jq_block.find('[name=title]').val()
             }, function (data) {

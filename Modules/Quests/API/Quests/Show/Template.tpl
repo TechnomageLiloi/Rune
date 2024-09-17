@@ -32,7 +32,7 @@
                 <td><?php echo $ticket->getTimestamp(); ?></td>
                 <td><?php echo $ticket->parse(); ?></td>
                 <td>
-                    <a href="javascript:void(0)" class="butn" onclick="Rune.Quests.Jobs.edit('<?php echo $ticket->getKey(); ?>');">Edit</a>
+                    <a href="javascript:void(0)" class="butn" onclick="Rune.Quests.Tickets.edit('<?php echo $ticket->getKey(); ?>');">Edit</a>
                 </td>
             </tr>
         <?php endforeach; ?>
