@@ -91,3 +91,31 @@ create table rune_artifacts
         foreign key (key_atom) references rune_atoms(key_atom)
             on update cascade on delete cascade
 );
+
+CREATE TABLE `rune_inventory` (
+    key_item bigint unsigned auto_increment,
+    `key_atom` varchar(250) not null,
+    `title` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL,
+    `type` tinyint(3) unsigned NOT NULL,
+    `program` json NOT NULL,
+    `dt` timestamp NOT NULL,
+    data json not null,
+    PRIMARY KEY (key_item),
+    foreign key (key_atom) references rune_atoms (key_atom)
+      on update cascade on delete cascade
+);
+
+CREATE TABLE `rune_questions` (
+    `key_question` timestamp NOT NULL,
+    `key_item` bigint unsigned not null,
+    `title` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL,
+    `status` tinyint(3) unsigned NOT NULL DEFAULT '1',
+    `type` tinyint(3) unsigned NOT NULL,
+    `program` json NOT NULL,
+    `theory` text COLLATE utf8mb4_unicode_ci NOT NULL,
+    `tags` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+    `dt` timestamp NOT NULL,
+    PRIMARY KEY (`key_question`),
+    foreign key (key_item) references rune_inventory (key_item)
+      on update cascade on delete cascade
+);
