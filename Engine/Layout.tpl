@@ -32,6 +32,8 @@
     <body>
         <div id="head">
             <?php if($admin): ?>
+                <a href="javascript:void(0)" onclick="Rune.Wiki.show();" class="butn">Wiki</a>
+                &diams;
                 <a href="javascript:void(0)" onclick="Rune.Diary.Road.show();" class="butn">Diary</a>
                 <a href="javascript:void(0)" onclick="Rune.Quests.Quest.show();" class="butn">Quest</a>
                 &diams;
@@ -43,7 +45,10 @@
 
         <div id="page" class="stylo">
             <script>
-                Rune.Wiki.show();
+                <?php if($admin): ?>
+                <?php else: ?>
+                    Rune.Wiki.show();
+                <?php endif; ?>
             </script>
         </div>
     </body>
