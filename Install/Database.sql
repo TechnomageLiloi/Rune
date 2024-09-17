@@ -75,3 +75,19 @@ create table rune_quests_tickets
             on update cascade on delete cascade
 );
 
+create table rune_artifacts
+(
+    key_artifact timestamp not null,
+    key_atom varchar(250) not null,
+    type tinyint unsigned default 1 not null,
+    title varchar(250) not null,
+    description text not null,
+    global varchar(250) not null,
+    local varchar(250) not null,
+    data json not null,
+    constraint rune_artifacts_pk
+        primary key (key_artifact),
+    constraint rune_artifacts_rune_rid_fk
+        foreign key (key_atom) references rune_atoms(key_atom)
+            on update cascade on delete cascade
+);
