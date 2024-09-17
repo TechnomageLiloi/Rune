@@ -39,7 +39,7 @@ class Manager extends DomainManager
             $sqlAccess = $isPublic ? 'status=2' : '1=1';
 
             $row = self::getAdapter()->getRow(sprintf(
-                'select * from %s where rid="%s" and %s',
+                'select * from %s where key_atom="%s" and %s',
                 $name,
                 $RID,
                 $sqlAccess
@@ -50,8 +50,8 @@ class Manager extends DomainManager
 
         if(!$row)
         {
-//            throw new IncorrectException();
-            return self::create($RID);
+            throw new IncorrectException();
+//            return self::create($RID);
         }
 
         return Entity::create($row);
@@ -104,12 +104,12 @@ class Manager extends DomainManager
     {
         $name = self::getTableName();
         $data = [
-            'rid' => $RID,
+            'key_atom' => $RID,
             'title' => $RID,
-            'program' => '// ' . $RID,
+            'program' => '// Program',
             'status' => Statuses::CLOSED,
             'data' => '{}',
-            'teacher' => 'Unknown'
+            'wiki' => '// Wiki'
         ];
 
         self::getAdapter()->insert($name, $data);

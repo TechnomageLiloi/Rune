@@ -17,6 +17,7 @@
         <script src="<?php echo ROOT_URL; ?>/Engine/Bootstrap.js"></script>
 
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Security/Password/Requests.js"></script>
+        <script src="<?php echo ROOT_URL; ?>/Engine/API/Wiki/Requests.js"></script>
 
         <?php if($admin): ?>
 
@@ -42,7 +43,7 @@
 
         <div id="page" class="stylo">
             <script>
-
+                Rune.Wiki.show();
             </script>
         </div>
     </body>

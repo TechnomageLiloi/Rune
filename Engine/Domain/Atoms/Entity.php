@@ -33,6 +33,11 @@ class Entity extends AbstractEntity
         return Parser::parseString($this->getProgram());
     }
 
+    public function parseWiki(): string
+    {
+        return Parser::parseString($this->getWiki());
+    }
+
     public function save(): void
     {
         Manager::save($this);
