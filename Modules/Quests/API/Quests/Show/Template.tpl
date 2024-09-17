@@ -4,6 +4,7 @@
 
     <div class="controls">
         <a href="javascript:void(0)" class="butn" onclick="Rune.Quests.Quest.edit('<?php echo $entity->getKey(); ?>');">Edit quest</a>
+        <a href="javascript:void(0)" class="butn" onclick="Rune.Quests.Quest.create();">Create new quest</a>
         &diams;
         <a href="javascript:void(0)" class="butn" onclick="Rune.Quests.Tickets.create();">Create ticket</a>
         <hr/>

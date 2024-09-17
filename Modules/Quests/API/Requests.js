@@ -6,7 +6,7 @@ Rune.Quests = {
             }
 
             API.request('Rune.Quests.Quest.Create', {}, function (data) {
-                Rune.Quests.Quest.search();
+                Rune.Quests.Quest.show();
             }, function () {
 
             });
