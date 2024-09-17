@@ -4,6 +4,8 @@ namespace Liloi\Rune\Modules\Quests\Domain\Quests;
 
 use Liloi\Rune\Domain\Manager as DomainManager;
 
+use Liloi\Rune\Exceptions\NotFoundException;
+
 class Manager extends DomainManager
 {
     /**
@@ -71,7 +73,7 @@ class Manager extends DomainManager
 
         if(empty($row))
         {
-            return self::create();
+            throw new NotFoundException();
         }
 
         return Entity::create($row);
