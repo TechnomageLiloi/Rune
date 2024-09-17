@@ -22,6 +22,7 @@
 
             <script src="<?php echo ROOT_URL; ?>/Modules/Admin/API/Requests.js"></script>
             <script src="<?php echo ROOT_URL; ?>/Modules/Diary/API/Requests.js"></script>
+            <script src="<?php echo ROOT_URL; ?>/Modules/Quests/API/Requests.js"></script>
 
         <?php endif; ?>
 
@@ -31,6 +32,7 @@
         <div id="head">
             <?php if($admin): ?>
                 <a href="javascript:void(0)" onclick="Rune.Diary.Road.show();" class="butn">Diary</a>
+                <a href="javascript:void(0)" onclick="Rune.Quests.Quest.show();" class="butn">Quest</a>
                 &diams;
                 <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.logout();">Logout</a>
             <?php else: ?>

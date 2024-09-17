@@ -3,9 +3,9 @@
 <div id="modules-road-show" class="stylo">
 
     <div class="controls">
-        <a href="javascript:void(0)" class="butn" onclick="Rune.Quests.Quests.edit('<?php echo $entity->getKey(); ?>');">Edit step</a>
+        <a href="javascript:void(0)" class="butn" onclick="Rune.Quests.Quest.edit('<?php echo $entity->getKey(); ?>');">Edit quest</a>
         &diams;
-        <a href="javascript:void(0)" class="butn" onclick="Rune.Quests.Jobs.create();">Create job</a>
+        <a href="javascript:void(0)" class="butn" onclick="Rune.Quests.Tickets.create();">Create ticket</a>
         <hr/>
     </div>
 
@@ -24,17 +24,15 @@
     <table>
         <tr>
             <th>Time</th>
-            <th>Type</th>
             <th>Title</th>
             <th>Actions</th>
         </tr>
-        <?php foreach($jobs as $job): ?>
+        <?php foreach($tickets as $ticket): ?>
             <tr>
-                <td><?php echo $job->getTimestamp(); ?></td>
-                <td><?php echo $job->getTypeTitle(); ?></td>
-                <td><?php echo $job->parse(); ?></td>
+                <td><?php echo $ticket->getTimestamp(); ?></td>
+                <td><?php echo $ticket->parse(); ?></td>
                 <td>
-                    <a href="javascript:void(0)" class="butn" onclick="Rune.Quests.Jobs.edit('<?php echo $job->getKey(); ?>');">Edit</a>
+                    <a href="javascript:void(0)" class="butn" onclick="Rune.Quests.Jobs.edit('<?php echo $ticket->getKey(); ?>');">Edit</a>
                 </td>
             </tr>
         <?php endforeach; ?>

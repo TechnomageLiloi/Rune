@@ -14,7 +14,7 @@ class Method extends SuperMethod
     public static function execute(): Response
     {
         self::accessCheck();
-        $entity = QuestsManager::load(self::getParameter('key_step'));
+        $entity = QuestsManager::load(self::getParameter('key_quest'));
 
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [

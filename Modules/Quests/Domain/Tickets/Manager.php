@@ -21,7 +21,7 @@ class Manager extends DomainManager
         $name = self::getTableName();
 
         $rows = self::getAdapter()->getArray(sprintf(
-            'select * from %s where key_quest="%s" order by key_job desc;',
+            'select * from %s where key_quest="%s" order by key_ticket desc;',
             $name, $keyQuest
         ));
 
