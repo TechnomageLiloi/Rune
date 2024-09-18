@@ -1,4 +1,4 @@
-Rune.Questions = {
+Rune.Exams.Questions = {
     collection: function ()
     {
         API.request('Rune.Questions.Collection', {
@@ -31,7 +31,7 @@ Rune.Questions = {
         API.request('Rune.Questions.Create', {
 
         }, function (data) {
-            Rune.Questions.collection();
+            Rune.Exams.Questions.collection();
         }, function () {
 
         });
@@ -47,7 +47,7 @@ Rune.Questions = {
         API.request('Rune.Questions.Remove', {
             'key_question': key_question
         }, function (data) {
-            Rune.Questions.collection();
+            Rune.Exams.Questions.collection();
         }, function () {
 
         });
@@ -105,7 +105,7 @@ Rune.Questions = {
             'tags': jq_block.find('[name="tags"]').val(),
             'dt': jq_block.find('[name="dt"]').val()
         }, function (data) {
-            Rune.Questions.collection();
+            Rune.Exams.Questions.collection();
         }, function () {
 
         });

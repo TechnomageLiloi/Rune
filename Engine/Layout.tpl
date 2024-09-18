@@ -27,6 +27,8 @@
             <script src="<?php echo ROOT_URL; ?>/Modules/Admin/API/Requests.js"></script>
             <script src="<?php echo ROOT_URL; ?>/Modules/Diary/API/Requests.js"></script>
             <script src="<?php echo ROOT_URL; ?>/Modules/Quests/API/Requests.js"></script>
+            <script src="<?php echo ROOT_URL; ?>/Modules/Exams/API/Inventory/Requests.js"></script>
+            <script src="<?php echo ROOT_URL; ?>/Modules/Exams/API/Questions/Requests.js"></script>
 
         <?php endif; ?>
 
@@ -41,6 +43,7 @@
                 <a href="javascript:void(0)" onclick="Rune.Wiki.show();" class="butn">Wiki</a>
                 &diams;
                 <a href="javascript:void(0)" onclick="Rune.Artifacts.create();" class="butn">Create new artifact</a>
+                <a href="javascript:void(0)" onclick="Rune.Exams.Inventory.create();" class="butn">Create new item</a>
                 &diams;
                 <a href="javascript:void(0)" onclick="Rune.Diary.Road.show();" class="butn">Diary</a>
                 <a href="javascript:void(0)" onclick="Rune.Quests.Quest.show();" class="butn">Quest</a>

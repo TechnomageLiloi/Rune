@@ -1,4 +1,6 @@
-Rune.Inventory = {
+Rune.Exams = {};
+
+Rune.Exams.Inventory = {
     collection: function ()
     {
         API.request('Rune.Inventory.Collection', {
@@ -31,7 +33,7 @@ Rune.Inventory = {
         API.request('Rune.Inventory.Create', {
 
         }, function (data) {
-            Rune.Inventory.collection();
+            Rune.Exams.Inventory.collection();
         }, function () {
 
         });
@@ -47,7 +49,7 @@ Rune.Inventory = {
         API.request('Rune.Inventory.Remove', {
             'key_question': key_question
         }, function (data) {
-            Rune.Inventory.collection();
+            Rune.Exams.Inventory.collection();
         }, function () {
 
         });
@@ -57,28 +59,6 @@ Rune.Inventory = {
     {
         API.request('Rune.Inventory.Edit', {
             'key_question': key_question
-        }, function (data) {
-            $('#page').html(data.render);
-        }, function () {
-
-        });
-    },
-
-    test: function (key_question)
-    {
-        API.request('Rune.Inventory.Test', {
-            'key_question': key_question
-        }, function (data) {
-            $('#page').html(data.render);
-        }, function () {
-
-        });
-    },
-
-    suite: function ()
-    {
-        API.request('Rune.Inventory.Suite', {
-            'tags': $('#tags').val()
         }, function (data) {
             $('#page').html(data.render);
         }, function () {
@@ -105,7 +85,7 @@ Rune.Inventory = {
             'tags': jq_block.find('[name="tags"]').val(),
             'dt': jq_block.find('[name="dt"]').val()
         }, function (data) {
-            Rune.Inventory.collection();
+            Rune.Exams.Inventory.collection();
         }, function () {
 
         });
