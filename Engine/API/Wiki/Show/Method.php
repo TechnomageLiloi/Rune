@@ -16,8 +16,8 @@ class Method extends SuperMethod
 
         $RID = AtomsManager::URLtoATOM($URL);
 
-        $entity = AtomsManager::load($RID);
-        $children = AtomsManager::loadFiles($RID);
+        $entity = AtomsManager::load($RID, true);
+        $children = AtomsManager::loadFiles($RID, true);
 
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [

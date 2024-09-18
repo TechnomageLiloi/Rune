@@ -50,8 +50,12 @@ class Manager extends DomainManager
 
         if(!$row)
         {
-            throw new IncorrectException();
-//            return self::create($RID);
+            if($isPublic)
+            {
+                throw new IncorrectException();
+            }
+
+            return self::create($RID);
         }
 
         return Entity::create($row);
