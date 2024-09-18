@@ -7,7 +7,16 @@
     <h1 class="header">
         <?php echo $entity->getTitle(); ?>
     </h1>
+
+    <?php $drive = $entity->getDataElement('drive'); ?>
+    <?php if($drive): ?>
+        <hr/>
+        <h3>Drive</h3>
+        &diams; <a target="_blank" href="<?php echo $drive; ?>"><?php echo $drive; ?></a>
+    <?php endif; ?>
+
     <hr/>
+
     <?php echo $entity->parseProgram(); ?>
 
     <?php if($inventory->count()): ?>
