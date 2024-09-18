@@ -93,7 +93,7 @@ create table rune_artifacts
 );
 
 CREATE TABLE rune_exams_inventory (
-    key_item bigint unsigned auto_increment,
+    key_item timestamp not null,
     `key_atom` varchar(250) not null,
     `title` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL,
     `type` tinyint(3) unsigned NOT NULL,
@@ -107,7 +107,7 @@ CREATE TABLE rune_exams_inventory (
 
 CREATE TABLE rune_exams_questions (
     `key_question` timestamp NOT NULL,
-    `key_item` bigint unsigned not null,
+    `key_item` timestamp not null,
     `title` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL,
     `status` tinyint(3) unsigned NOT NULL DEFAULT '1',
     `type` tinyint(3) unsigned NOT NULL,

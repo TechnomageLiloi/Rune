@@ -30,6 +30,7 @@
             <td><?php echo $entity->getTitle(); ?></td>
             <td><?php echo $entity->getTypeTitle(); ?></td>
             <td style="text-align: right; width: 300px;">
+                <a href="javascript:void(0)" onclick="Rune.Exams.Inventory.show('<?php echo $entity->getKey(); ?>');" class="butn">Show</a>
                 <a href="javascript:void(0)" onclick="Rune.Exams.Inventory.edit('<?php echo $entity->getKey(); ?>');" class="butn">Edit</a>
                 <a href="javascript:void(0)" onclick="Rune.Exams.Inventory.remove('<?php echo $entity->getKey(); ?>');" class="butn">Make obsolete</a>
             </td>

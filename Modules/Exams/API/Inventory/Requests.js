@@ -12,10 +12,10 @@ Rune.Exams.Inventory = {
         });
     },
 
-    show: function (key_question)
+    show: function (key_item)
     {
         API.request('Rune.Exams.Inventory.Show', {
-            'key_question': key_question
+            'key_item': key_item
         }, function (data) {
             $('#page').html(data.render);
         }, function () {

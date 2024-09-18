@@ -14,7 +14,7 @@
         <hr/>
         <h3>There are several items you see:</h3>
         <?php foreach($inventory as $key => $entity): ?>
-            <a href="javascript:void(0)" onclick="Rune.Artifacts.edit('<?php echo $entity->getKey(); ?>');" class="butn"><?php echo $entity->getTitle(); ?></a>
+            <a href="javascript:void(0)" onclick="Rune.Exams.Inventory.show('<?php echo $entity->getKey(); ?>');" class="butn"><?php echo $entity->getTitle(); ?></a>
         <?php endforeach; ?>
     <?php endif; ?>
 

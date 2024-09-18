@@ -85,10 +85,10 @@ class Manager extends DomainManager
         return $collection;
     }
 
-    public static function load(string $key_question): Entity
+    public static function load(string $key_item): Entity
     {
         $RID = AtomsManager::URLtoATOM($_SERVER['REQUEST_URI']);
-        $cache = 'questions:entity:' . $RID . ':key-' . $key_question;
+        $cache = 'questions:entity:' . $RID . ':key-' . $key_item;
 
         if(Cache::exists($cache))
         {
@@ -99,9 +99,9 @@ class Manager extends DomainManager
             $name = self::getTableName();
 
             $row = self::getAdapter()->getRow(sprintf(
-                'select * from %s where key_question="%s"',
+                'select * from %s where key_item="%s"',
                 $name,
-                $key_question
+                $key_item
             ));
 
             Cache::set($cache, $row);
@@ -150,6 +150,7 @@ class Manager extends DomainManager
 
         $name = self::getTableName();
         $data = [
+            'key_item' => date('Y-m-d H:i:s'),
             'key_atom' => $keyAtom,
             'title' => 'Enter the title',
             'type' => Types::BAR,
