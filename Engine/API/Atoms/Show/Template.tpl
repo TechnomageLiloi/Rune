@@ -10,6 +10,14 @@
     <hr/>
     <?php echo $entity->parseProgram(); ?>
 
+    <?php if($inventory->count()): ?>
+        <hr/>
+        <h3>There are several items you see:</h3>
+        <?php foreach($inventory as $key => $entity): ?>
+            <a href="javascript:void(0)" onclick="Rune.Artifacts.edit('<?php echo $entity->getKey(); ?>');" class="butn"><?php echo $entity->getTitle(); ?></a>
+        <?php endforeach; ?>
+    <?php endif; ?>
+
     <?php if($artifacts->count()): ?>
         <hr/>
         <h3>Artifact(s)</h3>

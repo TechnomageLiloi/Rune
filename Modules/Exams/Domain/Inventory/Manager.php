@@ -20,12 +20,12 @@ class Manager extends DomainManager
      */
     public static function getTableName(): string
     {
-        return self::getTablePrefix() . 'inventory';
+        return self::getTablePrefix() . 'exams_inventory';
     }
 
-    public static function loadCollection(string $RID): Collection
+    public static function loadCollection(string $keyAtom): Collection
     {
-        $cache = 'questions:collection:' . $RID;
+        $cache = 'questions:collection:' . $keyAtom;
 
         if(Cache::exists($cache))
         {
@@ -36,8 +36,8 @@ class Manager extends DomainManager
             $name = self::getTableName();
 
             $rows = self::getAdapter()->getArray(sprintf(
-                'select * from %s where rid="%s" order by key_question desc limit 100;',
-                $name, $RID
+                'select * from %s where key_atom="%s" order by title asc limit 100;',
+                $name, $keyAtom
             ));
 
             Cache::set($cache, $rows);
