@@ -30,6 +30,22 @@ class Modules
         $manager->add(new Method('Rune.Quests.Tickets.Edit', '\Liloi\Rune\Modules\Quests\API\Tickets\Edit\Method::execute'));
         $manager->add(new Method('Rune.Quests.Tickets.Save', '\Liloi\Rune\Modules\Quests\API\Tickets\Save\Method::execute'));
 
+        $manager->add(new Method('Rune.Exams.Questions.Collection', '\Liloi\Rune\Modules\Exams\API\Questions\Collection\Method::execute'));
+        $manager->add(new Method('Rune.Exams.Questions.Create', '\Liloi\Rune\Modules\Exams\API\Questions\Create\Method::execute'));
+        $manager->add(new Method('Rune.Exams.Questions.Remove', '\Liloi\Rune\Modules\Exams\API\Questions\Remove\Method::execute'));
+        $manager->add(new Method('Rune.Exams.Questions.Edit', '\Liloi\Rune\Modules\Exams\API\Questions\Edit\Method::execute'));
+        $manager->add(new Method('Rune.Exams.Questions.Save', '\Liloi\Rune\Modules\Exams\API\Questions\Save\Method::execute'));
+        $manager->add(new Method('Rune.Exams.Questions.Show', '\Liloi\Rune\Modules\Exams\API\Questions\Show\Method::execute'));
+        $manager->add(new Method('Rune.Exams.Questions.Test', '\Liloi\Rune\Modules\Exams\API\Questions\Test\Method::execute'));
+        $manager->add(new Method('Rune.Exams.Questions.Suite', '\Liloi\Rune\Modules\Exams\API\Questions\Suite\Method::execute'));
+
+        $manager->add(new Method('Rune.Exams.Inventory.Collection', '\Liloi\Rune\Modules\Exams\API\Inventory\Collection\Method::execute'));
+        $manager->add(new Method('Rune.Exams.Inventory.Create', '\Liloi\Rune\Modules\Exams\API\Inventory\Create\Method::execute'));
+        $manager->add(new Method('Rune.Exams.Inventory.Remove', '\Liloi\Rune\Modules\Exams\API\Inventory\Remove\Method::execute'));
+        $manager->add(new Method('Rune.Exams.Inventory.Edit', '\Liloi\Rune\Modules\Exams\API\Inventory\Edit\Method::execute'));
+        $manager->add(new Method('Rune.Exams.Inventory.Save', '\Liloi\Rune\Modules\Exams\API\Inventory\Save\Method::execute'));
+        $manager->add(new Method('Rune.Exams.Inventory.Show', '\Liloi\Rune\Modules\Exams\API\Inventory\Show\Method::execute'));
+
         return $manager;
     }
 }
