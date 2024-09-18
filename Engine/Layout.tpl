@@ -43,7 +43,7 @@
                 <a href="javascript:void(0)" onclick="Rune.Wiki.show();" class="butn">Wiki</a>
                 &diams;
                 <a href="javascript:void(0)" onclick="Rune.Artifacts.create();" class="butn">Create new artifact</a>
-                <a href="javascript:void(0)" onclick="Rune.Exams.Inventory.create();" class="butn">Create new item</a>
+                <a href="javascript:void(0)" onclick="Rune.Exams.Inventory.collection();" class="butn">Items</a>
                 &diams;
                 <a href="javascript:void(0)" onclick="Rune.Diary.Road.show();" class="butn">Diary</a>
                 <a href="javascript:void(0)" onclick="Rune.Quests.Quest.show();" class="butn">Quest</a>
