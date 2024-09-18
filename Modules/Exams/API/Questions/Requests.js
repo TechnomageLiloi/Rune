@@ -1,7 +1,7 @@
 Rune.Exams.Questions = {
     collection: function ()
     {
-        API.request('Rune.Questions.Collection', {
+        API.request('Rune.Exams.Questions.Collection', {
             
         }, function (data) {
             $('#page').html(data.render);
@@ -12,7 +12,7 @@ Rune.Exams.Questions = {
 
     show: function (key_question)
     {
-        API.request('Rune.Questions.Show', {
+        API.request('Rune.Exams.Questions.Show', {
             'key_question': key_question
         }, function (data) {
             $('#page').html(data.render);
@@ -28,7 +28,7 @@ Rune.Exams.Questions = {
             return;
         }
 
-        API.request('Rune.Questions.Create', {
+        API.request('Rune.Exams.Questions.Create', {
 
         }, function (data) {
             Rune.Exams.Questions.collection();
@@ -44,7 +44,7 @@ Rune.Exams.Questions = {
             return;
         }
 
-        API.request('Rune.Questions.Remove', {
+        API.request('Rune.Exams.Questions.Remove', {
             'key_question': key_question
         }, function (data) {
             Rune.Exams.Questions.collection();
@@ -55,7 +55,7 @@ Rune.Exams.Questions = {
 
     edit: function (key_question)
     {
-        API.request('Rune.Questions.Edit', {
+        API.request('Rune.Exams.Questions.Edit', {
             'key_question': key_question
         }, function (data) {
             $('#page').html(data.render);
@@ -66,7 +66,7 @@ Rune.Exams.Questions = {
 
     test: function (key_question)
     {
-        API.request('Rune.Questions.Test', {
+        API.request('Rune.Exams.Questions.Test', {
             'key_question': key_question
         }, function (data) {
             $('#page').html(data.render);
@@ -77,7 +77,7 @@ Rune.Exams.Questions = {
 
     suite: function ()
     {
-        API.request('Rune.Questions.Suite', {
+        API.request('Rune.Exams.Questions.Suite', {
             'tags': $('#tags').val()
         }, function (data) {
             $('#page').html(data.render);
@@ -94,7 +94,7 @@ Rune.Exams.Questions = {
         }
 
         const jq_block = $('#blueprint-edit');
-        API.request('Rune.Questions.Save', {
+        API.request('Rune.Exams.Questions.Save', {
             'key_question': key_question,
             'rid': jq_block.find('[name="rid"]').val(),
             'title': jq_block.find('[name="title"]').val(),

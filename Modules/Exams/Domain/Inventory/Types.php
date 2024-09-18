@@ -9,7 +9,8 @@ namespace Liloi\Rune\Modules\Exams\Domain\Inventory;
  */
 class Types
 {
-    public const PUZZLE = 1;
+    public const BAR = 1;
+    public const PUZZLE = 2;
 
     /**
      * Type list.
@@ -17,6 +18,7 @@ class Types
      * @var string[]
      */
     public static $list = [
+        self::BAR => 'Bar',
         self::PUZZLE => 'Puzzle',
     ];
 }

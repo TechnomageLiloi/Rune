@@ -3,7 +3,7 @@ Rune.Exams = {};
 Rune.Exams.Inventory = {
     collection: function ()
     {
-        API.request('Rune.Inventory.Collection', {
+        API.request('Rune.Exams.Inventory.Collection', {
             
         }, function (data) {
             $('#page').html(data.render);
@@ -14,7 +14,7 @@ Rune.Exams.Inventory = {
 
     show: function (key_question)
     {
-        API.request('Rune.Inventory.Show', {
+        API.request('Rune.Exams.Inventory.Show', {
             'key_question': key_question
         }, function (data) {
             $('#page').html(data.render);
@@ -30,7 +30,7 @@ Rune.Exams.Inventory = {
             return;
         }
 
-        API.request('Rune.Inventory.Create', {
+        API.request('Rune.Exams.Inventory.Create', {
 
         }, function (data) {
             Rune.Exams.Inventory.collection();
@@ -46,7 +46,7 @@ Rune.Exams.Inventory = {
             return;
         }
 
-        API.request('Rune.Inventory.Remove', {
+        API.request('Rune.Exams.Inventory.Remove', {
             'key_question': key_question
         }, function (data) {
             Rune.Exams.Inventory.collection();
@@ -57,7 +57,7 @@ Rune.Exams.Inventory = {
 
     edit: function (key_question)
     {
-        API.request('Rune.Inventory.Edit', {
+        API.request('Rune.Exams.Inventory.Edit', {
             'key_question': key_question
         }, function (data) {
             $('#page').html(data.render);
@@ -74,7 +74,7 @@ Rune.Exams.Inventory = {
         }
 
         const jq_block = $('#blueprint-edit');
-        API.request('Rune.Inventory.Save', {
+        API.request('Rune.Exams.Inventory.Save', {
             'key_question': key_question,
             'rid': jq_block.find('[name="rid"]').val(),
             'title': jq_block.find('[name="title"]').val(),

@@ -143,23 +143,21 @@ class Manager extends DomainManager
     }
 
     // @todo: rise this method to more abstract level.
-    public static function create(string $RID): array
+    public static function create(string $keyAtom): array
     {
-        Cache::remove('questions:collection:' . $RID);
-        Cache::remove('questions:load-by-tags:' . $RID);
+        Cache::remove('questions:collection:' . $keyAtom);
+        Cache::remove('questions:load-by-tags:' . $keyAtom);
 
         $name = self::getTableName();
         $data = [
-            'key_question' => date('Y-m-d H:i:s'),
-            'rid' => $RID,
+            'key_atom' => $keyAtom,
             'title' => 'Enter the title',
-            'status' => Statuses::TODO,
-            'type' => Types::PUZZLE,
-            'program' => '{}',
-            'theory' => '// theory',
-            'tags' => 'tags',
-            'dt' => date('Y-m-d H:i:s')
+            'type' => Types::BAR,
+            'program' => '// Bar',
+            'dt' => date('Y-m-d H:i:s'),
+            'data' => '{}',
         ];
+
         self::getAdapter()->insert($name, $data);
 
         return $data;
