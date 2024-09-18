@@ -163,7 +163,7 @@ class Manager extends DomainManager
             $sqlAccess = $isPublic ? 'status=2' : '1=1';
 
             $sql = sprintf(
-                'select * from %s where (rid like "%s:%%") && (rid not like "%s:%%:%%") && %s order by title asc;',
+                'select * from %s where (key_atom like "%s:%%") && (key_atom not like "%s:%%:%%") && %s order by title asc;',
                 $name, $RID, $RID, $sqlAccess
             );
 

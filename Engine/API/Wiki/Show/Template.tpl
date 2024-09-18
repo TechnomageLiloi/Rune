@@ -4,9 +4,6 @@
     <div class="seeds">
         <?php echo $entity->getSeeds(); ?>
     </div>
-    <h1 class="header">
-        <?php echo $entity->getTitle(); ?>
-    </h1>
     <hr/>
     <?php echo $entity->parseWiki(); ?>
 
