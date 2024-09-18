@@ -92,7 +92,7 @@ create table rune_artifacts
             on update cascade on delete cascade
 );
 
-CREATE TABLE `rune_inventory` (
+CREATE TABLE rune_exams_inventory (
     key_item bigint unsigned auto_increment,
     `key_atom` varchar(250) not null,
     `title` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -105,7 +105,7 @@ CREATE TABLE `rune_inventory` (
       on update cascade on delete cascade
 );
 
-CREATE TABLE `rune_questions` (
+CREATE TABLE rune_exams_questions (
     `key_question` timestamp NOT NULL,
     `key_item` bigint unsigned not null,
     `title` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -116,6 +116,6 @@ CREATE TABLE `rune_questions` (
     `tags` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
     `dt` timestamp NOT NULL,
     PRIMARY KEY (`key_question`),
-    foreign key (key_item) references rune_inventory (key_item)
+    foreign key (key_item) references rune_exams_inventory (key_item)
       on update cascade on delete cascade
 );
