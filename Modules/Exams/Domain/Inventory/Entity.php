@@ -71,7 +71,7 @@ class Entity extends AbstractEntity
      */
     public function remove(): void
     {
-        $this->save();
+        Manager::remove($this);
     }
 
     public function getParseTheory(): string

@@ -11,16 +11,13 @@ class Method extends SuperMethod
     public static function execute(): Response
     {
         self::accessCheck();
-        $key_question = self::getParameter('key_question');
-        $entity = Manager::load($key_question);
+        $key_item = self::getParameter('key_item');
+        $entity = Manager::load($key_item);
 
-        $entity->setRID(self::getParameter('rid'));
+        $entity->setKeyAtom(self::getParameter('key_atom'));
         $entity->setTitle(self::getParameter('title'));
-        $entity->setStatus(self::getParameter('status'));
         $entity->setType(self::getParameter('type'));
         $entity->setProgram(self::getParameter('program'));
-        $entity->setTheory(self::getParameter('theory'));
-        $entity->setTags(self::getParameter('tags'));
         $entity->setDt(self::getParameter('dt'));
 
         $entity->save();

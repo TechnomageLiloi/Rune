@@ -39,7 +39,7 @@ Rune.Exams.Inventory = {
         });
     },
 
-    remove: function (key_question)
+    remove: function (key_item)
     {
         if(!confirm('Are you sure?'))
         {
@@ -47,7 +47,7 @@ Rune.Exams.Inventory = {
         }
 
         API.request('Rune.Exams.Inventory.Remove', {
-            'key_question': key_question
+            'key_item': key_item
         }, function (data) {
             Rune.Exams.Inventory.collection();
         }, function () {
@@ -55,10 +55,10 @@ Rune.Exams.Inventory = {
         });
     },
 
-    edit: function (key_question)
+    edit: function (key_item)
     {
         API.request('Rune.Exams.Inventory.Edit', {
-            'key_question': key_question
+            'key_item': key_item
         }, function (data) {
             $('#page').html(data.render);
         }, function () {
@@ -66,7 +66,7 @@ Rune.Exams.Inventory = {
         });
     },
 
-    save: function (key_question)
+    save: function (key_item)
     {
         if(!confirm('Are you sure?'))
         {
@@ -75,14 +75,11 @@ Rune.Exams.Inventory = {
 
         const jq_block = $('#blueprint-edit');
         API.request('Rune.Exams.Inventory.Save', {
-            'key_question': key_question,
-            'rid': jq_block.find('[name="rid"]').val(),
+            'key_item': key_item,
+            'key_atom': jq_block.find('[name="key_atom"]').val(),
             'title': jq_block.find('[name="title"]').val(),
-            'status': jq_block.find('[name="status"]').val(),
             'type': jq_block.find('[name="type"]').val(),
             'program': jq_block.find('[name="program"]').val(),
-            'theory': jq_block.find('[name="theory"]').val(),
-            'tags': jq_block.find('[name="tags"]').val(),
             'dt': jq_block.find('[name="dt"]').val()
         }, function (data) {
             Rune.Exams.Inventory.collection();

@@ -116,13 +116,13 @@ class Manager extends DomainManager
         $data = $entity->get();
 
         // @todo: Get param name from const.
-        $key = $data['key_question'];
+        $key = $data['key_item'];
 //        unset($data['key_question']);
 
         self::getAdapter()->update(
             $name,
             $data,
-            sprintf('key_question = "%s"', $key)
+            sprintf('key_item = "%s"', $key)
         );
 
         $RID = AtomsManager::URLtoATOM($_SERVER['REQUEST_URI']);
@@ -138,7 +138,7 @@ class Manager extends DomainManager
 
         self::getAdapter()->delete(
             $name,
-            sprintf('key_question = "%s"', $key)
+            sprintf('key_item = "%s"', $key)
         );
     }
 
