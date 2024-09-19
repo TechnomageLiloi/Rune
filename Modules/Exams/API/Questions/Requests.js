@@ -75,10 +75,10 @@ Rune.Exams.Questions = {
         });
     },
 
-    suite: function ()
+    suite: function (key_item)
     {
         API.request('Rune.Exams.Questions.Suite', {
-            'tags': $('#tags').val()
+            key_item: key_item
         }, function (data) {
             $('#page').html(data.render);
         }, function () {
