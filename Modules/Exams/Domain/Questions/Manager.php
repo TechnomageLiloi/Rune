@@ -20,7 +20,7 @@ class Manager extends DomainManager
      */
     public static function getTableName(): string
     {
-        return self::getTablePrefix() . 'questions';
+        return self::getTablePrefix() . 'exams_questions';
     }
 
     public static function loadCollection(string $key_item): Collection
@@ -143,15 +143,15 @@ class Manager extends DomainManager
     }
 
     // @todo: rise this method to more abstract level.
-    public static function create(string $RID): array
+    public static function create(string $key_item): array
     {
-        Cache::remove('questions:collection:' . $RID);
-        Cache::remove('questions:load-by-tags:' . $RID);
+        Cache::remove('questions:collection:' . $key_item);
+        Cache::remove('questions:load-by-tags:' . $key_item);
 
         $name = self::getTableName();
         $data = [
             'key_question' => date('Y-m-d H:i:s'),
-            'rid' => $RID,
+            'key_item' => $key_item,
             'title' => 'Enter the title',
             'status' => Statuses::TODO,
             'type' => Types::CARD,

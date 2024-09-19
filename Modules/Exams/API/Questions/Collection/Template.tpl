@@ -17,9 +17,8 @@
 
 </style>
 <div id="problem-group">
-    <a href="javascript:void(0)" onclick="Rune.Questions.create();" class="butn">Create question</a>
-    <input type="text" id="tags" value="">
-    <a href="javascript:void(0)" onclick="Rune.Questions.suite();" class="butn">Suite-test</a>
+    <a href="javascript:void(0)" onclick="Rune.Exams.Questions.create('<?php echo $key_item; ?>');" class="butn">Create question</a>
+    <a href="javascript:void(0)" onclick="Rune.Exams.Questions.suite('<?php echo $key_item; ?>');" class="butn">Exam</a>
     <hr/>
     <table>
         <tr>

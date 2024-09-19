@@ -21,7 +21,7 @@ Rune.Exams.Questions = {
         });
     },
 
-    create: function ()
+    create: function (key_item)
     {
         if(!confirm('Are you sure?'))
         {
@@ -29,9 +29,9 @@ Rune.Exams.Questions = {
         }
 
         API.request('Rune.Exams.Questions.Create', {
-
+            key_item: key_item
         }, function (data) {
-            Rune.Exams.Questions.collection();
+            Rune.Exams.Questions.collection(key_item);
         }, function () {
 
         });

@@ -12,11 +12,13 @@ class Method extends SuperMethod
     public static function execute(): Response
     {
         self::accessCheck();
-        $collection = QuestionsManager::loadCollection(self::getParameter('key_item'));
+        $key_item = self::getParameter('key_item');
+        $collection = QuestionsManager::loadCollection($key_item);
 
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
-            'collection' => $collection
+            'collection' => $collection,
+            'key_item' => $key_item
         ]));
 
         return $response;
