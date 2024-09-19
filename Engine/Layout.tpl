@@ -29,6 +29,7 @@
             <script src="<?php echo ROOT_URL; ?>/Modules/Quests/API/Requests.js"></script>
             <script src="<?php echo ROOT_URL; ?>/Modules/Exams/API/Inventory/Requests.js"></script>
             <script src="<?php echo ROOT_URL; ?>/Modules/Exams/API/Questions/Requests.js"></script>
+            <script src="<?php echo ROOT_URL; ?>/Modules/Exams/API/Questions/Test/Testing.js"></script>
 
         <?php endif; ?>
 

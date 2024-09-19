@@ -96,4 +96,9 @@ class Entity extends AbstractEntity
     {
         return Parser::parseString($this->getTheory());
     }
+
+    public function getID(): string
+    {
+        return str_replace([':',' '],['-','-'], $this->getKey());
+    }
 }
