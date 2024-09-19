@@ -1,8 +1,8 @@
 Rune.Exams.Questions = {
-    collection: function ()
+    collection: function (key_item)
     {
         API.request('Rune.Exams.Questions.Collection', {
-            
+            key_item: key_item
         }, function (data) {
             $('#page').html(data.render);
         }, function () {

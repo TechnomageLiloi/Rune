@@ -23,9 +23,9 @@ class Manager extends DomainManager
         return self::getTablePrefix() . 'questions';
     }
 
-    public static function loadCollection(string $RID): Collection
+    public static function loadCollection(string $key_item): Collection
     {
-        $cache = 'questions:collection:' . $RID;
+        $cache = 'questions:collection:' . $key_item;
 
         if(Cache::exists($cache))
         {
@@ -36,8 +36,8 @@ class Manager extends DomainManager
             $name = self::getTableName();
 
             $rows = self::getAdapter()->getArray(sprintf(
-                'select * from %s where rid="%s" order by key_question desc limit 100;',
-                $name, $RID
+                'select * from %s where key_item="%s" order by title desc limit 100;',
+                $name, $key_item
             ));
 
             Cache::set($cache, $rows);

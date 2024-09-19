@@ -12,9 +12,7 @@ class Method extends SuperMethod
     public static function execute(): Response
     {
         self::accessCheck();
-        $URL = $_SERVER['REQUEST_URI'];
-        $RID = AtomsManager::URLtoATOM($URL);
-        $collection = QuestionsManager::loadCollection($RID);
+        $collection = QuestionsManager::loadCollection(self::getParameter('key_item'));
 
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
