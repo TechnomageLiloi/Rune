@@ -86,7 +86,7 @@ Rune.Exams.Questions = {
         });
     },
 
-    save: function (key_question)
+    save: function (key_question, key_item)
     {
         if(!confirm('Are you sure?'))
         {
@@ -96,7 +96,6 @@ Rune.Exams.Questions = {
         const jq_block = $('#blueprint-edit');
         API.request('Rune.Exams.Questions.Save', {
             'key_question': key_question,
-            'rid': jq_block.find('[name="rid"]').val(),
             'title': jq_block.find('[name="title"]').val(),
             'status': jq_block.find('[name="status"]').val(),
             'type': jq_block.find('[name="type"]').val(),
@@ -105,7 +104,7 @@ Rune.Exams.Questions = {
             'tags': jq_block.find('[name="tags"]').val(),
             'dt': jq_block.find('[name="dt"]').val()
         }, function (data) {
-            Rune.Exams.Questions.collection();
+            Rune.Exams.Questions.collection(key_item);
         }, function () {
 
         });

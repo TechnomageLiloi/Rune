@@ -35,9 +35,9 @@
             <td><?php echo $entity->getTypeTitle(); ?></td>
             <td><?php echo $entity->getStatusTitle(); ?></td>
             <td style="text-align: right; width: 300px;">
-                <a href="javascript:void(0)" onclick="Rune.Questions.test('<?php echo $entity->getKey(); ?>');" class="butn">Test</a>
-                <a href="javascript:void(0)" onclick="Rune.Questions.edit('<?php echo $entity->getKey(); ?>');" class="butn">Edit</a>
-                <a href="javascript:void(0)" onclick="Rune.Questions.remove('<?php echo $entity->getKey(); ?>');" class="butn">Make obsolete</a>
+                <a href="javascript:void(0)" onclick="Rune.Exams.Questions.test('<?php echo $entity->getKey(); ?>');" class="butn">Test</a>
+                <a href="javascript:void(0)" onclick="Rune.Exams.Questions.edit('<?php echo $entity->getKey(); ?>');" class="butn">Edit</a>
+                <a href="javascript:void(0)" onclick="Rune.Exams.Questions.remove('<?php echo $entity->getKey(); ?>');" class="butn">Make obsolete</a>
             </td>
         </tr>
         <?php endforeach; ?>
