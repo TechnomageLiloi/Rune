@@ -11,6 +11,9 @@ use Liloi\Tools\Entity as AbstractEntity;
  *
  * @method string getType()
  * @method void setType(string $value)
+ *
+ * @method string getStatus()
+ * @method void setStatus(string $value)
  */
 class Entity extends AbstractEntity
 {

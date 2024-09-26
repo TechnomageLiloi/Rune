@@ -101,7 +101,8 @@ class Manager extends DomainManager
             'key_job' => date('H:i:s'),
             'key_step' => $key_step,
             'title' => '-',
-            'type' => Types::SHIP
+            'type' => Types::SHIP,
+            'status' => Statuses::TODO
         ];
 
         self::getAdapter()->insert(self::getTableName(), $data);
