@@ -41,4 +41,9 @@ class Entity extends AbstractEntity
     {
         return Types::$list[$this->getType()];
     }
+
+    public function getStatusTitle(): string
+    {
+        return Statuses::$list[$this->getStatus()];
+    }
 }

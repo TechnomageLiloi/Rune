@@ -5,6 +5,14 @@
     <a href="javascript:void(0)" onclick="Rune.Diary.Road.show();">Cancel</a>
     <hr/>
     <table>
+        <tr><td>Statuses</td><td>
+            <select name="status">
+                <?php foreach($statuses as $key => $value): ?>
+                <option value="<?php echo $key; ?>" <?php if($entity->getStatus() == $key): ?>selected="selected"<?php endif; ?>><?php echo $value; ?></option>
+                <?php endforeach; ?>
+            </select>
+        </td></tr>
+
         <tr><td>Types</td><td>
             <select name="type">
                 <?php foreach($types as $key => $value): ?>

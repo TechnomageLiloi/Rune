@@ -84,7 +84,8 @@ Rune.Diary = {
             API.request('Rune.Diary.Jobs.Save', {
                 key_job: key_job,
                 title: jq_block.find('[name=title]').val(),
-                type: jq_block.find('[name=type]').val()
+                type: jq_block.find('[name=type]').val(),
+                status: jq_block.find('[name=status]').val()
             }, function (data) {
                 Rune.Diary.Road.show();
             }, function () {

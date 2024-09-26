@@ -6,6 +6,7 @@ use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
 use Liloi\Rune\Modules\Diary\Domain\Jobs\Manager as JobsManager;
 use Liloi\Rune\Modules\Diary\Domain\Jobs\Types as JobsTypes;
+use Liloi\Rune\Modules\Diary\Domain\Jobs\Statuses as JobsStatuses;
 use Liloi\Rune\Modules\Diary\Domain\Road\Manager as RoadManager;
 
 /**
@@ -23,7 +24,8 @@ class Method extends SuperMethod
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
             'entity' => $entity,
-            'types' => JobsTypes::$list
+            'types' => JobsTypes::$list,
+            'statuses' => JobsStatuses::$list,
         ]));
 
         return $response;

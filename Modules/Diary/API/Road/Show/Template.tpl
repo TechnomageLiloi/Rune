@@ -24,6 +24,7 @@
     <table>
         <tr>
             <th>Time</th>
+            <th>Status</th>
             <th>Type</th>
             <th>Title</th>
             <th>Actions</th>
@@ -31,6 +32,7 @@
         <?php foreach($jobs as $job): ?>
             <tr>
                 <td><?php echo $job->getTimestamp(); ?></td>
+                <td><?php echo $job->getStatusTitle(); ?></td>
                 <td><?php echo $job->getTypeTitle(); ?></td>
                 <td><?php echo $job->parse(); ?></td>
                 <td>
