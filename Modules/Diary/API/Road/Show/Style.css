@@ -11,3 +11,10 @@
 #modules-road-show table p {
   margin: 0;
 }
+#modules-road-show .current-job {
+  background-color: lightyellow;
+  border: gray 1px solid;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 10px;
+}

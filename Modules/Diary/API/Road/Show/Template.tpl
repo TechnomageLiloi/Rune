@@ -2,6 +2,10 @@
 
 <div id="modules-road-show" class="stylo">
 
+    <div class="current-job">
+        <?php echo $jobs[0]->parse(); ?>
+    </div>
+
     <div class="controls">
         <a href="javascript:void(0)" class="butn" onclick="Rune.Diary.Road.edit('<?php echo $entity->getKey(); ?>');">Edit step</a>
         &diams;
