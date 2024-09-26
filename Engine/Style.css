@@ -11,7 +11,8 @@ body a {
   text-decoration: none;
   color: red;
 }
-body #head {
+body #head,
+body #ticket-current {
   padding: 10px;
   text-align: center;
   background-color: #ffffd0;
