@@ -11,5 +11,15 @@ use Liloi\Tools\Collection as AbstractCollection;
  */
 class Collection extends AbstractCollection
 {
+    public function getKarma(): int
+    {
+        $karma = 0;
 
+        foreach($this as $job)
+        {
+            $karma += $job->getKarma();
+        }
+
+        return $karma;
+    }
 }

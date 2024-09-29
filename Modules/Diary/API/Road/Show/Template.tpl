@@ -25,7 +25,8 @@
 
     <hr/>
 
-    <h3>Jobs and periods</h3>
+    <h2>Jobs and periods</h2>
+    <h3>Karma for day: <?php echo $jobs->getKarma(); ?></h3>
 
     <table>
         <tr>
