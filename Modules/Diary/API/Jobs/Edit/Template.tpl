@@ -21,6 +21,8 @@
             </select>
         </td></tr>
 
+        <tr><td>Karma</td><td><input type="text" name="karma" value="<?php echo $entity->getKarma(); ?>"></td></tr>
+
         <tr><td>Title</td><td><textarea name="title"><?php echo $entity->getTitle(); ?></textarea></td></tr>
     </table>
     <hr/>

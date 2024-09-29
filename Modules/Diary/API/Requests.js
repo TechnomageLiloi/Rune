@@ -85,7 +85,8 @@ Rune.Diary = {
                 key_job: key_job,
                 title: jq_block.find('[name=title]').val(),
                 type: jq_block.find('[name=type]').val(),
-                status: jq_block.find('[name=status]').val()
+                status: jq_block.find('[name=status]').val(),
+                karma: jq_block.find('[name=karma]').val()
             }, function (data) {
                 Rune.Diary.Road.show();
             }, function () {
