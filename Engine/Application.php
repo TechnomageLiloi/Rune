@@ -7,8 +7,9 @@ use Liloi\Rune\API\Method;
 use Liloi\Rune\API\Tree;
 use Liloi\Rune\Domain\Manager;
 use Rune\Application\Conceptual as ConceptualApplication;
-use Liloi\Rune\Domain\Nodes\Manager as AtomsManager;
 use Liloi\Rune\API\Security\Error\Method as ErrorMethod;
+use Liloi\Rune\Domain\Config\Manager as ConfigManager;
+use Liloi\Rune\Domain\Config\Keys as ConfigKeys;
 
 /**
  * @inheritDoc
@@ -68,8 +69,7 @@ class Application extends ConceptualApplication
 
         if($admin)
         {
-            // @todo: config lock
-            $locked = false;
+            $locked = ConfigManager::load(ConfigKeys::LOCKED)->getString() ? true : false;
         }
         else
         {
