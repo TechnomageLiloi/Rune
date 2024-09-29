@@ -40,6 +40,7 @@
             <?php if($admin): ?>
                 <?php if(!$locked): ?>
                     <a href="javascript:void(0)" onclick="Rune.Diary.Road.show();" class="butn">Road</a>
+                    <a href="javascript:void(0)" onclick="Rune.Admin.menu();" class="butn">Menu</a>
                     &diams;
                     <a href="javascript:void(0)" onclick="Rune.Atoms.show();" class="butn">Game</a>
                     <a href="javascript:void(0)" onclick="Rune.Atoms.edit();" class="butn">Edit</a>

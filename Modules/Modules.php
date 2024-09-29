@@ -13,6 +13,7 @@ class Modules
     public static function collect(APIManager $manager): APIManager
     {
         $manager->add(new Method('Rune.Admin.Ping', '\Liloi\Rune\Modules\Admin\API\Ping\Method::execute'));
+        $manager->add(new Method('Rune.Admin.Menu', '\Liloi\Rune\Modules\Admin\API\Menu\Method::execute'));
 
         $manager->add(new Method('Rune.Diary.Road.Show', '\Liloi\Rune\Modules\Diary\API\Road\Show\Method::execute'));
         $manager->add(new Method('Rune.Diary.Road.Edit', '\Liloi\Rune\Modules\Diary\API\Road\Edit\Method::execute'));

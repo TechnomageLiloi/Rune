@@ -8,5 +8,15 @@ Rune.Admin = {
         }, function () {
 
         });
+    },
+
+    menu: function ()
+    {
+        API.request('Rune.Admin.Menu', {
+        }, function (data) {
+            $('#page').html(data.render);
+        }, function () {
+
+        });
     }
 }
