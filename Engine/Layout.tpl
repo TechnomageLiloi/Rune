@@ -56,6 +56,7 @@
                     <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.logout();">Logout</a>
                 <?php else: ?>
                     <h1 style="color: orange;">Ship is locked. Access to others is denied. There are no others. You are alone. You are in peace.</h1>
+                <a href="javascript:void(0)" onclick="Rune.Admin.lock('');" class="butn">Unock</a>
                 <?php endif; ?>
             <?php else: ?>
                 <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.show();">Login</a>

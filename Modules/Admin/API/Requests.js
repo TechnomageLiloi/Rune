@@ -18,5 +18,16 @@ Rune.Admin = {
         }, function () {
 
         });
+    },
+
+    lock: function (locked)
+    {
+        API.request('Rune.Admin.Lock', {
+            locked: locked
+        }, function (data) {
+            location.reload();
+        }, function () {
+
+        });
     }
 }
