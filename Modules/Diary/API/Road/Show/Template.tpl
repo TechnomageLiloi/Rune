@@ -30,17 +30,19 @@
     <table>
         <tr>
             <th>Time</th>
+            <th>Title</th>
             <th>Status</th>
             <th>Type</th>
-            <th>Title</th>
+            <th>Karna</th>
             <th>Actions</th>
         </tr>
         <?php foreach($jobs as $job): ?>
             <tr>
                 <td><?php echo $job->getTimestamp(); ?></td>
+                <td><?php echo $job->parse(); ?></td>
                 <td><?php echo $job->getStatusTitle(); ?></td>
                 <td><?php echo $job->getTypeTitle(); ?></td>
-                <td><?php echo $job->parse(); ?></td>
+                <td><?php echo $job->getKarma(); ?></td>
                 <td>
                     <a href="javascript:void(0)" class="butn" onclick="Rune.Diary.Jobs.edit('<?php echo $job->getKey(); ?>');">Edit</a>
                 </td>

@@ -102,7 +102,8 @@ class Manager extends DomainManager
             'key_step' => $key_step,
             'title' => '-',
             'type' => Types::HOME,
-            'status' => Statuses::TODO
+            'status' => Statuses::TODO,
+            'karma' => 0
         ];
 
         self::getAdapter()->insert(self::getTableName(), $data);

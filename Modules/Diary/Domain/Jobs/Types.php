@@ -11,7 +11,7 @@ class Types
     public const BIOTECH = 2;
     public const SOCIAL = 3;
     public const WIKI = 4;
-    public const PROJECTS = 5;
+    public const PROJECT = 5;
     public const WEAKNESS = 6;
     public const FAMILY = 7;
 
@@ -20,7 +20,7 @@ class Types
         self::BIOTECH => 'Biotech',
         self::SOCIAL => 'Social',
         self::WIKI => 'Wiki',
-        self::PROJECTS => 'Projects',
+        self::PROJECT => 'Project',
         self::WEAKNESS => 'Weakness',
         self::FAMILY => 'Family',
     ];

@@ -14,6 +14,9 @@ use Liloi\Tools\Entity as AbstractEntity;
  *
  * @method string getStatus()
  * @method void setStatus(string $value)
+ *
+ * @method string getKarma()
+ * @method void setKarma(string $value)
  */
 class Entity extends AbstractEntity
 {
