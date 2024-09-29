@@ -64,8 +64,21 @@ class Application extends ConceptualApplication
             }
         }
 
+        $admin = Security::check();
+
+        if($admin)
+        {
+            // @todo: config lock
+            $locked = false;
+        }
+        else
+        {
+            $locked = false;
+        }
+
         return $this->render(__DIR__ . '/Layout.tpl', [
-            'admin' => Security::check()
+            'admin' => $admin,
+            'locked' => $locked
         ]);
     }
 

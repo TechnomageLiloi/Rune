@@ -38,33 +38,39 @@
     <body>
         <div id="head">
             <?php if($admin): ?>
-                <a href="javascript:void(0)" onclick="Rune.Diary.Road.show();" class="butn">Road</a>
-                &diams;
-                <a href="javascript:void(0)" onclick="Rune.Atoms.show();" class="butn">Game</a>
-                <a href="javascript:void(0)" onclick="Rune.Atoms.edit();" class="butn">Edit</a>
-                &diams;
-                <a href="javascript:void(0)" onclick="Rune.Wiki.show();" class="butn">Wiki</a>
-                &diams;
-                <a href="javascript:void(0)" onclick="Rune.Artifacts.create();" class="butn">Create new artifact</a>
-                <a href="javascript:void(0)" onclick="Rune.Exams.Inventory.collection();" class="butn">Items</a>
-                &diams;
-                <a href="javascript:void(0)" onclick="Rune.Diary.Road.show();" class="butn">Diary</a>
-                <a href="javascript:void(0)" onclick="Rune.Quests.Quest.show();" class="butn">Quest</a>
-                &diams;
-                <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.logout();">Logout</a>
+                <?php if(!$locked): ?>
+                    <a href="javascript:void(0)" onclick="Rune.Diary.Road.show();" class="butn">Road</a>
+                    &diams;
+                    <a href="javascript:void(0)" onclick="Rune.Atoms.show();" class="butn">Game</a>
+                    <a href="javascript:void(0)" onclick="Rune.Atoms.edit();" class="butn">Edit</a>
+                    &diams;
+                    <a href="javascript:void(0)" onclick="Rune.Wiki.show();" class="butn">Wiki</a>
+                    &diams;
+                    <a href="javascript:void(0)" onclick="Rune.Artifacts.create();" class="butn">Create new artifact</a>
+                    <a href="javascript:void(0)" onclick="Rune.Exams.Inventory.collection();" class="butn">Items</a>
+                    &diams;
+                    <a href="javascript:void(0)" onclick="Rune.Diary.Road.show();" class="butn">Diary</a>
+                    <a href="javascript:void(0)" onclick="Rune.Quests.Quest.show();" class="butn">Quest</a>
+                    &diams;
+                    <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.logout();">Logout</a>
+                <?php else: ?>
+                    <h1 style="color: orange;">Ship is locked. Access to others is denied. There are no others. You are alone. You are is peace.</h1>
+                <?php endif; ?>
             <?php else: ?>
                 <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.show();">Login</a>
             <?php endif; ?>
         </div>
 
         <div id="page" class="stylo">
-            <script>
-                <?php if($admin): ?>
-                    Rune.Atoms.show();
-                <?php else: ?>
-                    Rune.Wiki.show();
-                <?php endif; ?>
-            </script>
+            <?php if(!$locked): ?>
+                <script>
+                    <?php if($admin): ?>
+                        Rune.Atoms.show();
+                    <?php else: ?>
+                        Rune.Wiki.show();
+                    <?php endif; ?>
+                </script>
+            <?php endif; ?>
         </div>
     </body>
 </html>
