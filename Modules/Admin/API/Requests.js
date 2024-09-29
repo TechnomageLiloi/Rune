@@ -22,6 +22,11 @@ Rune.Admin = {
 
     lock: function (locked)
     {
+        if(!confirm('Are you sure?'))
+        {
+            return;
+        }
+
         API.request('Rune.Admin.Lock', {
             locked: locked
         }, function (data) {
