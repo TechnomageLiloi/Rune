@@ -3,26 +3,25 @@
 namespace Liloi\Rune\Modules\Diary\Domain\Jobs;
 
 /**
- * Class diary types.
+ * Jobs types.
  */
 class Types
 {
-    public const SHIP = 1;
+    public const PERIOD = 1;
     public const BIOTECH = 2;
-    public const COMPANY = 3;
+    public const SOCIAL = 3;
     public const WIKI = 4;
-    public const REPOSITORIES = 5;
-    public const LABYRINTHS = 6;
+    public const PROJECTS = 5;
+    public const WEAKNESS = 6;
     public const FAMILY = 7;
 
-    // @ToDo: To more abstract level with redefine.
     static public array $list = [
-        self::SHIP => 'Ship',
+        self::PERIOD => 'Period',
         self::BIOTECH => 'Biotech',
-        self::COMPANY => 'Company',
+        self::SOCIAL => 'Social',
         self::WIKI => 'Wiki',
-        self::REPOSITORIES => 'Repositories',
-        self::LABYRINTHS => 'Labyrinths',
+        self::PROJECTS => 'Projects',
+        self::WEAKNESS => 'Weakness',
         self::FAMILY => 'Family',
     ];
 

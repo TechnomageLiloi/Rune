@@ -101,7 +101,7 @@ class Manager extends DomainManager
             'key_job' => date('H:i:s'),
             'key_step' => $key_step,
             'title' => '-',
-            'type' => Types::SHIP,
+            'type' => Types::PERIOD,
             'status' => Statuses::TODO
         ];
 

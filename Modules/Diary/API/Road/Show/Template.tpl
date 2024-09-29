@@ -25,7 +25,7 @@
 
     <hr/>
 
-    <h3>Jobs</h3>
+    <h3>Jobs and periods</h3>
 
     <table>
         <tr>
