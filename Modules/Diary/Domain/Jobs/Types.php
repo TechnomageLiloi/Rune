@@ -7,7 +7,7 @@ namespace Liloi\Rune\Modules\Diary\Domain\Jobs;
  */
 class Types
 {
-    public const PERIOD = 1;
+    public const HOME = 1;
     public const BIOTECH = 2;
     public const SOCIAL = 3;
     public const WIKI = 4;
@@ -16,7 +16,7 @@ class Types
     public const FAMILY = 7;
 
     static public array $list = [
-        self::PERIOD => 'Period',
+        self::HOME => 'Home',
         self::BIOTECH => 'Biotech',
         self::SOCIAL => 'Social',
         self::WIKI => 'Wiki',
