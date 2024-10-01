@@ -35,7 +35,7 @@
             <?php echo $entity->getTitle(); ?>
         </td>
         <td style="text-align: right;">
-            <a href="javascript:void(0)" onclick="API.Cards.edit('<?php echo $entity->getKey(); ?>');">Edit</a> &diams;
+            <a href="javascript:void(0)" onclick="Rune.Cards.edit('<?php echo $entity->getKey(); ?>');">Edit</a> &diams;
         </td>
     </tr>
 </table>

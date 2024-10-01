@@ -52,8 +52,8 @@
                     <a href="javascript:void(0)" onclick="Rune.Exams.Inventory.collection();" class="butn">Items</a>
                     &diams;
                     <a href="javascript:void(0)" onclick="Rune.Diary.Road.show();" class="butn">Diary</a>
-                    <a href="javascript:void(0)" onclick="Rune.Quests.Quest.show();" class="butn">Quest</a>
                     &diams;
+                    <a href="javascript:void(0)" onclick="Rune.Cards.getCollection();" class="butn">Cards</a>
                     &diams;
                     <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.logout();">Logout</a>
                 <?php else: ?>

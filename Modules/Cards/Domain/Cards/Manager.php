@@ -2,7 +2,7 @@
 
 namespace Liloi\Rune\Modules\Cards\Domain\Cards;
 
-use Liloi\Vicards\Domain\Manager as DomainManager;
+use Liloi\Rune\Domain\Manager as DomainManager;
 
 class Manager extends DomainManager
 {

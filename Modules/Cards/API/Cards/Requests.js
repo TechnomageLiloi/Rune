@@ -31,7 +31,7 @@ Rune.Cards = {
         API.request('Rune.Cards.Create', {
             'debug': true
         }, function (data) {
-            API.Cards.getCollection();
+            Rune.Cards.getCollection();
         }, function () {
 
         });
@@ -47,7 +47,7 @@ Rune.Cards = {
         API.request('Rune.Cards.Remove', {
             'key': key
         }, function (data) {
-            API.Cards.getCollection();
+            Rune.Cards.getCollection();
         }, function () {
 
         });
@@ -78,7 +78,7 @@ Rune.Cards = {
             'status': jq_block.find('[name="status"]').val(),
             'program': jq_block.find('[name="program"]').val()
         }, function (data) {
-            API.Cards.getCollection();
+            Rune.Cards.getCollection();
         }, function () {
 
         });

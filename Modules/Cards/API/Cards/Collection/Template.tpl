@@ -1,5 +1,5 @@
 <link href="<?php echo ROOT_URL; ?>/Engine/API/Maps/Collection/Style.css" rel="stylesheet" />
-<a href="javascript:void(0)" class="butn" onclick="API.Cards.create();">Create</a>
+<a href="javascript:void(0)" class="butn" onclick="Rune.Cards.create();">Create</a>
 <?php if($collection->count()): ?>
     <hr/>
     <table>
@@ -17,8 +17,8 @@
                     <?php echo $entity->getStatusTitle(); ?>
                 </td>
                 <td>
-                    <a href="javascript:void(0)" class="butn" onclick="API.Cards.show('<?php echo $entity->getKey(); ?>');">Show</a> &diams;
-                    <a href="javascript:void(0)" class="butn" onclick="API.Cards.edit('<?php echo $entity->getKey(); ?>');">Edit</a>
+                    <a href="javascript:void(0)" class="butn" onclick="Rune.Cards.show('<?php echo $entity->getKey(); ?>');">Show</a> &diams;
+                    <a href="javascript:void(0)" class="butn" onclick="Rune.Cards.edit('<?php echo $entity->getKey(); ?>');">Edit</a>
                 </td>
             </tr>
         <?php endforeach; ?>
