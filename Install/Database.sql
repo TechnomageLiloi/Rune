@@ -121,3 +121,13 @@ CREATE TABLE rune_exams_questions (
     foreign key (key_item) references rune_exams_inventory (key_item)
       on update cascade on delete cascade
 );
+
+create table rune_cards
+(
+    key_card bigint unsigned auto_increment,
+    title varchar(250) not null,
+    status tinyint unsigned not null,
+    program text null,
+    constraint rune_cards_pk
+        primary key (key_card)
+);
