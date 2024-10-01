@@ -55,6 +55,14 @@ class Modules
         $manager->add(new Method('Rune.Cards.Create', '\Liloi\Rune\Modules\Cards\API\Cards\Create\Method::execute'));
         $manager->add(new Method('Rune.Cards.Remove', '\Liloi\Rune\Modules\Cards\API\Cards\Remove\Method::execute'));
 
+        $manager->add(new Method('Rune.Imperials.Collection', '\Liloi\Rune\Modules\Business\API\Imperials\Collection\Method::execute'));
+        $manager->add(new Method('Rune.Imperials.Show', '\Liloi\Rune\Modules\Business\API\Imperials\Show\Method::execute'));
+        $manager->add(new Method('Rune.Imperials.Edit', '\Liloi\Rune\Modules\Business\API\Imperials\Edit\Method::execute'));
+        $manager->add(new Method('Rune.Imperials.Save', '\Liloi\Rune\Modules\Business\API\Imperials\Save\Method::execute'));
+        $manager->add(new Method('Rune.Imperials.Create', '\Liloi\Rune\Modules\Business\API\Imperials\Create\Method::execute'));
+        $manager->add(new Method('Rune.Imperials.Remove', '\Liloi\Rune\Modules\Business\API\Imperials\Remove\Method::execute'));
+
+
         return $manager;
     }
 }
