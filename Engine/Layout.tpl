@@ -30,6 +30,7 @@
             <script src="<?php echo ROOT_URL; ?>/Modules/Exams/API/Inventory/Requests.js"></script>
             <script src="<?php echo ROOT_URL; ?>/Modules/Exams/API/Questions/Requests.js"></script>
             <script src="<?php echo ROOT_URL; ?>/Modules/Exams/API/Questions/Test/Testing.js"></script>
+            <script src="<?php echo ROOT_URL; ?>/Modules/Cards/API/Cards/Requests.js"></script>
 
         <?php endif; ?>
 
@@ -52,6 +53,7 @@
                     &diams;
                     <a href="javascript:void(0)" onclick="Rune.Diary.Road.show();" class="butn">Diary</a>
                     <a href="javascript:void(0)" onclick="Rune.Quests.Quest.show();" class="butn">Quest</a>
+                    &diams;
                     &diams;
                     <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.logout();">Logout</a>
                 <?php else: ?>

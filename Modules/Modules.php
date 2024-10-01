@@ -48,6 +48,13 @@ class Modules
         $manager->add(new Method('Rune.Exams.Inventory.Save', '\Liloi\Rune\Modules\Exams\API\Inventory\Save\Method::execute'));
         $manager->add(new Method('Rune.Exams.Inventory.Show', '\Liloi\Rune\Modules\Exams\API\Inventory\Show\Method::execute'));
 
+        $manager->add(new Method('Rune.Cards.Collection', '\Liloi\Rune\Modules\Cards\API\Cards\Collection\Method::execute'));
+        $manager->add(new Method('Rune.Cards.Show', '\Liloi\Rune\Modules\Cards\API\Cards\Show\Method::execute'));
+        $manager->add(new Method('Rune.Cards.Edit', '\Liloi\Rune\Modules\Cards\API\Cards\Edit\Method::execute'));
+        $manager->add(new Method('Rune.Cards.Save', '\Liloi\Rune\Modules\Cards\API\Cards\Save\Method::execute'));
+        $manager->add(new Method('Rune.Cards.Create', '\Liloi\Rune\Modules\Cards\API\Cards\Create\Method::execute'));
+        $manager->add(new Method('Rune.Cards.Remove', '\Liloi\Rune\Modules\Cards\API\Cards\Remove\Method::execute'));
+
         return $manager;
     }
 }
