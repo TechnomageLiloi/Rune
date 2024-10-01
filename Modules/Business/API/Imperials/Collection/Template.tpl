@@ -1,5 +1,5 @@
 <link href="<?php echo ROOT_URL; ?>/Engine/API/Maps/Collection/Style.css" rel="stylesheet" />
-<a href="javascript:void(0)" class="butn" onclick="API.Imperials.create();">Create</a>
+<a href="javascript:void(0)" class="butn" onclick="Rune.Imperials.create();">Create</a>
 <?php if($collection->count()): ?>
     <hr/>
     <table>
@@ -21,8 +21,8 @@
                     <?php echo $entity->getCredits(); ?>
                 </td>
                 <td>
-                    <a href="javascript:void(0)" class="butn" onclick="API.Imperials.show('<?php echo $entity->getKey(); ?>');">Show</a> &diams;
-                    <a href="javascript:void(0)" class="butn" onclick="API.Imperials.edit('<?php echo $entity->getKey(); ?>');">Edit</a>
+                    <a href="javascript:void(0)" class="butn" onclick="Rune.Imperials.show('<?php echo $entity->getKey(); ?>');">Show</a> &diams;
+                    <a href="javascript:void(0)" class="butn" onclick="Rune.Imperials.edit('<?php echo $entity->getKey(); ?>');">Edit</a>
                 </td>
             </tr>
         <?php endforeach; ?>

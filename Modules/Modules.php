@@ -62,7 +62,6 @@ class Modules
         $manager->add(new Method('Rune.Imperials.Create', '\Liloi\Rune\Modules\Business\API\Imperials\Create\Method::execute'));
         $manager->add(new Method('Rune.Imperials.Remove', '\Liloi\Rune\Modules\Business\API\Imperials\Remove\Method::execute'));
 
-
         return $manager;
     }
 }

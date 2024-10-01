@@ -12,7 +12,7 @@
     }
 </style>
 <div id="ticket-edit">
-    <a href="javascript:void(0)" onclick="API.Imperials.save('<?php echo $entity->getKey(); ?>');">Save</a>
+    <a href="javascript:void(0)" onclick="Rune.Imperials.save('<?php echo $entity->getKey(); ?>');">Save</a>
     <hr/>
     <table style="width: 100%;">
         <tr>
@@ -37,5 +37,5 @@
         </td></tr>
     </table>
     <hr/>
-    <a href="javascript:void(0)" onclick="API.Imperials.save('<?php echo $entity->getKey(); ?>');">Save</a>
+    <a href="javascript:void(0)" onclick="Rune.Imperials.save('<?php echo $entity->getKey(); ?>');">Save</a>
 </div>

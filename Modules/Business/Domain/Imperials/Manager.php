@@ -13,7 +13,7 @@ class Manager extends DomainManager
      */
     public static function getTableName(): string
     {
-        return self::getTablePrefix() . 'imperials';
+        return self::getTablePrefix() . 'business_imperials';
     }
 
     public static function loadCollection(): Collection
