@@ -131,3 +131,15 @@ create table rune_cards
     constraint rune_cards_pk
         primary key (key_card)
 );
+
+create table rune_business_imperials
+(
+    key_imperial bigint unsigned auto_increment,
+    title varchar(250) not null,
+    status tinyint unsigned not null,
+    program text null,
+    credits bigint signed not null default 0,
+    constraint rune_business_imperials_pk
+        primary key (key_imperial)
+);
+
