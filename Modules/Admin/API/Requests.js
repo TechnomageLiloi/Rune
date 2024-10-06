@@ -20,6 +20,16 @@ Rune.Admin = {
         });
     },
 
+    report: function ()
+    {
+        API.request('Rune.Admin.Report', {
+        }, function (data) {
+            $('#page').html(data.render);
+        }, function () {
+
+        });
+    },
+
     lock: function (locked)
     {
         if(!confirm('Are you sure?'))
