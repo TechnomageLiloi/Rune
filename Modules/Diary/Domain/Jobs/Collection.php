@@ -15,8 +15,14 @@ class Collection extends AbstractCollection
     {
         $karma = 0;
 
+        /** @var Entity $job */
         foreach($this as $job)
         {
+            if($job->getStatus() != Statuses::SUCCESS)
+            {
+                continue;
+            }
+
             $karma += $job->getKarma();
         }
 
