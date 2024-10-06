@@ -37,7 +37,12 @@ class Entity extends AbstractEntity
 
     public function getTimestamp(): string
     {
-        return date('g:i a', strtotime($this->getKey()));
+        return date('G:i', strtotime($this->getKey()));
+    }
+
+    public function getHour(): string
+    {
+        return date('G', strtotime($this->getKey()));
     }
 
     public function getTypeTitle(): string

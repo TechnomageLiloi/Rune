@@ -4,9 +4,13 @@
 #modules-road-show table {
   width: 100%;
   text-align: left;
+  border: gray 1px solid;
 }
 #modules-road-show table td {
   vertical-align: top;
+}
+#modules-road-show table th {
+  border-top: gray 1px dashed;
 }
 #modules-road-show table p {
   margin: 0;

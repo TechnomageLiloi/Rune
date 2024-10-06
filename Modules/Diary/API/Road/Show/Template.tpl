@@ -37,17 +37,22 @@
             <th>Karna</th>
             <th>Actions</th>
         </tr>
-        <?php foreach($jobs as $job): ?>
+        <?php foreach($jobs->getByHour() as $hour => $jobsForHour): ?>
             <tr>
-                <td><?php echo $job->getTimestamp(); ?></td>
-                <td><?php echo $job->parse(); ?></td>
-                <td><?php echo $job->getStatusTitle(); ?></td>
-                <td><?php echo $job->getTypeTitle(); ?></td>
-                <td><?php echo $job->getKarma(); ?></td>
-                <td>
-                    <a href="javascript:void(0)" class="butn" onclick="Rune.Diary.Jobs.edit('<?php echo $job->getKey(); ?>');">Edit</a>
-                </td>
+                <th colspan="8"><?php echo $hour; ?>:00</th>
             </tr>
+            <?php foreach($jobsForHour as $job): ?>
+                <tr>
+                    <td><?php echo $job->getTimestamp(); ?></td>
+                    <td><?php echo $job->parse(); ?></td>
+                    <td><?php echo $job->getStatusTitle(); ?></td>
+                    <td><?php echo $job->getTypeTitle(); ?></td>
+                    <td><?php echo $job->getKarma(); ?></td>
+                    <td>
+                        <a href="javascript:void(0)" class="butn" onclick="Rune.Diary.Jobs.edit('<?php echo $job->getKey(); ?>');">Edit</a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
         <?php endforeach; ?>
     </table>
 </div>

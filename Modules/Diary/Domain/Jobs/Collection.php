@@ -22,4 +22,21 @@ class Collection extends AbstractCollection
 
         return $karma;
     }
+
+    public function getByHour(): array
+    {
+        $day = [];
+
+        for ($i=0;$i<24;$i++)
+        {
+            $day[$i] = [];
+        }
+
+        foreach ($this as $job)
+        {
+            $day[$job->getHour()][] = $job;
+        }
+
+        return $day;
+    }
 }
