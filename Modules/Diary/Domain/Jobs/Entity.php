@@ -25,6 +25,11 @@ class Entity extends AbstractEntity
         return $this->getField('key_job');
     }
 
+    public function getStep(): string
+    {
+        return $this->getField('key_step');
+    }
+
     public function save(): void
     {
         Manager::save($this);
@@ -48,7 +53,7 @@ class Entity extends AbstractEntity
 
     public function getDay(): string
     {
-        return date('N', strtotime($this->getKey()));
+        return date('N', strtotime($this->getStep()));
     }
 
     public function getTypeTitle(): string
