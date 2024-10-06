@@ -35,6 +35,25 @@ class Manager extends DomainManager
         return $collection;
     }
 
+    public static function loadByPeriod(string $from, string $to): Collection
+    {
+        $name = self::getTableName();
+
+        $rows = self::getAdapter()->getArray(sprintf(
+            'select * from %s where key_step between "%s" and "%s" order by key_job asc;',
+            $name, $from, $to
+        ));
+
+        $collection = new Collection();
+
+        foreach($rows as $row)
+        {
+            $collection[] = Entity::create($row);
+        }
+
+        return $collection;
+    }
+
     /**
      * Load day by key.
      *

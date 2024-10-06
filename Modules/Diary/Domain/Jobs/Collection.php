@@ -45,4 +45,21 @@ class Collection extends AbstractCollection
 
         return $day;
     }
+
+    public function getByDays(): array
+    {
+        $day = [];
+
+        for ($i=1;$i<=7;$i++)
+        {
+            $day[$i] = [];
+        }
+
+        foreach ($this as $job)
+        {
+            $day[$job->getDay()][] = $job;
+        }
+
+        return $day;
+    }
 }

@@ -45,6 +45,12 @@ class Entity extends AbstractEntity
         return date('G', strtotime($this->getKey()));
     }
 
+
+    public function getDay(): string
+    {
+        return date('N', strtotime($this->getKey()));
+    }
+
     public function getTypeTitle(): string
     {
         return Types::$list[$this->getType()];
