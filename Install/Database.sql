@@ -143,3 +143,12 @@ create table rune_business_imperials
         primary key (key_imperial)
 );
 
+create table rune_degrees
+(
+    key_degree tinyint unsigned auto_increment,
+    title varchar(250) not null,
+    status tinyint unsigned not null,
+    program text null,
+    constraint rune_degrees_pk
+        primary key (key_degree)
+);
