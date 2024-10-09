@@ -13,7 +13,7 @@ class Manager extends DomainManager
      */
     public static function getTableName(): string
     {
-        return self::getTablePrefix() . 'Degrees';
+        return self::getTablePrefix() . 'degrees';
     }
 
     public static function loadCollection(): Collection
@@ -21,7 +21,7 @@ class Manager extends DomainManager
         $name = self::getTableName();
 
         $rows = self::getAdapter()->getArray(sprintf(
-            'select * from %s order by key_degree desc;',
+            'select * from %s order by key_degree asc;',
             $name
         ));
 
@@ -70,7 +70,7 @@ class Manager extends DomainManager
         $name = self::getTableName();
         self::getAdapter()->insert($name, [
             'title' => 'Enter the title',
-            'status' => Statuses::ACTIVE,
+            'status' => Statuses::NOT_DEFENDED,
             'program' => '// comment',
         ]);
     }

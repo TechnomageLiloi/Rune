@@ -4,12 +4,16 @@
     <hr/>
     <table>
         <tr>
+            <th>Degree</th>
             <th>Title</th>
             <th>Status</th>
             <th>Actions</th>
         </tr>
         <?php foreach($collection as $entity): ?>
             <tr>
+                <td>
+                    <?php echo $entity->getKey(); ?>
+                </td>
                 <td>
                     <?php echo $entity->getTitle(); ?>
                 </td>

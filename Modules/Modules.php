@@ -63,6 +63,13 @@ class Modules
         $manager->add(new Method('Rune.Imperials.Create', '\Liloi\Rune\Modules\Business\API\Imperials\Create\Method::execute'));
         $manager->add(new Method('Rune.Imperials.Remove', '\Liloi\Rune\Modules\Business\API\Imperials\Remove\Method::execute'));
 
+        $manager->add(new Method('Rune.Degrees.Collection', '\Liloi\Rune\Modules\Degrees\API\Degrees\Collection\Method::execute'));
+        $manager->add(new Method('Rune.Degrees.Show', '\Liloi\Rune\Modules\Degrees\API\Degrees\Show\Method::execute'));
+        $manager->add(new Method('Rune.Degrees.Edit', '\Liloi\Rune\Modules\Degrees\API\Degrees\Edit\Method::execute'));
+        $manager->add(new Method('Rune.Degrees.Save', '\Liloi\Rune\Modules\Degrees\API\Degrees\Save\Method::execute'));
+        $manager->add(new Method('Rune.Degrees.Create', '\Liloi\Rune\Modules\Degrees\API\Degrees\Create\Method::execute'));
+        $manager->add(new Method('Rune.Degrees.Remove', '\Liloi\Rune\Modules\Degrees\API\Degrees\Remove\Method::execute'));
+
         return $manager;
     }
 }
