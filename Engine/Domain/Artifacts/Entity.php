@@ -45,4 +45,9 @@ class Entity extends AbstractEntity
     {
         return date('Y F j (D) - g:i a', strtotime($this->getKey()));
     }
+
+    public function getTypeTitle(): string
+    {
+        return Types::$list[$this->getType()];
+    }
 }

@@ -34,7 +34,7 @@
         <div class="block-quest">
             <a href="javascript:void(0)" onclick="Rune.Artifacts.edit('<?php echo $entity->getKey(); ?>');" class="butn">Edit</a>
             <a href="<?php echo $entity->getGlobal(); ?>" class="butn" target="_blank">Link</a>
-            <?php echo $entity->getTitle(); ?>
+            [<?php echo $entity->getTypeTitle(); ?>] <?php echo $entity->getTitle(); ?>
         </div>
         <?php endforeach; ?>
     <?php endif; ?>
