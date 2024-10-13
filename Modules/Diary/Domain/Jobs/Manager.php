@@ -88,7 +88,7 @@ class Manager extends DomainManager
         $name = self::getTableName();
 
         $row = self::getAdapter()->getRow(sprintf(
-            'select * from %s order by key_job desc limit 1;',
+            'select * from %s order by key_step desc, key_job desc limit 1;',
             $name
         ));
 

@@ -11,9 +11,11 @@ class Method extends SuperMethod
     public static function execute(): Response
     {
 
+        $job = JobsManager::loadCurrent();
+
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
-
+            'job' => $job
         ]));
         return $response;
     }
