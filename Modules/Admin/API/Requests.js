@@ -30,6 +30,16 @@ Rune.Admin = {
         });
     },
 
+    dashboard: function ()
+    {
+        API.request('Rune.Admin.Dashboard', {
+        }, function (data) {
+            $('#page').html(data.render);
+        }, function () {
+
+        });
+    },
+
     dump: function ()
     {
         API.request('Rune.Admin.Dump', {
