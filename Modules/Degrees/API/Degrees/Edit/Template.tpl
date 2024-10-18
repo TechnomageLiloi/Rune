@@ -22,6 +22,8 @@
 
         <tr><td>Title</td><td><input type="text" name="title" value="<?php echo $entity->getTitle(); ?>"/></td></tr>
 
+        <tr><td>Resource</td><td><input type="text" name="resource" value="<?php echo $entity->getResource(); ?>"/></td></tr>
+
         <tr><td>Status</td><td>
             <select name="status">
                 <?php foreach($statuses as $key => $value): ?>

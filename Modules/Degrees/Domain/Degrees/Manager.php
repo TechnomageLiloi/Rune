@@ -72,6 +72,7 @@ class Manager extends DomainManager
             'title' => 'Enter the title',
             'status' => Statuses::NOT_DEFENDED,
             'program' => '// comment',
+            'resource' => 'Wool',
         ]);
     }
 
@@ -89,6 +90,25 @@ class Manager extends DomainManager
         foreach($rows as $row)
         {
             $listDefended[$row['key_degree']] = $row['title'];
+        }
+
+        return $listDefended;
+    }
+
+    public static function getListResource(): array
+    {
+        $name = self::getTableName();
+
+        $rows = self::getAdapter()->getArray(sprintf(
+            'select key_degree, resource from %s where status="%s" order by key_degree asc;',
+            $name, Statuses::DEFENDED
+        ));
+
+        $listDefended = [];
+
+        foreach($rows as $row)
+        {
+            $listDefended[$row['key_degree']] = $row['resource'];
         }
 
         return $listDefended;

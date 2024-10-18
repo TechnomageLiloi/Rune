@@ -75,6 +75,7 @@ Rune.Degrees = {
         API.request('Rune.Degrees.Save', {
             'key': key,
             'title': jq_block.find('[name="title"]').val(),
+            'resource': jq_block.find('[name="resource"]').val(),
             'status': jq_block.find('[name="status"]').val(),
             'program': jq_block.find('[name="program"]').val()
         }, function (data) {

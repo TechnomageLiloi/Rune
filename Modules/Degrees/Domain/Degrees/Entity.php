@@ -13,6 +13,9 @@ use Liloi\Tools\Entity as AbstractEntity;
  *
  * @method string getProgram()
  * @method void setProgram(string $value)
+ *
+ * @method string getResource()
+ * @method void setResource(string $value)
  */
 class Entity extends AbstractEntity
 {
