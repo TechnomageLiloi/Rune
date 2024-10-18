@@ -20,7 +20,7 @@
     <hr/>
 
     <h2>Jobs and periods</h2>
-    <h3>Karma for day: <?php echo $jobs->getKarma(); ?></h3>
+    <h3>Resources for today: <?php echo implode(', ', $jobs->getResources()); ?></h3>
 
     <table>
         <tr>

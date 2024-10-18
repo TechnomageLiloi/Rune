@@ -29,6 +29,13 @@ class Collection extends AbstractCollection
         return $karma;
     }
 
+    public function getResources(): array
+    {
+        $resources = [];
+
+        return $resources;
+    }
+
     public function getByHour(): array
     {
         $day = [];
