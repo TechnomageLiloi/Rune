@@ -74,4 +74,23 @@ class Manager extends DomainManager
             'program' => '// comment',
         ]);
     }
+
+    public static function getList(): array
+    {
+        $name = self::getTableName();
+
+        $rows = self::getAdapter()->getArray(sprintf(
+            'select key_degree, title from %s where status="%s" order by key_degree asc;',
+            $name, Statuses::DEFENDED
+        ));
+
+        $listDefended = [];
+
+        foreach($rows as $row)
+        {
+            $listDefended[$row['key_degree']] = $row['title'];
+        }
+
+        return $listDefended;
+    }
 }

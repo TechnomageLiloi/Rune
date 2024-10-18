@@ -2,28 +2,24 @@
 
 namespace Liloi\Rune\Modules\Diary\Domain\Jobs;
 
+use Liloi\Rune\Modules\Degrees\Domain\Degrees\Manager as DegreesManager;
+
 /**
  * Jobs types.
  */
 class Types
 {
-    public const HOME = 1;
-    public const BIOTECH = 2;
-    public const SOCIAL = 3;
-    public const WIKI = 4;
-    public const PROJECT = 5;
-    public const WEAKNESS = 6;
-    public const FAMILY = 7;
+    static public ?array $list = null;
 
-    static public array $list = [
-        self::HOME => 'Home',
-        self::BIOTECH => 'Biotech',
-        self::SOCIAL => 'Social',
-        self::WIKI => 'Wiki',
-        self::PROJECT => 'Project',
-        self::WEAKNESS => 'Weakness',
-        self::FAMILY => 'Family',
-    ];
+    public static function getList(): array
+    {
+        if(self::$list === null)
+        {
+            self::$list = DegreesManager::getList();
+        }
+
+        return self::$list;
+    }
 
     // @todo: move this method to more abstract level.
     public static function getClass(string $id): string

@@ -58,7 +58,7 @@ class Entity extends AbstractEntity
 
     public function getTypeTitle(): string
     {
-        return Types::$list[$this->getType()];
+        return Types::getList()[$this->getType()];
     }
 
     public function getStatusTitle(): string

@@ -9,6 +9,6 @@ class Statuses
 
     public static $list = [
         self::NOT_DEFENDED => 'Not defended degree',
-        self::DEFENDED => 'Defended degree',
+        self::DEFENDED => 'Defended degreeimplode(', ')',
     ];
 }

@@ -24,7 +24,7 @@ class Method extends SuperMethod
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
             'entity' => $entity,
-            'types' => JobsTypes::$list,
+            'types' => JobsTypes::getList(),
             'statuses' => JobsStatuses::$list,
         ]));
 
