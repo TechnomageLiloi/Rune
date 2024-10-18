@@ -46,7 +46,7 @@ create table rune_diary_jobs
     title varchar(100) not null,
     type tinyint unsigned default 1 not null,
     status tinyint unsigned default 1 not null,
-    karma tinyint signed default 0 not null,
+    karma smallint signed default 0 not null,
     constraint rune_diary_jobs_pk
         primary key (key_job, key_step),
     constraint rune_diary_jobs_rune_diary_road_key_step_fk
