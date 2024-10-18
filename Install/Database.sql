@@ -149,6 +149,7 @@ create table rune_degrees
     title varchar(250) not null,
     status tinyint unsigned not null,
     program text null,
+    resource varchar(50) not null default 'Wool',
     constraint rune_degrees_pk
         primary key (key_degree)
 );
