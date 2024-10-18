@@ -32,7 +32,7 @@ class Collection extends AbstractCollection
 
     public function getResources(): array
     {
-        $listDegrees = DegreesManager::getList();
+        $listDegrees = DegreesManager::getListResource();
         $resources = [];
         
         foreach ($listDegrees as $key => $title)

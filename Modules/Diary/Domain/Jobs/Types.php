@@ -15,7 +15,7 @@ class Types
     {
         if(self::$list === null)
         {
-            self::$list = DegreesManager::getList();
+            self::$list = DegreesManager::getListResource();
         }
 
         return self::$list;

@@ -72,7 +72,7 @@ class Manager extends DomainManager
             'title' => 'Enter the title',
             'status' => Statuses::NOT_DEFENDED,
             'program' => '// comment',
-            'resource' => 'Wool',
+            'resource' => 'Wool: ' . date('Y-m-d-H-i-s'),
         ]);
     }
 
