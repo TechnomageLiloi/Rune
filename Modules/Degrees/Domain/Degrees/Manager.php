@@ -81,8 +81,8 @@ class Manager extends DomainManager
         $name = self::getTableName();
 
         $rows = self::getAdapter()->getArray(sprintf(
-            'select key_degree, title from %s where status="%s" order by key_degree asc;',
-            $name, Statuses::DEFENDED
+            'select key_degree, title from %s where status!="%s" order by key_degree asc;',
+            $name, Statuses::NOT_DEFENDED
         ));
 
         $listDefended = [];
@@ -100,8 +100,8 @@ class Manager extends DomainManager
         $name = self::getTableName();
 
         $rows = self::getAdapter()->getArray(sprintf(
-            'select key_degree, resource from %s where status="%s" order by key_degree asc;',
-            $name, Statuses::DEFENDED
+            'select key_degree, resource from %s where status!="%s" order by key_degree asc;',
+            $name, Statuses::NOT_DEFENDED
         ));
 
         $listDefended = [];
