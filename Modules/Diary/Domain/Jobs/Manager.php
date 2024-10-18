@@ -120,7 +120,7 @@ class Manager extends DomainManager
             'key_job' => date('H:i:s'),
             'key_step' => $key_step,
             'title' => '-',
-            'type' => Types::HOME,
+            'type' => 1, // @todo: remove magic numbers.
             'status' => Statuses::TODO,
             'karma' => 0
         ];
