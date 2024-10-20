@@ -5,6 +5,8 @@
     <div class="controls">
         <a href="javascript:void(0)" class="butn" onclick="Rune.Diary.Road.edit('<?php echo $entity->getKey(); ?>');">Edit step</a>
         &diams;
+        <a href="javascript:void(0)" onclick="Rune.Admin.report();" class="butn">Report</a>
+        &diams;
         <a href="javascript:void(0)" class="butn" onclick="Rune.Diary.Jobs.create();">Create job</a>
         <hr/>
     </div>

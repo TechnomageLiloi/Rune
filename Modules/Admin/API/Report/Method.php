@@ -17,6 +17,7 @@ class Method extends SuperMethod
 
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
+            'jobs' => $jobs,
             'report' => $jobs->getByDays()
         ]));
         return $response;

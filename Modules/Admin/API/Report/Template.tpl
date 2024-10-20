@@ -3,6 +3,14 @@
 <div id="modules-admin-report">
     <h1>Report</h1>
 
+    <h3>Resources for week<?php $resources = $jobs->getResources(); ?></h3>
+
+    <?php foreach($resources as $key => $value): ?>
+    <?php echo $key . ': ' . $value . ';'; ?>
+    <?php endforeach; ?>
+
+    <h3>Jobs</h3>
+
     <table>
         <tr>
             <?php for($i=0;$i<7;$i++): ?>
