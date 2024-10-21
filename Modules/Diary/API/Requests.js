@@ -126,7 +126,7 @@ Rune.Diary = {
             }
 
             const jq_block = $('#application-diary-edit');
-            API.request('Rune.Diary.Jobs.Save', {
+            API.request('Rune.Diary.Problems.Save', {
                 key_problem: key_problem,
                 summary: jq_block.find('[name=summary]').val()
             }, function (data) {
