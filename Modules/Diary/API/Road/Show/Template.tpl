@@ -28,6 +28,16 @@
         <?php echo $key . ': ' . $value . ';'; ?>
     <?php endforeach; ?>
 
+    <h3>Problems</h3>
+
+    <?php foreach($problems as $key => $value): ?>
+        <div class="problem">
+            <?php echo $value->getSummary(); ?>
+        </div>
+    <?php endforeach; ?>
+
+    <br/>
+
     <h3>Jobs for today</h3>
 
     <table>
