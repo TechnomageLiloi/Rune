@@ -153,3 +153,11 @@ create table rune_degrees
     constraint rune_degrees_pk
         primary key (key_degree)
 );
+
+create table rune_diary_problems
+(
+    key_problem datetime not null,
+    summary text null,
+    constraint rune_diary_problems_pk
+        primary key (key_problem)
+);
