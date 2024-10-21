@@ -100,7 +100,7 @@ class Manager extends DomainManager
         $name = self::getTableName();
 
         $rows = self::getAdapter()->getArray(sprintf(
-            'select key_degree, resource from %s where status!="%s" order by key_degree asc;',
+            'select key_degree, title, resource from %s where status!="%s" order by key_degree asc;',
             $name, Statuses::NOT_DEFENDED
         ));
 
@@ -108,7 +108,7 @@ class Manager extends DomainManager
 
         foreach($rows as $row)
         {
-            $listDefended[$row['key_degree']] = $row['resource'];
+            $listDefended[$row['key_degree']] = $row['title'] . ' (' . $row['resource'] . ')';
         }
 
         return $listDefended;
