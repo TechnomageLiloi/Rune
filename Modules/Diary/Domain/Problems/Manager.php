@@ -72,6 +72,17 @@ class Manager extends DomainManager
         self::update($name, $data, sprintf('key_problem="%s"', $entity->getKey()));
     }
 
+    public static function remove(Entity $entity): void
+    {
+        $name = self::getTableName();
+        $key = $entity->getKey();
+
+        self::getAdapter()->delete(
+            $name,
+            sprintf('key_problem = "%s"', $key)
+        );
+    }
+
     /**
      * Create new day.
      */

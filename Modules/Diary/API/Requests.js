@@ -108,6 +108,20 @@ Rune.Diary = {
             });
         },
 
+        remove: function (key_problem) {
+            if (!confirm('Are you sure?')) {
+                return;
+            }
+
+            API.request('Rune.Diary.Problems.Remove', {
+                key_problem: key_problem
+            }, function (data) {
+                Rune.Diary.Road.show();
+            }, function () {
+
+            });
+        },
+
         edit: function (key_problem) {
             API.request('Rune.Diary.Problems.Edit', {
                 key_problem: key_problem

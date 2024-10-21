@@ -33,6 +33,7 @@
     <?php foreach($problems as $key => $value): ?>
         <div class="problem">
             <a href="javascript:void(0)" class="butn" onclick="Rune.Diary.Problems.edit('<?php echo $value->getKey(); ?>');">Edit</a>
+            <a href="javascript:void(0)" class="butn" onclick="Rune.Diary.Problems.remove('<?php echo $value->getKey(); ?>');">Remove</a>
             <?php echo $value->getSummary(); ?>
         </div>
     <?php endforeach; ?>
