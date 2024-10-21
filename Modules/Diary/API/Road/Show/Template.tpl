@@ -7,6 +7,7 @@
         &diams;
         <a href="javascript:void(0)" onclick="Rune.Admin.report();" class="butn">Report</a>
         &diams;
+        <a href="javascript:void(0)" class="butn" onclick="Rune.Diary.Problems.create();">Create problem</a>
         <a href="javascript:void(0)" class="butn" onclick="Rune.Diary.Jobs.create();">Create job</a>
         <hr/>
     </div>

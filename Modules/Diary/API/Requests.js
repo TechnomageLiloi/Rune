@@ -93,5 +93,47 @@ Rune.Diary = {
 
             });
         }
-    }
+    },
+
+    Problems: {
+        create: function () {
+            if (!confirm('Are you sure?')) {
+                return;
+            }
+
+            API.request('Rune.Diary.Problems.Create', {}, function (data) {
+                Rune.Diary.Road.show();
+            }, function () {
+
+            });
+        },
+
+        edit: function (key_problem) {
+            API.request('Rune.Diary.Problems.Edit', {
+                key_problem: key_problem
+            }, function (data) {
+                const wrap = $('#page');
+                wrap.html(data.render);
+                wrap.show();
+            }, function () {
+
+            });
+        },
+
+        save: function (key_problem) {
+            if (!confirm('Are you sure?')) {
+                return;
+            }
+
+            const jq_block = $('#application-diary-edit');
+            API.request('Rune.Diary.Jobs.Save', {
+                key_problem: key_problem,
+                summary: jq_block.find('[name=summary]').val()
+            }, function (data) {
+                Rune.Diary.Road.show();
+            }, function () {
+
+            });
+        }
+    },
 }

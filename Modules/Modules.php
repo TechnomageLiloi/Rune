@@ -25,6 +25,9 @@ class Modules
         $manager->add(new Method('Rune.Diary.Jobs.Create', '\Liloi\Rune\Modules\Diary\API\Jobs\Create\Method::execute'));
         $manager->add(new Method('Rune.Diary.Jobs.Edit', '\Liloi\Rune\Modules\Diary\API\Jobs\Edit\Method::execute'));
         $manager->add(new Method('Rune.Diary.Jobs.Save', '\Liloi\Rune\Modules\Diary\API\Jobs\Save\Method::execute'));
+        $manager->add(new Method('Rune.Diary.Problems.Create', '\Liloi\Rune\Modules\Diary\API\Problems\Create\Method::execute'));
+        $manager->add(new Method('Rune.Diary.Problems.Edit', '\Liloi\Rune\Modules\Diary\API\Problems\Edit\Method::execute'));
+        $manager->add(new Method('Rune.Diary.Problems.Save', '\Liloi\Rune\Modules\Diary\API\Problems\Save\Method::execute'));
 
         $manager->add(new Method('Rune.Quests.Quest.Create', '\Liloi\Rune\Modules\Quests\API\Quests\Create\Method::execute'));
         $manager->add(new Method('Rune.Quests.Quest.Show', '\Liloi\Rune\Modules\Quests\API\Quests\Show\Method::execute'));
