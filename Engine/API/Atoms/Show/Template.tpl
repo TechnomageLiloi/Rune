@@ -23,7 +23,7 @@
         <hr/>
         <h3>There are several items you see:</h3>
         <?php foreach($inventory as $key => $entity): ?>
-            <a href="javascript:void(0)" onclick="Rune.Exams.Inventory.show('<?php echo $entity->getKey(); ?>');"><?php echo $entity->getTitle(); ?></a> <?php echo mb_strtolower($entity->getProgram()); ?>
+            <a href="javascript:void(0)" onclick="Rune.Exams.Inventory.show('<?php echo $entity->getKey(); ?>');"><?php echo $entity->getTitle(); ?></a> <?php echo $entity->getProgram(); ?>
         <?php endforeach; ?>
     <?php endif; ?>
 
