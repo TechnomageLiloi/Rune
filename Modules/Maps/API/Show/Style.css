@@ -1,7 +1,12 @@
 #modules-maps-show {
-  background-color: whitesmoke;
+  background-color: white;
+  height: 90%;
+}
+#modules-maps-show table {
+  width: 100%;
   height: 100%;
 }
 #modules-maps-show table td {
   border: gray 1px solid;
+  vertical-align: top;
 }

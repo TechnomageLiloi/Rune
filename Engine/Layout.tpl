@@ -77,7 +77,7 @@
             <?php if(!$locked): ?>
                 <script>
                     <?php if($admin): ?>
-                        Rune.Atoms.show();
+                        Rune.Maps.show();
                     <?php else: ?>
                         Rune.Wiki.show();
                     <?php endif; ?>

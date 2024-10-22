@@ -3,9 +3,9 @@
 <div id="modules-maps-show">
     <table>
         <tr>
-            <td>A</td>
-            <td>B</td>
-            <td>C</td>
+            <td></td>
+            <td></td>
+            <td></td>
         </tr>
     </table>
 </div>
