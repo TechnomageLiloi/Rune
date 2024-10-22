@@ -19,7 +19,9 @@ let Map = {
             {
                 if(Map.PCx === x && Map.PCy ===y)
                 {
+                    context.fillStyle = "yellow";
                     context.fillText('@', 10 * (x + size) + 50, 10 * (y + size) + 50);
+                    context.fillStyle = "white";
                     continue;
                 }
 
@@ -41,6 +43,11 @@ let Map = {
             case 100: Map.PCx++; break;
             case 119: Map.PCy--; break;
             case 120: Map.PCy++; break;
+
+            case 113: {Map.PCx--; Map.PCy--;}; break;
+            case 99: {Map.PCx++; Map.PCy++;}; break;
+            case 101: {Map.PCx++; Map.PCy--;}; break;
+            case 122: {Map.PCx--; Map.PCy++;}; break;
         }
 
         Map.start();
