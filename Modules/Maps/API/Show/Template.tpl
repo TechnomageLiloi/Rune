@@ -5,7 +5,9 @@
         <tr>
             <td></td>
             <td>
-                <canvas id="map"></canvas>
+                <div id="wrap-map">
+                    <canvas id="map" width="400" height="400"></canvas>
+                </div>
             </td>
             <td></td>
         </tr>

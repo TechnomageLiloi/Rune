@@ -11,8 +11,10 @@
   border: gray 1px solid;
   vertical-align: top;
 }
-#modules-maps-show #map {
-  background-color: black;
-  width: 100%;
-  height: 100%;
+#modules-maps-show #wrap-map {
+  width: 400px;
+  margin: 0 auto;
+}
+#modules-maps-show #wrap-map #map {
+  border: 1px solid red;
 }
