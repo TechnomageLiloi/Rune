@@ -4,8 +4,12 @@
     <table>
         <tr>
             <td></td>
-            <td></td>
+            <td>
+                <canvas id="map"></canvas>
+            </td>
             <td></td>
         </tr>
     </table>
 </div>
+
+<script src="<?php echo ROOT_URL; ?>/Modules/Maps/API/Show/Map.js"></script>
