@@ -33,6 +33,7 @@
             <script src="<?php echo ROOT_URL; ?>/Modules/Cards/API/Cards/Requests.js"></script>
             <script src="<?php echo ROOT_URL; ?>/Modules/Degrees/API/Degrees/Requests.js"></script>
             <script src="<?php echo ROOT_URL; ?>/Modules/Business/API/Imperials/Requests.js"></script>
+            <script src="<?php echo ROOT_URL; ?>/Modules/Maps/API/Requests.js"></script>
 
         <?php endif; ?>
 
@@ -61,6 +62,7 @@
                     <a href="javascript:void(0)" onclick="Rune.Cards.getCollection();" class="butn">Cards</a>
                     <a href="javascript:void(0)" onclick="Rune.Imperials.getCollection();" class="butn">Business</a>
                     &diams;
+                    <a href="javascript:void(0)" class="butn" onclick="Rune.Maps.show();">Map</a>
                     <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.logout();">Logout</a>
                 <?php else: ?>
                     <h1 style="color: orange;">Ship is locked. Access to others is denied. There are no others. You are alone. You are in peace.</h1>

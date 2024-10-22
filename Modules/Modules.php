@@ -76,6 +76,8 @@ class Modules
         $manager->add(new Method('Rune.Degrees.Create', '\Liloi\Rune\Modules\Degrees\API\Degrees\Create\Method::execute'));
         $manager->add(new Method('Rune.Degrees.Remove', '\Liloi\Rune\Modules\Degrees\API\Degrees\Remove\Method::execute'));
 
+        $manager->add(new Method('Rune.Maps.Show', '\Liloi\Rune\Modules\Maps\API\Show\Method::execute'));
+
         return $manager;
     }
 }
