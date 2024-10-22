@@ -1,9 +1,9 @@
 let Map = {
+    PCx: 0,
+    PCy: 0,
+
     start: function ()
     {
-        var PCx = 0;
-        var PCy = 0;
-
         let map = document.getElementById("map");
         let context = map.getContext("2d");
         context.font = "15px monospace";
@@ -17,7 +17,7 @@ let Map = {
         {
             for(let x=-size;x<=size;x++)
             {
-                if(PCx === x && PCy ===y)
+                if(Map.PCx === x && Map.PCy ===y)
                 {
                     context.fillText('@', 10 * (x + size) + 50, 10 * (y + size) + 50);
                     continue;
@@ -32,5 +32,19 @@ let Map = {
 };
 
 (function () {
+    $("body").on( "keypress", function( event ) {
+        // alert(event.keyCode);
+
+        switch (event.keyCode)
+        {
+            case 97: Map.PCx--; break;
+            case 100: Map.PCx++; break;
+            case 119: Map.PCy--; break;
+            case 120: Map.PCy++; break;
+        }
+
+        Map.start();
+    });
+
     Map.start();
 })();
