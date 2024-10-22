@@ -20,6 +20,7 @@ body #ticket-current {
 body #page {
   background-color: white;
   padding: 10px;
+  height: 100%;
 }
 body a.butn {
   border: red 1px solid;

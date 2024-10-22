@@ -1,0 +1,7 @@
+#modules-maps-show {
+  background-color: whitesmoke;
+  height: 100%;
+}
+#modules-maps-show table td {
+  border: gray 1px solid;
+}
