@@ -21,7 +21,10 @@ let Map = {
 
             switch (tile)
             {
+                case '.':
                 case 'T': context.fillStyle = "lime"; break;
+                case '#': context.fillStyle = "silver"; break;
+                case ',':
                 default: context.fillStyle = "white";
             }
 
