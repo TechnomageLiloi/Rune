@@ -15,3 +15,7 @@
 </div>
 
 <script src="<?php echo ROOT_URL; ?>/Modules/Maps/API/Show/Map.js"></script>
+
+<script>
+    Map.data = <?php echo $entity->getData(); ?>;
+</script>
