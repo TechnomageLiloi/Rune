@@ -3,13 +3,17 @@
 <div id="modules-maps-show">
     <table>
         <tr>
-            <td></td>
+            <td>
+                <div id="side-left"></div>
+            </td>
             <td>
                 <div id="wrap-map">
                     <canvas id="map" width="400" height="400"></canvas>
                 </div>
             </td>
-            <td></td>
+            <td>
+                <div id="side-right"></div>
+            </td>
         </tr>
     </table>
 </div>

@@ -32,9 +32,15 @@ let Map = {
         };
 
         context.fillStyle = 'red';
+        $('#side-left').html('');
         $.each(Map.data.objects, function(index, value) {
-            context.fillRect(0,0,400,400);
+            // context.fillRect(0,0,400,400);
             context.fillText('o', 10 * (value.x + size) + 50, 10 * (value.y + size) + 50);
+
+            if(Map.PCx == value.x && Map.PCy == value.y)
+            {
+                $('#side-left').html(JSON.stringify(value));
+            }
         });
 
         for(let y=-size;y<=size;y++)
