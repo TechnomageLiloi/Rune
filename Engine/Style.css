@@ -22,6 +22,10 @@ body #page {
   padding: 10px;
   height: 100%;
 }
+body #page .controls {
+  background-color: #ebefff;
+  padding: 10px;
+}
 body a.butn {
   border: red 1px solid;
   padding: 2px;
