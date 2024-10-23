@@ -97,11 +97,20 @@ let Map = {
             case 122: {x--; y++;}; break;
         }
 
-        if(Map.data.map[y + Map.size][x + Map.size] !== '#')
+        if(
+            Map.data.map[y + Map.size][x + Map.size] === '#' ||
+
+            x < -Map.size ||
+            x > Map.size ||
+            y < -Map.size ||
+            y > Map.size
+        )
         {
-            Map.PCx = x;
-            Map.PCy = y;
+            return;
         }
+
+        Map.PCx = x;
+        Map.PCy = y;
 
         Map.start();
     });
