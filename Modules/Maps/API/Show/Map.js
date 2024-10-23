@@ -1,6 +1,7 @@
 let Map = {
     PCx: 0,
     PCy: 0,
+    size: 15,
 
     start: function ()
     {
@@ -11,7 +12,7 @@ let Map = {
 
         context.fillStyle = "black";
         context.fillRect(0,0,400,400);
-        let size = 15;
+        let size = 15; // @deprecated; use Map.size
 
         context.fillStyle = "white";
 
@@ -80,19 +81,26 @@ let Map = {
 
 (function () {
     $("body").on( "keypress", function( event ) {
-        // alert(event.keyCode);
+        var x = Map.PCx;
+        var y = Map.PCy;
 
         switch (event.keyCode)
         {
-            case 97: Map.PCx--; break;
-            case 100: Map.PCx++; break;
-            case 119: Map.PCy--; break;
-            case 120: Map.PCy++; break;
+            case 97: x--; break;
+            case 100: x++; break;
+            case 119: y--; break;
+            case 120: y++; break;
 
-            case 113: {Map.PCx--; Map.PCy--;}; break;
-            case 99: {Map.PCx++; Map.PCy++;}; break;
-            case 101: {Map.PCx++; Map.PCy--;}; break;
-            case 122: {Map.PCx--; Map.PCy++;}; break;
+            case 113: {x--; y--;}; break;
+            case 99: {x++; y++;}; break;
+            case 101: {x++; y--;}; break;
+            case 122: {x--; y++;}; break;
+        }
+
+        if(Map.data.map[y + Map.size][x + Map.size] !== '#')
+        {
+            Map.PCx = x;
+            Map.PCy = y;
         }
 
         Map.start();
