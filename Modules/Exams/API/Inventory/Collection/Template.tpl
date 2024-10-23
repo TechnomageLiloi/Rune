@@ -16,9 +16,12 @@
     }
 
 </style>
-<div id="problem-group">
-    <a href="javascript:void(0)" onclick="Rune.Exams.Inventory.create();" class="butn">Create question</a>
-    <hr/>
+<div id="problem-group" class="window">
+    <div class="controls">
+        <a href="javascript:void(0)" onclick="Rune.Exams.Inventory.create();" class="butn">Create item</a>
+        <a href="javascript:void(0)" class="butn" onclick="Rune.Maps.show();" style="float: right;">x</a>
+    </div>
+
     <table>
         <tr>
             <th>Title</th>
