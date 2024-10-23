@@ -16,7 +16,16 @@ class Map
 
     public function load(): string
     {
-        $data = json_decode($this->entity->getData());
+        $data = (array)json_decode($this->entity->getData());
+
+        if(!isset($data['map']))
+        {
+            $line = '...............................';
+            $map = array_fill(0, 31, $line);
+
+            $data['map'] = $map;
+        }
+
         return json_encode($data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     }
 }
