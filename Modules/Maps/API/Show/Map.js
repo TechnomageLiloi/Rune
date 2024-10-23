@@ -31,6 +31,12 @@ let Map = {
             context.fillText(tile, 10 * (x + size) + 50, 10 * (y + size) + 50);
         };
 
+        context.fillStyle = 'red';
+        $.each(Map.data.objects, function(index, value) {
+            context.fillRect(0,0,400,400);
+            context.fillText('o', 10 * (value.x + size) + 50, 10 * (value.y + size) + 50);
+        });
+
         for(let y=-size;y<=size;y++)
         {
             for(let x=-size;x<=size;x++)

@@ -26,6 +26,11 @@ class Map
             $data['map'] = $map;
         }
 
+        if(!isset($data['objects']))
+        {
+            $data['objects'] = [];
+        }
+
         return json_encode($data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     }
 }
