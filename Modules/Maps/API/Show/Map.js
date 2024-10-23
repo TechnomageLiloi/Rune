@@ -4,6 +4,7 @@ let Map = {
 
     start: function ()
     {
+        var tile = '.';
         let map = document.getElementById("map");
         let context = map.getContext("2d");
         context.font = "15px monospace";
@@ -25,7 +26,8 @@ let Map = {
                     continue;
                 }
 
-                context.fillText('.', 10 * (x + size) + 50, 10 * (y + size) + 50);
+                tile = Map.data.map[y + size][x + size];
+                context.fillText(tile, 10 * (x + size) + 50, 10 * (y + size) + 50);
             }
         }
 
