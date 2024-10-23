@@ -14,6 +14,20 @@ let Map = {
         let size = 15;
 
         context.fillStyle = "white";
+
+        let renderTile = function (x, y)
+        {
+            tile = Map.data.map[y + size][x + size];
+
+            switch (tile)
+            {
+                case 'T': context.fillStyle = "lime"; break;
+                default: context.fillStyle = "white";
+            }
+
+            context.fillText(tile, 10 * (x + size) + 50, 10 * (y + size) + 50);
+        };
+
         for(let y=-size;y<=size;y++)
         {
             for(let x=-size;x<=size;x++)
@@ -26,8 +40,9 @@ let Map = {
                     continue;
                 }
 
-                tile = Map.data.map[y + size][x + size];
-                context.fillText(tile, 10 * (x + size) + 50, 10 * (y + size) + 50);
+                // tile = Map.data.map[y + size][x + size];
+                // context.fillText(tile, 10 * (x + size) + 50, 10 * (y + size) + 50);
+                renderTile(x, y);
             }
         }
 
