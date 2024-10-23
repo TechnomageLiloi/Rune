@@ -110,4 +110,14 @@ class Entity extends AbstractEntity
 
         return $data[$key];
     }
+
+    /**
+     * @return string
+     * @todo Move JSON decode to more abstract layer.
+     */
+    public function getDataBeauty(): string
+    {
+        $data = (array)json_decode($this->getData());
+        return json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    }
 }

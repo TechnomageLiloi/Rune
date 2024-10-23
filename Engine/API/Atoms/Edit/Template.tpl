@@ -19,7 +19,7 @@
 
         <tr><td>Wiki</td><td><textarea name="wiki"><?php echo $entity->getWiki(); ?></textarea></td></tr>
 
-        <tr><td>Data</td><td><textarea name="data"><?php echo $entity->getData(); ?></textarea></td></tr>
+        <tr><td>Data</td><td><textarea name="data"><?php echo $entity->getDataBeauty(); ?></textarea></td></tr>
     </table>
     <hr/>
     <a href="javascript:void(0)" onclick="Rune.Atoms.save('<?php echo $entity->getKey(); ?>');">Save</a>

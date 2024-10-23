@@ -5,6 +5,7 @@ Rune.Maps = {
 
         }, function (data) {
             $('#page').html(data.render);
+            Map.start();
         }, function () {
 
         });
