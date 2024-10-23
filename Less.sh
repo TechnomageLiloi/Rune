@@ -6,3 +6,4 @@ lessc ./Modules/Diary/API/Road/Show/Style.less ./Modules/Diary/API/Road/Show/Sty
 lessc ./Modules/Admin/API/Report/Style.less ./Modules/Admin/API/Report/Style.css
 lessc ./Modules/Admin/API/Dashboard/Style.less ./Modules/Admin/API/Dashboard/Style.css
 lessc ./Modules/Maps/API/Show/Style.less ./Modules/Maps/API/Show/Style.css
+lessc ./Modules/Quests/API/Quests/Show/Style.less ./Modules/Quests/API/Quests/Show/Style.css

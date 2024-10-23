@@ -10,7 +10,7 @@
         <a href="javascript:void(0)" class="butn" onclick="Rune.Diary.Problems.create();">Create problem</a>
         <a href="javascript:void(0)" class="butn" onclick="Rune.Diary.Jobs.create();">Create job</a>
 
-        <a href="javascript:void(0)" class="butn" onclick="Rune.Maps.show();" style="float: right;">X</a>
+        <a href="javascript:void(0)" class="butn" onclick="Rune.Maps.show();" style="float: right;">x</a>
     </div>
 
     <div class="data">

@@ -7,8 +7,11 @@
         <a href="javascript:void(0)" class="butn" onclick="Rune.Quests.Quest.create();">Create new quest</a>
         &diams;
         <a href="javascript:void(0)" class="butn" onclick="Rune.Quests.Tickets.create();">Create ticket</a>
-        <hr/>
+
+        <a href="javascript:void(0)" class="butn" onclick="Rune.Maps.show();" style="float: right;">x</a>
     </div>
+
+    <hr/>
 
     <div class="data">
         <?php echo $entity->getData(); ?><br/>
