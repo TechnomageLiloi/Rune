@@ -15,10 +15,12 @@ class Method extends SuperMethod
         $RID = AtomsManager::URLtoATOM($URL);
         $entity = AtomsManager::load($RID);
 
+        $map = new Map($entity);
 
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
-            'entity' => $entity
+            'entity' => $entity,
+            'map' => $map->load()
         ]));
 
         return $response;
