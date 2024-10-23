@@ -108,7 +108,7 @@ class Manager extends DomainManager
 
         foreach($rows as $row)
         {
-            $listDefended[$row['key_degree']] = $row['title'] . ' (' . $row['resource'] . ')';
+            $listDefended[$row['key_degree']] = $row['resource'];
         }
 
         return $listDefended;
