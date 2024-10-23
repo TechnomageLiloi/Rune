@@ -34,12 +34,18 @@ let Map = {
         context.fillStyle = 'red';
         $('#side-left').html('');
         $.each(Map.data.objects, function(index, value) {
-            // context.fillRect(0,0,400,400);
-            context.fillText('o', 10 * (value.x + size) + 50, 10 * (value.y + size) + 50);
+            var symbol = value.type === "quest" ? '*' : '0';
+
+            context.fillText(symbol, 10 * (value.x + size) + 50, 10 * (value.y + size) + 50);
 
             if(Map.PCx == value.x && Map.PCy == value.y)
             {
                 $('#side-left').html(JSON.stringify(value));
+
+                if(value.type === 'link')
+                {
+                    window.location.href = value.value;
+                }
             }
         });
 
