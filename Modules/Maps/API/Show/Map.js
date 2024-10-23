@@ -34,7 +34,14 @@ let Map = {
         context.fillStyle = 'red';
         $('#side-left').html('');
         $.each(Map.data.objects, function(index, value) {
-            var symbol = value.type === "quest" ? '*' : '0';
+
+            var symbol = '*';
+
+            switch (value.type) {
+                case 'quest': context.fillStyle = "orange"; break;
+                case 'item': context.fillStyle = "red"; break;
+                default: context.fillStyle = "blue"; symbol = '0'
+            }
 
             context.fillText(symbol, 10 * (value.x + size) + 50, 10 * (value.y + size) + 50);
 

@@ -1,3 +1,5 @@
+-- @todo: rename rune_exams_inventory to rune_exams_items
+
 create table rune_atoms
 (
 	key_atom varchar(250) not null,
