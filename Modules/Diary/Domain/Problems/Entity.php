@@ -35,4 +35,16 @@ class Entity extends AbstractEntity
     {
         return date('Y F j (D) - g:i a', strtotime($this->getKey()));
     }
+
+    public function getTime(): ?int
+    {
+        list($n) = explode(' ', $this->getSummary());
+
+        if(is_numeric($n))
+        {
+            return (int)$n;
+        }
+
+        return null;
+    }
 }

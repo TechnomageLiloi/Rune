@@ -6,6 +6,7 @@ use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
 use Liloi\Rune\Modules\Diary\Domain\Jobs\Manager as JobsManager;
 use Liloi\Rune\Modules\Diary\Domain\Problems\Manager as ProblemsManager;
+use Liloi\Rune\Modules\Diary\Domain\Problems\Entity as ProblemsEntity;
 use Liloi\Rune\Modules\Diary\Domain\Road\Manager as RoadManager;
 
 /**
@@ -20,12 +21,29 @@ class Method extends SuperMethod
 
         $jobs = JobsManager::loadCollection($step->getKey());
         $problems = ProblemsManager::loadCollection();
+        $times = [];
+
+        /**
+         * @var int $key
+         * @var ProblemsEntity $problem
+         */
+        foreach ((array)$problems as $key => $problem)
+        {
+            $number = $problem->getTime();
+
+            if($number !== null)
+            {
+                $times[$number] = $problem;
+                $problems->offsetUnset($key);
+            }
+        }
 
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
             'entity' => $step,
             'jobs' => $jobs,
-            'problems' => $problems
+            'problems' => $problems,
+            'times' => $times
         ]));
 
         return $response;

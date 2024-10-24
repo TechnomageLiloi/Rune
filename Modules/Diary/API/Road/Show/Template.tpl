@@ -46,19 +46,32 @@
     <table>
         <tr>
             <th>Time</th>
+            <th>Problem</th>
             <th>Title</th>
             <th>Status</th>
             <th>Type</th>
-            <th>Karna</th>
+            <th>Karma</th>
             <th>Actions</th>
         </tr>
         <?php foreach($jobs->getByHour() as $hour => $jobsForHour): ?>
             <tr>
-                <th colspan="8"><?php echo $hour; ?>:00</th>
+                <th><?php echo $hour; ?>:00</th>
+                <th colspan="7">
+                    <?php if(isset($times[$hour])): ?>
+                        <div class="problem">
+                            <a href="javascript:void(0)" class="butn" onclick="Rune.Diary.Problems.edit('<?php echo $times[$hour]->getKey(); ?>');">Edit</a>
+                            <a href="javascript:void(0)" class="butn" onclick="Rune.Diary.Problems.remove('<?php echo $times[$hour]->getKey(); ?>');">Remove</a>
+                            <?php echo $times[$hour]->getSummary(); ?>
+                        </div>
+                    <?php else: ?>
+                    -
+                    <?php endif; ?>
+                </th>
             </tr>
             <?php foreach($jobsForHour as $job): ?>
                 <tr>
                     <td><?php echo $job->getTimestamp(); ?></td>
+                    <td></td>
                     <td><?php echo $job->parse(); ?></td>
                     <td><?php echo $job->getStatusTitle(); ?></td>
                     <td><?php echo $job->getTypeTitle(); ?></td>
