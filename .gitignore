@@ -1,1 +1,6 @@
+/.htpasswd
+/vendor/
+/composer.lock
+/Pool/
 /.idea/
+/.phpunit.result.cache

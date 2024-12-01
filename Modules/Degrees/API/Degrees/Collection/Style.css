@@ -1,0 +1,16 @@
+#modules-degrees-collection {
+  padding: 10px;
+  font-size: x-large;
+}
+#modules-degrees-collection table {
+  width: 100%;
+}
+#modules-degrees-collection table tr.defended-degree {
+  color: green;
+}
+#modules-degrees-collection table tr.defending-now-degree {
+  color: orange;
+}
+#modules-degrees-collection table tr.not-defended-degree {
+  color: red;
+}

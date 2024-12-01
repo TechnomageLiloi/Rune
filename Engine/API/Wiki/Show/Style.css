@@ -1,0 +1,32 @@
+#wiki-show h1.header {
+  text-align: center;
+}
+#wiki-show table {
+  width: 100%;
+}
+#wiki-show table th {
+  text-align: left;
+}
+#wiki-show .seeds {
+  text-align: center;
+}
+#wiki-show .block-quest {
+  border: gray 1px solid;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  padding: 7px;
+  background-color: #ffffef;
+}
+#wiki-show .topic {
+  border: gray 1px solid;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  padding: 5px;
+}
+#wiki-show .topic h3 {
+  text-align: center;
+}
+#wiki-show .topic .tech {
+  color: gray;
+  text-align: center;
+}
