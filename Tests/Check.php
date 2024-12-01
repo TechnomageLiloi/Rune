@@ -18,6 +18,23 @@ class Check
 
     /////////////////////////////////////////////////////////////////////////////////////////////////
 
+    protected function getActiveDirectories(string $path): array
+    {
+        $recursiveIteratorIterator = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($path));
+        $files = [];
+
+        /** @var \SplFileInfo $file */
+        foreach ($recursiveIteratorIterator as $file) {
+            if (!$file->isDir() || in_array($file->getBasename(), ['..'])){
+                continue;
+            }
+
+            $files[] = $file->getPath();
+        }
+
+        return $files;
+    }
+
     protected function render(array $data = []): string
     {
         // @todo: assert filename
