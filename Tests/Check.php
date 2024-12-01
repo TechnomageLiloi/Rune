@@ -11,7 +11,18 @@ class Check
 
     public function collect(): string
     {
+        $dirs = $this->getActiveDirectories(__DIR__ . '/..');
+        $info = [];
+
+        foreach ($dirs as $dir)
+        {
+            $info[] = [
+                'path' => $dir
+            ];
+        }
+
         return $this->render([
+            'info' => $info,
             'title' => 'Test coverage check at ' . date('Y-m-d H:i:s')
         ]);
     }
