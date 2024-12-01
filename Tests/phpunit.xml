@@ -3,6 +3,7 @@
     <testsuites>
         <testsuite name="Rune Global Tests">
             <directory>.</directory>
+            <directory>../Engine</directory>
         </testsuite>
     </testsuites>
 </phpunit>
