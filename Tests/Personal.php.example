@@ -1,0 +1,15 @@
+<?php
+
+namespace Liloi\Rune;
+
+/**
+ * Check phpUnit testing ability.
+ */
+class Personal
+{
+    public static $private = [
+        'connection' => ['host'=>'','user'=>'','password'=>'','database'=>''],
+        'prefix' => 'rune_',
+        'admin' => '',
+    ];
+}

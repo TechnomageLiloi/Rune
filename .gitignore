@@ -4,3 +4,6 @@
 /Pool/
 /.idea/
 /.phpunit.result.cache
+/Tests/Jasmine/
+/Tests/Personal.php
+/Tests/.phpunit.result.cache

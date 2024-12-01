@@ -1,6 +1,5 @@
-describe('Imperials', function() {
-  it('Test', function() {
-    expect(true).toBeTruthy();
-    expect(true).toBeTruthy();
+describe('Rune', function() {
+  it('Is helper ready to use?', function() {
+    expect(_.isObject(Helper)).toBeTruthy();
   });
 });
