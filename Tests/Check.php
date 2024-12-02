@@ -16,18 +16,26 @@ class Check
 
         foreach ($dirs as $path)
         {
-            $part = explode('/../', $path)[1];
-
-            $parts = explode('/', $part);
-
-            if(in_array($parts[0], ['.git', '.idea', 'vendor', 'Wiki', 'Config', 'Pool', 'Install']))
+            if(!str_contains($path, '/../'))
             {
                 continue;
             }
 
+            $part = explode('/../', $path)[1];
+
+            $parts = explode('/', $part);
+
+            if(in_array($parts[0], ['.git', '.idea', 'vendor', 'Wiki', 'Config', 'Pool', 'Install', '']))
+            {
+                continue;
+            }
+
+            $tested = file_exists($path . '/Test.php') ? 'tested' : 'untested';
+
             $info[] = [
                 'path' => $path,
-                'part' => $part
+                'part' => $part,
+                'tested' => $tested
             ];
         }
 
