@@ -53,9 +53,11 @@ class Manager extends DomainManager
     }
 
     // @todo: rise this method to more abstract level.
-    public static function create($row): void
+    public static function create($row): Entity
     {
         $name = self::getTableName();
         self::getAdapter()->insert($name, $row);
+
+        return Entity::create($row);
     }
 }

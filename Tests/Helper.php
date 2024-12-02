@@ -23,6 +23,8 @@ class Helper extends Personal
                 return $connection;
             }));
         })();
+
+        (new \Liloi\Rune\Application(Pool::getSingleton()));
     }
 
     public static function truncateDatabase(): void
