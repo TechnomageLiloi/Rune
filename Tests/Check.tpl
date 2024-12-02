@@ -9,7 +9,7 @@
         <table>
             <?php foreach($info as $inf): ?>
             <tr>
-                <td><?php echo $inf['path']; ?></td>
+                <td><?php echo $inf['part']; ?></td>
             </tr>
             <?php endforeach; ?>
         </table>

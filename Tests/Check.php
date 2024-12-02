@@ -14,10 +14,20 @@ class Check
         $dirs = $this->getActiveDirectories(__DIR__ . '/..');
         $info = [];
 
-        foreach ($dirs as $dir)
+        foreach ($dirs as $path)
         {
+            $part = explode('/../', $path)[1];
+
+            $parts = explode('/', $part);
+
+            if(in_array($parts[0], ['.git', '.idea', 'vendor', 'Wiki', 'Config', 'Pool', 'Install']))
+            {
+                continue;
+            }
+
             $info[] = [
-                'path' => $dir
+                'path' => $path,
+                'part' => $part
             ];
         }
 
