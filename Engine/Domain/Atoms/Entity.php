@@ -20,9 +20,17 @@ use Liloi\Tools\Entity as AbstractEntity;
  *
  * @method string getWiki()
  * @method void setWiki(string $value)
+ *
+ * @method string getType()
+ * @method void setType(string $value)
  */
 class Entity extends AbstractEntity
 {
+    /**
+     * Gets atom key.
+     *
+     * @return string
+     */
     public function getKey(): string
     {
         return $this->getField('key_atom');

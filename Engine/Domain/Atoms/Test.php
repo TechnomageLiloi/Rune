@@ -30,5 +30,8 @@ class Test extends TestCase
         $this->assertEquals(0, Helper::one('select count(*) from rune_atoms;'));
         $entity = Manager::load($RID);
         $this->assertEquals(1, Helper::one('select count(*) from rune_atoms;'));
+
+        $this->assertEquals(Statuses::CLOSED, $entity->getStatus());
+        $this->assertEquals(Types::SCROLL, $entity->getType());
     }
 }

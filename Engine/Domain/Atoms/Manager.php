@@ -121,7 +121,7 @@ class Manager extends DomainManager
         Cache::remove('atoms:entity:' . $RID);
         Cache::remove('atoms:files:' . $RID);
 
-        return Entity::create($data);
+        return self::load($RID);
     }
 
     public static function URLtoATOM(string $URL): string
