@@ -4,6 +4,7 @@
         <testsuite name="Rune Global Tests">
             <directory>.</directory>
             <directory>../Engine</directory>
+            <directory>../Modules</directory>
         </testsuite>
     </testsuites>
 </phpunit>
