@@ -221,3 +221,18 @@ create table rune_topics
         foreign key (key_atom) references rune_atoms (key_atom)
             on update cascade on delete cascade
 );
+
+-- ---------------------------------------------------------------------------------------
+
+create table rune_scrolls
+(
+    key_scroll bigint unsigned auto_increment,
+    key_atom varchar(250) not null,
+    title varchar(100) not null,
+    scroll text not null,
+    constraint rune_scrolls_pk
+        primary key (key_scroll),
+    constraint rune_scrolls_rune_atoms_key_atom_fk
+        foreign key (key_atom) references rune_atoms (key_atom)
+            on update cascade on delete cascade
+);
