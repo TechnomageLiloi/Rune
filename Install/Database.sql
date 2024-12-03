@@ -236,3 +236,18 @@ create table rune_scrolls
         foreign key (key_atom) references rune_atoms (key_atom)
             on update cascade on delete cascade
 );
+
+create table rune_maps
+(
+	key_map bigint unsigned auto_increment,
+	id_map varchar(250) not null,
+	title varchar(100) not null,
+	map text not null,
+	objects json not null,
+	constraint rune_maps_pk
+		primary key (key_map)
+);
+
+create unique index rune_maps_id_map_uindex
+	on rune_maps (id_map);
+
