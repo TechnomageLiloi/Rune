@@ -20,6 +20,7 @@
     </head>
     <body>
         <h3><?php echo $title; ?></h3>
+        <?php echo $countTested; ?>/<?php echo $countUntested; ?>
         <hr>
         <table>
             <tr>

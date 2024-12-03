@@ -13,6 +13,8 @@ class Check
     {
         $dirs = $this->getActiveDirectories(__DIR__ . '/..');
         $info = [];
+        $countTested = 0;
+        $countUntested = 0;
 
         foreach ($dirs as $path)
         {
@@ -30,7 +32,16 @@ class Check
                 continue;
             }
 
-            $tested = file_exists($path . '/Test.php') ? 'tested' : 'untested';
+            if(file_exists($path . '/Test.php'))
+            {
+                $tested = 'tested';
+                ++$countTested;
+            }
+            else
+            {
+                $tested = 'untested';
+                ++$countUntested;
+            }
 
             $info[] = [
                 'path' => $path,
@@ -41,6 +52,8 @@ class Check
 
         return $this->render([
             'info' => $info,
+            'countTested' => $countTested,
+            'countUntested' => $countUntested,
             'title' => 'Test coverage check at ' . date('Y-m-d H:i:s')
         ]);
     }
