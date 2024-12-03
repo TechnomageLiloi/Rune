@@ -48,6 +48,19 @@ class Manager extends DomainManager
         return Entity::create($row);
     }
 
+    public static function loadByAtom(string $atom): Entity
+    {
+        $name = self::getTableName();
+
+        $row = self::getAdapter()->getRow(sprintf(
+            'select * from %s where key_atom="%s"',
+            $name,
+            $atom
+        ));
+
+        return Entity::create($row);
+    }
+
     public static function save(Entity $entity): void
     {
         $name = self::getTableName();

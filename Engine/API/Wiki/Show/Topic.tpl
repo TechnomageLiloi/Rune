@@ -5,7 +5,10 @@
         <?php echo $entity->getSeeds(); ?>
     </div>
     <hr/>
-    <?php echo $entity->parseWiki(); ?>
+
+    <h1><?php echo $scroll->getTitle(); ?></h1>
+
+    <?php echo $scroll->parseScroll(); ?>
 
     <?php if($children->count()): ?>
     <hr/>

@@ -3,6 +3,7 @@
 namespace Liloi\Rune\Modules\Databank\Domain\Scrolls;
 
 use Liloi\Tools\Entity as AbstractEntity;
+use Liloi\Stylo\Parser;
 
 /**
  * Scroll entity.
@@ -35,8 +36,8 @@ class Entity extends AbstractEntity
         Manager::save($this);
     }
 
-    public function getStatusTitle(): string
+    public function parseScroll(): string
     {
-        return Statuses::$list[$this->getStatus()];
+        return Parser::parseString($this->getScroll());
     }
 }
