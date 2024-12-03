@@ -53,7 +53,6 @@ class Manager extends DomainManager
         $name = self::getTableName();
         $data = $entity->get();
 
-        // @todo: Get param name from const.
         $key = $data['key_scroll'];
         unset($data['key_scroll']);
 
@@ -64,8 +63,7 @@ class Manager extends DomainManager
         );
     }
 
-    // @todo: rise this method to more abstract level.
-    public static function create(string $keyAtom): void
+    public static function create(string $keyAtom): Entity
     {
         $name = self::getTableName();
         self::getAdapter()->insert($name, [
@@ -73,5 +71,7 @@ class Manager extends DomainManager
             'title' => 'Enter the title',
             'scroll' => 'Enter the scroll',
         ]);
+
+        return self::load(\mysqli_insert_id(self::getAdapter()->getConnection()->get()));
     }
 }

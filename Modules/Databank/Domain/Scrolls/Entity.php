@@ -5,20 +5,29 @@ namespace Liloi\Rune\Modules\Databank\Domain\Scrolls;
 use Liloi\Tools\Entity as AbstractEntity;
 
 /**
+ * Scroll entity.
+ *
  * @method string getTitle()
  * @method void setTitle(string $value)
  *
- * @method string getStatus()
- * @method void setStatus(string $value)
- *
- * @method string getProgram()
- * @method void setProgram(string $value)
+ * @method string getScroll()
+ * @method void setScroll(string $value)
  */
 class Entity extends AbstractEntity
 {
     public function getKey(): string
     {
-        return $this->getField('key_card');
+        return $this->getField('key_scroll');
+    }
+
+    public function getAtom(): string
+    {
+        return $this->getField('key_atom');
+    }
+
+    public function setAtom(string $atom): void
+    {
+        $this->setField('key_atom', $atom);
     }
 
     public function save(): void
