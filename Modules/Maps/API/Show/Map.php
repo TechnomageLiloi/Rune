@@ -13,22 +13,10 @@ class Map
 {
     private ?AtomsEntity $entity = null;
 
-    private ?InventoryCollection $inventories = null;
-
-    private ?ArtifactsCollection $artifacts = null;
-
-    private ?NPCsCollection $NPCs = null;
-
     public function __construct(
-        AtomsEntity $entity,
-        InventoryCollection $inventories,
-        ArtifactsCollection $artifacts,
-        NPCsCollection $NPCs
+        AtomsEntity $entity
     ) {
         $this->entity = $entity;
-        $this->inventories = $inventories;
-        $this->artifacts = $artifacts;
-        $this->NPCs = $NPCs;
     }
 
     public function load(): string
@@ -46,30 +34,6 @@ class Map
         if(!isset($data['objects']))
         {
             $data['objects'] = [];
-        }
-
-        /** @var InventoryEntity $entity */
-        foreach($this->inventories as $entity)
-        {
-            $data['objects'][] = [
-                'x' => (int)$entity->getElement('x'),
-                'y' => (int)$entity->getElement('y'),
-                'key' => $entity->getKey(),
-                'entity' => $entity->get(),
-                'type' => 'inventory'
-            ];
-        }
-
-        /** @var ArtifactsEntity $entity */
-        foreach($this->artifacts as $entity)
-        {
-            $data['objects'][] = [
-                'x' => (int)$entity->getElement('x'),
-                'y' => (int)$entity->getElement('y'),
-                'key' => $entity->getKey(),
-                'entity' => $entity->get(),
-                'type' => 'artifact'
-            ];
         }
 
         return json_encode($data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);

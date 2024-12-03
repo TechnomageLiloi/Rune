@@ -4,11 +4,7 @@ namespace Liloi\Rune\Modules\Maps\API\Show;
 
 use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
-use Liloi\Rune\Domain\Artifacts\Manager as ArtifactsManager;
 use Liloi\Rune\Domain\Atoms\Manager as AtomsManager;
-use Liloi\Rune\Modules\Business\Domain\Imperials\Manager;
-use Liloi\Rune\Modules\Exams\Domain\Inventory\Manager as InventoryManager;
-use Liloi\Rune\Modules\Maps\Domain\NPCs\Manager as NPCsManager;
 
 class Method extends SuperMethod
 {
@@ -18,11 +14,9 @@ class Method extends SuperMethod
         $RID = AtomsManager::URLtoATOM($URL);
         $entity = AtomsManager::load($RID);
 
-        $collectionInventory = InventoryManager::loadCollection($RID);
-        $collectionArtifacts = ArtifactsManager::loadCollection($RID);
-        $collectionNPCs = NPCsManager::loadCollection($RID);
+        // @todo: use map manager instead atom.
 
-        $map = new Map($entity, $collectionInventory, $collectionArtifacts, $collectionNPCs);
+        $map = new Map($entity);
 
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
