@@ -76,7 +76,7 @@ class Helper extends Personal
         $prefix = 'rune_';
         $tables = [
             $prefix . 'atoms', $prefix . 'config', $prefix . 'logs',
-            $prefix . 'scrolls'
+            $prefix . 'scrolls', $prefix . 'maps'
         ];
 
         self::db()->query('SET foreign_key_checks = 0');

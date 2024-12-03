@@ -9,8 +9,8 @@ use Liloi\Stylo\Parser;
  * @method string getTitle()
  * @method void setTitle(string $value)
  *
- * @method string getMaps()
- * @method void setMaps(string $value)
+ * @method string getMap()
+ * @method void setMap(string $value)
  *
  * @method string getObjects()
  * @method void setObjects(string $value)
@@ -19,7 +19,7 @@ class Entity extends AbstractEntity
 {
     public function getKey(): string
     {
-        return $this->getField('key_npc');
+        return $this->getField('key_map');
     }
 
     public function getKeyAtom(): string

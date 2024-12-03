@@ -19,23 +19,23 @@ class Test extends TestCase
         $this->assertTrue(file_exists(__DIR__ . '/Manager.php'));
     }
 
-//    public function testCheckSaveLoad(): void
-//    {
-//        Helper::defineConfig();
-//        Helper::truncateDatabase();
-//        Security::login();
-//        AtomsManager::load('rune');
-//
-//        $this->assertEquals(0, Helper::one('select count(*) from rune_scroll;'));
-//        $scroll = Manager::create('rune');
-//        $this->assertEquals(0, Helper::one('select count(*) from rune_scroll;'));
-//
-//        $this->assertTrue($scroll instanceof Entity);
-//
-//        $scroll->setTitle('Test!');
-//        $scroll->save();
-//
-//        $scrollNew = Manager::load($scroll->getKey());
-//        $this->assertEquals('Test!', $scrollNew->getTitle());
-//    }
+    public function testCheckSaveLoad(): void
+    {
+        Helper::defineConfig();
+        Helper::truncateDatabase();
+        Security::login();
+
+        $this->assertEquals(0, Helper::one('select count(*) from rune_maps;'));
+        $map = Manager::create('test');
+        $this->assertEquals(1, Helper::one('select count(*) from rune_maps;'));
+
+        $this->assertTrue($map instanceof Entity);
+        $map->setTitle('Test!');
+        $map->setMap('...');
+        $map->save();
+
+        $scrollNew = Manager::load($map->getKey());
+        $this->assertEquals('Test!', $scrollNew->getTitle());
+        $this->assertEquals('...', $scrollNew->getMap());
+    }
 }

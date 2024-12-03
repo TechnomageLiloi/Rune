@@ -62,16 +62,12 @@ class Manager extends DomainManager
 
         // @todo: Get param name from const.
         $key = $data['key_map'];
-//        unset($data['key_question']);
 
         self::getAdapter()->update(
             $name,
             $data,
             sprintf('key_map = "%s"', $key)
         );
-
-        $RID = AtomsManager::URLtoATOM($_SERVER['REQUEST_URI']);
-
     }
 
     public static function remove(Entity $entity): void
@@ -86,7 +82,7 @@ class Manager extends DomainManager
     }
 
     // @todo: rise this method to more abstract level.
-    public static function create(string $idMap): array
+    public static function create(string $idMap): Entity
     {
         $name = self::getTableName();
         $data = [
@@ -98,6 +94,6 @@ class Manager extends DomainManager
 
         self::getAdapter()->insert($name, $data);
 
-        return $data;
+        return self::load(\mysqli_insert_id(self::getAdapter()->getConnection()->get()));
     }
 }
