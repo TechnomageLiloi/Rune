@@ -43,10 +43,13 @@ class Check
                 ++$countUntested;
             }
 
+            $files = scandir($path);
+
             $info[] = [
                 'path' => $path,
                 'part' => $part,
-                'tested' => $tested
+                'tested' => $tested,
+                'countFiles' => count($files) - ($tested === 'tested' ? 3 : 0),
             ];
         }
 

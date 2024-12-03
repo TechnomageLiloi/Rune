@@ -10,6 +10,9 @@
             th {
                 text-align: left;
             }
+            td {
+                border-bottom: silver 1px dashed;
+            }
             td.tested {
                 background-color: #bfffb6;
             }
@@ -26,6 +29,7 @@
             <tr>
                 <th>Tested</th>
                 <th>Directory</th>
+                <th>Files</th>
                 <th>Tests</th>
                 <th>Asserts</th>
             </tr>
@@ -33,6 +37,7 @@
             <tr>
                 <td class="<?php echo $inf['tested']; ?>"><?php echo ucfirst($inf['tested']); ?></td>
                 <td><?php echo $inf['part']; ?></td>
+                <td><?php echo $inf['countFiles']; ?></td>
                 <td>-</td>
                 <td>-</td>
             </tr>
