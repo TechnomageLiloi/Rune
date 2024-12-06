@@ -27,7 +27,7 @@ class Check
 
             $parts = explode('/', $part);
 
-            if(in_array($parts[0], ['.git', '.idea', 'vendor', 'Wiki', 'Config', 'Pool', 'Install', '']))
+            if(in_array($parts[0], ['.git', '.idea', 'vendor', 'Tests', 'Wiki', 'Config', 'Pool', 'Install', '']))
             {
                 continue;
             }

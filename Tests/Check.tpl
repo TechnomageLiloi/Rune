@@ -23,7 +23,7 @@
     </head>
     <body>
         <h3><?php echo $title; ?></h3>
-        <?php echo $countTested; ?>/<?php echo $countUntested; ?>
+        Tested: <?php echo $countTested; ?> - Untested: <?php echo $countUntested; ?>
         <hr>
         <table>
             <tr>
