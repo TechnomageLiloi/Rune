@@ -15,3 +15,16 @@ create table rune_config
     constraint rune_config_pk
         primary key (key_config)
 );
+
+create table rune_levels
+(
+    key_level tinyint unsigned auto_increment,
+    title varchar(250) not null,
+    status tinyint unsigned not null,
+    program text null,
+    goal varchar(250) not null default '-',
+    constraint rune_levels_pk
+        primary key (key_level)
+);
+
+INSERT INTO rune_levels (title, status, program, goal) VALUES (0x4E656D6F, 1, null, DEFAULT);

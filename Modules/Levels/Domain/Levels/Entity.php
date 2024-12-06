@@ -15,9 +15,6 @@ use Liloi\Stylo\Parser;
  * @method string getProgram()
  * @method void setProgram(string $value)
  *
- * @method string getResource()
- * @method void setResource(string $value)
- *
  * @method string getGoal()
  * @method void setGoal(string $value)
  */
