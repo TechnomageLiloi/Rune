@@ -74,15 +74,12 @@ class Helper extends Personal
     public static function truncateDatabase(): void
     {
         $prefix = 'rune_';
-        $tables = [
-            $prefix . 'atoms', $prefix . 'config', $prefix . 'logs',
-            $prefix . 'scrolls', $prefix . 'maps'
-        ];
+        $tables = ['config', 'logs'];
 
         self::db()->query('SET foreign_key_checks = 0');
         foreach ($tables as $table)
         {
-            self::db()->query(sprintf('truncate table %s', $table));
+            self::db()->query(sprintf('truncate table %s', $prefix . $table));
         }
         self::db()->query('SET foreign_key_checks = 1');
     }

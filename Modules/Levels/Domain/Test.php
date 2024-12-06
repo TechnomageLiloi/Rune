@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\Rune\Modules;
+namespace Liloi\Rune\Modules\Levels\Domain;
 
 use PHPUnit\Framework\TestCase;
 
@@ -12,7 +12,5 @@ class Test extends TestCase
     public function testCheckFileExistence(): void
     {
         $this->assertTrue(is_dir(__DIR__ . '/Levels'));
-
-        $this->assertTrue(file_exists(__DIR__ . '/Modules.php'));
     }
 }
