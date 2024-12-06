@@ -45,9 +45,6 @@
         <div id="head">
             <?php if($admin): ?>
                 <?php if(!$locked): ?>
-                    <a href="javascript:void(0)" onclick="Rune.Admin.menu();" class="butn">Menu</a>
-                    &diams;
-
                     <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.logout();">Save game</a>
                 <?php else: ?>
                     <h1 style="color: orange;">Ship is locked. Access to others is denied. There are no others. You are alone. You are in peace.</h1>
