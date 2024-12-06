@@ -39,6 +39,8 @@
 
     </head>
     <body>
+        <img src="/Signum.png" width="100">
+
         <h3><?php echo $title; ?></h3>
         Tested: <?php echo $countTested; ?> - Untested: <?php echo $countUntested; ?> - Total tests: <?php echo $globalTests; ?> - Total asserts: <?php echo $globalAsserts; ?>
         <hr>
@@ -60,6 +62,12 @@
             </tr>
             <?php endforeach; ?>
         </table>
+
+        <hr/>
+
+        <div style="background-color: black; color: white;padding: 5px;margin: 0px;">
+            <?php echo str_replace("\n", "<br/>", shell_exec('phpunit')); ?>
+        </div>
 
         <hr/>
 
