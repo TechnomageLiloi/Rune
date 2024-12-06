@@ -32,10 +32,16 @@ class Check
                 continue;
             }
 
+            $countTests = 0;
+            $countAsserts = 0;
             if(file_exists($path . '/Test.php'))
             {
                 $tested = 'tested';
                 ++$countTested;
+
+                $testContent = file_get_contents($path . '/Test.php');
+                $countTests = substr_count($testContent, 'public function test');
+                $countAsserts = substr_count($testContent, '->assert');
             }
             else
             {
@@ -50,6 +56,8 @@ class Check
                 'part' => $part,
                 'tested' => $tested,
                 'countFiles' => count($files) - ($tested === 'tested' ? 3 : 0),
+                'countTests' => $countTests,
+                'countAsserts' => $countAsserts,
             ];
         }
 

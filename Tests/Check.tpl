@@ -38,8 +38,8 @@
                 <td class="<?php echo $inf['tested']; ?>"><?php echo ucfirst($inf['tested']); ?></td>
                 <td><?php echo $inf['part']; ?></td>
                 <td><?php echo $inf['countFiles']; ?></td>
-                <td>-</td>
-                <td>-</td>
+                <td><?php echo $inf['countTests']; ?></td>
+                <td><?php echo $inf['countAsserts']; ?></td>
             </tr>
             <?php endforeach; ?>
         </table>
