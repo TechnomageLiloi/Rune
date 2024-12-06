@@ -27,5 +27,5 @@
 
 <script>
     Map.data = <?php echo $map; ?>;
-    Rune.Exams.Inventory.getInventory();
+    //Rune.Exams.Inventory.getInventory();
 </script>
