@@ -252,3 +252,14 @@ create table rune_maps
 create unique index rune_maps_id_map_uindex
 	on rune_maps (id_map);
 
+create table rune_levels
+(
+    key_level tinyint unsigned auto_increment,
+    title varchar(250) not null,
+    status tinyint unsigned not null,
+    program text null,
+    resource varchar(50) not null default 'Wool',
+    goal varchar(250) not null default '-',
+    constraint rune_levels_pk
+        primary key (key_level)
+);
