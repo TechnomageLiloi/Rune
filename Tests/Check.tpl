@@ -20,6 +20,23 @@
                 background-color: #ffdada;
             }
         </style>
+
+        <link rel="shortcut icon" type="image/png" href="/Tests/Jasmine/jasmine_favicon.png">
+        <link rel="stylesheet" href="/Tests/Jasmine/jasmine.css">
+
+        <script src="/Tests/Jasmine/jasmine.js"></script>
+        <script src="/Tests/Jasmine/jasmine-html.js"></script>
+        <script src="/Tests/Jasmine/boot0.js"></script>
+        <script src="/Tests/Jasmine/boot1.js"></script>
+        <script src="/Tests/Jasmine/Jquery.min.js"></script>
+        <script src="/Tests/Jasmine/Underscore.min.js"></script>
+
+        <!-- Rune JS source -->
+        <script src="/Tests/Helper.js"></script>
+
+        <!-- Test JS source -->
+        <script src="/Engine/API/Requests.js"></script> <script src="/Engine/API/Test.js"></script>
+
     </head>
     <body>
         <h3><?php echo $title; ?></h3>
@@ -43,5 +60,8 @@
             </tr>
             <?php endforeach; ?>
         </table>
+
+        <hr/>
+
     </body>
 </html>
