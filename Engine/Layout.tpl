@@ -45,25 +45,7 @@
         <div id="head">
             <?php if($admin): ?>
                 <?php if(!$locked): ?>
-                    <a href="javascript:void(0)" onclick="Rune.Admin.dashboard();" class="butn">Dashboard</a>
-                    <a href="javascript:void(0)" onclick="Rune.News.Topics.show();" class="butn">Topics</a>
-                    &diams;
-                    <a href="javascript:void(0)" onclick="Rune.Diary.Road.show();" class="butn">Road</a>
                     <a href="javascript:void(0)" onclick="Rune.Admin.menu();" class="butn">Menu</a>
-                    &diams;
-                    <a href="javascript:void(0)" onclick="Rune.Atoms.show();" class="butn">Game</a>
-                    <a href="javascript:void(0)" onclick="Rune.Atoms.edit();" class="butn">Edit</a>
-                    &diams;
-                    <a href="javascript:void(0)" onclick="Rune.Wiki.show();" class="butn">Wiki</a>
-                    &diams;
-                    <a href="javascript:void(0)" onclick="Rune.Artifacts.create();" class="butn">Create new artifact</a>
-                    <a href="javascript:void(0)" onclick="Rune.Exams.Inventory.collection();" class="butn">Items</a>
-                    &diams;
-                    <a href="javascript:void(0)" onclick="Rune.Quests.Quest.show(2);" class="butn">Quest</a>
-                    &diams;
-                    <a href="javascript:void(0)" onclick="Rune.Degrees.getCollection();" class="butn">Degrees</a>
-                    <a href="javascript:void(0)" onclick="Rune.Cards.getCollection();" class="butn">Cards</a>
-                    <a href="javascript:void(0)" onclick="Rune.Imperials.getCollection();" class="butn">Imperials</a>
                     &diams;
 
                     <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.logout();">Save game</a>
