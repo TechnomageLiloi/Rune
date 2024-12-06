@@ -28,3 +28,12 @@ create table rune_levels
 );
 
 INSERT INTO rune_levels (title, status, program, goal) VALUES (0x4E656D6F, 1, '-', DEFAULT);
+
+create table rune_road
+(
+    key_day date,
+    program text null,
+    goal varchar(250) not null default '-',
+    constraint rune_road_pk
+        primary key (key_day)
+);
