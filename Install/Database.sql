@@ -27,4 +27,4 @@ create table rune_levels
         primary key (key_level)
 );
 
-INSERT INTO rune_levels (title, status, program, goal) VALUES (0x4E656D6F, 1, null, DEFAULT);
+INSERT INTO rune_levels (title, status, program, goal) VALUES (0x4E656D6F, 1, '-', DEFAULT);
