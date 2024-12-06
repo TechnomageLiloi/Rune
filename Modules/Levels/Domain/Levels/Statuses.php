@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\Rune\Modules\Degrees\Domain\Levels;
+namespace Liloi\Rune\Modules\Levels\Domain\Levels;
 
 class Statuses
 {

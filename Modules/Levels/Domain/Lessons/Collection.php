@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\Rune\Modules\Levels\Domain\Levels;
+namespace Liloi\Rune\Modules\Levels\Domain\Lessons;
 
 use Liloi\Tools\Collection as AbstractCollection;
 

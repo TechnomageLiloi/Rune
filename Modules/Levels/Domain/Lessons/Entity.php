@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\Rune\Modules\Levels\Domain\Levels;
+namespace Liloi\Rune\Modules\Levels\Domain\Lessons;
 
 use Liloi\Tools\Entity as AbstractEntity;
 use Liloi\Stylo\Parser;
@@ -14,18 +14,22 @@ use Liloi\Stylo\Parser;
  *
  * @method string getProgram()
  * @method void setProgram(string $value)
- *
- * @method string getResource()
- * @method void setResource(string $value)
- *
- * @method string getGoal()
- * @method void setGoal(string $value)
  */
 class Entity extends AbstractEntity
 {
     public function getKey(): string
     {
+        return $this->getField('key_lesson');
+    }
+
+    public function getKeyLevel(): string
+    {
         return $this->getField('key_level');
+    }
+
+    public function setKeyLevel(string $keyLevel): void
+    {
+        $this->setField('key_level', $keyLevel);
     }
 
     public function save(): void
@@ -36,11 +40,6 @@ class Entity extends AbstractEntity
     public function getStatusTitle(): string
     {
         return Statuses::$list[$this->getStatus()];
-    }
-
-    public function getStatusClass(): string
-    {
-        return strtolower(str_replace(' ', '-', $this->getStatusTitle()));
     }
 
     public function getProgramParse(): string
