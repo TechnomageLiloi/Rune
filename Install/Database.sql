@@ -44,6 +44,7 @@ create table rune_diary_jobs
 (
     key_job time not null,
     key_step date not null,
+	quarter tinyint unsigned default 1 not null,
     title varchar(100) not null,
     type tinyint unsigned default 1 not null,
     status tinyint unsigned default 1 not null,
