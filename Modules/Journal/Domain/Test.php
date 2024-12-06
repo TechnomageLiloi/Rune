@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\Rune\Modules\Levels\Domain;
+namespace Liloi\Rune\Modules\Journal\Domain;
 
 use PHPUnit\Framework\TestCase;
 
