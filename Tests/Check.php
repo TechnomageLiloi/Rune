@@ -15,6 +15,8 @@ class Check
         $info = [];
         $countTested = 0;
         $countUntested = 0;
+        $globalTests = 0;
+        $globalAsserts = 0;
 
         foreach ($dirs as $path)
         {
@@ -41,7 +43,9 @@ class Check
 
                 $testContent = file_get_contents($path . '/Test.php');
                 $countTests = substr_count($testContent, 'public function test');
+                $globalTests += $countTests;
                 $countAsserts = substr_count($testContent, '->assert');
+                $globalAsserts += $countAsserts;
             }
             else
             {
@@ -65,7 +69,9 @@ class Check
             'info' => $info,
             'countTested' => $countTested,
             'countUntested' => $countUntested,
-            'title' => 'Test coverage check at ' . date('Y-m-d H:i:s')
+            'title' => 'Test coverage check at ' . date('Y-m-d H:i:s'),
+            'globalTests' => $globalTests,
+            'globalAsserts' => $globalAsserts,
         ]);
     }
 

@@ -23,7 +23,7 @@
     </head>
     <body>
         <h3><?php echo $title; ?></h3>
-        Tested: <?php echo $countTested; ?> - Untested: <?php echo $countUntested; ?>
+        Tested: <?php echo $countTested; ?> - Untested: <?php echo $countUntested; ?> - Total tests: <?php echo $globalTests; ?> - Total asserts: <?php echo $globalAsserts; ?>
         <hr>
         <table>
             <tr>
