@@ -11,6 +11,9 @@ use Liloi\Stylo\Parser;
  *
  * @method string getGoal()
  * @method void setGoal(string $value)
+ *
+ * @method string getXp()
+ * @method void setXp(string $value)
  */
 class Entity extends AbstractEntity
 {

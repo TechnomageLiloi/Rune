@@ -7,6 +7,10 @@
             <td>Goal</td>
             <td><input name="goal" type="text" value="<?php echo $job->getGoal(); ?>"></td>
         </tr>
+        <tr>
+            <td>XP</td>
+            <td><input name="xp" type="text" value="<?php echo $job->getXp(); ?>"></td>
+        </tr>
         <tr><td>Status</td><td>
             <select name="status">
                 <?php foreach($statuses as $key => $value): ?>

@@ -53,7 +53,8 @@ Rune.Journal = {
                 key_hour: key_hour,
                 key_quarter: key_quarter,
                 goal: jq_block.find('[name="goal"]').val(),
-                status: jq_block.find('[name="status"]').val()
+                status: jq_block.find('[name="status"]').val(),
+                xp: jq_block.find('[name="xp"]').val()
             }, function (data) {
                 Rune.Journal.show();
             }, function () {

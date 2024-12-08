@@ -35,7 +35,8 @@ class Test extends TestCase
             'key_quarter' => random_int(0, 100),
             'key_day' => $key_day,
             'goal' => 'Enter the goal',
-            'status' => Statuses::TODO
+            'status' => Statuses::TODO,
+            'xp' => random_int(-100, 100),
         ];
 
         $entity = Entity::create($data);
@@ -45,5 +46,6 @@ class Test extends TestCase
         $this->assertEquals($data['key_day'], $entity->getKey());
         $this->assertEquals($data['goal'], $entity->getGoal());
         $this->assertEquals($data['status'], $entity->getStatus());
+        $this->assertEquals($data['xp'], $entity->getXp());
     }
 }

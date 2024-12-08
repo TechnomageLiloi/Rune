@@ -22,6 +22,7 @@ class Method extends SuperMethod
 
         $job->setGoal(self::getParameter('goal'));
         $job->setStatus(self::getParameter('status'));
+        $job->setXp(self::getParameter('xp'));
 
         $job->save();
 

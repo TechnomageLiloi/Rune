@@ -97,7 +97,8 @@ class Manager extends DomainManager
             'key_quarter' => $keyQuarter,
             'key_day' => $keyDay,
             'goal' => 'Enter the goal',
-            'status' => Statuses::TODO
+            'status' => Statuses::TODO,
+            'xp' => 0
         ]);
     }
 
