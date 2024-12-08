@@ -77,14 +77,10 @@ class Manager extends DomainManager
         $name = self::getTableName();
         $data = $entity->get();
 
-        // @todo: Get param name from const.
-        $key = $data['key_level'];
-        unset($data['key_level']);
-
         self::getAdapter()->update(
             $name,
             $data,
-            sprintf('key_level = "%s"', $key)
+            sprintf('key_hour="%s" and key_quarter="%s"', $data['key_hour'], $data['key_quarter'])
         );
     }
 

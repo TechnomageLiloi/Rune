@@ -39,6 +39,26 @@ Rune.Journal = {
             }, function () {
 
             });
+        },
+
+        save: function (key_hour, key_quarter)
+        {
+            if(!confirm('Are you sure?'))
+            {
+                return;
+            }
+
+            const jq_block = $('#journal-jobs-edit');
+            API.request('Rune.Journal.Jobs.Save', {
+                key_hour: key_hour,
+                key_quarter: key_quarter,
+                goal: jq_block.find('[name="goal"]').val(),
+                status: jq_block.find('[name="status"]').val()
+            }, function (data) {
+                Rune.Journal.show();
+            }, function () {
+
+            });
         }
     }
 }
