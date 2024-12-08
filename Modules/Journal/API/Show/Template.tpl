@@ -8,14 +8,14 @@
     <table>
         <tr>
             <th></th>
-            <th style="width: 23%;">1</th>
-            <th style="width: 23%;">2</th>
-            <th style="width: 23%;">3</th>
-            <th style="width: 23%;">4</th>
+            <th style="width: 23%;">:00</th>
+            <th style="width: 23%;">:15</th>
+            <th style="width: 23%;">:30</th>
+            <th style="width: 23%;">:45</th>
         </tr>
         <?php foreach($jobHours as $hour => $jobQuarters): ?>
             <tr>
-                <th style="width: 100px;"><?php echo $hour; ?>:00</th>
+                <th style="width: 100px;"><?php echo $hour; ?>:</th>
                 <?php foreach($jobQuarters as $quarter => $job): ?>
                     <?php if($job === null): ?>
                         <td>
