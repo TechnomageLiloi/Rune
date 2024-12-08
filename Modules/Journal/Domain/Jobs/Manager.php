@@ -90,14 +90,19 @@ class Manager extends DomainManager
     }
 
     // @todo: rise this method to more abstract level.
-    public static function create(): void
+    public static function create(
+        string $keyHour,
+        string $keyQuarter,
+        string $keyDay
+    ): void
     {
         $name = self::getTableName();
         self::getAdapter()->insert($name, [
-            'title' => 'Enter the title',
-            'status' => Statuses::TODO,
-            'program' => '// comment',
-            'resource' => 'Wool: ' . date('Y-m-d-H-i-s'),
+            'key_hour' => $keyHour,
+            'key_quarter' => $keyQuarter,
+            'key_day' => $keyDay,
+            'goal' => 'Enter the goal',
+            'status' => Statuses::TODO
         ]);
     }
 

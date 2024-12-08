@@ -16,10 +16,10 @@
         <?php foreach($jobHours as $hour => $jobQuarters): ?>
             <tr>
                 <th style="width: 100px;"><?php echo $hour; ?>:00</th>
-                <?php foreach($jobQuarters as $job): ?>
+                <?php foreach($jobQuarters as $quarter => $job): ?>
                     <td>
                         <?php if($job === null): ?>
-                            <a href="javascript:void(0)" class="butn" onclick="Rune.Journal.Jobs.create();">Create</a>
+                            <a href="javascript:void(0)" class="butn" onclick="Rune.Journal.Jobs.create(<?php echo $hour; ?>, <?php echo $quarter; ?>, '<?php echo $day->getKey(); ?>');">Create</a>
                         <?php else: ?>
                             <a href="javascript:void(0)" class="butn" onclick="Rune.Journal.Jobs.edit();">Edit</a>
                             <?php echo $day->getGoal(); ?>
