@@ -45,6 +45,7 @@ create table rune_jobs
 	key_day date not null,
 	goal varchar(250) not null,
 	status tinyint unsigned default 1 not null,
+	xp smallint signed default 0 not null,
 	constraint rune_jobs_pk
 		primary key (key_hour, key_quarter),
 	constraint rune_jobs_rune_road_key_day_fk
