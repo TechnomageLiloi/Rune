@@ -7,10 +7,14 @@
             <td>Goal</td>
             <td><input name="goal" type="text" value="<?php echo $job->getGoal(); ?>"></td>
         </tr>
-        <tr>
-            <td>Status</td>
-            <td><input name="status" type="text" value="<?php echo $job->getStatus(); ?>"></td>
-        </tr>
+        <tr><td>Status</td><td>
+            <select name="status">
+                <?php foreach($statuses as $key => $value): ?>
+                <option value="<?php echo $key; ?>" <?php if($job->getStatus() == $key): ?>selected="selected"<?php endif; ?>><?php echo $value; ?></option>
+                <?php endforeach; ?>
+            </select>
+        </td></tr>
+
     </table>
 
 </div>
