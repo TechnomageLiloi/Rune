@@ -1,7 +1,7 @@
 <link href="<?php echo ROOT_URL; ?>/Modules/Journal/API/Jobs/Edit/Style.css" rel="stylesheet" />
 
 <div id="journal-jobs-edit" class="stylo">
-    <a href="javascript:void(0)" class="butn" onclick="Rune.Journal.Jobs.save(<?php echo $job->getHour(); ?>, <?php echo $job->getQuarter(); ?>);">Save</a>
+    <a href="javascript:void(0)" class="butn" onclick="Rune.Journal.Jobs.save(<?php echo $job->getHour(); ?>, <?php echo $job->getQuarter(); ?>, '<?php echo $job->getKey(); ?>');">Save</a>
     <table>
         <tr>
             <td>Goal</td>

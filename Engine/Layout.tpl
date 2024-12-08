@@ -34,7 +34,7 @@
         <div id="head">
             <?php if($admin): ?>
                 <?php if(!$locked): ?>
-                    <a href="javascript:void(0)" class="butn" onclick="Rune.Journal.show();">Journal</a>
+                    <a href="javascript:void(0)" class="butn" onclick="Rune.Journal.show('<?php echo date("Y-m-d"); ?>');">Journal</a>
                     <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.logout();">Save game</a>
                 <?php else: ?>
                     <h1 style="color: orange;">Ship is locked. Access to others is denied. There are no others. You are alone. You are in peace.</h1>
@@ -51,7 +51,7 @@
             <?php if(!$locked): ?>
                 <script>
                     <?php if($admin): ?>
-                        Rune.Journal.show();
+                        Rune.Journal.show('<?php echo date("Y-m-d"); ?>');
                     <?php else: ?>
                         Rune.Wiki.show();
                     <?php endif; ?>

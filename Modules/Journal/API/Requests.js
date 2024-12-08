@@ -1,8 +1,8 @@
 Rune.Journal = {
-    show: function ()
+    show: function (key_day)
     {
         API.request('Rune.Journal.Show', {
-
+            key_day: key_day
         }, function (data) {
             $('#page').html(data.render);
         }, function () {
@@ -23,7 +23,7 @@ Rune.Journal = {
                 key_quarter: key_quarter,
                 key_day: key_day
             }, function (data) {
-                Rune.Journal.show();
+                Rune.Journal.show(key_day);
             }, function () {
 
             });
@@ -41,7 +41,7 @@ Rune.Journal = {
             });
         },
 
-        save: function (key_hour, key_quarter)
+        save: function (key_hour, key_quarter, key_day)
         {
             if(!confirm('Are you sure?'))
             {
@@ -56,7 +56,7 @@ Rune.Journal = {
                 status: jq_block.find('[name="status"]').val(),
                 xp: jq_block.find('[name="xp"]').val()
             }, function (data) {
-                Rune.Journal.show();
+                Rune.Journal.show(key_day);
             }, function () {
 
             });

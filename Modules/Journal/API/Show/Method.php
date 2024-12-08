@@ -16,7 +16,7 @@ class Method extends SuperMethod
     {
         self::accessCheck();
 
-        $day = RoadManager::load(date('Y-m-d'));
+        $day = RoadManager::load(self::getParameter('key_day'));
         $jobHours = JobsManager::loadGroup($day->getKey());
 
         $response = new Response();
