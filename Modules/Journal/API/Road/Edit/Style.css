@@ -1,31 +1,38 @@
-#journal-jobs-edit {
+#journal-road-edit {
   padding: 10px;
   border: gray 3px solid;
   border-radius: 5px;
 }
-#journal-jobs-edit table {
+#journal-road-edit table {
   width: 100%;
   text-align: left;
   border: gray 1px solid;
 }
-#journal-jobs-edit table td {
+#journal-road-edit table td {
   vertical-align: top;
   border-top: gray 1px dashed;
 }
-#journal-jobs-edit table th {
+#journal-road-edit table td textarea {
+  width: 100%;
+  height: 300px;
+}
+#journal-road-edit table td input {
+  width: 100%;
+}
+#journal-road-edit table th {
   border-top: gray 1px dashed;
 }
-#journal-jobs-edit table p {
+#journal-road-edit table p {
   margin: 0;
 }
-#journal-jobs-edit .current-job {
+#journal-road-edit .current-job {
   background-color: lightyellow;
   border: gray 1px solid;
   border-radius: 5px;
   padding: 5px;
   margin-bottom: 10px;
 }
-#journal-jobs-edit .problem {
+#journal-road-edit .problem {
   border: gray 1px solid;
   float: left;
   padding: 5px;

@@ -60,5 +60,37 @@ Rune.Journal = {
 
             });
         }
+    },
+
+    Road: {
+        edit: function (key_day)
+        {
+            API.request('Rune.Journal.Road.Edit', {
+                key_day: key_day
+            }, function (data) {
+                $('#page').html(data.render);
+            }, function () {
+
+            });
+        },
+
+        save: function (key_day)
+        {
+            if(!confirm('Are you sure?'))
+            {
+                return;
+            }
+
+            const jq_block = $('#journal-road-edit');
+            API.request('Rune.Journal.Road.Save', {
+                key_day: key_day,
+                goal: jq_block.find('[name="goal"]').val(),
+                program: jq_block.find('[name="program"]').val()
+            }, function (data) {
+                Rune.Journal.show();
+            }, function () {
+
+            });
+        }
     }
 }
