@@ -16,13 +16,13 @@ class Manager extends DomainManager
         return self::getTablePrefix() . 'levels';
     }
 
-    public static function loadCollection(): Collection
+    public static function loadCollection(string $keyDay): Collection
     {
         $name = self::getTableName();
 
         $rows = self::getAdapter()->getArray(sprintf(
-            'select * from %s order by key_level asc;',
-            $name
+            'select * from %s where key_day = "%s";',
+            $name, $keyDay
         ));
 
         $collection = new Collection();
@@ -33,6 +33,31 @@ class Manager extends DomainManager
         }
 
         return $collection;
+    }
+
+    public static function loadGroup(string $keyDay): array
+    {
+        $group = [];
+
+        for ($hour=0;$hour<24;$hour++)
+        {
+            $group[$hour] = [];
+
+            for ($quarter=1;$quarter<=4;$quarter++)
+            {
+                $group[$hour][$quarter] = null;
+            }
+        }
+
+        $jobs = self::loadCollection($keyDay);
+
+        /** @var Entity $job */
+        foreach ($jobs as $job)
+        {
+            $group[$job->getHour()][$job->getQuarter()] = $job;
+        }
+
+        return $group;
     }
 
     public static function load(string $key): Entity

@@ -28,4 +28,14 @@ class Entity extends AbstractEntity
     {
         return Parser::parseString($this->getProgram());
     }
+
+    public function getHour(): int
+    {
+        return (int)$this->getField('key_hour');
+    }
+
+    public function getQuarter(): int
+    {
+        return (int)$this->getField('key_quarter');
+    }
 }
