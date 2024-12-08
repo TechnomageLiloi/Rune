@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\Rune\Modules\Journal\API\Jobs\Edit;
+namespace Liloi\Rune\Modules\Journal\API\Road\Edit;
 
 use PHPUnit\Framework\TestCase;
 

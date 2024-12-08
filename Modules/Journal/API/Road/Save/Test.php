@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\Rune\Modules\Journal\API\Jobs\Save;
+namespace Liloi\Rune\Modules\Journal\API\Road\Save;
 
 use PHPUnit\Framework\TestCase;
 
