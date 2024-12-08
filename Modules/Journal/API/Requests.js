@@ -27,6 +27,18 @@ Rune.Journal = {
             }, function () {
 
             });
+        },
+
+        edit: function (key_hour, key_quarter)
+        {
+            API.request('Rune.Journal.Jobs.Edit', {
+                key_hour: key_hour,
+                key_quarter: key_quarter
+            }, function (data) {
+                $('#page').html(data.render);
+            }, function () {
+
+            });
         }
     }
 }

@@ -21,8 +21,8 @@
                         <?php if($job === null): ?>
                             <a href="javascript:void(0)" class="butn" onclick="Rune.Journal.Jobs.create(<?php echo $hour; ?>, <?php echo $quarter; ?>, '<?php echo $day->getKey(); ?>');">Create</a>
                         <?php else: ?>
-                            <a href="javascript:void(0)" class="butn" onclick="Rune.Journal.Jobs.edit();">Edit</a>
-                            <?php echo $day->getGoal(); ?>
+                            <a href="javascript:void(0)" class="butn" onclick="Rune.Journal.Jobs.edit(<?php echo $hour; ?>, <?php echo $quarter; ?>);">Edit</a>
+                            <?php echo $job->getGoal(); ?>
                         <?php endif; ?>
                     </td>
                 <?php endforeach; ?>

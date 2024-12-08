@@ -60,14 +60,13 @@ class Manager extends DomainManager
         return $group;
     }
 
-    public static function load(string $key): Entity
+    public static function load(string $keyHour, string $keyQuarter): Entity
     {
         $name = self::getTableName();
 
         $row = self::getAdapter()->getRow(sprintf(
-            'select * from %s where key_level="%s"',
-            $name,
-            $key
+            'select * from %s where key_hour="%s" and key_quarter="%s"',
+            $name, $keyHour, $keyQuarter
         ));
 
         return Entity::create($row);
