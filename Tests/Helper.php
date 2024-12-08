@@ -74,7 +74,7 @@ class Helper extends Personal
     public static function truncateDatabase(): void
     {
         $prefix = 'rune_';
-        $tables = ['config', 'logs', 'levels'];
+        $tables = ['config', 'jobs', 'levels', 'logs', 'road'];
 
         self::db()->query('SET foreign_key_checks = 0');
         foreach ($tables as $table)
