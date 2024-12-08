@@ -12,6 +12,19 @@
   vertical-align: top;
   border-top: gray 1px dashed;
 }
+#modules-road-show table td.to-do {
+  color: gray;
+}
+#modules-road-show table td.in-hand {
+  color: yellow;
+  background-color: black;
+}
+#modules-road-show table td.success {
+  color: #00dc25;
+}
+#modules-road-show table td.failure {
+  color: #ff0000;
+}
 #modules-road-show table th {
   border-top: gray 1px dashed;
 }

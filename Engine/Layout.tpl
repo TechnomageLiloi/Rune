@@ -51,7 +51,7 @@
             <?php if(!$locked): ?>
                 <script>
                     <?php if($admin): ?>
-                        Rune.Maps.show();
+                        Rune.Journal.show();
                     <?php else: ?>
                         Rune.Wiki.show();
                     <?php endif; ?>

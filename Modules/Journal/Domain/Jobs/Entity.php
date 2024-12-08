@@ -24,6 +24,16 @@ class Entity extends AbstractEntity
         Manager::save($this);
     }
 
+    public function getStatusTitle(): string
+    {
+        return Statuses::$list[$this->getStatus()];
+    }
+
+    public function getStatusClass(): string
+    {
+        return strtolower(str_replace(' ', '-', $this->getStatusTitle()));
+    }
+
     public function getHour(): int
     {
         return (int)$this->getField('key_hour');

@@ -17,14 +17,16 @@
             <tr>
                 <th style="width: 100px;"><?php echo $hour; ?>:00</th>
                 <?php foreach($jobQuarters as $quarter => $job): ?>
-                    <td>
-                        <?php if($job === null): ?>
+                    <?php if($job === null): ?>
+                        <td>
                             <a href="javascript:void(0)" class="butn" onclick="Rune.Journal.Jobs.create(<?php echo $hour; ?>, <?php echo $quarter; ?>, '<?php echo $day->getKey(); ?>');">Create</a>
-                        <?php else: ?>
+                        </td>
+                    <?php else: ?>
+                        <td class="<?php echo $job->getStatusClass(); ?>">
                             <a href="javascript:void(0)" class="butn" onclick="Rune.Journal.Jobs.edit(<?php echo $hour; ?>, <?php echo $quarter; ?>);">Edit</a>
                             <?php echo $job->getGoal(); ?>
-                        <?php endif; ?>
-                    </td>
+                        </td>
+                    <?php endif; ?>
                 <?php endforeach; ?>
             </tr>
         <?php endforeach; ?>
