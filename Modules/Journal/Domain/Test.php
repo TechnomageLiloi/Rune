@@ -11,6 +11,6 @@ class Test extends TestCase
 {
     public function testCheckFileExistence(): void
     {
-        $this->assertTrue(is_dir(__DIR__ . '/Levels'));
+        $this->assertTrue(is_dir(__DIR__ . '/Road'));
     }
 }

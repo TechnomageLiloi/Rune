@@ -37,3 +37,18 @@ create table rune_road
     constraint rune_road_pk
         primary key (key_day)
 );
+
+create table rune_jobs
+(
+	key_hour tinyint unsigned not null,
+	key_quarter tinyint unsigned not null,
+	key_day date not null,
+	goal varchar(250) not null,
+	status tinyint unsigned default 1 not null,
+	constraint rune_jobs_pk
+		primary key (key_hour, key_quarter),
+	constraint rune_jobs_rune_road_key_day_fk
+		foreign key (key_day) references rune_road (key_day)
+			on update cascade on delete cascade
+);
+
