@@ -13,7 +13,7 @@ class Manager extends DomainManager
      */
     public static function getTableName(): string
     {
-        return self::getTablePrefix() . 'levels';
+        return self::getTablePrefix() . 'jobs';
     }
 
     public static function loadCollection(string $keyDay): Collection

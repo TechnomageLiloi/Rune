@@ -4,14 +4,14 @@
     <h3>Day goal: <?php echo $day->getGoal(); ?></h3>
     <?php echo $day->getProgramParse(); ?>
     <hr/>
-
+    <h3>Jobs</h3>
     <table>
         <tr>
             <th></th>
-            <th>1</th>
-            <th>2</th>
-            <th>3</th>
-            <th>4</th>
+            <th style="width: 23%;">1</th>
+            <th style="width: 23%;">2</th>
+            <th style="width: 23%;">3</th>
+            <th style="width: 23%;">4</th>
         </tr>
         <?php foreach($jobHours as $hour => $jobQuarters): ?>
             <tr>
@@ -19,8 +19,9 @@
                 <?php foreach($jobQuarters as $job): ?>
                     <td>
                         <?php if($job === null): ?>
-                            X
+                            <a href="javascript:void(0)" class="butn" onclick="Rune.Journal.Jobs.create();">Create</a>
                         <?php else: ?>
+                            <a href="javascript:void(0)" class="butn" onclick="Rune.Journal.Jobs.edit();">Edit</a>
                             <?php echo $day->getGoal(); ?>
                         <?php endif; ?>
                     </td>
