@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\Rune\Modules\Journal;
+namespace Liloi\Rune\Modules\Journal\API\Jobs\Create;
 
 use PHPUnit\Framework\TestCase;
 
@@ -11,7 +11,6 @@ class Test extends TestCase
 {
     public function testCheckFileExistence(): void
     {
-        $this->assertTrue(is_dir(__DIR__ . '/Domain'));
-        $this->assertTrue(is_dir(__DIR__ . '/API'));
+        $this->assertTrue(file_exists(__DIR__ . '/Method.php'));;
     }
 }
