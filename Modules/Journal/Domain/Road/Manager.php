@@ -13,7 +13,7 @@ class Manager extends DomainManager
      */
     public static function getTableName(): string
     {
-        return self::getTablePrefix() . 'levels';
+        return self::getTablePrefix() . 'road';
     }
 
     public static function loadCollection(): Collection
@@ -21,7 +21,7 @@ class Manager extends DomainManager
         $name = self::getTableName();
 
         $rows = self::getAdapter()->getArray(sprintf(
-            'select * from %s order by key_level asc;',
+            'select * from %s order by key_day desc limit 7;',
             $name
         ));
 
@@ -40,10 +40,15 @@ class Manager extends DomainManager
         $name = self::getTableName();
 
         $row = self::getAdapter()->getRow(sprintf(
-            'select * from %s where key_level="%s"',
+            'select * from %s where key_day="%s"',
             $name,
             $key
         ));
+
+        if(empty($row))
+        {
+            return self::create($key);
+        }
 
         return Entity::create($row);
     }
@@ -54,63 +59,26 @@ class Manager extends DomainManager
         $data = $entity->get();
 
         // @todo: Get param name from const.
-        $key = $data['key_level'];
-        unset($data['key_level']);
+        $key = $data['key_day'];
+        unset($data['key_day']);
 
         self::getAdapter()->update(
             $name,
             $data,
-            sprintf('key_level = "%s"', $key)
+            sprintf('key_day = "%s"', $key)
         );
     }
 
-    // @todo: rise this method to more abstract level.
-    public static function create(): void
+    public static function create(string $key): Entity
     {
         $name = self::getTableName();
-        self::getAdapter()->insert($name, [
-            'title' => 'Enter the title',
-            'status' => Statuses::TODO,
-            'program' => '// comment',
-            'resource' => 'Wool: ' . date('Y-m-d-H-i-s'),
-        ]);
-    }
+        $data = [
+            'key_day' => $key,
+            'goal' => 'Enter the goal',
+            'program' => 'Enter the journal day record',
+        ];
+        self::getAdapter()->insert($name, $data);
 
-    public static function getList(): array
-    {
-        $name = self::getTableName();
-
-        $rows = self::getAdapter()->getArray(sprintf(
-            'select key_level, title from %s where status!="%s" order by key_level asc;',
-            $name, Statuses::TODO
-        ));
-
-        $listDefended = [];
-
-        foreach($rows as $row)
-        {
-            $listDefended[$row['key_level']] = $row['title'];
-        }
-
-        return $listDefended;
-    }
-
-    public static function getListResource(): array
-    {
-        $name = self::getTableName();
-
-        $rows = self::getAdapter()->getArray(sprintf(
-            'select key_level, title, resource from %s where status!="%s" order by key_level asc;',
-            $name, Statuses::TODO
-        ));
-
-        $listDefended = [];
-
-        foreach($rows as $row)
-        {
-            $listDefended[$row['key_level']] = $row['resource'] . ' (' . $row['title'] . ')';
-        }
-
-        return $listDefended;
+        return Entity::create($data);
     }
 }
