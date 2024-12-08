@@ -6,8 +6,8 @@ use Liloi\Tools\Entity as AbstractEntity;
 use Liloi\Stylo\Parser;
 
 /**
- * @method string getProgram()
- * @method void setProgram(string $value)
+ * @method string getStatus()
+ * @method void setStatus(string $value)
  *
  * @method string getGoal()
  * @method void setGoal(string $value)
@@ -22,11 +22,6 @@ class Entity extends AbstractEntity
     public function save(): void
     {
         Manager::save($this);
-    }
-
-    public function getProgramParse(): string
-    {
-        return Parser::parseString($this->getProgram());
     }
 
     public function getHour(): int

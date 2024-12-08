@@ -17,12 +17,12 @@ class Method extends SuperMethod
         self::accessCheck();
 
         $day = RoadManager::load(date('Y-m-d'));
-        $jobs = JobsManager::loadGroup($day->getKey());
+        $jobHours = JobsManager::loadGroup($day->getKey());
 
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
             'day' => $day,
-            'jobs' => $jobs
+            'jobHours' => $jobHours
         ]));
 
         return $response;
