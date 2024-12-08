@@ -24,18 +24,7 @@
 
             <script src="<?php echo ROOT_URL; ?>/Engine/API/Artifacts/Requests.js"></script>
 
-            <script src="<?php echo ROOT_URL; ?>/Modules/Admin/API/Requests.js"></script>
-            <script src="<?php echo ROOT_URL; ?>/Modules/Diary/API/Requests.js"></script>
-            <script src="<?php echo ROOT_URL; ?>/Modules/Quests/API/Requests.js"></script>
-            <script src="<?php echo ROOT_URL; ?>/Modules/Exams/API/Inventory/Requests.js"></script>
-            <script src="<?php echo ROOT_URL; ?>/Modules/Exams/API/Questions/Requests.js"></script>
-            <script src="<?php echo ROOT_URL; ?>/Modules/Exams/API/Questions/Test/Testing.js"></script>
-            <script src="<?php echo ROOT_URL; ?>/Modules/Cards/API/Cards/Requests.js"></script>
-            <script src="<?php echo ROOT_URL; ?>/Modules/Degrees/API/Degrees/Requests.js"></script>
-            <script src="<?php echo ROOT_URL; ?>/Modules/Degrees/API/Lessons/Requests.js"></script>
-            <script src="<?php echo ROOT_URL; ?>/Modules/Business/API/Imperials/Requests.js"></script>
-            <script src="<?php echo ROOT_URL; ?>/Modules/Maps/API/Requests.js"></script>
-            <script src="<?php echo ROOT_URL; ?>/Modules/News/API/Requests.js"></script>
+            <script src="<?php echo ROOT_URL; ?>/Modules/Journal/API/Requests.js"></script>
 
         <?php endif; ?>
 
@@ -45,6 +34,7 @@
         <div id="head">
             <?php if($admin): ?>
                 <?php if(!$locked): ?>
+                    <a href="javascript:void(0)" class="butn" onclick="Rune.Journal.show();">Journal</a>
                     <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.logout();">Save game</a>
                 <?php else: ?>
                     <h1 style="color: orange;">Ship is locked. Access to others is denied. There are no others. You are alone. You are in peace.</h1>

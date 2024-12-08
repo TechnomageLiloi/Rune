@@ -12,6 +12,7 @@ class Modules
 {
     public static function collect(APIManager $manager): APIManager
     {
+        $manager->add(new Method('Rune.Journal.Show', '\Liloi\Rune\Modules\Journal\API\Show\Method::execute'));
         return $manager;
     }
 }
