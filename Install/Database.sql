@@ -47,7 +47,7 @@ create table rune_jobs
 	status tinyint unsigned default 1 not null,
 	xp smallint signed default 0 not null,
 	constraint rune_jobs_pk
-		primary key (key_hour, key_quarter),
+		primary key (key_hour, key_quarter, key_day),
 	constraint rune_jobs_rune_road_key_day_fk
 		foreign key (key_day) references rune_road (key_day)
 			on update cascade on delete cascade
