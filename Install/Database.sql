@@ -16,6 +16,20 @@ create table rune_config
         primary key (key_config)
 );
 
+create table rune_databank
+(
+	rid varchar(250) not null,
+	type tinyint unsigned not null,
+	title varchar(100) not null,
+	summary text not null,
+	tags varchar(100) not null,
+	ts timestamp not null,
+	constraint rune_databank_pk
+		primary key (rid)
+);
+
+-- ---------------------------------------------------------------------------------------------------------------------
+
 create table rune_levels
 (
     key_level tinyint unsigned auto_increment,
