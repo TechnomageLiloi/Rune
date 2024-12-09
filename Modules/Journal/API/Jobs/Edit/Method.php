@@ -19,6 +19,7 @@ class Method extends SuperMethod
         $job = JobsManager::load(
             self::getParameter('key_hour'),
             self::getParameter('key_quarter'),
+            self::getParameter('key_day')
         );
 
         $response = new Response();

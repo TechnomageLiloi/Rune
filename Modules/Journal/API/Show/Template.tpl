@@ -27,7 +27,7 @@
                         </td>
                     <?php else: ?>
                         <td class="<?php echo $job->getStatusClass(); ?>">
-                            <a href="javascript:void(0)" class="butn" onclick="Rune.Journal.Jobs.edit(<?php echo $hour; ?>, <?php echo $quarter; ?>);">Edit</a>
+                            <a href="javascript:void(0)" class="butn" onclick="Rune.Journal.Jobs.edit(<?php echo $hour; ?>, <?php echo $quarter; ?>, '<?php echo $day->getKey(); ?>');">Edit</a>
                             [<?php echo $job->getXp(); ?>] <?php echo $job->getGoal(); ?>
                         </td>
                     <?php endif; ?>

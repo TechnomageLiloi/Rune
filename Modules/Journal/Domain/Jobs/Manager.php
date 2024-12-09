@@ -60,13 +60,13 @@ class Manager extends DomainManager
         return $group;
     }
 
-    public static function load(string $keyHour, string $keyQuarter): Entity
+    public static function load(string $keyHour, string $keyQuarter, string $keyDay): Entity
     {
         $name = self::getTableName();
 
         $row = self::getAdapter()->getRow(sprintf(
-            'select * from %s where key_hour="%s" and key_quarter="%s"',
-            $name, $keyHour, $keyQuarter
+            'select * from %s where key_hour="%s" and key_quarter="%s" and key_day="%s"',
+            $name, $keyHour, $keyQuarter, $keyDay
         ));
 
         return Entity::create($row);
@@ -80,7 +80,12 @@ class Manager extends DomainManager
         self::getAdapter()->update(
             $name,
             $data,
-            sprintf('key_hour="%s" and key_quarter="%s"', $data['key_hour'], $data['key_quarter'])
+            sprintf(
+                'key_hour="%s" and key_quarter="%s" and key_day="%s"',
+                $data['key_hour'],
+                $data['key_quarter'],
+                $data['key_day']
+            )
         );
     }
 

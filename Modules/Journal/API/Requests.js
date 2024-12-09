@@ -29,11 +29,12 @@ Rune.Journal = {
             });
         },
 
-        edit: function (key_hour, key_quarter)
+        edit: function (key_hour, key_quarter, key_day)
         {
             API.request('Rune.Journal.Jobs.Edit', {
                 key_hour: key_hour,
-                key_quarter: key_quarter
+                key_quarter: key_quarter,
+                key_day: key_day
             }, function (data) {
                 $('#page').html(data.render);
             }, function () {
@@ -52,6 +53,7 @@ Rune.Journal = {
             API.request('Rune.Journal.Jobs.Save', {
                 key_hour: key_hour,
                 key_quarter: key_quarter,
+                key_day: key_day,
                 goal: jq_block.find('[name="goal"]').val(),
                 status: jq_block.find('[name="status"]').val(),
                 xp: jq_block.find('[name="xp"]').val()
