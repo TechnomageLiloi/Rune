@@ -93,12 +93,12 @@ class Manager extends DomainManager
         $name = self::getTableName();
         $data = [
             'rid' => $RID,
+            'status' => Statuses::CLOSED,
             'type' => Types::NEMO,
             'title' => $RID,
-            'program' => '// Program',
-            'status' => Statuses::CLOSED,
-            'data' => '{}',
-            'wiki' => '// Wiki'
+            'summary' => '// Summary',
+            'tags' => '-',
+            'ts' => date('Y-m-d H:i:s')
         ];
 
         self::getAdapter()->insert($name, $data);

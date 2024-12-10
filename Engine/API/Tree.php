@@ -36,6 +36,10 @@ class Tree
             $manager->add(new Method('Rune.Security.Password.Check', '\Liloi\Rune\API\Security\Password\Check\Method::execute'));
             $manager->add(new Method('Rune.Security.Password.Logout', '\Liloi\Rune\API\Security\Password\Logout\Method::execute'));
 
+            $manager->add(new Method('Rune.Databank.Show', '\Liloi\Rune\API\Databank\Show\Method::execute'));
+            $manager->add(new Method('Rune.Databank.Edit', '\Liloi\Rune\API\Databank\Edit\Method::execute'));
+            $manager->add(new Method('Rune.Databank.Save', '\Liloi\Rune\API\Databank\Save\Method::execute'));
+
             $manager = Modules::collect($manager);
 
             self::$instance = new self($manager);
