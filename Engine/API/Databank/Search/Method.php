@@ -12,13 +12,14 @@ class Method extends SuperMethod
     {
         self::accessCheck();
 
-        $likeRID = self::getParameter('rid');
+        $RID = self::getParameter('rid');
 
-        $collection = DatabankManager::search($likeRID);
+        $collection = DatabankManager::search($RID);
 
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
             'collection' => $collection,
+            'RID' => $RID,
         ]));
         return $response;
     }

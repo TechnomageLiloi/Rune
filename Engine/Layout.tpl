@@ -31,7 +31,7 @@
         <div id="head">
             <?php if($admin): ?>
                 <?php if(!$locked): ?>
-                    <a href="javascript:void(0)" onclick="Rune.Databank.show();" class="butn">Databank</a>
+                    <a href="javascript:void(0)" onclick="Rune.Databank.search('*');" class="butn">Databank</a>
                     <a href="javascript:void(0)" class="butn" onclick="Rune.Journal.show('<?php echo date("Y-m-d"); ?>');">Journal</a>
                     <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.logout();">Save game</a>
                 <?php else: ?>

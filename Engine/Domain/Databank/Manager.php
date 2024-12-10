@@ -155,10 +155,20 @@ class Manager extends DomainManager
     {
         $name = self::getTableName();
 
-        $sql = sprintf(
-            'select * from %s where rid like "%%%s%%" order by title asc;',
-            $name, $likeRID
-        );
+        if($likeRID === '*')
+        {
+            $sql = sprintf(
+                'select * from %s order by ts desc;',
+                $name
+            );
+        }
+        else
+        {
+            $sql = sprintf(
+                'select * from %s where rid like "%%%s%%" order by title asc;',
+                $name, $likeRID
+            );
+        }
 
         $rows = self::getAdapter()->getArray($sql);
 

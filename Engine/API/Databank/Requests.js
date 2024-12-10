@@ -19,7 +19,7 @@ Rune.Databank = {
 
     search: function (rid)
     {
-        API.request('Rune.Databank.Show', {
+        API.request('Rune.Databank.Search', {
             rid: rid
         }, function (data) {
             $('#page').html(data.render);
