@@ -150,4 +150,25 @@ class Manager extends DomainManager
 
         return $collection;
     }
+
+    public static function search(string $likeRID): Collection
+    {
+        $name = self::getTableName();
+
+        $sql = sprintf(
+            'select * from %s where rid like "%%%s%%" order by title asc;',
+            $name, $likeRID
+        );
+
+        $rows = self::getAdapter()->getArray($sql);
+
+        $collection = new Collection();
+
+        foreach($rows as $row)
+        {
+            $collection[] = Entity::create($row);
+        }
+
+        return $collection;
+    }
 }

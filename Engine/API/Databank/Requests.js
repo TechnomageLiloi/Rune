@@ -16,6 +16,18 @@ Rune.Databank = {
         });
     },
 
+
+    search: function (rid)
+    {
+        API.request('Rune.Databank.Show', {
+            rid: rid
+        }, function (data) {
+            $('#page').html(data.render);
+        }, function () {
+
+        });
+    },
+
     edit: function ()
     {
         API.request('Rune.Databank.Edit', {
