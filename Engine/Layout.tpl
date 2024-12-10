@@ -21,11 +21,8 @@
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Atoms/Requests.js"></script>
 
         <?php if($admin): ?>
-
-            <script src="<?php echo ROOT_URL; ?>/Engine/API/Artifacts/Requests.js"></script>
-
+            <script src="<?php echo ROOT_URL; ?>/Engine/API/Databank/Requests.js"></script>
             <script src="<?php echo ROOT_URL; ?>/Modules/Journal/API/Requests.js"></script>
-
         <?php endif; ?>
 
         <title>Rune</title>
