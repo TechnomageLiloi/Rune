@@ -19,6 +19,7 @@ create table rune_config
 create table rune_databank
 (
 	rid varchar(250) not null,
+	status tinyint unsigned not null default 1,
 	type tinyint unsigned not null,
 	title varchar(100) not null,
 	summary text not null,

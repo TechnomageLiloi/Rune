@@ -106,28 +106,26 @@ class Manager extends DomainManager
         return Entity::create($data);
     }
 
-    public static function URLtoATOM(string $URL): string
+    public static function URLtoRID(string $URL): string
     {
-        $output = 'rune';
+        $URL = trim($URL, '/');
 
-        if($URL === '/' || $URL === '/rune')
+        if(empty($URL))
         {
-            return $output;
+            throw new IncorrectException();
         }
 
-        $parts = str_replace('/', ':', trim($URL, '/'));
-
-        return $output . ':' . str_replace('rune:', '', $parts);
+        return str_replace('/', ':', strtolower($URL));
     }
 
-    public static function ATOMtoURL(string $keyAtom): string
+    public static function RIDtoURL(string $RID): string
     {
-        if($keyAtom === 'rune')
+        if(empty($RID))
         {
-            return '/rune';
+            throw new IncorrectException();
         }
 
-        return '/' . str_replace(':', '/', $keyAtom);
+        return '/' . str_replace(':', '/', $RID);
     }
 
     public static function loadFiles(string $RID, bool $isPublic = false): Collection

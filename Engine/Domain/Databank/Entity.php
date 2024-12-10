@@ -6,6 +6,9 @@ use Liloi\Stylo\Parser;
 use Liloi\Tools\Entity as AbstractEntity;
 
 /**
+ * @method string getStatus()
+ * @method void setStatus(string $value)
+ *
  * @method string getType()
  * @method void setType(string $value)
  *
@@ -40,7 +43,7 @@ class Entity extends AbstractEntity
 
     public function getPath(): string
     {
-        return Manager::ATOMtoURL($this->getKey());
+        return Manager::RIDtoURL($this->getKey());
     }
 
     public function getSeeds(): string
@@ -62,7 +65,7 @@ class Entity extends AbstractEntity
             {
                 $seed = sprintf(
                     '<a href="%s">%s</a>',
-                    Manager::ATOMtoURL($rid_seed),
+                    Manager::RIDtoURL($rid_seed),
                     ucfirst(str_replace('-', ' ', end($rid)))
                 );
             }
