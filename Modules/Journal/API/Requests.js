@@ -90,7 +90,7 @@ Rune.Journal = {
                 goal: jq_block.find('[name="goal"]').val(),
                 program: jq_block.find('[name="program"]').val()
             }, function (data) {
-                Rune.Journal.show();
+                Rune.Journal.show(key_day);
             }, function () {
 
             });
