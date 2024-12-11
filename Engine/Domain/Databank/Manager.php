@@ -97,8 +97,8 @@ class Manager extends DomainManager
             'type' => Types::NEMO,
             'title' => $RID,
             'summary' => '// Summary',
-            'tags' => '-',
-            'ts' => date('Y-m-d H:i:s')
+            'map' => ".....\n.....\n.....\n.....\n.....",
+            'data' => '{}'
         ];
 
         self::getAdapter()->insert($name, $data);

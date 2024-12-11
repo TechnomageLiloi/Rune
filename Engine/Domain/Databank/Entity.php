@@ -18,11 +18,11 @@ use Liloi\Tools\Entity as AbstractEntity;
  * @method string getSummary()
  * @method void setSummary(string $value)
  *
- * @method string getTags()
- * @method void setTags(string $value)
+ * @method string getMap()
+ * @method void setMap(string $value)
  *
- * @method string getTs()
- * @method void setTs(string $value)
+ * @method string getData()
+ * @method void setData(string $value)
  */
 class Entity extends AbstractEntity
 {

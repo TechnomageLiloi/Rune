@@ -17,6 +17,7 @@ class Test extends TestCase
         $this->assertTrue(file_exists(__DIR__ . '/Manager.php'));
         $this->assertTrue(file_exists(__DIR__ . '/Statuses.php'));
         $this->assertTrue(file_exists(__DIR__ . '/Types.php'));
+        $this->assertTrue(file_exists(__DIR__ . '/Statuses.php'));
     }
 
     public function testCheckEntity(): void
@@ -31,8 +32,8 @@ class Test extends TestCase
             'type' => Types::NEMO,
             'title' => 'test',
             'summary' => 'test',
-            'tags' => 'test',
-            'ts' => date('Y-m-d H:i:s')
+            'map' => 'test',
+            'data' => '{}'
         ];
 
         $entity = Entity::create($data);
@@ -42,7 +43,7 @@ class Test extends TestCase
         $this->assertEquals($data['type'], $entity->getType());
         $this->assertEquals($data['title'], $entity->getTitle());
         $this->assertEquals($data['summary'], $entity->getSummary());
-        $this->assertEquals($data['tags'], $entity->getTags());
-        $this->assertEquals($data['ts'], $entity->getTs());
+        $this->assertEquals($data['map'], $entity->getMap());
+        $this->assertEquals($data['data'], $entity->getData());
     }
 }
