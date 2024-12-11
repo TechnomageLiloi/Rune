@@ -39,12 +39,7 @@ class Manager extends DomainManager
 
         if(!$row)
         {
-            if($isPublic)
-            {
-                throw new IncorrectException();
-            }
-
-            return self::create($RID);
+            throw new IncorrectException();
         }
 
         return Entity::create($row);
@@ -97,7 +92,7 @@ class Manager extends DomainManager
             'type' => Types::NEMO,
             'title' => $RID,
             'summary' => '// Summary',
-            'map' => ".....\n.....\n.....\n.....\n.....",
+            'map' => ".......\n.......\n.......\n.......\n.......\n.......\n.......",
             'data' => '{}'
         ];
 
@@ -158,7 +153,7 @@ class Manager extends DomainManager
         if($likeRID === '*')
         {
             $sql = sprintf(
-                'select * from %s order by ts desc;',
+                'select * from %s order by title asc limit 17;',
                 $name
             );
         }

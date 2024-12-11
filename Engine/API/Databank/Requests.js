@@ -11,6 +11,22 @@ Rune.Databank = {
         });
     },
 
+    create: function (rid)
+    {
+        if(!confirm('Are you sure?'))
+        {
+            return;
+        }
+
+        API.request('Rune.Databank.Create', {
+            rid: rid
+        }, function (data) {
+            Rune.Databank.show(rid);
+        }, function () {
+
+        });
+    },
+
 
     search: function (rid)
     {
