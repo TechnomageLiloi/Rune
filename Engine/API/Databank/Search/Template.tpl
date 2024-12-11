@@ -10,6 +10,10 @@
             <tr>
                 <td><?php echo $child->getKey(); ?></td>
                 <td><?php echo $child->getTitle(); ?></td>
+                <td>
+                    <a href="javascript:void(0)" onclick="Rune.Databank.show('<?php echo $entity->getKey(); ?>');">Show</a>
+                    <a href="javascript:void(0)" onclick="Rune.Databank.edit('<?php echo $entity->getKey(); ?>');">Edit</a>
+                </td>
             </tr>
         <?php endforeach; ?>
     </table>

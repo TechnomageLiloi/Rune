@@ -1,16 +1,11 @@
 Rune.Databank = {
 
-    show: function (wrap)
+    show: function (rid)
     {
-        if(typeof wrap == 'undefined')
-        {
-            wrap = $('#page');
-        }
-
         API.request('Rune.Databank.Show', {
-
+            rid: rid
         }, function (data) {
-            wrap.html(data.render);
+            $('#page').html(data.render);
         }, function () {
 
         });
@@ -28,10 +23,10 @@ Rune.Databank = {
         });
     },
 
-    edit: function ()
+    edit: function (rid)
     {
         API.request('Rune.Databank.Edit', {
-
+            rid: rid
         }, function (data) {
             const wrap = $('#page');
             wrap.html(data.render);
@@ -41,7 +36,7 @@ Rune.Databank = {
         });
     },
 
-    save: function (key_atom)
+    save: function (rid)
     {
         if(!confirm('Are you sure?'))
         {
@@ -50,14 +45,15 @@ Rune.Databank = {
 
         const jq_block = $('#game-maps-edit');
         API.request('Rune.Databank.Save', {
-            key_atom: key_atom,
+            rid: rid,
+            type: jq_block.find('[name=type]').val(),
             status: jq_block.find('[name=status]').val(),
             title: jq_block.find('[name=title]').val(),
             data: jq_block.find('[name=data]').val(),
-            program: jq_block.find('[name=program]').val(),
-            wiki: jq_block.find('[name=wiki]').val()
+            summary: jq_block.find('[name=summary]').val(),
+            map: jq_block.find('[name=map]').val()
         }, function (data) {
-            Rune.Databank.show();
+            Rune.Databank.show(rid);
         }, function () {
 
         });

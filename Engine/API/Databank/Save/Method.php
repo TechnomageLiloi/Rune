@@ -22,8 +22,8 @@ class Method extends SuperMethod
         $entity->setType(self::getParameter('type'));
         $entity->setStatus(self::getParameter('status'));
         $entity->setSummary(self::getParameter('summary'));
-        $entity->setTags(self::getParameter('tags'));
-        $entity->setTs(self::getParameter('ts'));
+        $entity->setMap(self::getParameter('map'));
+        $entity->setData(self::getParameter('data'));
 
         $entity->save();
 

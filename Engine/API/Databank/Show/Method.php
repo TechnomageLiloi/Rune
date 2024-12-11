@@ -12,10 +12,7 @@ class Method extends SuperMethod
     {
         self::accessCheck();
 
-        $URL = $_SERVER['REQUEST_URI'];
-
-        $RID = DatabankManager::URLtoRID($URL);
-
+        $RID = self::getParameter('rid');
         $entity = DatabankManager::load($RID);
         $children = DatabankManager::loadFiles($RID);
 
