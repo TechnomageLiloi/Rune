@@ -22,11 +22,11 @@
 
         <tr><td style="width: 10%;">Title</td><td><input type="text" name="title" value="<?php echo $entity->getTitle(); ?>" /></td></tr>
 
-        <tr><td style="width: 10%;">Tags</td><td><input type="text" name="tags" value="<?php echo $entity->getTags(); ?>" /></td></tr>
-
-        <tr><td style="width: 10%;">Timestamp</td><td><input type="text" name="ts" value="<?php echo $entity->getTs(); ?>" /></td></tr>
-
         <tr><td>Summary</td><td><textarea name="summary"><?php echo $entity->getSummary(); ?></textarea></td></tr>
+
+        <tr><td>Map</td><td><textarea name="map"><?php echo $entity->getMap(); ?></textarea></td></tr>
+
+        <tr><td>Data</td><td><textarea name="data"><?php echo $entity->getData(); ?></textarea></td></tr>
     </table>
     <hr/>
     <a href="javascript:void(0)" onclick="Rune.Databank.save('<?php echo $entity->getKey(); ?>');">Save</a>
