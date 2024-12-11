@@ -23,8 +23,8 @@ create table rune_databank
 	type tinyint unsigned not null,
 	title varchar(100) not null,
 	summary text not null,
-	tags varchar(100) not null,
-	ts timestamp not null,
+	map text not null,
+	data json not null,
 	constraint rune_databank_pk
 		primary key (rid)
 );
