@@ -20,32 +20,19 @@
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Wiki/Requests.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Atoms/Requests.js"></script>
 
-        <?php if($admin): ?>
-            <script src="<?php echo ROOT_URL; ?>/Engine/API/Databank/Requests.js"></script>
-            <script src="<?php echo ROOT_URL; ?>/Modules/Journal/API/Requests.js"></script>
-            <script src="<?php echo ROOT_URL; ?>/Modules/Maps/API/Requests.js"></script>
-            <script src="<?php echo ROOT_URL; ?>/Modules/Menu/API/Requests.js"></script>
-        <?php endif; ?>
+        <script src="<?php echo ROOT_URL; ?>/Engine/API/Databank/Requests.js"></script>
+        <script src="<?php echo ROOT_URL; ?>/Modules/Journal/API/Requests.js"></script>
+        <script src="<?php echo ROOT_URL; ?>/Modules/Maps/API/Requests.js"></script>
+        <script src="<?php echo ROOT_URL; ?>/Modules/Menu/API/Requests.js"></script>
 
         <title>Rune</title>
     </head>
     <body>
         <div id="head">
-            <?php if($admin): ?>
-                <?php if(!$locked): ?>
-                    <a href="javascript:void(0)" onclick="Rune.Maps.show();" class="butn">Play</a>
-                    <a href="javascript:void(0)" onclick="Rune.Databank.search('*');" class="butn">Databank</a>
-                    <a href="javascript:void(0)" class="butn" onclick="Rune.Journal.show('<?php echo date("Y-m-d"); ?>');">Journal</a>
-                    <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.logout();">Save game</a>
-                <?php else: ?>
-                    <h1 style="color: orange;">Ship is locked. Access to others is denied. There are no others. You are alone. You are in peace.</h1>
-                    <a href="javascript:void(0)" onclick="Rune.Admin.lock('');" class="butn">Unlock</a>
-                <?php endif; ?>
-            <?php else: ?>
-                <a href="/" class="butn">News</a>
-                <a href="/rune" class="butn">Root</a>
-                <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.show();">Login</a>
-            <?php endif; ?>
+            <a href="javascript:void(0)" onclick="Rune.Maps.show();" class="butn">Play</a>
+            <a href="javascript:void(0)" onclick="Rune.Databank.search('*');" class="butn">Databank</a>
+            <a href="javascript:void(0)" class="butn" onclick="Rune.Journal.show('<?php echo date("Y-m-d"); ?>');">Journal</a>
+            <a href="/" class="butn">Save game</a>
         </div>
 
         <div id="page" class="stylo">
