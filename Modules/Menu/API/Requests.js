@@ -14,7 +14,8 @@ Rune.Menu = {
     save: function ()
     {
         API.request('Rune.Menu.Save', {
-
+            x: Map.PCx,
+            y: Map.PCy
         }, function (data) {
             document.location.href = '/';
         }, function () {
