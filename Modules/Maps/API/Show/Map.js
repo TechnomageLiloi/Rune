@@ -1,6 +1,6 @@
 let Map = {
-    PCx: 15,
-    PCy: 15,
+    PCx: 2,
+    PCy: 2,
     size: 15,
 
     start: function ()
@@ -39,13 +39,13 @@ let Map = {
         {
             for(let x=-size;x<=size;x++)
             {
-                // if(Map.PCx === x && Map.PCy ===y)
-                // {
-                //     context.fillStyle = "yellow";
-                //     context.fillText('@', 10 * (x + size) + 50, 10 * (y + size) + 50);
-                //     context.fillStyle = "white";
-                //     continue;
-                // }
+                if(0 === x && 0 ===y)
+                {
+                    context.fillStyle = "yellow";
+                    context.fillText('@', 10 * (x + size) + 50, 10 * (y + size) + 50);
+                    context.fillStyle = "white";
+                    continue;
+                }
 
                 // tile = Map.data.map[y + size][x + size];
                 // context.fillText(tile, 10 * (x + size) + 50, 10 * (y + size) + 50);
