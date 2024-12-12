@@ -1,6 +1,6 @@
 let Map = {
-    PCx: 0,
-    PCy: 0,
+    PCx: 15,
+    PCy: 15,
     size: 15,
 
     start: function ()
@@ -12,13 +12,16 @@ let Map = {
 
         context.fillStyle = "black";
         context.fillRect(0,0,400,400);
-        let size = 15; // @deprecated; use Map.size
-
-        context.fillStyle = "white";
+        const size = 15;
 
         let renderTile = function (x, y)
         {
-            tile = Map.data.map[y + size][x + size];
+            if(_.isUndefined(Map.data.map[y + Map.PCy]) || _.isUndefined(Map.data.map[y + Map.PCy][x + Map.PCx]))
+            {
+                return;
+            }
+
+            tile = Map.data.map[y + Map.PCy][x + Map.PCx];
 
             switch (tile)
             {
@@ -32,42 +35,17 @@ let Map = {
             context.fillText(tile, 10 * (x + size) + 50, 10 * (y + size) + 50);
         };
 
-        context.fillStyle = 'red';
-        $('#elements').html('');
-        $.each(Map.data.objects, function(index, value) {
-
-            var symbol = '*';
-
-            switch (value.type) {
-                case 'artifact': context.fillStyle = "red"; break;
-                case 'inventory': context.fillStyle = "white"; break;
-                default: context.fillStyle = "white"; symbol = '0'
-            }
-
-            context.fillText(symbol, 10 * (value.x + size) + 50, 10 * (value.y + size) + 50);
-
-            if(Map.PCx == value.x && Map.PCy == value.y)
-            {
-                $('#elements').html(JSON.stringify(value));
-
-                if(value.type === 'link')
-                {
-                    window.location.href = value.value;
-                }
-            }
-        });
-
         for(let y=-size;y<=size;y++)
         {
             for(let x=-size;x<=size;x++)
             {
-                if(Map.PCx === x && Map.PCy ===y)
-                {
-                    context.fillStyle = "yellow";
-                    context.fillText('@', 10 * (x + size) + 50, 10 * (y + size) + 50);
-                    context.fillStyle = "white";
-                    continue;
-                }
+                // if(Map.PCx === x && Map.PCy ===y)
+                // {
+                //     context.fillStyle = "yellow";
+                //     context.fillText('@', 10 * (x + size) + 50, 10 * (y + size) + 50);
+                //     context.fillStyle = "white";
+                //     continue;
+                // }
 
                 // tile = Map.data.map[y + size][x + size];
                 // context.fillText(tile, 10 * (x + size) + 50, 10 * (y + size) + 50);
@@ -97,17 +75,17 @@ let Map = {
             case 122: {x--; y++;}; break;
         }
 
-        if(
-            Map.data.map[y + Map.size][x + Map.size] === '#' ||
-
-            x < -Map.size ||
-            x > Map.size ||
-            y < -Map.size ||
-            y > Map.size
-        )
-        {
-            return;
-        }
+        // if(
+        //     Map.data.map[y + Map.size][x + Map.size] === '#' ||
+        //
+        //     x < -Map.size ||
+        //     x > Map.size ||
+        //     y < -Map.size ||
+        //     y > Map.size
+        // )
+        // {
+        //     return;
+        // }
 
         Map.PCx = x;
         Map.PCy = y;

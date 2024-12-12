@@ -18,13 +18,8 @@ class Map
     {
         $data = (array)json_decode($this->entity->getData());
 
-        if(!isset($data['map']))
-        {
-            $line = '...............................';
-            $map = array_fill(0, 31, $line);
-
-            $data['map'] = $map;
-        }
+        $map = $this->entity->getMap();
+        $data['map'] = explode("\n", $map);
 
         if(!isset($data['objects']))
         {
