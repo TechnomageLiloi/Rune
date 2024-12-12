@@ -28,6 +28,8 @@ let Map = {
                 case '.':
                 case 'T': context.fillStyle = "lime"; break;
                 case '#': context.fillStyle = "silver"; break;
+                case '~': context.fillStyle = "blue"; break;
+                case '-': context.fillStyle = "#87CEEB"; tile = '~'; break;
                 case ',':
                 default: context.fillStyle = "white";
             }
@@ -78,8 +80,14 @@ let Map = {
         if(
             _.isUndefined(Map.data.map[y]) ||
             _.isUndefined(Map.data.map[y][x]) ||
-            Map.data.map[y][x] === '#'
+            Map.data.map[y][x] === '#' ||
+            Map.data.map[y][x] === '~'
         )
+        {
+            return;
+        }
+
+        if(Map.data.map[y][x] === 'T' && Math.floor(Math.random() * 10))
         {
             return;
         }
