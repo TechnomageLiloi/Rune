@@ -1,0 +1,11 @@
+#modules-menu-show {
+  background-color: white;
+  height: 90%;
+  text-align: center;
+}
+#modules-menu-show a {
+  font-size: xx-large;
+}
+#modules-menu-show img {
+  width: 150px;
+}

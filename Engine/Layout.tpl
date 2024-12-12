@@ -24,6 +24,7 @@
             <script src="<?php echo ROOT_URL; ?>/Engine/API/Databank/Requests.js"></script>
             <script src="<?php echo ROOT_URL; ?>/Modules/Journal/API/Requests.js"></script>
             <script src="<?php echo ROOT_URL; ?>/Modules/Maps/API/Requests.js"></script>
+            <script src="<?php echo ROOT_URL; ?>/Modules/Menu/API/Requests.js"></script>
         <?php endif; ?>
 
         <title>Rune</title>
@@ -35,7 +36,7 @@
                     <a href="javascript:void(0)" onclick="Rune.Maps.show();" class="butn">Play</a>
                     <a href="javascript:void(0)" onclick="Rune.Databank.search('*');" class="butn">Databank</a>
                     <a href="javascript:void(0)" class="butn" onclick="Rune.Journal.show('<?php echo date("Y-m-d"); ?>');">Journal</a>
-                    <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.logout();">Save</a>
+                    <a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.logout();">Save game</a>
                 <?php else: ?>
                     <h1 style="color: orange;">Ship is locked. Access to others is denied. There are no others. You are alone. You are in peace.</h1>
                     <a href="javascript:void(0)" onclick="Rune.Admin.lock('');" class="butn">Unlock</a>
@@ -48,16 +49,13 @@
         </div>
 
         <div id="page" class="stylo">
-            <?php if(!$locked): ?>
-                <script>
-                    <?php if($admin): ?>
-                        //Rune.Journal.show('<?php //echo date("Y-m-d"); ?>');
-                        Rune.Maps.show();
-                    <?php else: ?>
-                        Rune.Wiki.show();
-                    <?php endif; ?>
-                </script>
-            <?php endif; ?>
+            <script>
+                <?php if($_SERVER['REQUEST_URI']==='/'): ?>
+                    Rune.Menu.show();
+                <?php else: ?>
+                    Rune.Maps.show();
+                <?php endif; ?>
+            </script>
         </div>
     </body>
 </html>

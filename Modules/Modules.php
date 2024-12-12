@@ -22,6 +22,8 @@ class Modules
         $manager->add(new Method('Rune.Maps.Show', '\Liloi\Rune\Modules\Maps\API\Show\Method::execute'));
         $manager->add(new Method('Rune.Maps.Save', '\Liloi\Rune\Modules\Maps\API\Save\Method::execute'));
 
+        $manager->add(new Method('Rune.Menu.Show', '\Liloi\Rune\Modules\Menu\API\Show\Method::execute'));
+
         return $manager;
     }
 }
