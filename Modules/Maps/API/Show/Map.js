@@ -1,6 +1,6 @@
 let Map = {
-    PCx: 2,
-    PCy: 2,
+    PCx: 1,
+    PCy: 1,
     size: 15,
 
     start: function ()

@@ -3,6 +3,8 @@
 namespace Liloi\Rune\Modules\Maps\API\Show;
 
 use Liloi\Rune\Domain\Databank\Entity as DatabankEntity;
+use Liloi\Rune\Domain\Config\Manager as ConfigManager;
+use Liloi\Rune\Domain\Config\Keys as ConfigKeys;
 
 class Map
 {
@@ -25,6 +27,9 @@ class Map
         {
             $data['objects'] = [];
         }
+
+        $data['x'] = (int)(ConfigManager::load(ConfigKeys::MAP_X)->getString() ?? 2);
+        $data['y'] = (int)(ConfigManager::load(ConfigKeys::MAP_Y)->getString() ?? 2);
 
         return json_encode($data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     }

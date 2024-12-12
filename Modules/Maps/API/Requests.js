@@ -6,6 +6,8 @@ Rune.Maps = {
         }, function (data) {
             $('#page').html(data.render);
             // Rune.Atoms.show($('#side-left'));
+            Map.PCx = Map.data.x;
+            Map.PCy = Map.data.y;
             Map.start();
         }, function () {
 
