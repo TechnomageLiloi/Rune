@@ -75,17 +75,14 @@ let Map = {
             case 122: {x--; y++;}; break;
         }
 
-        // if(
-        //     Map.data.map[y + Map.size][x + Map.size] === '#' ||
-        //
-        //     x < -Map.size ||
-        //     x > Map.size ||
-        //     y < -Map.size ||
-        //     y > Map.size
-        // )
-        // {
-        //     return;
-        // }
+        if(
+            _.isUndefined(Map.data.map[y]) ||
+            _.isUndefined(Map.data.map[y][x]) ||
+            Map.data.map[y][x] === '#'
+        )
+        {
+            return;
+        }
 
         Map.PCx = x;
         Map.PCy = y;
