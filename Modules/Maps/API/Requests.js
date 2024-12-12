@@ -5,7 +5,7 @@ Rune.Maps = {
 
         }, function (data) {
             $('#page').html(data.render);
-            Rune.Atoms.show($('#side-left'));
+            // Rune.Atoms.show($('#side-left'));
             Map.start();
         }, function () {
 
