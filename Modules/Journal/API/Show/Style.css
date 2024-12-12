@@ -8,6 +8,9 @@
   text-align: left;
   border: gray 1px solid;
 }
+#modules-road-show table tr:hover {
+  background-color: #ffffc6;
+}
 #modules-road-show table td {
   vertical-align: top;
   border-top: gray 1px dashed;
