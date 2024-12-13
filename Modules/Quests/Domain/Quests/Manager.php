@@ -69,7 +69,7 @@ class Manager extends DomainManager
     {
         $name = self::getTableName();
 
-        $row = self::getAdapter()->getRow(sprintf('select * from %s order by key_quest desc limit 1;', $name));
+        $row = self::getAdapter()->getRow(sprintf('select * from %s order by dt desc limit 1;', $name));
 
         if(empty($row))
         {

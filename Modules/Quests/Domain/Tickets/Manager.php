@@ -131,7 +131,6 @@ class Manager extends DomainManager
     public static function create(string $keyQuest): Entity
     {
         $data = [
-            'key_ticket' => date('Y-m-d H:i:s'),
             'key_quest' => $keyQuest,
             'title' => '-'
         ];

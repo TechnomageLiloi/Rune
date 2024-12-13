@@ -81,7 +81,7 @@ Rune.Quests = {
             }
 
             API.request('Rune.Quests.Tickets.Create', {}, function (data) {
-                Rune.Quests.Quest.show();
+                Rune.Quests.Quest.show(2);
             }, function () {
 
             });

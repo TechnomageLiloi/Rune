@@ -31,7 +31,7 @@
 
             <?php if($tickets[$quest->getKey()]): ?>
                 <?php foreach($tickets[$quest->getKey()] as $ticket): ?>
-                    <tr style="display: none;">
+                    <tr style="display: block;">
                         <td><?php echo $ticket->getTimestamp(); ?></td>
                         <td><?php echo $ticket->parse(); ?></td>
                         <td>
