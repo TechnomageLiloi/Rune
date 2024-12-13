@@ -36,6 +36,11 @@ class Method extends SuperMethod
             $entity->setDt(self::getParameter('dt'));
         }
 
+        if(self::getParameterExist('xp'))
+        {
+            $entity->setXp(self::getParameter('xp'));
+        }
+
         $entity->save();
 
         return new Response();

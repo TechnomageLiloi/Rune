@@ -17,6 +17,9 @@ use Liloi\Tools\Entity as AbstractEntity;
  *
  * @method string getDt()
  * @method void setDt(string $value)
+ *
+ * @method string getXp()
+ * @method void setXp(string $value)
  */
 class Entity extends AbstractEntity
 {

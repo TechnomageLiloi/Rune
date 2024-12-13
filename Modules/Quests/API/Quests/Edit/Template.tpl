@@ -2,9 +2,14 @@
 
 <div id="application-Quests-edit">
     <a href="javascript:void(0)" onclick="Rune.Quests.Quest.save('<?php echo $entity->getKey(); ?>');">Save</a>
-    <a href="javascript:void(0)" onclick="Rune.Quests.Quest.show('<?php echo $entity->getKey(); ?>');">Cancel</a>
+    <a href="javascript:void(0)" onclick="Rune.Quests.Quest.show('<?php echo $entity->getStatus(); ?>');">Cancel</a>
     <hr/>
     <table>
+
+        <tr>
+            <td>XP</td>
+            <td><input name="xp" type="text" value="<?php echo $entity->getXp(); ?>"></td>
+        </tr>
 
         <tr><td>Summary</td><td><textarea name="summary"><?php echo $entity->getSummary(); ?></textarea></td></tr>
 
@@ -21,5 +26,5 @@
     </table>
     <hr/>
     <a href="javascript:void(0)" onclick="Rune.Quests.Quest.save('<?php echo $entity->getKey(); ?>');">Save</a>
-    <a href="javascript:void(0)" onclick="Rune.Quests.Quest.show('<?php echo $entity->getKey(); ?>');">Cancel</a>
+    <a href="javascript:void(0)" onclick="Rune.Quests.Quest.show('<?php echo $entity->getStatus(); ?>');">Cancel</a>
 </div>

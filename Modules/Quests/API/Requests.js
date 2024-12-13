@@ -44,6 +44,7 @@ Rune.Quests = {
             API.request('Rune.Quests.Quest.Save', {
                 key_quest: key_quest,
                 data: jq_block.find('[name=data]').val(),
+                xp: jq_block.find('[name=xp]').val(),
                 status: status,
                 summary: jq_block.find('[name=summary]').val()
             }, function (data) {

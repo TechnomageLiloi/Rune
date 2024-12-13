@@ -77,6 +77,7 @@ create table rune_quests
     data json not null,
     status tinyint unsigned default 1 not null,
     dt timestamp null,
+    xp smallint unsigned default 0 not null,
     constraint rune_quests_pk
         primary key (key_quest)
 );

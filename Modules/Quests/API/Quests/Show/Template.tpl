@@ -20,9 +20,9 @@
         <?php foreach($quests as $quest): ?>
 
             <tr>
-                <td>#<?php echo $quest->getKey(); ?></td>
+                <td style="width: 200px;">#<?php echo $quest->getKey(); ?> [XP:<?php echo $quest->getXp(); ?>]</td>
                 <td><?php echo $quest->parse(); ?></td>
-                <td>
+                <td style="width: 200px;text-align: right;">
                     <a href="javascript:void(0)" class="butn" onclick="Rune.Quests.Quest.edit('<?php echo $quest->getKey(); ?>');">Edit quest</a>
                     &diams;
                     <a href="javascript:void(0)" class="butn" onclick="Rune.Quests.Quest.update('<?php echo $quest->getKey(); ?>', <?php echo $status; ?>);">To top</a>
@@ -31,10 +31,10 @@
 
             <?php if($tickets[$quest->getKey()]): ?>
                 <?php foreach($tickets[$quest->getKey()] as $ticket): ?>
-                    <tr style="display: block;">
-                        <td><?php echo $ticket->getTimestamp(); ?></td>
+                    <tr>
+                        <td style="width: 200px;"><?php echo $ticket->getTimestamp(); ?></td>
                         <td><?php echo $ticket->parse(); ?></td>
-                        <td>
+                        <td style="width: 200px;text-align: right;">
                             <a href="javascript:void(0)" class="butn" onclick="Rune.Quests.Tickets.edit('<?php echo $ticket->getKey(); ?>');">Edit</a>
                         </td>
                     </tr>
