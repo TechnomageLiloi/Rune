@@ -93,3 +93,21 @@ create table rune_tickets
         foreign key (key_quest) references rune_quests (key_quest)
             on update cascade on delete cascade
 );
+
+create table rune_items
+(
+	key_item bigint unsigned auto_increment,
+	rid varchar(250) null,
+	type tinyint unsigned not null,
+	title varchar(100) not null,
+	description text not null,
+	x smallint unsigned not null,
+	y smallint unsigned not null,
+	data json not null,
+	constraint rune_items_pk
+		primary key (key_item),
+	constraint rune_items_rune_databank_rid_fk
+		foreign key (rid) references rune_databank (rid)
+			on update cascade on delete cascade
+);
+
