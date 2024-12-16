@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\Rune\Modules\Exams\Domain\Questions;
+namespace Liloi\Rune\Modules\Exams\Domain\Crystals;
 
 use Liloi\Tools\Entity as AbstractEntity;
 use Liloi\Stylo\Parser;
@@ -36,7 +36,7 @@ class Entity extends AbstractEntity
 {
     public function getKey(): string
     {
-        return $this->getField('key_question');
+        return $this->getField('key_crystal');
     }
 
     public function getKeyNPC(): string

@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\Rune\Modules\Exams\Domain\Questions;
+namespace Liloi\Rune\Modules\Exams\Domain\Crystals;
 
 /**
  * Question's statuses.

@@ -1,8 +1,7 @@
 <?php
 
-namespace Liloi\Rune\Modules\Exams\Domain\Questions;
+namespace Liloi\Rune\Modules\Exams\Domain\Crystals;
 
-use Liloi\Rune\Domain\Atoms\Manager as AtomsManager;
 use Liloi\Rune\Domain\Manager as DomainManager;
 use Liloi\Rune\Services\Cache;
 
@@ -20,28 +19,17 @@ class Manager extends DomainManager
      */
     public static function getTableName(): string
     {
-        return self::getTablePrefix() . 'exams_questions';
+        return self::getTablePrefix() . 'crystals';
     }
 
     public static function loadCollection(string $key_item): Collection
     {
-        $cache = 'questions:collection:' . $key_item;
+        $name = self::getTableName();
 
-        if(Cache::exists($cache))
-        {
-            $rows = Cache::get($cache);
-        }
-        else
-        {
-            $name = self::getTableName();
-
-            $rows = self::getAdapter()->getArray(sprintf(
-                'select * from %s where key_item="%s" order by title desc limit 100;',
-                $name, $key_item
-            ));
-
-            Cache::set($cache, $rows);
-        }
+        $rows = self::getAdapter()->getArray(sprintf(
+            'select * from %s where key_item="%s" order by title desc limit 100;',
+            $name, $key_item
+        ));
 
         $collection = new Collection();
 
@@ -55,23 +43,12 @@ class Manager extends DomainManager
 
     public static function loadByTags(string $tags, string $RID): Collection
     {
-        $cache = 'questions:load-by-tags:' . $RID . ':' . str_replace(' ', '-', $tags);
+        $name = self::getTableName();
 
-        if(Cache::exists($cache))
-        {
-            $rows = Cache::get($cache);
-        }
-        else
-        {
-            $name = self::getTableName();
-
-            $rows = self::getAdapter()->getArray(sprintf(
-                'select * from %s where tags like "%%%s%%" and rid like "%s%%" limit 100;',
-                $name, $tags, $RID
-            ));
-
-            Cache::set($cache, $rows);
-        }
+        $rows = self::getAdapter()->getArray(sprintf(
+            'select * from %s where tags like "%%%s%%" and rid like "%s%%" limit 100;',
+            $name, $tags, $RID
+        ));
 
         shuffle($rows);
 
@@ -85,38 +62,26 @@ class Manager extends DomainManager
         return $collection;
     }
 
-    public static function load(string $key_question): Entity
+    public static function load(string $key_crystal): Entity
     {
-        $RID = AtomsManager::URLtoATOM($_SERVER['REQUEST_URI']);
-        $cache = 'questions:entity:' . $RID . ':key-' . $key_question;
+        $name = self::getTableName();
 
-        if(Cache::exists($cache))
-        {
-            $row = Cache::get($cache);
-        }
-        else
-        {
-            $name = self::getTableName();
-
-            $row = self::getAdapter()->getRow(sprintf(
-                'select * from %s where key_question="%s"',
-                $name,
-                $key_question
-            ));
-
-            Cache::set($cache, $row);
-        }
+        $row = self::getAdapter()->getRow(sprintf(
+            'select * from %s where key_crystal="%s"',
+            $name,
+            $key_crystal
+        ));
 
         return Entity::create($row);
     }
 
-    public static function setDoneParameter(string $key_question, bool $done): void
+    public static function setDoneParameter(string $key_crystal, bool $done): void
     {
         $query = sprintf(
             'update %s set %s where %s',
             self::getTableName(),
             "done=b'" . (int)$done . "'",
-            "key_question='" . $key_question . "'"
+            "key_crystal='" . $key_crystal . "'"
         );
 
         self::getAdapter()->getConnection()->request($query);
@@ -129,19 +94,14 @@ class Manager extends DomainManager
         $data = $entity->get();
 
         // @todo: Get param name from const.
-        $key = $data['key_question'];
-//        unset($data['key_question']);
+        $key = $data['key_crystal'];
+//        unset($data['key_crystal']);
 
         self::getAdapter()->update(
             $name,
             $data,
-            sprintf('key_question = "%s"', $key)
+            sprintf('key_crystal = "%s"', $key)
         );
-
-        $RID = AtomsManager::URLtoATOM($_SERVER['REQUEST_URI']);
-        Cache::remove('questions:entity:' . $RID . ':key-' . $key);
-        Cache::remove('questions:collection:' . $RID);
-        Cache::remove('questions:load-by-tags:' . $RID);
     }
 
     public static function remove(Entity $entity): void
@@ -151,7 +111,7 @@ class Manager extends DomainManager
 
         self::getAdapter()->delete(
             $name,
-            sprintf('key_question = "%s"', $key)
+            sprintf('key_crystal = "%s"', $key)
         );
     }
 
@@ -163,7 +123,7 @@ class Manager extends DomainManager
 
         $name = self::getTableName();
         $data = [
-            'key_question' => date('Y-m-d H:i:s'),
+            'key_crystal' => date('Y-m-d H:i:s'),
             'key_item' => $key_item,
             'title' => 'Enter the title',
             'status' => Statuses::TODO,
