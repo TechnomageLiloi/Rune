@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\Rune\Modules\Maps\Domain\Teacher;
+namespace Liloi\Rune\Modules\Teacher\Domain\Teacher;
 
 use Liloi\Tools\Entity as AbstractEntity;
 
