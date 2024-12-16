@@ -4,10 +4,22 @@
 }
 #teacher-show table {
   width: 100%;
+  font-size: x-large;
 }
 #teacher-show table td {
+  border-bottom: silver 1px solid;
   vertical-align: top;
+  width: 50%;
 }
 #teacher-show table td.apprentice {
+  text-align: right;
+}
+#teacher-show table th {
+  border-bottom: silver 2px solid;
+}
+#teacher-show table th.teacher {
+  text-align: left;
+}
+#teacher-show table th.apprentice {
   text-align: right;
 }
