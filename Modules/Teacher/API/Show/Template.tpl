@@ -2,6 +2,16 @@
 <div id="teacher-show">
     <table>
         <tr>
+            <td>
+                <a href="javascript:void(0)" onclick="Rune.Teacher.save(1, $('#teacher').val());">Add</a>
+                <input type="text" id="teacher">
+            </td>
+            <td class="apprentice">
+                <input type="text" id="apprentice">
+                <a href="javascript:void(0)" onclick="Rune.Teacher.save(0, $('#apprentice').val());">Add</a>
+            </td>
+        </tr>
+        <tr>
             <th class="teacher">Teacher</th>
             <th class="apprentice">Apprentice</th>
         </tr>

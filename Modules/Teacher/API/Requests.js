@@ -17,9 +17,9 @@ Rune.Teacher = {
             teacher: teacher,
             dialog: dialog
         }, function (data) {
-
-        }, function () {
             Rune.Teacher.show();
+        }, function () {
+
         });
     },
 }

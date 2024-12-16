@@ -6,8 +6,11 @@
   width: 100%;
   font-size: x-large;
 }
+#teacher-show table input {
+  width: 90%;
+}
 #teacher-show table td {
-  border-bottom: silver 1px solid;
+  border-bottom: silver 1px dashed;
   vertical-align: top;
   width: 50%;
 }
