@@ -111,3 +111,19 @@ create table rune_items
 			on update cascade on delete cascade
 );
 
+CREATE TABLE rune_crystals
+(
+    key_crystal bigint unsigned auto_increment,
+    key_item bigint unsigned,
+    title varchar(250) NOT NULL,
+    status tinyint(3) unsigned NOT NULL DEFAULT '1',
+    type tinyint(3) unsigned NOT NULL,
+    program text NOT NULL,
+    theory text NOT NULL,
+    tags varchar(100) NOT NULL,
+    dt timestamp NOT NULL,
+    done bit default false not null,
+    PRIMARY KEY (key_crystal),
+    foreign key (key_item) references rune_items(key_item)
+        on update cascade on delete cascade
+);
