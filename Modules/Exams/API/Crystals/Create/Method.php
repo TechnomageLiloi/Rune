@@ -1,11 +1,11 @@
 <?php
 
-namespace Liloi\Rune\Modules\Exams\API\Questions\Create;
+namespace Liloi\Rune\Modules\Exams\API\Crystals\Create;
 
 use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
 use Liloi\Rune\Domain\Atoms\Manager as AtomsManager;
-use Liloi\Rune\Modules\Exams\Domain\Questions\Manager;
+use Liloi\Rune\Modules\Exams\Domain\Crystals\Manager;
 
 /**
  * Rune API: Blueprint.Blueprints.Create

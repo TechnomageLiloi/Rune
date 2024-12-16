@@ -1,12 +1,11 @@
 <?php
 
-namespace Liloi\Rune\Modules\Exams\API\Questions\Suite;
+namespace Liloi\Rune\Modules\Exams\API\Crystals\Collection;
 
 use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
 use Liloi\Rune\Domain\Atoms\Manager as AtomsManager;
-use Liloi\Rune\Modules\Exams\Domain\Questions\Manager;
-use Liloi\Rune\Modules\Exams\API\Questions\Test\Method as TestMethod;
+use Liloi\Rune\Modules\Exams\Domain\Crystals\Manager as CrystalsManager;
 
 class Method extends SuperMethod
 {
@@ -14,18 +13,12 @@ class Method extends SuperMethod
     {
         self::accessCheck();
         $key_item = self::getParameter('key_item');
-        $collection = Manager::loadCollection($key_item);
-
-        $renders = [];
-        foreach($collection as $entity)
-        {
-            $renders[] = TestMethod::renderTest($entity);
-        }
+        $collection = CrystalsManager::loadCollection($key_item);
 
         $response = new Response();
-
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
-            'renders' => $renders
+            'collection' => $collection,
+            'key_item' => $key_item
         ]));
 
         return $response;

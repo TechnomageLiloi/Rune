@@ -1,21 +1,21 @@
 <?php
 
-namespace Liloi\Rune\Modules\Exams\API\Questions\Test;
+namespace Liloi\Rune\Modules\Exams\API\Crystals\Test;
 
 use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
-use Liloi\Rune\Modules\Exams\Domain\Questions\Manager;
-use Liloi\Rune\Modules\Exams\Domain\Questions\Statuses;
-use Liloi\Rune\Modules\Exams\Domain\Questions\Types;
-use Liloi\Rune\Modules\Exams\Domain\Questions\Entity;
+use Liloi\Rune\Modules\Exams\Domain\Crystals\Manager;
+use Liloi\Rune\Modules\Exams\Domain\Crystals\Statuses;
+use Liloi\Rune\Modules\Exams\Domain\Crystals\Types;
+use Liloi\Rune\Modules\Exams\Domain\Crystals\Entity;
 
 class Method extends SuperMethod
 {
     public static function execute(): Response
     {
         self::accessCheck();
-        $key_question = self::getParameter('key_question');
-        $entity = Manager::load($key_question);
+        $key_crystal = self::getParameter('key_crystal');
+        $entity = Manager::load($key_crystal);
 
         $response = new Response();
         $response->set('render', self::renderTest($entity));

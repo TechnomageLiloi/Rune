@@ -1,7 +1,7 @@
-Rune.Exams.Questions = {
+Rune.Exams.Crystals = {
     collection: function (key_item)
     {
-        API.request('Rune.Exams.Questions.Collection', {
+        API.request('Rune.Crystals.Collection', {
             key_item: key_item
         }, function (data) {
             $('#page').html(data.render);
@@ -10,10 +10,10 @@ Rune.Exams.Questions = {
         });
     },
 
-    show: function (key_question)
+    show: function (key_crystal)
     {
-        API.request('Rune.Exams.Questions.Show', {
-            'key_question': key_question
+        API.request('Rune.Crystals.Show', {
+            'key_crystal': key_crystal
         }, function (data) {
             $('#page').html(data.render);
         }, function () {
@@ -28,35 +28,35 @@ Rune.Exams.Questions = {
             return;
         }
 
-        API.request('Rune.Exams.Questions.Create', {
+        API.request('Rune.Crystals.Create', {
             key_item: key_item
         }, function (data) {
-            Rune.Exams.Questions.collection(key_item);
+            Rune.Exams.Crystals.collection(key_item);
         }, function () {
 
         });
     },
 
-    remove: function (key_question)
+    remove: function (key_crystal)
     {
         if(!confirm('Are you sure?'))
         {
             return;
         }
 
-        API.request('Rune.Exams.Questions.Remove', {
-            'key_question': key_question
+        API.request('Rune.Crystals.Remove', {
+            'key_crystal': key_crystal
         }, function (data) {
-            Rune.Exams.Questions.collection();
+            Rune.Exams.Crystals.collection();
         }, function () {
 
         });
     },
 
-    edit: function (key_question)
+    edit: function (key_crystal)
     {
-        API.request('Rune.Exams.Questions.Edit', {
-            'key_question': key_question
+        API.request('Rune.Crystals.Edit', {
+            'key_crystal': key_crystal
         }, function (data) {
             $('#page').html(data.render);
         }, function () {
@@ -64,10 +64,10 @@ Rune.Exams.Questions = {
         });
     },
 
-    test: function (key_question)
+    test: function (key_crystal)
     {
-        API.request('Rune.Exams.Questions.Test', {
-            'key_question': key_question
+        API.request('Rune.Crystals.Test', {
+            'key_crystal': key_crystal
         }, function (data) {
             $('#page').html(data.render);
         }, function () {
@@ -77,7 +77,7 @@ Rune.Exams.Questions = {
 
     suite: function (key_item)
     {
-        API.request('Rune.Exams.Questions.Suite', {
+        API.request('Rune.Crystals.Suite', {
             key_item: key_item
         }, function (data) {
             $('#page').html(data.render);
@@ -86,7 +86,7 @@ Rune.Exams.Questions = {
         });
     },
 
-    save: function (key_question, key_item)
+    save: function (key_crystal, key_item)
     {
         if(!confirm('Are you sure?'))
         {
@@ -94,8 +94,8 @@ Rune.Exams.Questions = {
         }
 
         const jq_block = $('#blueprint-edit');
-        API.request('Rune.Exams.Questions.Save', {
-            'key_question': key_question,
+        API.request('Rune.Crystals.Save', {
+            'key_crystal': key_crystal,
             'title': jq_block.find('[name="title"]').val(),
             'status': jq_block.find('[name="status"]').val(),
             'type': jq_block.find('[name="type"]').val(),
@@ -104,7 +104,7 @@ Rune.Exams.Questions = {
             'tags': jq_block.find('[name="tags"]').val(),
             'dt': jq_block.find('[name="dt"]').val()
         }, function (data) {
-            Rune.Exams.Questions.collection(key_item);
+            Rune.Exams.Crystals.collection(key_item);
         }, function () {
 
         });
@@ -118,8 +118,8 @@ Rune.Exams.Questions = {
         }
 
         const jq_block = $('#blueprint-edit');
-        API.request('Rune.Exams.Questions.Done', {
-            'key_question': keyQuestion,
+        API.request('Rune.Crystals.Done', {
+            'key_crystal': keyQuestion,
             'done': done,
         }, function (data) {
             alert('Done.');

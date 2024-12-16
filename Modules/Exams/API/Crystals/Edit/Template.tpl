@@ -12,7 +12,7 @@
     }
 </style>
 <div id="blueprint-edit">
-    <a href="javascript:void(0)" onclick="Rune.Exams.Questions.save('<?php echo $entity->getKey(); ?>', '<?php echo $entity->getKeyItem(); ?>');">Save</a>
+    <a href="javascript:void(0)" onclick="Rune.Exams.Crystals.save('<?php echo $entity->getKey(); ?>', '<?php echo $entity->getKeyItem(); ?>');">Save</a>
     <hr/>
     <table style="width: 100%;">
         <tr>
@@ -45,5 +45,5 @@
 
     </table>
     <hr/>
-    <a href="javascript:void(0)" onclick="Rune.Exams.Questions.save('<?php echo $entity->getKey(); ?>', '<?php echo $entity->getKeyItem(); ?>');">Save</a>
+    <a href="javascript:void(0)" onclick="Rune.Exams.Crystals.save('<?php echo $entity->getKey(); ?>', '<?php echo $entity->getKeyItem(); ?>');">Save</a>
 </div>

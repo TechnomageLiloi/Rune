@@ -27,8 +27,8 @@
 
 </style>
 <div id="problem-group">
-    <a href="javascript:void(0)" onclick="Rune.Exams.Questions.create('<?php echo $key_item; ?>');" class="butn">Create question</a>
-    <a href="javascript:void(0)" onclick="Rune.Exams.Questions.suite('<?php echo $key_item; ?>');" class="butn">Exam</a>
+    <a href="javascript:void(0)" onclick="Rune.Exams.Crystals.create('<?php echo $key_item; ?>');" class="butn">Create question</a>
+    <a href="javascript:void(0)" onclick="Rune.Exams.Crystals.suite('<?php echo $key_item; ?>');" class="butn">Exam</a>
     <hr/>
     <table>
         <tr>
@@ -47,9 +47,9 @@
             <td><?php echo $entity->getTypeTitle(); ?></td>
             <td><?php echo $entity->getStatusTitle(); ?></td>
             <td style="text-align: right; width: 300px;">
-                <a href="javascript:void(0)" onclick="Rune.Exams.Questions.test('<?php echo $entity->getKey(); ?>');" class="butn">Test</a>
-                <a href="javascript:void(0)" onclick="Rune.Exams.Questions.edit('<?php echo $entity->getKey(); ?>');" class="butn">Edit</a>
-                <a href="javascript:void(0)" onclick="Rune.Exams.Questions.remove('<?php echo $entity->getKey(); ?>');" class="butn">Make obsolete</a>
+                <a href="javascript:void(0)" onclick="Rune.Exams.Crystals.test('<?php echo $entity->getKey(); ?>');" class="butn">Test</a>
+                <a href="javascript:void(0)" onclick="Rune.Exams.Crystals.edit('<?php echo $entity->getKey(); ?>');" class="butn">Edit</a>
+                <a href="javascript:void(0)" onclick="Rune.Exams.Crystals.remove('<?php echo $entity->getKey(); ?>');" class="butn">Make obsolete</a>
             </td>
         </tr>
         <?php endforeach; ?>
