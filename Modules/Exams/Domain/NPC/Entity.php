@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\Rune\Modules\Maps\Domain\NPCs;
+namespace Liloi\Rune\Modules\Exams\Domain\NPC;
 
 use Liloi\Tools\Entity as AbstractEntity;
 use Liloi\Stylo\Parser;
@@ -12,12 +12,6 @@ use Liloi\Stylo\Parser;
  * @method string getDescription()
  * @method void setDescription(string $value)
  *
- * @method string getStatus()
- * @method void setStatus(string $value)
- *
- * @method string getType()
- * @method void setType(string $value)
- *
  * @method string getData()
  * @method void setData(string $value)
  */
@@ -28,19 +22,14 @@ class Entity extends AbstractEntity
         return $this->getField('key_npc');
     }
 
-    public function getKeyAtom(): string
+    public function getRID(): string
     {
-        return $this->getField('key_atom');
+        return $this->getField('rid');
     }
 
-    public function setKeyAtom(string $key_atom): void
+    public function setRID(string $RID): void
     {
-        $this->setField('key_atom', $key_atom);
-    }
-
-    public function getTypeTitle(): string
-    {
-        return Types::$list[$this->getType()];
+        $this->setField('rid', $RID);
     }
 
     public function getParse(): string
@@ -69,10 +58,5 @@ class Entity extends AbstractEntity
     public function remove(): void
     {
         Manager::remove($this);
-    }
-
-    public function getParseTheory(): string
-    {
-        return Parser::parseString($this->getTheory());
     }
 }

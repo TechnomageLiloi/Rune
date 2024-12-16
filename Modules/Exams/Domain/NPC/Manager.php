@@ -1,10 +1,8 @@
 <?php
 
-namespace Liloi\Rune\Modules\Maps\Domain\NPCs;
+namespace Liloi\Rune\Modules\Exams\Domain\NPC;
 
-use Liloi\Rune\Domain\Atoms\Manager as AtomsManager;
 use Liloi\Rune\Domain\Manager as DomainManager;
-use Liloi\Rune\Services\Cache;
 
 /**
  * Question's manager.
@@ -25,23 +23,12 @@ class Manager extends DomainManager
 
     public static function loadCollection(string $keyAtom): Collection
     {
-        $cache = 'questions:collection:' . $keyAtom;
+        $name = self::getTableName();
 
-        if(Cache::exists($cache))
-        {
-            $rows = Cache::get($cache);
-        }
-        else
-        {
-            $name = self::getTableName();
-
-            $rows = self::getAdapter()->getArray(sprintf(
-                'select * from %s where key_npc="%s" order by title asc limit 100;',
-                $name, $keyAtom
-            ));
-
-            Cache::set($cache, $rows);
-        }
+        $rows = self::getAdapter()->getArray(sprintf(
+            'select * from %s where key_npc="%s" order by title asc limit 100;',
+            $name, $keyAtom
+        ));
 
         $collection = new Collection();
 
@@ -55,25 +42,13 @@ class Manager extends DomainManager
 
     public static function load(string $key_npc): Entity
     {
-        $RID = AtomsManager::URLtoATOM($_SERVER['REQUEST_URI']);
-        $cache = 'questions:entity:' . $RID . ':key-' . $key_npc;
+        $name = self::getTableName();
 
-        if(Cache::exists($cache))
-        {
-            $row = Cache::get($cache);
-        }
-        else
-        {
-            $name = self::getTableName();
-
-            $row = self::getAdapter()->getRow(sprintf(
-                'select * from %s where key_npc="%s"',
-                $name,
-                $key_npc
-            ));
-
-            Cache::set($cache, $row);
-        }
+        $row = self::getAdapter()->getRow(sprintf(
+            'select * from %s where key_npc="%s"',
+            $name,
+            $key_npc
+        ));
 
         return Entity::create($row);
     }
@@ -85,18 +60,12 @@ class Manager extends DomainManager
 
         // @todo: Get param name from const.
         $key = $data['key_npc'];
-//        unset($data['key_question']);
 
         self::getAdapter()->update(
             $name,
             $data,
             sprintf('key_npc = "%s"', $key)
         );
-
-        $RID = AtomsManager::URLtoATOM($_SERVER['REQUEST_URI']);
-        Cache::remove('questions:entity:' . $RID . ':key-' . $key);
-        Cache::remove('questions:collection:' . $RID);
-        Cache::remove('questions:load-by-tags:' . $RID);
     }
 
     public static function remove(Entity $entity): void
@@ -111,15 +80,13 @@ class Manager extends DomainManager
     }
 
     // @todo: rise this method to more abstract level.
-    public static function create(string $keyAtom): array
+    public static function create(string $RID): array
     {
         $name = self::getTableName();
         $data = [
-            'key_atom' => $keyAtom,
+            'rid' => $RID,
             'title' => 'Enter the title',
             'description' => '// Description',
-            'status' => Statuses::TEACHER,
-            'type' => Types::TEACHER,
             'data' => '{}',
         ];
 

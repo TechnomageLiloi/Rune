@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\Rune\Modules\Maps\Domain\NPCs;
+namespace Liloi\Rune\Modules\Exams\Domain\NPC;
 
 use Liloi\Tools\Collection as AbstractCollection;
 
