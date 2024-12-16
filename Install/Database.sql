@@ -127,3 +127,13 @@ CREATE TABLE rune_crystals
     foreign key (key_item) references rune_items(key_item)
         on update cascade on delete cascade
 );
+
+create table rune_teacher
+(
+	key_dialog timestamp not null,
+	teacher bool default true not null,
+	dialog text not null,
+	constraint rune_teacher_pk
+		primary key (key_dialog)
+);
+
