@@ -10,12 +10,10 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-        $entity = TeacherManager::load(self::getParameter('key_dialog'));
-
-        $entity->setTeacher(self::getParameter('teacher'));
-        $entity->setDialog(self::getParameter('dialog'));
-
-        $entity->save();
+        TeacherManager::create(
+            self::getParameter('teacher'),
+            self::getParameter('dialog')
+        );
 
         return new Response();
     }

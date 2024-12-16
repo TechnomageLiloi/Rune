@@ -25,4 +25,9 @@ class Entity extends AbstractEntity
     {
         Manager::save($this);
     }
+
+    public function getClass(): string
+    {
+        return $this->getTeacher() ? 'teacher' : 'apprentice';
+    }
 }
