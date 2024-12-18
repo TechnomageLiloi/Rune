@@ -105,6 +105,24 @@ class Manager extends DomainManager
         self::getAdapter()->request($query);
     }
 
+    public static function put(Entity $entity, $x, $y): void
+    {
+        $name = self::getTableName();
+        $data = $entity->get();
+
+        $key = $data['key_item'];
+
+        $query = sprintf(
+            'update %s set %s, x = %s, y = %s where %s',
+            $name,
+            'rid = null',
+            $x, $y,
+            'key_item = ' . $key
+        );
+
+        self::getAdapter()->request($query);
+    }
+
     // @todo: rise this method to more abstract level.
     public static function create(string $keyAtom): array
     {

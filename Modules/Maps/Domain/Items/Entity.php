@@ -68,11 +68,20 @@ class Entity extends AbstractEntity
     }
 
     /**
-     * Save question to database.
+     * Drop question to terra.
      */
     public function drop($RID, $x, $y): self
     {
         Manager::drop($this, $RID, $x, $y);
+        return $this;
+    }
+
+    /**
+     * Put question from terra.
+     */
+    public function put($x, $y): self
+    {
+        Manager::put($this, $x, $y);
         return $this;
     }
 }
