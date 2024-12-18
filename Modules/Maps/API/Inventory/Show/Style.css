@@ -1,0 +1,24 @@
+#maps-inventory-show {
+  background-color: white;
+  height: 90%;
+  padding: 10px;
+  border: gray 3px solid;
+  border-radius: 5px;
+  min-height: 400px;
+}
+#maps-inventory-show table {
+  width: 100%;
+  height: 100%;
+}
+#maps-inventory-show table td {
+  width: 33%;
+  border: gray 1px solid;
+  vertical-align: top;
+}
+#maps-inventory-show #wrap-map {
+  width: 400px;
+  margin: 0 auto;
+}
+#maps-inventory-show #wrap-map #map {
+  border: 1px solid red;
+}

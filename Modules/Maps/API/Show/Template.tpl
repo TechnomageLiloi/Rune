@@ -14,6 +14,7 @@
             <td>
                 <div id="side-right">
                     <a href="javascript:void(0)" onclick="Rune.Maps.saveMap();" class="butn">Save map</a>
+                    <a href="javascript:void(0)" onclick="Rune.Maps.Inventory.show();" class="butn">Inventory</a>
                     <!--<a href="javascript:void(0)" onclick="Rune.Exams.Inventory.getInventory();" class="butn">Inventory</a>-->
                     <hr/>
                     <div id="elements"></div>

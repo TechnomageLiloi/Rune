@@ -8,7 +8,6 @@
 }
 #modules-maps-show table td {
   width: 33%;
-  border: gray 1px solid;
   vertical-align: top;
 }
 #modules-maps-show #wrap-map {
@@ -17,4 +16,10 @@
 }
 #modules-maps-show #wrap-map #map {
   border: 1px solid red;
+}
+#modules-maps-show #side-right {
+  padding: 10px;
+  border: gray 3px solid;
+  border-radius: 5px;
+  min-height: 400px;
 }

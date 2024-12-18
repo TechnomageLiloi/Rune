@@ -30,5 +30,18 @@ Rune.Maps = {
     saveMap: function ()
     {
         Rune.Maps.save('atom', 'map', Map.data.map);
+    },
+
+    Inventory: {
+        show: function ()
+        {
+            API.request('Rune.Maps.Inventory.Show', {
+
+            }, function (data) {
+                $('#side-left').html(data.render);
+            }, function () {
+
+            });
+        },
     }
 }
