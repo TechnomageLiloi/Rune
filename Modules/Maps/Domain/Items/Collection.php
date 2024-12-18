@@ -12,5 +12,16 @@ use Liloi\Tools\Collection as AbstractCollection;
  */
 class Collection extends AbstractCollection
 {
+    public function toArray(): array
+    {
+        $collection = [];
 
+        /** @var Entity $entity */
+        foreach ($this as $entity)
+        {
+            $collection[$entity->getKey()] = $entity->get();
+        }
+
+        return $collection;
+    }
 }

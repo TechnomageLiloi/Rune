@@ -22,13 +22,13 @@ class Manager extends DomainManager
         return self::getTablePrefix() . 'items';
     }
 
-    public static function loadCollection(string $keyAtom): Collection
+    public static function loadCollection(string $RID): Collection
     {
         $name = self::getTableName();
 
         $rows = self::getAdapter()->getArray(sprintf(
-            'select * from %s where key_npc="%s" order by title asc limit 100;',
-            $name, $keyAtom
+            'select * from %s where rid="%s" order by title asc limit 100;',
+            $name, $RID
         ));
 
         $collection = new Collection();
