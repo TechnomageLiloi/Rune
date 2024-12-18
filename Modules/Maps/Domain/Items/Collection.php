@@ -19,7 +19,17 @@ class Collection extends AbstractCollection
         /** @var Entity $entity */
         foreach ($this as $entity)
         {
-            $collection[$entity->getKey()] = $entity->get();
+            if(!isset($collection[$entity->getY()]))
+            {
+                $collection[$entity->getY()] = [];
+            }
+
+            if(!isset($collection[$entity->getY()][$entity->getX()]))
+            {
+                $collection[$entity->getY()][$entity->getX()] = [];
+            }
+
+            $collection[$entity->getY()][$entity->getX()][$entity->getKey()] = $entity->get();
         }
 
         return $collection;
