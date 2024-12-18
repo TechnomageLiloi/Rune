@@ -51,10 +51,23 @@ Rune.Maps = {
                 x: Map.PCx,
                 y: Map.PCy
             }, function (data) {
-                $('#side-left').html(data.render);
+                Rune.Maps.show();
             }, function () {
 
             });
         },
+
+        parseItem: function (entity)
+        {
+            let html = entity.title;
+
+            if(entity.type == 1)
+            {
+                $('#side-left').html(entity.description);
+                return;
+            }
+
+            $('#side-left').html(html);
+        }
     }
 }

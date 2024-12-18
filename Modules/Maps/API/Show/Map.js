@@ -70,7 +70,8 @@ let Map = {
                 )
                 {
                     Map.data.items[Map.PCy][Map.PCx].forEach(function(item) {
-                        $('#side-left').html(JSON.stringify(item));
+                        // $('#side-left').html(JSON.stringify(item));
+                        Rune.Maps.Inventory.parseItem(item);
                     });
                 }
 
