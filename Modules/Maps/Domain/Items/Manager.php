@@ -80,14 +80,14 @@ class Manager extends DomainManager
 
         $key = $data['key_item'];
 
-        self::getAdapter()->update(
+        self::update(
             $name,
             $data,
             sprintf('key_item = "%s"', $key)
         );
     }
 
-    public static function saveDrop(Entity $entity): void
+    public static function drop(Entity $entity, $RID, $x, $y): void
     {
         $name = self::getTableName();
         $data = $entity->get();
@@ -95,9 +95,10 @@ class Manager extends DomainManager
         $key = $data['key_item'];
 
         $query = sprintf(
-            'update %s set %s where %s',
+            'update %s set %s, x = %s, y = %s where %s',
             $name,
-            'rid = null',
+            'rid = "' . $RID . '"',
+            $x, $y,
             'key_item = ' . $key
         );
 

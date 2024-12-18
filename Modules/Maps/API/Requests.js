@@ -43,5 +43,18 @@ Rune.Maps = {
 
             });
         },
+
+        drop: function (keyItem)
+        {
+            API.request('Rune.Maps.Inventory.Drop', {
+                key_item: keyItem,
+                x: Map.PCx,
+                y: Map.PCy
+            }, function (data) {
+                $('#side-left').html(data.render);
+            }, function () {
+
+            });
+        },
     }
 }
