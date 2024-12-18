@@ -60,16 +60,14 @@ class Manager extends DomainManager
         return $collection;
     }
 
-    public static function load(string $key_npc): Entity
+    public static function load(string $keyItem): Entity
     {
-        $RID = AtomsManager::URLtoATOM($_SERVER['REQUEST_URI']);
-
         $name = self::getTableName();
 
         $row = self::getAdapter()->getRow(sprintf(
-            'select * from %s where key_npc="%s"',
+            'select * from %s where key_item="%s"',
             $name,
-            $key_npc
+            $keyItem
         ));
 
         return Entity::create($row);
@@ -80,13 +78,30 @@ class Manager extends DomainManager
         $name = self::getTableName();
         $data = $entity->get();
 
-        $key = $data['key_npc'];
+        $key = $data['key_item'];
 
         self::getAdapter()->update(
             $name,
             $data,
-            sprintf('key_npc = "%s"', $key)
+            sprintf('key_item = "%s"', $key)
         );
+    }
+
+    public static function saveDrop(Entity $entity): void
+    {
+        $name = self::getTableName();
+        $data = $entity->get();
+
+        $key = $data['key_item'];
+
+        $query = sprintf(
+            'update %s set %s where %s',
+            $name,
+            'rid = null',
+            'key_item = ' . $key
+        );
+
+        self::getAdapter()->request($query);
     }
 
     // @todo: rise this method to more abstract level.

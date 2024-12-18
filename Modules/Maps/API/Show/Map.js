@@ -56,7 +56,7 @@ let Map = {
         {
             for(let x=-size;x<=size;x++)
             {
-                if(0 === x && 0 ===y)
+                if(0 === x && 0 === y)
                 {
                     context.fillStyle = "yellow";
                     context.fillText('@', 10 * (x + size) + 50, 10 * (y + size) + 50);

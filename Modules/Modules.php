@@ -21,6 +21,7 @@ class Modules
 
         $manager->add(new Method('Rune.Maps.Show', '\Liloi\Rune\Modules\Maps\API\Show\Method::execute'));
         $manager->add(new Method('Rune.Maps.Inventory.Show', '\Liloi\Rune\Modules\Maps\API\Inventory\Show\Method::execute'));
+        $manager->add(new Method('Rune.Maps.Inventory.Drop', '\Liloi\Rune\Modules\Maps\API\Inventory\Drop\Method::execute'));
         $manager->add(new Method('Rune.Maps.Save', '\Liloi\Rune\Modules\Maps\API\Save\Method::execute'));
 
         $manager->add(new Method('Rune.Teacher.Show', '\Liloi\Rune\Modules\Teacher\API\Show\Method::execute'));

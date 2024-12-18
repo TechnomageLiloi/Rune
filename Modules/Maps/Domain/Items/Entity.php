@@ -65,4 +65,12 @@ class Entity extends AbstractEntity
     {
         Manager::save($this);
     }
+
+    /**
+     * Save question to database.
+     */
+    public function saveDrop(): void
+    {
+        Manager::saveDrop($this);
+    }
 }
