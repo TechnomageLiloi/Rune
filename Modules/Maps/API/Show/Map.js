@@ -27,7 +27,7 @@ let Map = {
             )
             {
                 Map.data.items[y+ Map.PCy][x+ Map.PCx].forEach(function(item) {
-                    context.fillStyle = "blue";
+                    context.fillStyle = "#7adcff";
                     context.fillText('o', 10 * (x + size) + 50, 10 * (y + size) + 50);
                     context.fillStyle = "white";
                 });
@@ -50,6 +50,8 @@ let Map = {
             context.fillText(tile, 10 * (x + size) + 50, 10 * (y + size) + 50);
         };
 
+        $('#side-left').html('');
+
         for(let y=-size;y<=size;y++)
         {
             for(let x=-size;x<=size;x++)
@@ -60,6 +62,16 @@ let Map = {
                     context.fillText('@', 10 * (x + size) + 50, 10 * (y + size) + 50);
                     context.fillStyle = "white";
                     continue;
+                }
+
+                if(
+                    !_.isUndefined(Map.data.items[Map.PCy]) &&
+                    !_.isUndefined(Map.data.items[Map.PCy][Map.PCx])
+                )
+                {
+                    Map.data.items[Map.PCy][Map.PCx].forEach(function(item) {
+                        $('#side-left').html(JSON.stringify(item));
+                    });
                 }
 
                 // tile = Map.data.map[y + size][x + size];
