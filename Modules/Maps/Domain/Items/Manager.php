@@ -41,6 +41,25 @@ class Manager extends DomainManager
         return $collection;
     }
 
+    public static function loadInventory(): Collection
+    {
+        $name = self::getTableName();
+
+        $rows = self::getAdapter()->getArray(sprintf(
+            'select * from %s where rid is null order by title asc limit 100;',
+            $name
+        ));
+
+        $collection = new Collection();
+
+        foreach($rows as $row)
+        {
+            $collection[] = Entity::create($row);
+        }
+
+        return $collection;
+    }
+
     public static function load(string $key_npc): Entity
     {
         $RID = AtomsManager::URLtoATOM($_SERVER['REQUEST_URI']);
