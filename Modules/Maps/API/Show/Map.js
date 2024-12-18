@@ -21,6 +21,19 @@ let Map = {
                 return;
             }
 
+            if(
+                !_.isUndefined(Map.data.items[y+ Map.PCy]) &&
+                !_.isUndefined(Map.data.items[y+ Map.PCy][x+ Map.PCx])
+            )
+            {
+                Map.data.items[y+ Map.PCy][x+ Map.PCx].forEach(function(item) {
+                    context.fillStyle = "blue";
+                    context.fillText('o', 10 * (x + size) + 50, 10 * (y + size) + 50);
+                    context.fillStyle = "white";
+                });
+                return;
+            }
+
             tile = Map.data.map[y + Map.PCy][x + Map.PCx];
 
             switch (tile)

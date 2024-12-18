@@ -29,7 +29,7 @@ class Collection extends AbstractCollection
                 $collection[$entity->getY()][$entity->getX()] = [];
             }
 
-            $collection[$entity->getY()][$entity->getX()][$entity->getKey()] = $entity->get();
+            $collection[$entity->getY()][$entity->getX()][] = $entity->get();
         }
 
         return $collection;
