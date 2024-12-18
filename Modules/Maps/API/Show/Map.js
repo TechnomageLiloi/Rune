@@ -101,6 +101,21 @@ let Map = {
             case 99: {x++; y++;}; break;
             case 101: {x++; y--;}; break;
             case 122: {x--; y++;}; break;
+
+            case 116: {
+
+                if(
+                    !_.isUndefined(Map.data.items[Map.PCy]) &&
+                    !_.isUndefined(Map.data.items[Map.PCy][Map.PCx])
+                )
+                {
+                    Map.data.items[Map.PCy][Map.PCx].forEach(function(item) {
+                        Rune.Maps.Inventory.put(item.key_item)
+                    });
+                }
+
+                return ;
+            }; break;
         }
 
         if(

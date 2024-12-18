@@ -57,6 +57,20 @@ Rune.Maps = {
             });
         },
 
+
+        put: function (keyItem)
+        {
+            API.request('Rune.Maps.Inventory.Put', {
+                key_item: keyItem,
+                x: Map.PCx,
+                y: Map.PCy
+            }, function (data) {
+                Rune.Maps.show();
+            }, function () {
+
+            });
+        },
+
         parseItem: function (entity)
         {
             let html = entity.title;

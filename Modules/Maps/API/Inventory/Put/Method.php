@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\Rune\Modules\Maps\API\Inventory\Drop;
+namespace Liloi\Rune\Modules\Maps\API\Inventory\Put;
 
 use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
