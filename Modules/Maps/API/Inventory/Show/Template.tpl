@@ -14,6 +14,7 @@
             <td><?php echo $item->getTitle(); ?></td>
             <td><?php echo $item->getTypeTitle(); ?></td>
             <td>
+                <a href="javascript:void(0)" onclick="Rune.Maps.Inventory.edit('<?php echo $item->getKey(); ?>');" class="butn">Edit</a>
                 <a href="javascript:void(0)" onclick="Rune.Maps.Inventory.drop('<?php echo $item->getKey(); ?>');" class="butn">Drop</a>
             </td>
         </tr>

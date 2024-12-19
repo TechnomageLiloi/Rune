@@ -44,6 +44,17 @@ Rune.Maps = {
             });
         },
 
+        edit: function (keyItem)
+        {
+            API.request('Rune.Maps.Inventory.Edit', {
+                key_item: keyItem
+            }, function (data) {
+                $('#side-left').html(data.render);
+            }, function () {
+
+            });
+        },
+
         drop: function (keyItem)
         {
             API.request('Rune.Maps.Inventory.Drop', {

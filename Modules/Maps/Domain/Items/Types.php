@@ -10,7 +10,8 @@ namespace Liloi\Rune\Modules\Maps\Domain\Items;
 class Types
 {
     public const NOTE = 1;
-    public const CRYSTAL = 2;
+    public const PORTAL = 2;
+    public const CRYSTAL = 3;
 
     /**
      * Type list.
@@ -19,6 +20,7 @@ class Types
      */
     public static $list = [
         self::NOTE => 'Note',
+        self::PORTAL => 'Portal',
         self::CRYSTAL => 'Crystal',
     ];
 }

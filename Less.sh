@@ -10,3 +10,4 @@ lessc ./Modules/Journal/API/Jobs/Edit/Style.less ./Modules/Journal/API/Jobs/Edit
 lessc ./Modules/Journal/API/Road/Edit/Style.less ./Modules/Journal/API/Road/Edit/Style.css
 lessc ./Modules/Maps/API/Show/Style.less ./Modules/Maps/API/Show/Style.css
 lessc ./Modules/Maps/API/Inventory/Show/Style.less ./Modules/Maps/API/Inventory/Show/Style.css
+lessc ./Modules/Maps/API/Inventory/Edit/Style.less ./Modules/Maps/API/Inventory/Edit/Style.css
