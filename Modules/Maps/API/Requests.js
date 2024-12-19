@@ -120,9 +120,15 @@ Rune.Maps = {
         {
             let html = entity.title;
 
-            if(entity.type == 2)
+            if(entity.type == 2) // Note
             {
                 $('#side-left').html(entity.description);
+                return;
+            }
+
+            if(entity.type == 3) // Portal
+            {
+                $('#side-left').html('<a target="_blank" href="' + entity.description + '">' + entity.title + '</a>');
                 return;
             }
 

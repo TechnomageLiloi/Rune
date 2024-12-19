@@ -116,6 +116,21 @@ let Map = {
 
                 return ;
             }; break;
+
+            case 115: {
+                if(
+                    !_.isUndefined(Map.data.items[Map.PCy]) &&
+                    !_.isUndefined(Map.data.items[Map.PCy][Map.PCx])
+                )
+                {
+                    Map.data.items[Map.PCy][Map.PCx].forEach(function(item) {
+                        if(item.type == 3) // Portal
+                        {
+                            window.open(item.description, '_blank');
+                        }
+                    });
+                }
+            }; break;
         }
 
         if(
