@@ -49,7 +49,26 @@ Rune.Maps = {
             API.request('Rune.Maps.Inventory.Edit', {
                 key_item: keyItem
             }, function (data) {
-                $('#side-left').html(data.render);
+                $('#page').html(data.render);
+            }, function () {
+
+            });
+        },
+
+        save: function (keyItem) {
+            if (!confirm('Are you sure?')) {
+                return;
+            }
+
+            const jq_block = $('#maps-inventory-edit');
+            API.request('Rune.Maps.Inventory.Save', {
+                key_item: keyItem,
+                type: jq_block.find('[name=type]').val(),
+                title: jq_block.find('[name=title]').val(),
+                description: jq_block.find('[name=description]').val(),
+                data: jq_block.find('[name=data]').val(),
+            }, function (data) {
+                Rune.Maps.show();
             }, function () {
 
             });

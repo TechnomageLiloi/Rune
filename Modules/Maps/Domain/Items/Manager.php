@@ -79,6 +79,7 @@ class Manager extends DomainManager
         $data = $entity->get();
 
         $key = $data['key_item'];
+        unset($data['rid']);
 
         self::update(
             $name,

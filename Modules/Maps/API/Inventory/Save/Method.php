@@ -1,10 +1,10 @@
 <?php
 
-namespace Liloi\Rune\Modules\Quests\API\Quests\Save;
+namespace Liloi\Rune\Modules\Maps\API\Inventory\Save;
 
 use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
-use Liloi\Rune\Modules\Quests\Domain\Quests\Manager as QuestsManager;
+use Liloi\Rune\Modules\Maps\Domain\Items\Manager as ItemsManager;
 
 /**
  * Rune API: Interstate60.Application.Quests.Save
@@ -13,31 +13,26 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-        $entity = QuestsManager::load(self::getParameter('key_quest'));
+        $entity = ItemsManager::load(self::getParameter('key_item'));
+
+        if(self::getParameterExist('type'))
+        {
+            $entity->setType(self::getParameter('type'));
+        }
+
+        if(self::getParameterExist('title'))
+        {
+            $entity->setTitle(self::getParameter('title'));
+        }
+
+        if(self::getParameterExist('description'))
+        {
+            $entity->setDescription(self::getParameter('description'));
+        }
 
         if(self::getParameterExist('data'))
         {
             $entity->setData(self::getParameter('data'));
-        }
-
-        if(self::getParameterExist('summary'))
-        {
-            $entity->setSummary(self::getParameter('summary'));
-        }
-
-        if(self::getParameterExist('status'))
-        {
-            $entity->setStatus(self::getParameter('status'));
-        }
-
-        if(self::getParameterExist('dt'))
-        {
-            $entity->setDt(self::getParameter('dt'));
-        }
-
-        if(self::getParameterExist('xp'))
-        {
-            $entity->setXp(self::getParameter('xp'));
         }
 
         $entity->save();

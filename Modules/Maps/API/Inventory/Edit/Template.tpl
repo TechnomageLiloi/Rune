@@ -25,6 +25,6 @@
 
     </table>
     <hr/>
-    <a href="javascript:void(0)" onclick="Rune.Quests.Quest.save('<?php echo $entity->getKey(); ?>');" class="butn">Save</a>
+    <a href="javascript:void(0)" onclick="Rune.Maps.Inventory.save('<?php echo $entity->getKey(); ?>');" class="butn">Save</a>
 
 </div>
