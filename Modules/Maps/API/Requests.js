@@ -44,6 +44,21 @@ Rune.Maps = {
             });
         },
 
+        create: function ()
+        {
+            if (!confirm('Are you sure?')) {
+                return;
+            }
+
+            API.request('Rune.Maps.Inventory.Create', {
+
+            }, function (data) {
+                Rune.Maps.Inventory.show();
+            }, function () {
+
+            });
+        },
+
         edit: function (keyItem)
         {
             API.request('Rune.Maps.Inventory.Edit', {
@@ -105,7 +120,7 @@ Rune.Maps = {
         {
             let html = entity.title;
 
-            if(entity.type == 1)
+            if(entity.type == 2)
             {
                 $('#side-left').html(entity.description);
                 return;

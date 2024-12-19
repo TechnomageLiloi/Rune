@@ -125,11 +125,10 @@ class Manager extends DomainManager
     }
 
     // @todo: rise this method to more abstract level.
-    public static function create(string $keyAtom): array
+    public static function create(): array
     {
         $name = self::getTableName();
         $data = [
-            'key_item' => $keyAtom,
             'title' => 'Enter the title',
             'description' => '// Description',
             'x' => 1,

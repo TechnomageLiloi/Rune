@@ -3,6 +3,7 @@
 <div id="maps-inventory-show">
     <h1>Inventory</h1>
     <hr/>
+    <a href="javascript:void(0)" onclick="Rune.Maps.Inventory.create();" class="butn">Create ingot</a>
     <table>
         <tr>
             <th>Item</th>
