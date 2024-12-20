@@ -29,6 +29,8 @@ create table rune_databank
 		primary key (rid)
 );
 
+INSERT INTO `rune_databank` VALUES ('portal',1,1,'Portal astral pocket', 'Portal astral pocket', '[[[start]]]\nAstral pocket\n[[[/]]]','{}');
+
 -- ---------------------------------------------------------------------------------------------------------------------
 
 create table rune_levels
