@@ -29,6 +29,8 @@
 
         <script src="<?php echo ROOT_URL; ?>/Pool/Sandbox.js"></script>
 
+        <script src="<?php echo ROOT_URL; ?>/Modules/Exams/Client/Opponent.js"></script>
+
         <title>Rune</title>
     </head>
     <body>
