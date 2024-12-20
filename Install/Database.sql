@@ -125,6 +125,7 @@ CREATE TABLE rune_crystals
     tags varchar(100) NOT NULL,
     dt timestamp NOT NULL,
     done bit default false not null,
+    data json not null,
     PRIMARY KEY (key_crystal, rid),
     foreign key (rid) references rune_databank(rid)
         on update cascade on delete cascade
