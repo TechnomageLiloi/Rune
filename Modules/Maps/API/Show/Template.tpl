@@ -3,24 +3,21 @@
 <div id="modules-maps-show">
     <table>
         <tr>
-            <td>
+            <td id="left-top">
 
             </td>
-            <td>
+            <td id="map" rowspan="2">
 
             </td>
-            <td>
+            <td id="right-top">
 
             </td>
         </tr>
         <tr>
-            <td>
+            <td id="left-bottom">
 
             </td>
-            <td>
-
-            </td>
-            <td>
+            <td id="right-bottom">
 
             </td>
         </tr>

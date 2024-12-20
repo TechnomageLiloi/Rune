@@ -8,6 +8,9 @@
 }
 #modules-maps-show table td {
   width: 33%;
-  border: gray 1px solid;
+  height: 50%;
+  border: gray 2px solid;
   vertical-align: top;
+  border-radius: 5px;
+  padding: 5px;
 }
