@@ -27,6 +27,8 @@
         <script src="<?php echo ROOT_URL; ?>/Modules/Quests/API/Requests.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Modules/Teacher/API/Requests.js"></script>
 
+        <script src="<?php echo ROOT_URL; ?>/Pool/Sandbox.js"></script>
+
         <title>Rune</title>
     </head>
     <body>
