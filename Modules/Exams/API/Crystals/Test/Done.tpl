@@ -1,5 +1,0 @@
-<link href="<?php echo ROOT_URL; ?>/Engine/API/Crystals/Test/Style.css" rel="stylesheet" />
-<div id="testing-<?php echo $entity->getID(); ?>" class="testing-card">
-    <?php echo $entity->getParseTheory(); ?>
-    <hr/>
-</div>

@@ -39,14 +39,14 @@ class Entity extends AbstractEntity
         return $this->getField('key_crystal');
     }
 
-    public function getKeyNPC(): string
+    public function getRID(): ?string
     {
-        return $this->getField('key_npc');
+        return $this->getField('rid');
     }
 
-    public function setKeyNPC(string $keyNPC): void
+    public function setRID(?string $RID): void
     {
-        $this->setField('key_npc', $keyNPC);
+        $this->setField('rid', $RID);
     }
 
     public function getTypeTitle(): string
