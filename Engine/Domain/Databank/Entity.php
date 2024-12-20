@@ -36,6 +36,11 @@ class Entity extends AbstractEntity
         return Parser::parseString($this->getSummary());
     }
 
+    public function parseMap(): string
+    {
+        return Parser::parseString($this->getMap());
+    }
+
     public function save(): void
     {
         Manager::save($this);

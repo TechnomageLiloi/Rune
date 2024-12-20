@@ -7,7 +7,7 @@
 
             </td>
             <td id="map" rowspan="2">
-
+                <?php echo $entity->parseMap(); ?>
             </td>
             <td id="right-top">
 
@@ -25,5 +25,5 @@
 </div>
 
 <script>
-
+    Rune.Trigger.initialize();
 </script>
