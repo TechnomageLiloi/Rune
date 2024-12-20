@@ -113,8 +113,8 @@ create table rune_items
 
 CREATE TABLE rune_crystals
 (
-    key_crystal bigint unsigned auto_increment,
-    key_item bigint unsigned,
+    key_crystal varchar(250) not null,
+    rid varchar(250) not null,
     title varchar(250) NOT NULL,
     status tinyint(3) unsigned NOT NULL DEFAULT '1',
     type tinyint(3) unsigned NOT NULL,
@@ -123,8 +123,8 @@ CREATE TABLE rune_crystals
     tags varchar(100) NOT NULL,
     dt timestamp NOT NULL,
     done bit default false not null,
-    PRIMARY KEY (key_crystal),
-    foreign key (key_item) references rune_items(key_item)
+    PRIMARY KEY (key_crystal, rid),
+    foreign key (rid) references rune_databank(rid)
         on update cascade on delete cascade
 );
 
