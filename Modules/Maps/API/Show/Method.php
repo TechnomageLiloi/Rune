@@ -14,12 +14,9 @@ class Method extends SuperMethod
         $RID = DatabankManager::URLtoRID($URL);
         $entity = DatabankManager::load($RID);
 
-        $map = new Map($entity);
-
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
-            'entity' => $entity,
-            'map' => $map->load()
+            'entity' => $entity
         ]));
 
         return $response;

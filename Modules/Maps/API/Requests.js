@@ -38,7 +38,7 @@ Rune.Maps = {
             API.request('Rune.Maps.Inventory.Show', {
 
             }, function (data) {
-                $('#side-left').html(data.render);
+                $('#elements').html(data.render);
             }, function () {
 
             });
