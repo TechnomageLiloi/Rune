@@ -39,6 +39,11 @@ class Modules
         $manager->add(new Method('Rune.Quests.Quest.Edit', '\Liloi\Rune\Modules\Quests\API\Quests\Edit\Method::execute'));
         $manager->add(new Method('Rune.Quests.Quest.Save', '\Liloi\Rune\Modules\Quests\API\Quests\Save\Method::execute'));
 
+        $manager->add(new Method('Rune.Exams.Opponents.Battle', '\Liloi\Rune\Modules\Exams\API\Battle\Method::execute'));
+        $manager->add(new Method('Rune.Exams.Opponents.Show', '\Liloi\Rune\Modules\Exams\API\Show\Method::execute'));
+        $manager->add(new Method('Rune.Exams.Opponents.Edit', '\Liloi\Rune\Modules\Exams\API\Edit\Method::execute'));
+        $manager->add(new Method('Rune.Exams.Opponents.Save', '\Liloi\Rune\Modules\Exams\API\Save\Method::execute'));
+
         $manager->add(new Method('Rune.Quests.Tickets.Create', '\Liloi\Rune\Modules\Quests\API\Tickets\Create\Method::execute'));
         $manager->add(new Method('Rune.Quests.Tickets.Edit', '\Liloi\Rune\Modules\Quests\API\Tickets\Edit\Method::execute'));
         $manager->add(new Method('Rune.Quests.Tickets.Save', '\Liloi\Rune\Modules\Quests\API\Tickets\Save\Method::execute'));
