@@ -113,20 +113,16 @@ create table rune_items
 			on update cascade on delete cascade
 );
 
-CREATE TABLE rune_crystals
+CREATE TABLE rune_opponents
 (
-    key_crystal varchar(250) not null,
+    key_opponent varchar(250) not null,
     rid varchar(250) not null,
+    specie smallint unsigned NOT NULL,
     title varchar(250) NOT NULL,
-    status tinyint(3) unsigned NOT NULL DEFAULT '1',
     type tinyint(3) unsigned NOT NULL,
     program text NOT NULL,
     theory text NOT NULL,
-    tags varchar(100) NOT NULL,
-    dt timestamp NOT NULL,
-    done bit default false not null,
-    data json not null,
-    PRIMARY KEY (key_crystal, rid),
+    PRIMARY KEY (key_opponent, rid),
     foreign key (rid) references rune_databank(rid)
         on update cascade on delete cascade
 );
