@@ -30,6 +30,7 @@
         <script src="<?php echo ROOT_URL; ?>/Pool/Sandbox.js"></script>
 
         <script src="<?php echo ROOT_URL; ?>/Modules/Exams/Client/Opponent.js"></script>
+        <script src="<?php echo ROOT_URL; ?>/Modules/Exams/API/Requests.js"></script>
 
         <title>Rune</title>
     </head>

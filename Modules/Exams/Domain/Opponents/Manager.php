@@ -20,4 +20,16 @@ class Manager extends DomainManager
     {
         return self::getTablePrefix() . 'opponents';
     }
+
+    public static function load(string $key_opponent, string $RID): Entity
+    {
+        $name = self::getTableName();
+
+        $row = self::getAdapter()->getRow(sprintf(
+            'select * from %s where key_opponent="%s" and rid="%s"',
+            $name, $key_opponent, $RID
+        ));
+
+        return Entity::create($row);
+    }
 }

@@ -1,9 +1,10 @@
+Rune.Exams = {};
+
 Rune.Exams.Opponents = {
-    show: function (key_opponent, RID)
+    show: function (key_opponent)
     {
         API.request('Rune.Exams.Opponents.Show', {
-            'key_opponent': key_opponent,
-            'rid': RID
+            'key_opponent': key_opponent
         }, function (data) {
             $('#page').html(data.render);
         }, function () {
