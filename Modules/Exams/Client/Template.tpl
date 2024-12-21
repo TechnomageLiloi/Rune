@@ -1,0 +1,2 @@
+<a href="javascript:void(0)" class="butn" onclick="Rune.Exams.Opponents.battle('<%= key %>');">Battle</a>
+<a href="javascript:void(0)" class="butn" onclick="Rune.Exams.Opponents.edit('<%= key %>');">Edit</a>
