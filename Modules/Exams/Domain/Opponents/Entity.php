@@ -39,4 +39,9 @@ class Entity extends AbstractEntity
     {
         $this->setField('rid', $RID);
     }
+
+    public function save(): void
+    {
+        Manager::save($this);
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\Rune\Modules\Exams\API\Edit;
+namespace Liloi\Rune\Modules\Exams\API\Save;
 
 use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
@@ -15,11 +15,10 @@ class Method extends SuperMethod
         $RID = DatabankManager::URLtoRID($URL);
         $entity = OpponentsManager::load(self::getParameter('key_opponent'), $RID);
 
-        $response = new Response();
-        $response->set('render', static::render(__DIR__ . '/Template.tpl', [
-            'entity' => $entity
-        ]));
+        $entity->setTitle(self::getParameter('title'));
 
-        return $response;
+        $entity->save();
+
+        return new Response();
     }
 }

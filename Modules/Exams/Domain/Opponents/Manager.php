@@ -32,4 +32,19 @@ class Manager extends DomainManager
 
         return Entity::create($row);
     }
+
+    public static function save(Entity $entity): void
+    {
+        $name = self::getTableName();
+        $data = $entity->get();
+
+        // @todo: Get param name from const.
+        $keyOpponent = $data['key_opponent'];
+
+        self::getAdapter()->update(
+            $name,
+            $data,
+            sprintf('key_opponent="%s" and rid="%s"', $keyOpponent, $data['rid'])
+        );
+    }
 }
