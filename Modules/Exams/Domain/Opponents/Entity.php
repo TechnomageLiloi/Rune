@@ -45,6 +45,11 @@ class Entity extends AbstractEntity
         Manager::save($this);
     }
 
+    public function getSpecieTitle(): string
+    {
+        return Species::$list[$this->getSpecie()];
+    }
+
     public function getTypeTitle(): string
     {
         return Types::$list[$this->getType()];
