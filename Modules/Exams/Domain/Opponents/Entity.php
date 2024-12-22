@@ -44,4 +44,14 @@ class Entity extends AbstractEntity
     {
         Manager::save($this);
     }
+
+    public function getTypeTitle(): string
+    {
+        return Types::$list[$this->getType()];
+    }
+
+    public function getParseTheory(): string
+    {
+        return Parser::parseString($this->getTheory());
+    }
 }
