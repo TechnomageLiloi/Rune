@@ -1,12 +1,12 @@
 Rune.Exams = {};
 
 Rune.Exams.Opponents = {
-    show: function (key_opponent)
+    show: function (key_opponent, f)
     {
         API.request('Rune.Exams.Opponents.Show', {
             'key_opponent': key_opponent
         }, function (data) {
-            $('#page').html(data.render);
+            f(data);
         }, function () {
 
         });
