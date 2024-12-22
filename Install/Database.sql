@@ -136,3 +136,20 @@ create table rune_teacher
 		primary key (key_dialog)
 );
 
+create table rune_crystals
+(
+    key_crystal timestamp not null,
+    key_opponent varchar(250) not null,
+    rid varchar(250) not null,
+    status tinyint unsigned default 1 not null,
+    data json not null,
+    constraint rune_crystals_pk
+        primary key (key_crystal),
+    constraint rune_crystals_rune_databank_rid_fk
+        foreign key (rid) references rune_databank (rid)
+            on update cascade on delete cascade,
+    constraint rune_crystals_rune_opponents_key_opponent_fk
+        foreign key (key_opponent) references rune_opponents (key_opponent)
+            on update cascade on delete cascade
+);
+
