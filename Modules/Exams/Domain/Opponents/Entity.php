@@ -54,4 +54,16 @@ class Entity extends AbstractEntity
     {
         return Parser::parseString($this->getTheory());
     }
+
+    public function getElement(string $key)
+    {
+        $data = json_decode($this->getProgram(), JSON_UNESCAPED_UNICODE);
+
+        return $data[$key];
+    }
+
+    public function getID(): string
+    {
+        return $this->getRID() . '-' . $this->getKey();
+    }
 }

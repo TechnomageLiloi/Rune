@@ -32,6 +32,8 @@
         <script src="<?php echo ROOT_URL; ?>/Modules/Exams/Client/Opponent.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Modules/Exams/API/Requests.js"></script>
 
+        <script src="<?php echo ROOT_URL; ?>/Modules/Exams/API/Battle/Testing.js"></script>
+
         <title>Rune</title>
     </head>
     <body>

@@ -12,13 +12,12 @@ Rune.Exams.Opponents = {
         });
     },
 
-    battle: function (key_opponent, RID)
+    battle: function (key_opponent)
     {
         API.request('Rune.Exams.Opponents.Battle', {
-            'key_opponent': key_opponent,
-            'rid': RID
+            'key_opponent': key_opponent
         }, function (data) {
-            $('#page').html(data.render);
+            $('#' + key_opponent).html(data.render);
         }, function () {
 
         });

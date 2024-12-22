@@ -16,6 +16,9 @@ class Method extends SuperMethod
         $entity = OpponentsManager::load(self::getParameter('key_opponent'), $RID);
 
         $entity->setTitle(self::getParameter('title'));
+        $entity->setProgram(self::getParameter('program'));
+        $entity->setTheory(self::getParameter('theory'));
+        $entity->setType(self::getParameter('type'));
 
         $entity->save();
 
