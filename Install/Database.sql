@@ -120,7 +120,7 @@ CREATE TABLE rune_opponents
     specie smallint unsigned NOT NULL,
     title varchar(250) NOT NULL,
     type tinyint(3) unsigned NOT NULL,
-    program text NOT NULL,
+    program json NOT NULL,
     theory text NOT NULL,
     PRIMARY KEY (key_opponent, rid),
     foreign key (rid) references rune_databank(rid)
