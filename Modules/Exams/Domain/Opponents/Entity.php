@@ -79,6 +79,7 @@ class Entity extends AbstractEntity
 
     public function getID(): string
     {
-        return $this->getRID() . '-' . $this->getKey();
+        $id = $this->getRID() . '-' . $this->getKey();
+        return str_replace([':',' '],['-','-'], $id);
     }
 }
