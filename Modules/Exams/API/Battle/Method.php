@@ -8,6 +8,7 @@ use Liloi\Rune\Domain\Databank\Manager as DatabankManager;
 use Liloi\Rune\Modules\Exams\Domain\Opponents\Manager as OpponentsManager;
 use Liloi\Rune\Modules\Exams\Domain\Opponents\Types;
 use Liloi\Rune\Modules\Exams\Domain\Opponents\Entity;
+use Liloi\Rune\Modules\Exams\Domain\Crystals\Statuses as CrystalsStatuses;
 
 class Method extends SuperMethod
 {
@@ -44,6 +45,7 @@ class Method extends SuperMethod
 
         return static::render(__DIR__ . '/Question.tpl', [
             'entity' => $entity,
+            'statuses' => CrystalsStatuses::$list,
             'inner' => static::render(__DIR__ . '/' . $template . '.tpl', [
                 'entity' => $entity
             ])

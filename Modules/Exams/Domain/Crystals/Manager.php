@@ -49,18 +49,23 @@ class Manager extends DomainManager
         );
     }
 
-    public static function create(string $key_opponent, string $RID): Entity
+    public static function create(
+        string $key_opponent,
+        string $RID,
+        $status = Statuses::LOSE,
+        array $data = []
+    ): Entity
     {
         $name = self::getTableName();
-        $data = [
+        $row = [
             'key_crystal' => date('Y-m-d H:i:s'),
             'key_opponent' => $key_opponent,
             'rid' => $RID,
-            'status' => Statuses::LOSE,
-            'data' => '{}'
+            'status' => $status,
+            'data' => json_encode($data)
         ];
 
-        self::getAdapter()->insert($name, $data);
+        self::getAdapter()->insert($name, $row);
 
         return Entity::create($data);
     }

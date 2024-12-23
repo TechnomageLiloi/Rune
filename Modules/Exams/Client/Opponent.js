@@ -1,6 +1,27 @@
 var Opponent = {
-    test: function (target)
+    test: function (target, text)
     {
-        Rune.Exams.Opponents.show(target);
+        Rune.Exams.Opponents.show(target, text);
+    },
+
+    lock: function (key_opponent)
+    {
+        if(!confirm('Are you sure?'))
+        {
+            return;
+        }
+
+        const jq_block = $('#' + key_opponent);
+        API.request('Rune.Exams.Crystals.Create', {
+            'key_opponent': key_opponent,
+            'status': jq_block.find('[class="crystal-status"]').val(),
+            'data': {
+                'note': jq_block.find('[class="crystal-note"]').val()
+            }
+        }, function (data) {
+            alert('Locked.');
+        }, function () {
+
+        });
     }
 };
