@@ -50,6 +50,16 @@ class Entity extends AbstractEntity
         return Species::$list[$this->getSpecie()];
     }
 
+    public function getSpecieStart(): string
+    {
+        return Species::$start[$this->getSpecie()];
+    }
+
+    public function getSpecieFinish(): string
+    {
+        return Species::$finish[$this->getSpecie()];
+    }
+
     public function getTypeTitle(): string
     {
         return Types::$list[$this->getType()];
