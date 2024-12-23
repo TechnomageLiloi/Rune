@@ -92,7 +92,7 @@ class Manager extends DomainManager
             'type' => Types::NEMO,
             'title' => $RID,
             'summary' => '// Summary',
-            'map' => ".......\n.......\n.......\n.......\n.......\n.......\n.......",
+            'map' => "[[[start]]]\nTemp\n[[[/]]]",
             'data' => '{}'
         ];
 

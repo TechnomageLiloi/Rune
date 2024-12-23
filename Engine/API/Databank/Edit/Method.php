@@ -19,6 +19,13 @@ class Method extends SuperMethod
         self::accessCheck();
 
         $RID = self::getParameter('rid');
+
+        if(empty($RID))
+        {
+            $URL = $_SERVER['REQUEST_URI'];
+            $RID = DatabankManager::URLtoRID($URL);
+        }
+
         $entity = DatabankManager::load($RID);
 
         $response = new Response();

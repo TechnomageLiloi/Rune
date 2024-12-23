@@ -39,6 +39,7 @@
     <body>
         <div id="head">
             <a href="javascript:void(0)" onclick="Rune.Maps.show();" class="butn">Play</a>
+            <a href="javascript:void(0)" onclick="Rune.Databank.edit('');" class="butn">Edit</a>
             <a href="javascript:void(0)" onclick="Rune.Teacher.show();" class="butn">Teacher</a>
             <a href="javascript:void(0)" onclick="Rune.Databank.search('*');" class="butn">Databank</a>
             <a href="javascript:void(0)" class="butn" onclick="Rune.Journal.show('<?php echo date("Y-m-d"); ?>');">Journal</a>
