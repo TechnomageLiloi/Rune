@@ -2,7 +2,6 @@
 
 namespace Liloi\Rune\Modules\Exams\Domain\Crystals;
 
-use Liloi\Rune\Modules\Exams\Domain\Questions\Statuses;
 use Liloi\Tools\Entity as AbstractEntity;
 use Liloi\Stylo\Parser;
 

@@ -18,6 +18,17 @@ Rune.Exams.Opponents = {
         });
     },
 
+    search: function (key_opponent)
+    {
+        API.request('Rune.Exams.Crystals.Search', {
+            'key_opponent': key_opponent
+        }, function (data) {
+            $('#' + key_opponent).html(data.render);
+        }, function () {
+
+        });
+    },
+
     battle: function (key_opponent)
     {
         API.request('Rune.Exams.Opponents.Battle', {
