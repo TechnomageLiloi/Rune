@@ -67,7 +67,8 @@ Rune.Databank = {
             title: jq_block.find('[name=title]').val(),
             data: jq_block.find('[name=data]').val(),
             summary: jq_block.find('[name=summary]').val(),
-            map: jq_block.find('[name=map]').val()
+            map: jq_block.find('[name=map]').val(),
+            drive: jq_block.find('[name=drive]').val()
         }, function (data) {
             Rune.Databank.show(rid);
         }, function () {

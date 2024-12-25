@@ -24,6 +24,7 @@ class Method extends SuperMethod
         $entity->setSummary(self::getParameter('summary'));
         $entity->setMap(self::getParameter('map'));
         $entity->setData(self::getParameter('data'));
+        $entity->setDrive(self::getParameter('drive'));
 
         $entity->save();
 

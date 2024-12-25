@@ -93,7 +93,8 @@ class Manager extends DomainManager
             'title' => $RID,
             'summary' => '// Summary',
             'map' => "[[[start]]]\nTemp\n[[[/]]]",
-            'data' => '{}'
+            'data' => '{}',
+            'drive' => '/'
         ];
 
         self::getAdapter()->insert($name, $data);

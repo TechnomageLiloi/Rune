@@ -23,6 +23,9 @@ use Liloi\Tools\Entity as AbstractEntity;
  *
  * @method string getData()
  * @method void setData(string $value)
+ *
+ * @method string getDrive()
+ * @method void setDrive(string $value)
  */
 class Entity extends AbstractEntity
 {

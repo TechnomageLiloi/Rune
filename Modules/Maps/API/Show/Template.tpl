@@ -18,7 +18,7 @@
 
             </td>
             <td id="right-bottom">
-
+                <a href="<?php echo $entity->getDrive(); ?>" target="_blank"><?php echo $entity->getDrive(); ?></a>
             </td>
         </tr>
     </table>
