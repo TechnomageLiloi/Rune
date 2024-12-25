@@ -25,11 +25,12 @@ create table rune_databank
 	summary text not null,
 	map text not null,
 	data json not null,
+    drive varchar(250) default '/' not null,
 	constraint rune_databank_pk
 		primary key (rid)
 );
 
-INSERT INTO `rune_databank` VALUES ('portal',1,1,'Portal astral pocket', 'Portal astral pocket', '[[[start]]]\nAstral pocket\n[[[/]]]','{}');
+INSERT INTO `rune_databank` VALUES ('portal',1,1,'Portal astral pocket', 'Portal astral pocket', '[[[start]]]\nAstral pocket\n[[[/]]]','{}','/');
 
 -- ---------------------------------------------------------------------------------------------------------------------
 
