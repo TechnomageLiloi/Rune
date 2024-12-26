@@ -26,6 +26,7 @@
         <script src="<?php echo ROOT_URL; ?>/Modules/Menu/API/Requests.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Modules/Quests/API/Requests.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Modules/Teacher/API/Requests.js"></script>
+        <script src="<?php echo ROOT_URL; ?>/Modules/Levels/API/Levels/Requests.js"></script>
 
         <script src="<?php echo ROOT_URL; ?>/Pool/Sandbox.js"></script>
 
