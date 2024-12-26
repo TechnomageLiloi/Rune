@@ -56,7 +56,6 @@ class Modules
         $manager->add(new Method('Rune.Levels.Edit', '\Liloi\Rune\Modules\Levels\API\Levels\Edit\Method::execute'));
         $manager->add(new Method('Rune.Levels.Save', '\Liloi\Rune\Modules\Levels\API\Levels\Save\Method::execute'));
         $manager->add(new Method('Rune.Levels.Create', '\Liloi\Rune\Modules\Levels\API\Levels\Create\Method::execute'));
-        $manager->add(new Method('Rune.Levels.Remove', '\Liloi\Rune\Modules\Levels\API\Levels\Remove\Method::execute'));
         $manager->add(new Method('Rune.Levels.Plan', '\Liloi\Rune\Modules\Levels\API\Levels\Plan\Method::execute'));
 
         return $manager;

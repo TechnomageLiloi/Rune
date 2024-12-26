@@ -86,7 +86,6 @@ Rune.Levels = {
         API.request('Rune.Levels.Save', {
             'key': key,
             'title': jq_block.find('[name="title"]').val(),
-            'resource': jq_block.find('[name="resource"]').val(),
             'goal': jq_block.find('[name="goal"]').val(),
             'status': jq_block.find('[name="status"]').val(),
             'program': jq_block.find('[name="program"]').val()

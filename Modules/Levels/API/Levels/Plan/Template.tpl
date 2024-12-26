@@ -10,6 +10,9 @@
                         <h2>
                             <?php echo $entity->getKey(); ?> Degree: <?php echo $entity->getTitle(); ?>
                         </h2>
+                        <h3>
+                            <?php echo $entity->getGoal(); ?>
+                        </h3>
                     </td>
                 </tr>
                 <tr>
