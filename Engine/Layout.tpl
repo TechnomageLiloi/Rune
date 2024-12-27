@@ -48,7 +48,7 @@
             <a href="javascript:void(0)" class="butn" onclick="Rune.Journal.show('<?php echo date("Y-m-d"); ?>');">Journal</a>
             &diams;
             <a href="javascript:void(0)" onclick="Rune.Levels.getCollection();" class="butn">Levels</a>
-            <a href="javascript:void(0)" onclick="Rune.Quests.Quest.show(2);" class="butn">Quests</a>
+            <a href="javascript:void(0)" onclick="Rune.Levels.Quest.show(2);" class="butn">Quests</a>
             &diams;
             <a href="javascript:void(0)" onclick="Rune.Menu.save();" class="butn">Save game</a>
         </div>

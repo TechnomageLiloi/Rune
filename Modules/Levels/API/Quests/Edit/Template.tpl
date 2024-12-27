@@ -1,8 +1,8 @@
 <link href="<?php echo ROOT_URL; ?>/Engine/API/Quests/Edit/Style.css" rel="stylesheet" />
 
 <div id="application-Quests-edit">
-    <a href="javascript:void(0)" onclick="Rune.Quests.Quest.save('<?php echo $entity->getKey(); ?>');">Save</a>
-    <a href="javascript:void(0)" onclick="Rune.Quests.Quest.show('<?php echo $entity->getStatus(); ?>');">Cancel</a>
+    <a href="javascript:void(0)" onclick="Rune.Levels.Quest.save('<?php echo $entity->getKey(); ?>');">Save</a>
+    <a href="javascript:void(0)" onclick="Rune.Levels.Quest.show('<?php echo $entity->getStatus(); ?>');">Cancel</a>
     <hr/>
     <table>
 
@@ -30,6 +30,6 @@
 
     </table>
     <hr/>
-    <a href="javascript:void(0)" onclick="Rune.Quests.Quest.save('<?php echo $entity->getKey(); ?>');">Save</a>
-    <a href="javascript:void(0)" onclick="Rune.Quests.Quest.show('<?php echo $entity->getStatus(); ?>');">Cancel</a>
+    <a href="javascript:void(0)" onclick="Rune.Levels.Quest.save('<?php echo $entity->getKey(); ?>');">Save</a>
+    <a href="javascript:void(0)" onclick="Rune.Levels.Quest.show('<?php echo $entity->getStatus(); ?>');">Cancel</a>
 </div>
