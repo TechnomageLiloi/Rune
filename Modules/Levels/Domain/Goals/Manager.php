@@ -13,7 +13,7 @@ class Manager extends DomainManager
      */
     public static function getTableName(): string
     {
-        return self::getTablePrefix() . 'quests_tickets';
+        return self::getTablePrefix() . 'goals';
     }
 
     public static function loadCollection(string $keyQuest): Collection
