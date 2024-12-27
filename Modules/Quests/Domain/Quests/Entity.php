@@ -33,6 +33,11 @@ class Entity extends AbstractEntity
         return $this->getField('key_level');
     }
 
+    public function setKeyLevel($keyLevel): void
+    {
+        $this->setField('key_level', $keyLevel);
+    }
+
     public function parse(): string
     {
         return Parser::parseString($this->getSummary());

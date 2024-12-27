@@ -7,6 +7,11 @@
     <table>
 
         <tr>
+            <td>Level</td>
+            <td><input name="key_level" type="text" value="<?php echo $entity->getKeyLevel(); ?>"></td>
+        </tr>
+
+        <tr>
             <td>XP</td>
             <td><input name="xp" type="text" value="<?php echo $entity->getXp(); ?>"></td>
         </tr>

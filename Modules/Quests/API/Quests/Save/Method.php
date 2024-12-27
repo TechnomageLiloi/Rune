@@ -41,6 +41,11 @@ class Method extends SuperMethod
             $entity->setXp(self::getParameter('xp'));
         }
 
+        if(self::getParameterExist('key_level'))
+        {
+            $entity->setKeyLevel(self::getParameter('key_level'));
+        }
+
         $entity->save();
 
         return new Response();
