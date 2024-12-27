@@ -58,6 +58,11 @@ class Modules
         $manager->add(new Method('Rune.Levels.Create', '\Liloi\Rune\Modules\Levels\API\Levels\Create\Method::execute'));
         $manager->add(new Method('Rune.Levels.Plan', '\Liloi\Rune\Modules\Levels\API\Levels\Plan\Method::execute'));
 
+        $manager->add(new Method('Rune.Levels.Quest.Create', '\Liloi\Rune\Modules\Levels\API\Quests\Create\Method::execute'));
+        $manager->add(new Method('Rune.Levels.Quest.Show', '\Liloi\Rune\Modules\Levels\API\Quests\Show\Method::execute'));
+        $manager->add(new Method('Rune.Levels.Quest.Edit', '\Liloi\Rune\Modules\Levels\API\Quests\Edit\Method::execute'));
+        $manager->add(new Method('Rune.Levels.Quest.Save', '\Liloi\Rune\Modules\Levels\API\Quests\Save\Method::execute'));
+
         return $manager;
     }
 }
