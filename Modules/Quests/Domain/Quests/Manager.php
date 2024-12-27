@@ -100,7 +100,8 @@ class Manager extends DomainManager
     {
         $data = [
             'summary' => '-',
-            'data' => '{}'
+            'data' => '{}',
+            'key_level' => '1'
         ];
 
         self::getAdapter()->insert(self::getTableName(), $data);

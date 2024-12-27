@@ -28,6 +28,11 @@ class Entity extends AbstractEntity
         return $this->getField('key_quest');
     }
 
+    public function getKeyLevel(): string
+    {
+        return $this->getField('key_level');
+    }
+
     public function parse(): string
     {
         return Parser::parseString($this->getSummary());
@@ -43,8 +48,8 @@ class Entity extends AbstractEntity
         return date('Y F j (D) - g:i a', strtotime($this->getKey()));
     }
 
-    public function getTypeTitle(): string
+    public function getStatusTitle(): string
     {
-        return Types::$list[$this->getType()];
+        return Statuses::$list[$this->getStatus()];
     }
 }
