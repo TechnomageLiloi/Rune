@@ -5,8 +5,8 @@ namespace Liloi\Rune\Modules\Levels\Domain\Levels;
 class Statuses
 {
     public const NOT_DEFENDED = 1;
-    public const DEFENDED = 2;
-    public const DEFENDING = 3;
+    public const DEFENDING = 2;
+    public const DEFENDED = 3;
 
     public static $list = [
         self::NOT_DEFENDED => 'Not defended level',
