@@ -52,4 +52,36 @@ class Entity extends AbstractEntity
 
         return $data[$key];
     }
+
+    public function getDate(): string
+    {
+        return date('Y-m-d', strtolower($this->getKey()));
+    }
+
+    public function getHour(): int
+    {
+        return (int)date('H', strtolower($this->getKey()));
+    }
+
+    public function getQuarter(): int
+    {
+        $minutes = (int)date('i', strtolower($this->getKey()));
+
+        if($minutes >= 0 && $minutes < 15)
+        {
+            return 1;
+        }
+
+        if($minutes >= 15 && $minutes < 30)
+        {
+            return 2;
+        }
+
+        if($minutes >= 30 && $minutes < 45)
+        {
+            return 3;
+        }
+
+        return 4;
+    }
 }
