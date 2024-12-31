@@ -24,13 +24,34 @@
                     <?php if($job === null): ?>
                         <td>
                             <a href="javascript:void(0)" class="butn" onclick="Rune.Journal.Jobs.create(<?php echo $hour; ?>, <?php echo $quarter; ?>, '<?php echo $day->getKey(); ?>');">Create</a>
+
+                            <?php if($groupCrystals[$hour][$quarter]): ?>
+                            <div style="font-size: xx-small">
+                                <ol>
+                                    <?php foreach($groupCrystals[$hour][$quarter] as $crystal): ?>
+                                    <li><?php echo $crystal->getRID(); ?> / <?php echo $crystal->getKeyOpponent(); ?> / <?php echo $crystal->getData(); ?></li>
+                                    <?php endforeach; ?>
+                                </ol>
+                            </div>
+                            <?php endif; ?>
                         </td>
                     <?php else: ?>
                         <td class="<?php echo $job->getStatusClass(); ?>">
                             <a href="javascript:void(0)" class="butn" onclick="Rune.Journal.Jobs.edit(<?php echo $hour; ?>, <?php echo $quarter; ?>, '<?php echo $day->getKey(); ?>');">Edit</a>
                             [<?php echo $job->getXp(); ?>] <?php echo $job->getGoal(); ?>
+
+                            <?php if($groupCrystals[$hour][$quarter]): ?>
+                            <div style="font-size: xx-small">
+                                <ol>
+                                    <?php foreach($groupCrystals[$hour][$quarter] as $crystal): ?>
+                                    <li><?php echo $crystal->getRID(); ?> / <?php echo $crystal->getKeyOpponent(); ?> / <?php echo $crystal->getData(); ?></li>
+                                    <?php endforeach; ?>
+                                </ol>
+                            </div>
+                            <?php endif; ?>
                         </td>
                     <?php endif; ?>
+
                 <?php endforeach; ?>
             </tr>
         <?php endforeach; ?>

@@ -55,17 +55,17 @@ class Entity extends AbstractEntity
 
     public function getDate(): string
     {
-        return date('Y-m-d', strtolower($this->getKey()));
+        return date('Y-m-d', strtotime($this->getKey()));
     }
 
     public function getHour(): int
     {
-        return (int)date('H', strtolower($this->getKey()));
+        return (int)date('H', strtotime($this->getKey()));
     }
 
     public function getQuarter(): int
     {
-        $minutes = (int)date('i', strtolower($this->getKey()));
+        $minutes = (int)date('i', strtotime($this->getKey()));
 
         if($minutes >= 0 && $minutes < 15)
         {

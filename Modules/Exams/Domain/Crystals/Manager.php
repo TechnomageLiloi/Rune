@@ -127,7 +127,12 @@ class Manager extends DomainManager
         /** @var Entity $crystal */
         foreach ($crystals as $crystal)
         {
-            $group[$crystal->getHour()][$crystal->getQuarter()] = $crystal;
+            if(!isset($group[$crystal->getHour()][$crystal->getQuarter()]))
+            {
+                $group[$crystal->getHour()][$crystal->getQuarter()] = [];
+            }
+
+            $group[$crystal->getHour()][$crystal->getQuarter()][] = $crystal;
         }
 
         return $group;
