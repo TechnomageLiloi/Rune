@@ -41,6 +41,25 @@ class Manager extends DomainManager
         return $collection;
     }
 
+    public static function loadPeriod(string $from, string $to): Collection
+    {
+        $name = self::getTableName();
+
+        $rows = self::getAdapter()->getArray(sprintf(
+            'select * from %s where key_crystal between "%s" and "%s";',
+            $name, $from, $to
+        ));
+
+        $collection = new Collection();
+
+        foreach($rows as $row)
+        {
+            $collection[] = Entity::create($row);
+        }
+
+        return $collection;
+    }
+
     public static function load(string $key_crystal): Entity
     {
         $name = self::getTableName();
@@ -87,5 +106,30 @@ class Manager extends DomainManager
         self::getAdapter()->insert($name, $row);
 
         return Entity::create($data);
+    }
+
+    public static function loadGroup(string $keyDay): array
+    {
+        $group = [];
+
+        for ($hour=0;$hour<24;$hour++)
+        {
+            $group[$hour] = [];
+
+            for ($quarter=1;$quarter<=4;$quarter++)
+            {
+                $group[$hour][$quarter] = null;
+            }
+        }
+
+        $crystals = self::loadPeriod($keyDay . ' 00:00:00', $keyDay . ' 23:59:59');
+
+        /** @var Entity $crystal */
+        foreach ($crystals as $crystal)
+        {
+            $group[$crystal->getHour()][$crystal->getQuarter()] = $crystal;
+        }
+
+        return $group;
     }
 }

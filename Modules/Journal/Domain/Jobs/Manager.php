@@ -57,8 +57,6 @@ class Manager extends DomainManager
             $group[$job->getHour()][$job->getQuarter()] = $job;
         }
 
-        // @todo: crystals group
-
         return $group;
     }
 

@@ -77,11 +77,6 @@ class Entity extends AbstractEntity
             return 2;
         }
 
-        if($minutes >= 30 && $minutes < 45)
-        {
-            return 3;
-        }
-
-        return 4;
+        return ($minutes >= 30 && $minutes < 45) ? 3 : 4;
     }
 }
