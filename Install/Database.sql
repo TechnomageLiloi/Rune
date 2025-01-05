@@ -91,11 +91,12 @@ create table rune_quests
 
 create table rune_tickets
 (
-    key_ticket bigint unsigned auto_increment,
+    key_ticket tinyint unsigned,
     key_quest bigint unsigned,
     title varchar(100) not null,
+    status tinyint unsigned default 1 not null,
     constraint rune_tickets_pk
-        primary key (key_ticket),
+        primary key (key_ticket, key_quest),
     constraint rune_tickets_rune_quests_key_quest_fk
         foreign key (key_quest) references rune_quests (key_quest)
             on update cascade on delete cascade
