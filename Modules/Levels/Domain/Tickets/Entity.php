@@ -33,4 +33,9 @@ class Entity extends AbstractEntity
     {
         return Parser::parseString($this->getTitle());
     }
+
+    public function getClass(): string
+    {
+        return str_replace(' ', '-', strtolower(Statuses::$list[$this->getStatus()]));
+    }
 }

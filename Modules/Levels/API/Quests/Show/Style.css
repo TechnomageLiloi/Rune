@@ -10,6 +10,12 @@
 #modules-road-show table td {
   vertical-align: top;
 }
+#modules-road-show table td.not-complete {
+  color: red;
+}
+#modules-road-show table td.complete {
+  color: green;
+}
 #modules-road-show table p {
   margin: 0;
 }

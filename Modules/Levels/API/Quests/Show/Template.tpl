@@ -30,8 +30,8 @@
             <?php if($tickets[$quest->getKey()]): ?>
                 <?php foreach($tickets[$quest->getKey()] as $ticket): ?>
                     <tr>
-                        <td style="width: 200px;"><?php echo $ticket->getKey(); ?></td>
-                        <td><?php echo $ticket->parse(); ?></td>
+                        <td style="width: 200px;" class="<?php echo $ticket->getClass(); ?>"><?php echo $ticket->getKey(); ?></td>
+                        <td class="<?php echo $ticket->getClass(); ?>"><?php echo $ticket->parse(); ?></td>
                         <td style="width: 200px;text-align: right;">
                             <a href="javascript:void(0)" class="butn" onclick="Rune.Levels.Tickets.edit('<?php echo $ticket->getKey(); ?>', '<?php echo $ticket->getKeyQuest(); ?>');">Edit</a>
                         </td>
