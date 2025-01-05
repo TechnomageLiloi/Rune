@@ -34,11 +34,6 @@ class Modules
         $manager->add(new Method('Rune.Menu.Show', '\Liloi\Rune\Modules\Menu\API\Show\Method::execute'));
         $manager->add(new Method('Rune.Menu.Save', '\Liloi\Rune\Modules\Menu\API\Save\Method::execute'));
 
-        $manager->add(new Method('Rune.Quests.Quest.Create', '\Liloi\Rune\Modules\Quests\API\Quests\Create\Method::execute'));
-        $manager->add(new Method('Rune.Quests.Quest.Show', '\Liloi\Rune\Modules\Quests\API\Quests\Show\Method::execute'));
-        $manager->add(new Method('Rune.Quests.Quest.Edit', '\Liloi\Rune\Modules\Quests\API\Quests\Edit\Method::execute'));
-        $manager->add(new Method('Rune.Quests.Quest.Save', '\Liloi\Rune\Modules\Quests\API\Quests\Save\Method::execute'));
-
         $manager->add(new Method('Rune.Exams.Crystals.Create', '\Liloi\Rune\Modules\Exams\API\Crystals\Create\Method::execute'));
         $manager->add(new Method('Rune.Exams.Crystals.Search', '\Liloi\Rune\Modules\Exams\API\Crystals\Search\Method::execute'));
 
@@ -46,10 +41,6 @@ class Modules
         $manager->add(new Method('Rune.Exams.Opponents.Show', '\Liloi\Rune\Modules\Exams\API\Show\Method::execute'));
         $manager->add(new Method('Rune.Exams.Opponents.Edit', '\Liloi\Rune\Modules\Exams\API\Edit\Method::execute'));
         $manager->add(new Method('Rune.Exams.Opponents.Save', '\Liloi\Rune\Modules\Exams\API\Save\Method::execute'));
-
-        $manager->add(new Method('Rune.Quests.Tickets.Create', '\Liloi\Rune\Modules\Quests\API\Tickets\Create\Method::execute'));
-        $manager->add(new Method('Rune.Quests.Tickets.Edit', '\Liloi\Rune\Modules\Quests\API\Tickets\Edit\Method::execute'));
-        $manager->add(new Method('Rune.Quests.Tickets.Save', '\Liloi\Rune\Modules\Quests\API\Tickets\Save\Method::execute'));
 
         $manager->add(new Method('Rune.Levels.Collection', '\Liloi\Rune\Modules\Levels\API\Levels\Collection\Method::execute'));
         $manager->add(new Method('Rune.Levels.Show', '\Liloi\Rune\Modules\Levels\API\Levels\Show\Method::execute'));

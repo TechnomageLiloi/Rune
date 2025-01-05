@@ -146,7 +146,7 @@ class Manager extends DomainManager
         $name = self::getTableName();
 
         $key = self::getAdapter()->getSingle(sprintf(
-            'select key_ticket from %s where key_quest="%s"',
+            'select key_ticket from %s where key_quest="%s" order by key_ticket desc;',
             $name, $keyQuest
         ));
 

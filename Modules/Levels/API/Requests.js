@@ -74,3 +74,50 @@ Rune.Levels.Quest = {
         });
     }
 };
+
+Rune.Levels.Tickets = {
+    create: function (key_quest) {
+        if (!confirm('Are you sure?')) {
+            return;
+        }
+
+        API.request('Rune.Levels.Tickets.Create', {
+            key_quest: key_quest
+        }, function (data) {
+            Rune.Levels.Quest.show(1);
+        }, function () {
+
+        });
+    },
+
+    edit: function (key_ticket, key_quest) {
+        API.request('Rune.Levels.Tickets.Edit', {
+            key_ticket: key_ticket,
+            key_quest: key_quest
+        }, function (data) {
+            const wrap = $('#page');
+            wrap.html(data.render);
+            wrap.show();
+        }, function () {
+
+        });
+    },
+
+    save: function (key_ticket, key_quest) {
+        if (!confirm('Are you sure?')) {
+            return;
+        }
+
+        const jq_block = $('#application-Quests-edit');
+        API.request('Rune.Levels.Tickets.Save', {
+            key_ticket: key_ticket,
+            key_quest: key_quest,
+            title: jq_block.find('[name=title]').val(),
+            status: jq_block.find('[name=status]').val()
+        }, function (data) {
+            Rune.Tickets.Quest.show();
+        }, function () {
+
+        });
+    }
+};
