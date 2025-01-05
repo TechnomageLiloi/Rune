@@ -33,7 +33,7 @@
                         <td style="width: 200px;"><?php echo $ticket->getKey(); ?></td>
                         <td><?php echo $ticket->parse(); ?></td>
                         <td style="width: 200px;text-align: right;">
-                            <a href="javascript:void(0)" class="butn" onclick="Rune.Levels.Goals.edit('<?php echo $ticket->getKey(); ?>');">Edit</a>
+                            <a href="javascript:void(0)" class="butn" onclick="Rune.Levels.Tickets.edit('<?php echo $ticket->getKey(); ?>', '<?php echo $ticket->getKeyQuest(); ?>');">Edit</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

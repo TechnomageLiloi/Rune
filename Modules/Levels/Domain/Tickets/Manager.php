@@ -118,7 +118,7 @@ class Manager extends DomainManager
         $name = self::getTableName();
         $data = $entity->get();
 
-        self::update($name, $data, sprintf('key_ticket="%s"', $entity->getKey()));
+        self::update($name, $data, sprintf('key_ticket="%s" && key_quest="%s"', $entity->getKey(), $entity->getKeyQuest()));
     }
 
     /**

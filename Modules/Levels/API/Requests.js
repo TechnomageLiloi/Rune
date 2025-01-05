@@ -115,7 +115,7 @@ Rune.Levels.Tickets = {
             title: jq_block.find('[name=title]').val(),
             status: jq_block.find('[name=status]').val()
         }, function (data) {
-            Rune.Tickets.Quest.show();
+            Rune.Tickets.Quest.show(1);
         }, function () {
 
         });
