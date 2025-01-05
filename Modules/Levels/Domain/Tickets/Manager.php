@@ -132,7 +132,8 @@ class Manager extends DomainManager
         $data = [
             'key_ticket' => self::getNextKey($keyQuest),
             'key_quest' => $keyQuest,
-            'title' => '-'
+            'title' => '-',
+            'status' => Statuses::NOT_COMPLETE
         ];
 
         self::getAdapter()->insert(self::getTableName(), $data);
