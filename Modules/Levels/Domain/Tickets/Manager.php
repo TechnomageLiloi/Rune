@@ -117,7 +117,6 @@ class Manager extends DomainManager
     {
         $name = self::getTableName();
         $data = $entity->get();
-//        unset($data['key_job']);
 
         self::update($name, $data, sprintf('key_ticket="%s"', $entity->getKey()));
     }
@@ -131,6 +130,7 @@ class Manager extends DomainManager
     public static function create(string $keyQuest): Entity
     {
         $data = [
+            'key_ticket' => self::getNextKey($keyQuest),
             'key_quest' => $keyQuest,
             'title' => '-'
         ];
@@ -138,5 +138,24 @@ class Manager extends DomainManager
         self::getAdapter()->insert(self::getTableName(), $data);
 
         return Entity::create($data);
+    }
+
+    private static function getNextKey(string $keyQuest): int
+    {
+        $name = self::getTableName();
+
+        $key = self::getAdapter()->getSingle(sprintf(
+            'select key_ticket from %s where key_quest="%s"',
+            $name, $keyQuest
+        ));
+
+        if($key === false)
+        {
+            return 0;
+        }
+
+        ++$key;
+
+        return $key;
     }
 }
