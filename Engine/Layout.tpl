@@ -17,8 +17,6 @@
         <script src="<?php echo ROOT_URL; ?>/Engine/Bootstrap.js"></script>
 
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Security/Password/Requests.js"></script>
-        <script src="<?php echo ROOT_URL; ?>/Engine/API/Wiki/Requests.js"></script>
-        <script src="<?php echo ROOT_URL; ?>/Engine/API/Atoms/Requests.js"></script>
 
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Databank/Requests.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Modules/Journal/API/Requests.js"></script>
