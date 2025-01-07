@@ -75,7 +75,7 @@ class Application extends ConceptualApplication
             exit();
         }
 
-        if($URL !== '/')
+        if($URL !== '/' && !str_contains('.', $URL))
         {
             $RID = DatabankManager::URLtoRID($URL);
             ConfigManager::load(ConfigKeys::CURRENT)->setString($RID)->save();
