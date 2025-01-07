@@ -40,6 +40,11 @@ class Types
     public const VIDEO = 6;
 
     /**
+     * Timer type of question.
+     */
+    public const TIMER = 7;
+
+    /**
      * Type list.
      *
      * @var string[]
@@ -51,5 +56,6 @@ class Types
         self::RADIO => 'Radio',
         self::CHECK => 'Check',
         self::SENTENCE => 'Sentence',
+        self::TIMER => 'Timer',
     ];
 }
