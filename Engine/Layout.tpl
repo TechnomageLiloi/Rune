@@ -29,7 +29,9 @@
         <script src="<?php echo ROOT_URL; ?>/Modules/Levels/API/Levels/Requests.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Modules/Levels/API/Requests.js"></script>
 
-        <script src="<?php echo ROOT_URL; ?>/Pool/Sandbox.js"></script>
+        <?php if(file_exists(ROOT_URL . "/Pool/Sandbox.js")): ?>
+            <script src="<?php echo ROOT_URL; ?>/Pool/Sandbox.js"></script>
+        <?php endif; ?>
 
         <script src="<?php echo ROOT_URL; ?>/Modules/Exams/Client/Opponent.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Modules/Exams/API/Requests.js"></script>
