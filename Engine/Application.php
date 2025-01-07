@@ -75,10 +75,15 @@ class Application extends ConceptualApplication
             exit();
         }
 
-        if($URL !== '/' && !str_contains('.', $URL))
+
+        if($URL !== '/')
         {
             $RID = DatabankManager::URLtoRID($URL);
-            ConfigManager::load(ConfigKeys::CURRENT)->setString($RID)->save();
+
+            if(strpos($RID, '.') === false)
+            {
+                ConfigManager::load(ConfigKeys::CURRENT)->setString($RID)->save();
+            }
         }
 
         $admin = Security::check();
