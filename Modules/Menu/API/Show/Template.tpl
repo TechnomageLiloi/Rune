@@ -4,5 +4,5 @@
     <img src="/Signum.png">
     <br/>
     <br/>
-    <a class="butn" href="/portal">Load game</a>
+    <a class="butn" href="/rune">Load game</a>
 </div>

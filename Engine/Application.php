@@ -10,6 +10,7 @@ use Rune\Application\Conceptual as ConceptualApplication;
 use Liloi\Rune\API\Security\Error\Method as ErrorMethod;
 use Liloi\Rune\Domain\Config\Manager as ConfigManager;
 use Liloi\Rune\Domain\Config\Keys as ConfigKeys;
+use Liloi\Rune\Domain\Databank\Manager as DatabankManager;
 
 /**
  * @inheritDoc
@@ -65,20 +66,25 @@ class Application extends ConceptualApplication
             }
         }
 
+        $URL = $_SERVER['REQUEST_URI'];
+
+        if($URL === '/rune')
+        {
+            $RID = ConfigManager::load(ConfigKeys::CURRENT)->getString() ?? 'portal';
+            header('Location: ' . DatabankManager::RIDtoURL($RID));
+            exit();
+        }
+
+        if($URL !== '/')
+        {
+            $RID = DatabankManager::URLtoRID($URL);
+            ConfigManager::load(ConfigKeys::CURRENT)->setString($RID)->save();
+        }
+
         $admin = Security::check();
 
-        if($admin)
-        {
-            $locked = ConfigManager::load(ConfigKeys::LOCKED)->getString() ? true : false;
-        }
-        else
-        {
-            $locked = false;
-        }
-
         return $this->render(__DIR__ . '/Layout.tpl', [
-            'admin' => $admin,
-            'locked' => $locked
+            'admin' => $admin
         ]);
     }
 

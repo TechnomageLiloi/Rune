@@ -9,4 +9,6 @@ class Keys
     public const MAP = 'map';
     public const MAP_X = 'map-x';
     public const MAP_Y = 'map-y';
+
+    public const CURRENT = 'current';
 }
