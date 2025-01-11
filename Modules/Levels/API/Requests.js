@@ -121,3 +121,13 @@ Rune.Levels.Tickets = {
         });
     }
 };
+
+Rune.Levels.characterShow = function () {
+    API.request('Rune.Levels.Character', {
+
+    }, function (data) {
+        $('#page').html(data.render);
+    }, function () {
+
+    });
+};

@@ -58,6 +58,8 @@ class Modules
         $manager->add(new Method('Rune.Levels.Tickets.Edit', '\Liloi\Rune\Modules\Levels\API\Tickets\Edit\Method::execute'));
         $manager->add(new Method('Rune.Levels.Tickets.Save', '\Liloi\Rune\Modules\Levels\API\Tickets\Save\Method::execute'));
 
+        $manager->add(new Method('Rune.Levels.Character', '\Liloi\Rune\Modules\Levels\API\Character\Method::execute'));
+
         return $manager;
     }
 }

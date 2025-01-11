@@ -10,6 +10,7 @@ lessc ./Modules/Journal/API/Road/Edit/Style.less ./Modules/Journal/API/Road/Edit
 lessc ./Modules/Maps/API/Show/Style.less ./Modules/Maps/API/Show/Style.css
 lessc ./Modules/Maps/API/Inventory/Show/Style.less ./Modules/Maps/API/Inventory/Show/Style.css
 lessc ./Modules/Maps/API/Inventory/Edit/Style.less ./Modules/Maps/API/Inventory/Edit/Style.css
+lessc ./Modules/Levels/API/Character/Style.less ./Modules/Levels/API/Character/Style.css
 lessc ./Modules/Levels/API/Levels/Plan/Style.less ./Modules/Levels/API/Levels/Plan/Style.css
 lessc ./Modules/Levels/API/Levels/Collection/Style.less ./Modules/Levels/API/Levels/Collection/Style.css
 lessc ./Modules/Levels/API/Quests/Show/Style.less ./Modules/Levels/API/Quests/Show/Style.css
