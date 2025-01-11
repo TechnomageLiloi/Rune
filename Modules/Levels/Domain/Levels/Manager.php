@@ -48,6 +48,23 @@ class Manager extends DomainManager
         return Entity::create($row);
     }
 
+    public static function loadLevel(): int
+    {
+        $name = self::getTableName();
+
+        $level = self::getAdapter()->getSingle(sprintf(
+            'select key_level from %s where status="%s" order by key_level desc limit 1',
+            $name, Statuses::DEFENDED
+        ));
+
+        if($level === false)
+        {
+            return 0;
+        }
+
+        return (int)$level;
+    }
+
     public static function save(Entity $entity): void
     {
         $name = self::getTableName();

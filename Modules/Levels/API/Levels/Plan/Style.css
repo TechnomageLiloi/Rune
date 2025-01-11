@@ -1,6 +1,9 @@
 #modules-levels-plan {
   padding: 10px;
   font-size: x-large;
+  background-color: white;
+  height: 90%;
+  overflow-y: scroll;
 }
 #modules-levels-plan table {
   width: 100%;
