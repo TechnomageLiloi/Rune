@@ -103,7 +103,7 @@ Rune.Levels.Tickets = {
         });
     },
 
-    save: function (key_ticket, key_quest) {
+    save: function (key_ticket, key_quest, status) {
         if (!confirm('Are you sure?')) {
             return;
         }
@@ -115,7 +115,7 @@ Rune.Levels.Tickets = {
             title: jq_block.find('[name=title]').val(),
             status: jq_block.find('[name=status]').val()
         }, function (data) {
-            Rune.Tickets.Quest.show(1);
+            Rune.Levels.Quest.show(status);
         }, function () {
 
         });
