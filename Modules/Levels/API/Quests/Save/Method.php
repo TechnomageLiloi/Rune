@@ -13,7 +13,6 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-        self::accessCheck();
         $entity = QuestsManager::load(self::getParameter('key_quest'));
 
         if(self::getParameterExist('data'))
@@ -34,16 +33,6 @@ class Method extends SuperMethod
         if(self::getParameterExist('dt'))
         {
             $entity->setDt(self::getParameter('dt'));
-        }
-
-        if(self::getParameterExist('xp'))
-        {
-            $entity->setXp(self::getParameter('xp'));
-        }
-
-        if(self::getParameterExist('key_level'))
-        {
-            $entity->setKeyLevel(self::getParameter('key_level'));
         }
 
         $entity->save();

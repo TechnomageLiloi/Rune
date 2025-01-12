@@ -76,17 +76,12 @@ create table rune_jobs
 create table rune_quests
 (
     key_quest bigint unsigned auto_increment,
-    key_level tinyint unsigned,
     summary text null,
     data json not null,
     status tinyint unsigned default 1 not null,
     dt timestamp null,
-    xp smallint unsigned default 0 not null,
     constraint rune_quests_pk
-        primary key (key_quest),
-    constraint rune_quests_rune_levels_key_level_fk
-        foreign key (key_level) references rune_levels (key_level)
-            on update cascade on delete cascade
+        primary key (key_quest)
 );
 
 create table rune_tickets

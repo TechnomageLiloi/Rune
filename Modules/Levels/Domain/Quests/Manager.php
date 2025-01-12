@@ -88,7 +88,6 @@ class Manager extends DomainManager
     {
         $name = self::getTableName();
         $data = $entity->get();
-//        unset($data['key_quest']);
 
         self::update($name, $data, sprintf('key_quest="%s"', $entity->getKey()));
     }
@@ -99,9 +98,8 @@ class Manager extends DomainManager
     public static function create(): Entity
     {
         $data = [
-            'summary' => '-',
             'data' => '{}',
-            'key_level' => '1'
+            'summary' => '-',
         ];
 
         self::getAdapter()->insert(self::getTableName(), $data);

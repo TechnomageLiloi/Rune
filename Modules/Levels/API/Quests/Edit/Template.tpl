@@ -5,19 +5,7 @@
     <a href="javascript:void(0)" onclick="Rune.Levels.Quest.show('<?php echo $entity->getStatus(); ?>');">Cancel</a>
     <hr/>
     <table>
-
-        <tr>
-            <td>Level</td>
-            <td><input name="key_level" type="text" value="<?php echo $entity->getKeyLevel(); ?>"></td>
-        </tr>
-
-        <tr>
-            <td>XP</td>
-            <td><input name="xp" type="text" value="<?php echo $entity->getXp(); ?>"></td>
-        </tr>
-
         <tr><td>Summary</td><td><textarea name="summary"><?php echo $entity->getSummary(); ?></textarea></td></tr>
-
         <tr><td>Status</td><td>
             <select name="status">
                 <?php foreach($statuses as $key => $value): ?>
@@ -25,9 +13,7 @@
                 <?php endforeach; ?>
             </select>
         </td></tr>
-
         <tr><td>Data</td><td><textarea name="data"><?php echo $entity->getData(); ?></textarea></td></tr>
-
     </table>
     <hr/>
     <a href="javascript:void(0)" onclick="Rune.Levels.Quest.save('<?php echo $entity->getKey(); ?>');">Save</a>

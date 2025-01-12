@@ -18,7 +18,7 @@
         <?php foreach($quests as $quest): ?>
 
             <tr>
-                <td style="width: 200px;">#<?php echo $quest->getKey(); ?> [XP:<?php echo $quest->getXp(); ?>]</td>
+                <td style="width: 200px;">#<?php echo $quest->getKey(); ?></td>
                 <td><?php echo $quest->parse(); ?></td>
                 <td style="width: 300px;text-align: right;">
                     <a href="javascript:void(0)" class="butn" onclick="Rune.Levels.Tickets.create('<?php echo $quest->getKey(); ?>');">Create ticket</a>
