@@ -10,12 +10,12 @@
             <td><?php echo $nickname; ?></td>
         </tr>
         <tr>
-            <td>Current level</td>
-            <td>#<?php echo $level; ?></td>
+            <td>Defended</td>
+            <td>Level <?php echo $level; ?></td>
         </tr>
         <tr>
-            <td>Concentration level</td>
-            <td>#<?php echo $concentration->getKey(); ?> - <?php echo $concentration->getTitle(); ?></td>
+            <td>Concentration</td>
+            <td>Level <?php echo $concentration->getKey(); ?> - <?php echo $concentration->getTitle(); ?></td>
         </tr>
     </table>
 </div>

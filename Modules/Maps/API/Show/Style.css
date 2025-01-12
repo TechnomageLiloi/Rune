@@ -2,17 +2,10 @@
   background-color: white;
   height: 90%;
 }
-#modules-maps-show table {
-  width: 100%;
-  height: 100%;
-}
-#modules-maps-show table td {
-  width: 33%;
-  height: 50%;
-  border: gray 2px solid;
-  vertical-align: top;
-  border-radius: 5px;
-  padding: 5px;
+#modules-maps-show .local-buttons {
+  background-color: #e9ffe8;
+  text-align: center;
+  padding: 10px;
 }
 #map {
   font-size: x-large;

@@ -1,27 +1,10 @@
 <link href="<?php echo ROOT_URL; ?>/Modules/Maps/API/Show/Style.css" rel="stylesheet" />
 
 <div id="modules-maps-show">
-    <table>
-        <tr>
-            <td id="left-top">
-
-            </td>
-            <td id="map" rowspan="2">
-                <?php echo $entity->parseMap(); ?>
-            </td>
-            <td id="right-top">
-
-            </td>
-        </tr>
-        <tr>
-            <td id="left-bottom">
-
-            </td>
-            <td id="right-bottom">
-                <a href="<?php echo $entity->getDrive(); ?>" target="_blank"><?php echo $entity->getDrive(); ?></a>
-            </td>
-        </tr>
-    </table>
+    <div class="local-buttons">
+        <a href="<?php echo $entity->getDrive(); ?>" target="_blank" class="butn">Drive</a>
+    </div>
+    <?php echo $entity->parseMap(); ?>
 </div>
 
 <script>
