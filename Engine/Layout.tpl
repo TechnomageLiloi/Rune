@@ -19,6 +19,7 @@
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Security/Password/Requests.js"></script>
 
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Databank/Requests.js"></script>
+        <script src="<?php echo ROOT_URL; ?>/Modules/Admin/API/Requests.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Modules/Journal/API/Requests.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Modules/Maps/API/Requests.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Modules/Menu/API/Requests.js"></script>

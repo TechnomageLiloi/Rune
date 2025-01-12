@@ -60,6 +60,8 @@ class Modules
 
         $manager->add(new Method('Rune.Levels.Character', '\Liloi\Rune\Modules\Levels\API\Character\Method::execute'));
 
+        $manager->add(new Method('Rune.Admin.Config.Save', '\Liloi\Rune\Modules\Admin\API\Config\Save\Method::execute'));
+
         return $manager;
     }
 }
