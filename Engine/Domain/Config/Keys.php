@@ -14,4 +14,6 @@ class Keys
 
     public const GAMER_FULL_NAME = 'gamer-full-name';
     public const GAMER_NICK_NAME = 'gamer-nick-name';
+
+    public const LEVEL_CONCENTRATE = 'level-concentrate';
 }

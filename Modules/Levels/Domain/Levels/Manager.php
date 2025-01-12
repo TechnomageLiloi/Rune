@@ -3,6 +3,8 @@
 namespace Liloi\Rune\Modules\Levels\Domain\Levels;
 
 use Liloi\Rune\Domain\Manager as DomainManager;
+use Liloi\Rune\Domain\Config\Manager as ConfigManager;
+use Liloi\Rune\Domain\Config\Keys as ConfigKeys;
 
 class Manager extends DomainManager
 {
@@ -46,6 +48,12 @@ class Manager extends DomainManager
         ));
 
         return Entity::create($row);
+    }
+
+    public static function loadConcentration(): Entity
+    {
+        $level = (int)(ConfigManager::load(ConfigKeys::LEVEL_CONCENTRATE)->getString() ?? 1);
+        return self::load($level);
     }
 
     public static function loadLevel(): int

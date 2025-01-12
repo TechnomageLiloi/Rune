@@ -6,12 +6,16 @@
             <td><?php echo $fullname; ?></td>
         </tr>
         <tr>
-            <td>Nickname</td>
+            <td>Nick name</td>
             <td><?php echo $nickname; ?></td>
         </tr>
         <tr>
-            <td>Level</td>
-            <td><?php echo $level; ?></td>
+            <td>Current level</td>
+            <td>#<?php echo $level; ?></td>
+        </tr>
+        <tr>
+            <td>Concentration level</td>
+            <td>#<?php echo $concentration->getKey(); ?> - <?php echo $concentration->getTitle(); ?></td>
         </tr>
     </table>
 </div>

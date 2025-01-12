@@ -17,7 +17,8 @@ class Method extends SuperMethod
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
             'fullname' => ConfigManager::load(ConfigKeys::GAMER_FULL_NAME)->getString() ?? 'Enter full name',
             'nickname' => ConfigManager::load(ConfigKeys::GAMER_NICK_NAME)->getString() ?? 'Enter nick name',
-            'level' => LevelsManager::loadLevel()
+            'level' => LevelsManager::loadLevel(),
+            'concentration' => LevelsManager::loadConcentration(),
         ]));
 
         return $response;
