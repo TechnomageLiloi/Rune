@@ -33,7 +33,8 @@
                         <?php echo $entity->getStatusTitle(); ?>
                     </td>
                     <td>
-                        <a href="javascript:void(0)" class="butn" onclick="Rune.Levels.show('<?php echo $entity->getKey(); ?>');">Show</a> &diams;
+                        <a href="javascript:void(0)" class="butn" onclick="Rune.Admin.Config.saveAlert('level-concentrate', '<?php echo $entity->getKey(); ?>');">Concentrate</a>
+                        <a href="javascript:void(0)" class="butn" onclick="Rune.Levels.show('<?php echo $entity->getKey(); ?>');">Show</a>
                         <a href="javascript:void(0)" class="butn" onclick="Rune.Levels.edit('<?php echo $entity->getKey(); ?>');">Edit</a>
                     </td>
                 </tr>
