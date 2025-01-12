@@ -1,0 +1,9 @@
+#levels-character table {
+  width: 100%;
+}
+#levels-character table td {
+  border-top: gray 1px dashed;
+}
+#levels-character table td:first-child {
+  width: 200px;
+}
