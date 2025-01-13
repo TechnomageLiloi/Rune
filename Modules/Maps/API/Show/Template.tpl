@@ -4,7 +4,9 @@
     <div class="local-buttons">
         <a href="<?php echo $entity->getDrive(); ?>" target="_blank" class="butn">Drive</a>
     </div>
-    <?php echo $entity->parseMap(); ?>
+    <div class="map">
+        <?php echo $entity->parseMap(); ?>
+    </div>
 </div>
 
 <script>
