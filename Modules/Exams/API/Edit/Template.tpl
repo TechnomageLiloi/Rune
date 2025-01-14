@@ -3,12 +3,13 @@
 <div id="exams-edit">
     <a href="javascript:void(0)" class="butn" onclick="Rune.Exams.Opponents.save('<?php echo $entity->getKey(); ?>');">Save</a>
     <table>
-        <tr>
-            <td>Specie</td>
-            <td>
-                <input type="text" name="specie" value="<?php echo $entity->getSpecie(); ?>">
-            </td>
-        </tr>
+        <tr><td>Specie</td><td>
+            <select name="specie">
+                <?php foreach($species as $key => $value): ?>
+                    <option value="<?php echo $key; ?>" <?php if($entity->getSpecie() == $key): ?>selected="selected"<?php endif; ?>><?php echo $value; ?></option>
+                <?php endforeach; ?>
+            </select>
+        </td></tr>
 
         <tr><td>Type</td><td>
             <select name="type">
