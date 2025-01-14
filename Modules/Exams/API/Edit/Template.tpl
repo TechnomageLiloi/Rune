@@ -9,12 +9,15 @@
                 <input type="text" name="specie" value="<?php echo $entity->getSpecie(); ?>">
             </td>
         </tr>
-        <tr>
-            <td>Type</td>
-            <td>
-                <input type="text" name="type" value="<?php echo $entity->getType(); ?>">
-            </td>
-        </tr>
+
+        <tr><td>Type</td><td>
+            <select name="type">
+                <?php foreach($types as $key => $value): ?>
+                    <option value="<?php echo $key; ?>" <?php if($entity->getType() == $key): ?>selected="selected"<?php endif; ?>><?php echo $value; ?></option>
+                <?php endforeach; ?>
+            </select>
+        </td></tr>
+
         <tr>
             <td>Title</td>
             <td>

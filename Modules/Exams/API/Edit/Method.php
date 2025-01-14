@@ -6,6 +6,7 @@ use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
 use Liloi\Rune\Domain\Databank\Manager as DatabankManager;
 use Liloi\Rune\Modules\Exams\Domain\Opponents\Manager as OpponentsManager;
+use Liloi\Rune\Modules\Exams\Domain\Opponents\Types as OpponentsTypes;
 
 class Method extends SuperMethod
 {
@@ -17,7 +18,8 @@ class Method extends SuperMethod
 
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
-            'entity' => $entity
+            'entity' => $entity,
+            'types' => OpponentsTypes::$list
         ]));
 
         return $response;
