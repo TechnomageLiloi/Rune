@@ -49,6 +49,11 @@ class Entity extends AbstractEntity
         Manager::save($this);
     }
 
+    public function remove(): void
+    {
+        Manager::remove($this);
+    }
+
     public function getPath(): string
     {
         return Manager::RIDtoURL($this->getKey());

@@ -41,6 +41,7 @@ class Tree
             $manager->add(new Method('Rune.Databank.Edit', '\Liloi\Rune\API\Databank\Edit\Method::execute'));
             $manager->add(new Method('Rune.Databank.Save', '\Liloi\Rune\API\Databank\Save\Method::execute'));
             $manager->add(new Method('Rune.Databank.Search', '\Liloi\Rune\API\Databank\Search\Method::execute'));
+            $manager->add(new Method('Rune.Databank.Remove', '\Liloi\Rune\API\Databank\Remove\Method::execute'));
 
             $manager = Modules::collect($manager);
 

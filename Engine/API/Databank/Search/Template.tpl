@@ -12,6 +12,7 @@
                 <td><?php echo $entity->getKey(); ?></td>
                 <td><?php echo $entity->getTitle(); ?></td>
                 <td>
+                    <a href="javascript:void(0)" onclick="Rune.Databank.remove('<?php echo $entity->getKey(); ?>');">Remove</a>
                     <a href="javascript:void(0)" onclick="Rune.Databank.show('<?php echo $entity->getKey(); ?>');">Show</a>
                     <a href="javascript:void(0)" onclick="Rune.Databank.edit('<?php echo $entity->getKey(); ?>');">Edit</a>
                 </td>
