@@ -68,7 +68,6 @@ class Application extends ConceptualApplication
 
         $URL = $_SERVER['REQUEST_URI'];
 
-
         if($URL !== '/')
         {
             $RID = DatabankManager::URLtoRID($URL);

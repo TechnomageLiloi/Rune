@@ -100,7 +100,7 @@ class Manager extends DomainManager
             'key_opponent' => $key_opponent,
             'rid' => $RID,
             'status' => $status,
-            'data' => json_encode($data)
+            'data' => json_encode($data, JSON_UNESCAPED_UNICODE)
         ];
 
         self::getAdapter()->insert($name, $row);
