@@ -68,13 +68,6 @@ class Application extends ConceptualApplication
 
         $URL = $_SERVER['REQUEST_URI'];
 
-        if($URL === '/rune')
-        {
-            $RID = ConfigManager::load(ConfigKeys::CURRENT)->getString() ?? 'portal';
-            header('Location: ' . DatabankManager::RIDtoURL($RID));
-            exit();
-        }
-
 
         if($URL !== '/')
         {
