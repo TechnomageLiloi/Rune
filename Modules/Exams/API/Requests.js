@@ -62,6 +62,7 @@ Rune.Exams.Opponents = {
         API.request('Rune.Exams.Opponents.Save', {
             'key_opponent': key_opponent,
             'title': jq_block.find('[name="title"]').val(),
+            'specie': jq_block.find('[name="specie"]').val(),
             'type': jq_block.find('[name="type"]').val(),
             'program': jq_block.find('[name="program"]').val(),
             'theory': jq_block.find('[name="theory"]').val()
