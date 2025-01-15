@@ -8,7 +8,8 @@
         &diams;
         <a href="javascript:void(0)" onclick="Rune.Levels.Quest.show(1);" class="butn">New quests</a>
         <a href="javascript:void(0)" onclick="Rune.Levels.Quest.show(2);" class="butn">In hand quests</a>
-        <a href="javascript:void(0)" onclick="Rune.Levels.Quest.show(3);" class="butn">Complete quests</a>
+        <a href="javascript:void(0)" onclick="Rune.Levels.Quest.show(3);" class="butn">Success quests</a>
+        <a href="javascript:void(0)" onclick="Rune.Levels.Quest.show(4);" class="butn">Failure quests</a>
 
         <a href="javascript:void(0)" class="butn" onclick="Rune.Maps.show();" style="float: right;">x</a>
     </div>

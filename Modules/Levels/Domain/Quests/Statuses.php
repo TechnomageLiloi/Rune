@@ -12,6 +12,7 @@ class Statuses
     public const TODO = 1;
     public const IN_HAND = 2;
     public const COMPLETE = 3;
+    public const FAILURE = 4;
 
     /**
      * Type list.
@@ -22,5 +23,6 @@ class Statuses
         self::TODO => 'To Do',
         self::IN_HAND => 'In Hand',
         self::COMPLETE => 'Complete',
+        self::FAILURE => 'Failure',
     ];
 }
