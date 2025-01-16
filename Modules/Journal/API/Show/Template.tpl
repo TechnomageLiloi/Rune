@@ -35,6 +35,9 @@
                     <?php echo $atom->getXp(); ?>
                 </td>
                 <td>
+                    <?php echo $atom->getStatusTitle(); ?>
+                </td>
+                <td>
                     <a href="javascript:void(0)" class="butn" onclick="Rune.Journal.Atoms.edit('<?php echo $atom->getKeyDay(); ?>', '<?php echo $atom->getKeyAtom(); ?>');">Edit</a>
                 </td>
             </tr>
