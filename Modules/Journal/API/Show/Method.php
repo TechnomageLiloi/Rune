@@ -18,14 +18,10 @@ class Method extends SuperMethod
         self::accessCheck();
 
         $day = RoadManager::load(self::getParameter('key_day'));
-        $jobHours = JobsManager::loadGroup($day->getKey());
-        $groupCrystals = CrystalsManager::loadGroup($day->getKey());
 
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
-            'day' => $day,
-            'jobHours' => $jobHours,
-            'groupCrystals' => $groupCrystals
+            'day' => $day
         ]));
 
         return $response;
