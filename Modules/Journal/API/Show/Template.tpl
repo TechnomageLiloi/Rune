@@ -9,5 +9,5 @@
     <h3>Day goal: <?php echo $day->getGoal(); ?></h3>
     <?php echo $day->getProgramParse(); ?>
     <hr/>
-    <h3>Jobs</h3>
+    <h3>Atoms</h3>
 </div>
