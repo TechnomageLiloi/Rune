@@ -56,21 +56,6 @@ create table rune_road
         primary key (key_day)
 );
 
-create table rune_jobs
-(
-	key_hour tinyint unsigned not null,
-	key_quarter tinyint unsigned not null,
-	key_day date not null,
-	goal varchar(250) not null,
-	status tinyint unsigned default 1 not null,
-	xp smallint signed default 0 not null,
-	constraint rune_jobs_pk
-		primary key (key_hour, key_quarter, key_day),
-	constraint rune_jobs_rune_road_key_day_fk
-		foreign key (key_day) references rune_road (key_day)
-			on update cascade on delete cascade
-);
-
 -- -----------------------------------------------------------------------------------------------------------
 
 create table rune_quests
@@ -154,3 +139,18 @@ create table rune_crystals
             on update cascade on delete cascade
 );
 
+-- ----------------------------------------------------------------------------------------------------
+
+create table rune_atoms
+(
+    key_day date not null,
+    key_atom smallint unsigned not null,
+    goal varchar(250) not null,
+    status tinyint unsigned default 1 not null,
+    xp smallint signed default 0 not null,
+    constraint rune_atoms_pk
+        primary key (key_day, key_atom),
+    constraint rune_atoms_rune_road_key_day_fk
+        foreign key (key_day) references rune_road (key_day)
+            on update cascade on delete cascade
+);
