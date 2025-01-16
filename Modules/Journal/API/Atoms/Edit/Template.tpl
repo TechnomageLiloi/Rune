@@ -1,6 +1,6 @@
 <link href="<?php echo ROOT_URL; ?>/Modules/Journal/API/Atoms/Edit/Style.css" rel="stylesheet" />
 
-<div id="journal-jobs-edit" class="stylo">
+<div id="journal-atoms-edit" class="stylo">
     <a href="javascript:void(0)" class="butn" onclick="Rune.Journal.Atoms.save('<?php echo $atom->getKeyDay(); ?>', '<?php echo $atom->getKeyAtom(); ?>');">Save</a>
     <table>
         <tr>

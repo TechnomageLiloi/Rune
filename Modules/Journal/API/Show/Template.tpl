@@ -13,10 +13,25 @@
     <h3>Atoms</h3>
 
     <table>
+        <tr>
+            <th>Start</th>
+            <th>Finish</th>
+            <th>Goal</th>
+            <th>Action</th>
+        </tr>
         <?php foreach($atoms as $atom): ?>
             <tr>
                 <td>
+                    <?php echo $atom->getStart(); ?>
+                </td>
+                <td>
+                    <?php echo $atom->getFinish(); ?>
+                </td>
+                <td>
                     <?php echo $atom->getGoal(); ?>
+                </td>
+                <td>
+                    <a href="javascript:void(0)" class="butn" onclick="Rune.Journal.Atoms.edit('<?php echo $atom->getKeyDay(); ?>', '<?php echo $atom->getKeyAtom(); ?>');">Edit</a>
                 </td>
             </tr>
         <?php endforeach; ?>
