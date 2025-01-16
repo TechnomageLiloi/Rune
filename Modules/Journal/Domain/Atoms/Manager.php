@@ -13,7 +13,7 @@ class Manager extends DomainManager
      */
     public static function getTableName(): string
     {
-        return self::getTablePrefix() . 'jobs';
+        return self::getTablePrefix() . 'atoms';
     }
 
     public static function loadCollection(string $keyDay): Collection
@@ -35,38 +35,13 @@ class Manager extends DomainManager
         return $collection;
     }
 
-    public static function loadGroup(string $keyDay): array
-    {
-        $group = [];
-
-        for ($hour=0;$hour<24;$hour++)
-        {
-            $group[$hour] = [];
-
-            for ($quarter=1;$quarter<=4;$quarter++)
-            {
-                $group[$hour][$quarter] = null;
-            }
-        }
-
-        $jobs = self::loadCollection($keyDay);
-
-        /** @var Entity $job */
-        foreach ($jobs as $job)
-        {
-            $group[$job->getHour()][$job->getQuarter()] = $job;
-        }
-
-        return $group;
-    }
-
-    public static function load(string $keyHour, string $keyQuarter, string $keyDay): Entity
+    public static function load(string $keyHour, string $keyAtom): Entity
     {
         $name = self::getTableName();
 
         $row = self::getAdapter()->getRow(sprintf(
-            'select * from %s where key_hour="%s" and key_quarter="%s" and key_day="%s"',
-            $name, $keyHour, $keyQuarter, $keyDay
+            'select * from %s where key_day="%s" and key_atom="%s"',
+            $name, $keyHour, $keyAtom
         ));
 
         return Entity::create($row);
@@ -81,29 +56,45 @@ class Manager extends DomainManager
             $name,
             $data,
             sprintf(
-                'key_hour="%s" and key_quarter="%s" and key_day="%s"',
+                'key_hour="%s" and key_atom="%s"',
                 $data['key_hour'],
-                $data['key_quarter'],
-                $data['key_day']
+                $data['key_atom']
             )
         );
     }
 
     // @todo: rise this method to more abstract level.
-    public static function create(
-        string $keyHour,
-        string $keyQuarter,
-        string $keyDay
-    ): void
+    public static function create(string $keyDay): void
     {
         $name = self::getTableName();
+
         self::getAdapter()->insert($name, [
-            'key_hour' => $keyHour,
-            'key_quarter' => $keyQuarter,
             'key_day' => $keyDay,
+            'key_atom' => self::getNextKey($keyDay),
             'goal' => 'Enter the goal',
             'status' => Statuses::TODO,
-            'xp' => 0
+            'xp' => 0,
+            'start' => date('Y-m-d H:i:s'),
+            'finish' => date('Y-m-d H:i:s'),
         ]);
+    }
+
+    private static function getNextKey(string $keyDay): int
+    {
+        $name = self::getTableName();
+
+        $key = self::getAdapter()->getSingle(sprintf(
+            'select key_atom from %s where key_day="%s" order by key_atom desc;',
+            $name, $keyDay
+        ));
+
+        if($key === false)
+        {
+            return 0;
+        }
+
+        ++$key;
+
+        return $key;
     }
 }
