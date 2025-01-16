@@ -65,6 +65,61 @@ Rune.Journal = {
         }
     },
 
+    Atoms: {
+        create: function (key_hour, key_quarter, key_day)
+        {
+            if(!confirm('Are you sure?'))
+            {
+                return;
+            }
+
+            API.request('Rune.Journal.Atoms.Create', {
+                key_hour: key_hour,
+                key_quarter: key_quarter,
+                key_day: key_day
+            }, function (data) {
+                Rune.Journal.show(key_day);
+            }, function () {
+
+            });
+        },
+
+        edit: function (key_hour, key_quarter, key_day)
+        {
+            API.request('Rune.Journal.Atoms.Edit', {
+                key_hour: key_hour,
+                key_quarter: key_quarter,
+                key_day: key_day
+            }, function (data) {
+                $('#page').html(data.render);
+            }, function () {
+
+            });
+        },
+
+        save: function (key_hour, key_quarter, key_day)
+        {
+            if(!confirm('Are you sure?'))
+            {
+                return;
+            }
+
+            const jq_block = $('#journal-atoms-edit');
+            API.request('Rune.Journal.Atoms.Save', {
+                key_hour: key_hour,
+                key_quarter: key_quarter,
+                key_day: key_day,
+                goal: jq_block.find('[name="goal"]').val(),
+                status: jq_block.find('[name="status"]').val(),
+                xp: jq_block.find('[name="xp"]').val()
+            }, function (data) {
+                Rune.Journal.show(key_day);
+            }, function () {
+
+            });
+        }
+    },
+
     Road: {
         edit: function (key_day)
         {

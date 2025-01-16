@@ -19,6 +19,10 @@ class Modules
         $manager->add(new Method('Rune.Journal.Road.Edit', '\Liloi\Rune\Modules\Journal\API\Road\Edit\Method::execute'));
         $manager->add(new Method('Rune.Journal.Road.Save', '\Liloi\Rune\Modules\Journal\API\Road\Save\Method::execute'));
 
+        $manager->add(new Method('Rune.Journal.Atoms.Create', '\Liloi\Rune\Modules\Journal\API\Atoms\Create\Method::execute'));
+        $manager->add(new Method('Rune.Journal.Atoms.Edit', '\Liloi\Rune\Modules\Journal\API\Atoms\Edit\Method::execute'));
+        $manager->add(new Method('Rune.Journal.Atoms.Save', '\Liloi\Rune\Modules\Journal\API\Atoms\Save\Method::execute'));
+
         $manager->add(new Method('Rune.Maps.Show', '\Liloi\Rune\Modules\Maps\API\Show\Method::execute'));
         $manager->add(new Method('Rune.Maps.Inventory.Show', '\Liloi\Rune\Modules\Maps\API\Inventory\Show\Method::execute'));
         $manager->add(new Method('Rune.Maps.Inventory.Drop', '\Liloi\Rune\Modules\Maps\API\Inventory\Drop\Method::execute'));

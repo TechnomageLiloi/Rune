@@ -1,0 +1,34 @@
+#journal-jobs-edit {
+  padding: 10px;
+  border: gray 3px solid;
+  border-radius: 5px;
+}
+#journal-jobs-edit table {
+  width: 100%;
+  text-align: left;
+  border: gray 1px solid;
+}
+#journal-jobs-edit table td {
+  vertical-align: top;
+  border-top: gray 1px dashed;
+}
+#journal-jobs-edit table th {
+  border-top: gray 1px dashed;
+}
+#journal-jobs-edit table p {
+  margin: 0;
+}
+#journal-jobs-edit .current-job {
+  background-color: lightyellow;
+  border: gray 1px solid;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+#journal-jobs-edit .problem {
+  border: gray 1px solid;
+  float: left;
+  padding: 5px;
+  margin-right: 10px;
+  background-color: #e7ffe0;
+}
