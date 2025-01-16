@@ -18,6 +18,7 @@
             <th>Finish</th>
             <th>Goal</th>
             <th>XP</th>
+            <th>Status</th>
             <th>Action</th>
         </tr>
         <?php foreach($atoms as $atom): ?>
