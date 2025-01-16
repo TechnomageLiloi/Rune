@@ -56,8 +56,8 @@ class Manager extends DomainManager
             $name,
             $data,
             sprintf(
-                'key_hour="%s" and key_atom="%s"',
-                $data['key_hour'],
+                'key_day="%s" and key_atom="%s"',
+                $data['key_day'],
                 $data['key_atom']
             )
         );

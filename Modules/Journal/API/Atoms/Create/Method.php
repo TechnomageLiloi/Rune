@@ -13,14 +13,7 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-        self::accessCheck();
-
-        AtomsManager::create(
-            self::getParameter('key_hour'),
-            self::getParameter('key_quarter'),
-            self::getParameter('key_day')
-        );
-
+        AtomsManager::create(self::getParameter('key_day'));
         return new Response();
     }
 }

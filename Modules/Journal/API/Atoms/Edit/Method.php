@@ -14,17 +14,14 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-        self::accessCheck();
-
-        $job = AtomsManager::load(
-            self::getParameter('key_hour'),
-            self::getParameter('key_quarter'),
-            self::getParameter('key_day')
+        $atom = AtomsManager::load(
+            self::getParameter('key_day'),
+            self::getParameter('key_atom')
         );
 
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
-            'job' => $job,
+            'atom' => $atom,
             'statuses' => AtomsStatuses::$list
         ]));
 

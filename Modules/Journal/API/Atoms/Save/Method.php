@@ -13,19 +13,18 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-        self::accessCheck();
-
-        $job = AtomsManager::load(
-            self::getParameter('key_hour'),
-            self::getParameter('key_quarter'),
-            self::getParameter('key_day')
+        $atom = AtomsManager::load(
+            self::getParameter('key_day'),
+            self::getParameter('key_atom')
         );
 
-        $job->setGoal(self::getParameter('goal'));
-        $job->setStatus(self::getParameter('status'));
-        $job->setXp(self::getParameter('xp'));
+        $atom->setGoal(self::getParameter('goal'));
+        $atom->setStatus(self::getParameter('status'));
+        $atom->setXp(self::getParameter('xp'));
+        $atom->setStart(self::getParameter('start'));
+        $atom->setFinish(self::getParameter('finish'));
 
-        $job->save();
+        $atom->save();
 
         return new Response();
     }
