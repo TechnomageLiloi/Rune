@@ -17,6 +17,7 @@
             <th>Start</th>
             <th>Finish</th>
             <th>Goal</th>
+            <th>XP</th>
             <th>Action</th>
         </tr>
         <?php foreach($atoms as $atom): ?>
@@ -29,6 +30,9 @@
                 </td>
                 <td>
                     <?php echo $atom->getGoal(); ?>
+                </td>
+                <td>
+                    <?php echo $atom->getXp(); ?>
                 </td>
                 <td>
                     <a href="javascript:void(0)" class="butn" onclick="Rune.Journal.Atoms.edit('<?php echo $atom->getKeyDay(); ?>', '<?php echo $atom->getKeyAtom(); ?>');">Edit</a>
