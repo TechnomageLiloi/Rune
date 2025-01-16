@@ -66,7 +66,7 @@ Rune.Journal = {
     },
 
     Atoms: {
-        create: function (key_hour, key_quarter, key_day)
+        create: function (key_day)
         {
             if(!confirm('Are you sure?'))
             {
@@ -74,8 +74,6 @@ Rune.Journal = {
             }
 
             API.request('Rune.Journal.Atoms.Create', {
-                key_hour: key_hour,
-                key_quarter: key_quarter,
                 key_day: key_day
             }, function (data) {
                 Rune.Journal.show(key_day);
@@ -84,12 +82,11 @@ Rune.Journal = {
             });
         },
 
-        edit: function (key_hour, key_quarter, key_day)
+        edit: function (key_day, key_atom)
         {
             API.request('Rune.Journal.Atoms.Edit', {
-                key_hour: key_hour,
-                key_quarter: key_quarter,
-                key_day: key_day
+                key_day: key_day,
+                key_atom: key_atom
             }, function (data) {
                 $('#page').html(data.render);
             }, function () {
@@ -97,7 +94,7 @@ Rune.Journal = {
             });
         },
 
-        save: function (key_hour, key_quarter, key_day)
+        save: function (key_day, key_atom)
         {
             if(!confirm('Are you sure?'))
             {
@@ -106,12 +103,13 @@ Rune.Journal = {
 
             const jq_block = $('#journal-atoms-edit');
             API.request('Rune.Journal.Atoms.Save', {
-                key_hour: key_hour,
-                key_quarter: key_quarter,
                 key_day: key_day,
+                key_atom: key_atom,
                 goal: jq_block.find('[name="goal"]').val(),
                 status: jq_block.find('[name="status"]').val(),
-                xp: jq_block.find('[name="xp"]').val()
+                xp: jq_block.find('[name="xp"]').val(),
+                start: jq_block.find('[name="start"]').val(),
+                finish: jq_block.find('[name="finish"]').val()
             }, function (data) {
                 Rune.Journal.show(key_day);
             }, function () {
