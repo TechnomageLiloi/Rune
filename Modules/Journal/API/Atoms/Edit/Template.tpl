@@ -23,12 +23,18 @@
 
         <tr>
             <td>Start</td>
-            <td><input name="start" type="text" value="<?php echo $atom->getStart(); ?>"></td>
+            <td>
+                <input name="start" type="text" value="<?php echo $atom->getStart(); ?>">
+                <a href="javascript:void(0)" class="butn" onclick="$('#journal-atoms-edit [name=start]').val('<?php echo date("H:i:s"); ?>');">Now</a>
+            </td>
         </tr>
 
         <tr>
             <td>Finish</td>
-            <td><input name="finish" type="text" value="<?php echo $atom->getFinish(); ?>"></td>
+            <td>
+                <input name="finish" type="text" value="<?php echo $atom->getFinish(); ?>">
+                <a href="javascript:void(0)" class="butn" onclick="$('#journal-atoms-edit [name=finish]').val('<?php echo date("H:i:s"); ?>');">Now</a>
+            </td>
         </tr>
 
     </table>
