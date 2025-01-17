@@ -35,7 +35,7 @@
                 <td>
                     <?php echo $atom->getXp(); ?>
                 </td>
-                <td>
+                <td class="<?php echo $atom->getStatusClass(); ?>">
                     <?php echo $atom->getStatusTitle(); ?>
                 </td>
                 <td>
