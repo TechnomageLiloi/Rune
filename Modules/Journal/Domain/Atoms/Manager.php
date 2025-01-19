@@ -83,6 +83,7 @@ class Manager extends DomainManager
     }
 
     public static function updateLast(
+        $note = '-',
         $status = Statuses::TODO
     ): void
     {
@@ -92,6 +93,7 @@ class Manager extends DomainManager
         ));
 
         $entity = Entity::create($row);
+        $entity->setGoal($entity->getGoal() . ' : ' . $note);
         $entity->setStatus($status);
         $entity->save();
     }

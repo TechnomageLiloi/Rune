@@ -13,11 +13,8 @@ var Opponent = {
 
         const jq_block = $('#' + key_opponent);
         API.request('Rune.Exams.Crystals.Create', {
-            'key_opponent': key_opponent,
             'status': jq_block.find('[class="crystal-status"]').val(),
-            'data': {
-                'note': jq_block.find('[class="crystal-note"]').val()
-            }
+            'note': jq_block.find('[class="crystal-note"]').val()
         }, function (data) {
             alert('Locked.');
         }, function () {
