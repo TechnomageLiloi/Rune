@@ -10,6 +10,7 @@ use Liloi\Rune\Modules\Exams\Domain\Opponents\Types;
 use Liloi\Rune\Modules\Exams\Domain\Opponents\Entity;
 use Liloi\Rune\Modules\Exams\Domain\Crystals\Statuses as CrystalsStatuses;
 use Liloi\Rune\Modules\Journal\Domain\Atoms\Manager as AtomsManager;
+use Liloi\Rune\Modules\Journal\Domain\Atoms\Statuses as AtomsStatuses;
 
 class Method extends SuperMethod
 {
@@ -21,7 +22,8 @@ class Method extends SuperMethod
 
         AtomsManager::create(
             date('Y-m-d'),
-            $entity->getSpecieTitle() . ' / ' . $entity->getTypeTitle() . ' / '. $entity->getTitle()
+            $entity->getSpecieTitle() . ' / ' . $entity->getTypeTitle() . ' / '. $entity->getTitle(),
+            AtomsStatuses::IN_HAND
         );
 
         $response = new Response();
