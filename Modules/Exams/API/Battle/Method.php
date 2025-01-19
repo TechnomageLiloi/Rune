@@ -55,7 +55,7 @@ class Method extends SuperMethod
 
         return static::render(__DIR__ . '/Question.tpl', [
             'entity' => $entity,
-            'statuses' => CrystalsStatuses::$list,
+            'statuses' => AtomsStatuses::$list,
             'inner' => static::render(__DIR__ . '/' . $template . '.tpl', [
                 'entity' => $entity
             ])

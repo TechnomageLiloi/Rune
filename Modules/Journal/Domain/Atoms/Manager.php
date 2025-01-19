@@ -63,7 +63,6 @@ class Manager extends DomainManager
         );
     }
 
-    // @todo: rise this method to more abstract level.
     public static function create(
         string $keyDay,
         string $goal = 'Enter the goal.',
@@ -81,6 +80,20 @@ class Manager extends DomainManager
             'start' => date('Y-m-d H:i:s'),
             'finish' => date('Y-m-d H:i:s'),
         ]);
+    }
+
+    public static function updateLast(
+        $status = Statuses::TODO
+    ): void
+    {
+        $row = self::getAdapter()->getRow(sprintf(
+            'select * from %s order by key_day desc, key_atom desc',
+            self::getTableName()
+        ));
+
+        $entity = Entity::create($row);
+        $entity->setStatus($status);
+        $entity->save();
     }
 
     private static function getNextKey(string $keyDay): int
