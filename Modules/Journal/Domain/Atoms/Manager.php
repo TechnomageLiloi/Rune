@@ -64,15 +64,19 @@ class Manager extends DomainManager
     }
 
     // @todo: rise this method to more abstract level.
-    public static function create(string $keyDay): void
+    public static function create(
+        string $keyDay,
+        string $goal = 'Enter the goal.',
+        $status = Statuses::TODO
+    ): void
     {
         $name = self::getTableName();
 
         self::getAdapter()->insert($name, [
             'key_day' => $keyDay,
             'key_atom' => self::getNextKey($keyDay),
-            'goal' => 'Enter the goal',
-            'status' => Statuses::TODO,
+            'goal' => $goal,
+            'status' => $status,
             'xp' => 0,
             'start' => date('Y-m-d H:i:s'),
             'finish' => date('Y-m-d H:i:s'),

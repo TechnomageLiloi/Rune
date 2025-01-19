@@ -9,6 +9,7 @@ use Liloi\Rune\Modules\Exams\Domain\Opponents\Manager as OpponentsManager;
 use Liloi\Rune\Modules\Exams\Domain\Opponents\Types;
 use Liloi\Rune\Modules\Exams\Domain\Opponents\Entity;
 use Liloi\Rune\Modules\Exams\Domain\Crystals\Statuses as CrystalsStatuses;
+use Liloi\Rune\Modules\Journal\Domain\Atoms\Manager as AtomsManager;
 
 class Method extends SuperMethod
 {
@@ -17,6 +18,11 @@ class Method extends SuperMethod
         $URL = $_SERVER['REQUEST_URI'];
         $RID = DatabankManager::URLtoRID($URL);
         $entity = OpponentsManager::load(self::getParameter('key_opponent'), $RID);
+
+        AtomsManager::create(
+            date('Y-m-d'),
+            $entity->getSpecieTitle() . ' / ' . $entity->getTypeTitle() . ' / '. $entity->getTitle()
+        );
 
         $response = new Response();
         $response->set('render', self::renderTest($entity));
