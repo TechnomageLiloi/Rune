@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\Rune\Domains\Maps;
+namespace Liloi\Rune\Domain\Maps;
 
 use Liloi\Stylo\Parser;
 use Liloi\Tools\Entity as AbstractEntity;
@@ -69,5 +69,36 @@ class Entity extends AbstractEntity
     public function getTimestamp(string $format = "Y-m-d H:i:s")
     {
         return date($format, strtotime($this->getDt()));
+    }
+
+    public function getSeeds(): string
+    {
+        $rid_full = $this->getKey();
+        $rid = explode(':', $rid_full);
+
+        $seeds = [];
+
+        while(count($rid) > 0)
+        {
+            $rid_seed = implode(':', $rid);
+
+            if($rid_seed == $rid_full)
+            {
+                $seed = ucfirst(str_replace('-', ' ', end($rid)));
+            }
+            else
+            {
+                $seed = sprintf(
+                    '<a href="%s">%s</a>',
+                    Manager::ATOMtoURL($rid_seed),
+                    ucfirst(str_replace('-', ' ', end($rid)))
+                );
+            }
+
+            array_unshift($seeds, $seed);
+            array_pop($rid);
+        }
+
+        return implode(' &#9654; ', $seeds);
     }
 }

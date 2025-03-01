@@ -12,6 +12,8 @@ class Modules
 {
     public static function collect(APIManager $manager): APIManager
     {
+        $manager->add(new Method('Rune.Wiki.Show', '\Liloi\Rune\Modules\Wiki\Show\Method::execute'));
+
         return $manager;
     }
 }

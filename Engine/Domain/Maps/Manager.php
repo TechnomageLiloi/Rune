@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\Rune\Domains\Maps;
+namespace Liloi\Rune\Domain\Maps;
 
 use Liloi\Rune\Domain\Manager as DomainManager;
 
@@ -89,5 +89,41 @@ class Manager extends DomainManager
 
         self::insert($name, $data);
         return Entity::create($data);
+    }
+
+    public static function URLtoATOM(string $URL): string
+    {
+        return str_replace('/', ':', trim($URL, '/')) ?: 'rune';
+    }
+
+    public static function ATOMtoURL(string $keyAtom): string
+    {
+        if($keyAtom === 'rune')
+        {
+            return '/';
+        }
+
+        return '/' . str_replace(':', '/', $keyAtom);
+    }
+
+    public static function loadFiles(string $keyMap): Collection
+    {
+        $name = self::getTableName();
+
+        $sql = sprintf(
+            'select * from %s where (key_map like "%s:%%") && (key_map not like "%s:%%:%%") order by title asc;',
+            $name, $keyMap, $keyMap
+        );
+
+        $rows = self::getAdapter()->getArray($sql);
+
+        $collection = new Collection();
+
+        foreach($rows as $row)
+        {
+            $collection[] = Entity::create($row);
+        }
+
+        return $collection;
     }
 }

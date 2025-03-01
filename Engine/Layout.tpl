@@ -14,12 +14,14 @@
 
         <script src="/Engine/Bootstrap.js"></script>
 
+        <script src="/Modules/Wiki/Requests.js"></script>
+
         <title>Rune</title>
     </head>
     <body>
         <div id="page" class="stylo">
             <script>
-                I60.Vertex.show();
+                Rune.Wiki.show();
             </script>
         </div>
     </body>

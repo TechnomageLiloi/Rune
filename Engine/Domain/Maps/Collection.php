@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\Rune\Domains\Maps;
+namespace Liloi\Rune\Domain\Maps;
 
 use Liloi\Tools\Collection as AbstractCollection;
 
