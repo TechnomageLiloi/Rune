@@ -12,6 +12,7 @@
         "technomage-liloi/rune-tools": "dev-main",
         "technomage-liloi/rune-dump": "dev-main",
         "technomage-liloi/stylo": "dev-main",
+        "twbs/bootstrap": "5.3.3",
         "ext-json": "*",
         "ext-mysqli": "*"
     },

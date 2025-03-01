@@ -7,6 +7,10 @@
         <script src="/vendor/technomage-liloi/rune-framework/Frontside/Library/Jquery.min.js"></script>
         <script src="/vendor/technomage-liloi/rune-framework/Frontside/Library/Underscore.min.js"></script>
         <script src="/vendor/technomage-liloi/rune-framework/Frontside/Library/Backbone.min.js"></script>
+
+        <script src="/vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
+        <link href="/vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
         <script src="/vendor/technomage-liloi/rune-api/Client/API.js"></script>
         <script src="/vendor/technomage-liloi/stylo/Source/Stylo.js"></script>
 
