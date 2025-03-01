@@ -100,16 +100,12 @@ class Manager extends DomainManager
     {
         $key = str_replace('/', ':', trim($URL, '/'));
         $key = str_replace('rune:','', $key);
-        return $key ? 'rune:' . $key : 'rune';
+
+        return ($key && $key !== 'rune') ? 'rune:' . $key : 'rune';
     }
 
     public static function ATOMtoURL(string $keyAtom): string
     {
-        if($keyAtom === 'rune')
-        {
-            return '/';
-        }
-
         return '/' . str_replace(':', '/', $keyAtom);
     }
 
