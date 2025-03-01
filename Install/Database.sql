@@ -1,11 +1,11 @@
-create table rune
+create table rune_maps
 (
-	rid varchar(666) not null,
+	key_map varchar(666) not null,
 	title varchar(250) not null,
-	article mediumtext not null,
 	data json not null,
+	map mediumtext not null,
 	dt timestamp not null,
-	constraint rune_pk
-		primary key (rid)
+	constraint rune_maps_pk
+		primary key(key_map)
 );
 
