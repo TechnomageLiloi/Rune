@@ -47,6 +47,12 @@ class Application extends ConceptualApplication
      */
     public function compile(): string
     {
+        if($_SERVER['REQUEST_URI'] === '/')
+        {
+            header(sprintf('Location: /diary/%s', date('Y/W/N')), true, 301);
+            exit();
+        }
+
         $this->bind();
 
         // If API requested, then 'method' post parameter would be set.

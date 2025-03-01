@@ -86,7 +86,7 @@ class Manager extends DomainManager
         $name = self::getTableName();
         $data = [
             'key_map' => $key,
-            'title' => 'Enter note',
+            'title' => $key,
             'map' => '-',
             'data' => '{}',
             'dt' => date('Y-m-d H:i:s')
