@@ -14,11 +14,17 @@
 
         <script src="/Engine/Bootstrap.js"></script>
 
+        <script src="/Engine/API/Maps/Requests.js"></script>
         <script src="/Modules/Wiki/Requests.js"></script>
 
         <title>Rune</title>
     </head>
     <body>
+
+    <div id="head">
+        <a href="javascript:void(0)" class="butn" onclick="Rune.Maps.edit();">Edit</a>
+    </div>
+
         <div id="page" class="stylo">
             <script>
                 Rune.Wiki.show();

@@ -32,6 +32,9 @@ class Tree
         {
             $manager = new Manager();
 
+            $manager->add(new Method('Rune.Maps.Edit', '\Liloi\Rune\API\Maps\Edit\Method::execute'));
+            $manager->add(new Method('Rune.Maps.Save', '\Liloi\Rune\API\Maps\Save\Method::execute'));
+
             $manager = Modules::collect($manager);
 
             self::$instance = new self($manager);

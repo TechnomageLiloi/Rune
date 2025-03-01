@@ -101,4 +101,9 @@ class Entity extends AbstractEntity
 
         return implode(' &#9654; ', $seeds);
     }
+
+    public function getPath(): string
+    {
+        return Manager::ATOMtoURL($this->getKey());
+    }
 }

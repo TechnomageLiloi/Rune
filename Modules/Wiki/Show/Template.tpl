@@ -4,7 +4,7 @@
     <div class="seeds">
         <?php echo $entity->getSeeds(); ?>
         <?php $drive = $entity->getDataElement('drive'); ?>
-        <?php if($access && $drive): ?>
+        <?php if($drive): ?>
             <br/>
             Drive: <a target="_blank" href="<?php echo $drive; ?>"><?php echo $drive; ?></a>
         <?php endif; ?>
