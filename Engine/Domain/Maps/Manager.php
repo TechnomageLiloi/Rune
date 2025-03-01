@@ -98,7 +98,9 @@ class Manager extends DomainManager
 
     public static function URLtoATOM(string $URL): string
     {
-        return str_replace('/', ':', trim($URL, '/')) ?: 'rune';
+        $key = str_replace('/', ':', trim($URL, '/'));
+        $key = str_replace('rune:','', $key);
+        return $key ? 'rune:' . $key : 'rune';
     }
 
     public static function ATOMtoURL(string $keyAtom): string
