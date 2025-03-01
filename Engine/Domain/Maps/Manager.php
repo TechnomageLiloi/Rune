@@ -51,6 +51,11 @@ class Manager extends DomainManager
             $keyRoad
         ));
 
+        if(empty($row))
+        {
+            return self::create($keyRoad);
+        }
+
         return Entity::create($row);
     }
 
