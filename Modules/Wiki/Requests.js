@@ -5,6 +5,7 @@ Rune.Wiki = {
 
         }, function (data) {
             $('#page').html(data.render);
+            Rune.Trigger.initialize();
         }, function () {
 
         });
