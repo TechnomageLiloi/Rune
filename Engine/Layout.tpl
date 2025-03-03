@@ -3,7 +3,6 @@
     <head>
         <link rel="shortcut icon" type="image/png" href="/Signum.png">
 
-        <!-- @todo: add function to link scripts and styles -->
         <script src="/vendor/technomage-liloi/rune-framework/Frontside/Library/Jquery.min.js"></script>
         <script src="/vendor/technomage-liloi/rune-framework/Frontside/Library/Underscore.min.js"></script>
         <script src="/vendor/technomage-liloi/rune-framework/Frontside/Library/Backbone.min.js"></script>
@@ -20,6 +19,8 @@
 
         <script src="/Engine/API/Maps/Requests.js"></script>
         <script src="/Modules/Wiki/Requests.js"></script>
+        <script src="/Modules/Exams/API/Requests.js"></script>
+        <script src="/Modules/Exams/API/Battle/Testing.js"></script>
 
         <title>Rune</title>
     </head>
