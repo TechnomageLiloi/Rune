@@ -13,6 +13,7 @@ class Method extends SuperMethod
     {
         $URL = $_SERVER['REQUEST_URI'];
         $RID = MapsManager::URLtoATOM($URL);
+
         $entity = OpponentsManager::load(self::getParameter('key_crystal'), $RID);
 
         $text = '';

@@ -5,7 +5,6 @@
     <br/>
     <?php echo $entity->getSpecieStart(); ?> <?php echo $text; ?>
     <br/>
-    <a href="javascript:void(0)" class="butn" onclick="Rune.Exams.Opponents.battle('<?php echo $entity->getKey(); ?>');">Battle</a>
-    <a href="javascript:void(0)" class="butn" onclick="Rune.Exams.Opponents.edit('<?php echo $entity->getKey(); ?>');">Edit</a>
-    <a href="javascript:void(0)" class="butn" onclick="Rune.Exams.Opponents.search('<?php echo $entity->getKey(); ?>');">Crystals</a>
+    <a href="javascript:void(0)" class="butn" onclick="Rune.Exams.Crystals.battle('<?php echo $entity->getKey(); ?>');">Battle</a>
+    <a href="javascript:void(0)" class="butn" onclick="Rune.Exams.Crystals.edit('<?php echo $entity->getKey(); ?>');">Edit</a>
 </div>

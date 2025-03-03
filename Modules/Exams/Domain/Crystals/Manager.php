@@ -19,7 +19,7 @@ class Manager extends DomainManager
      */
     public static function getTableName(): string
     {
-        return self::getTablePrefix() . 'opponents';
+        return self::getTablePrefix() . 'crystals';
     }
 
     public static function load(string $keyCrystal, string $key_map): Entity
@@ -67,7 +67,7 @@ class Manager extends DomainManager
             'theory' => 'Question theory',
         ];
 
-        self::getAdapter()->insert($name, $data);
+        self::insert($name, $data);
 
         return Entity::create($data);
     }

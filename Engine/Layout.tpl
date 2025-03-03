@@ -21,6 +21,7 @@
         <script src="/Modules/Wiki/Requests.js"></script>
         <script src="/Modules/Exams/API/Requests.js"></script>
         <script src="/Modules/Exams/API/Battle/Testing.js"></script>
+        <script src="/Modules/Exams/Client/Crystal.js"></script>
 
         <title>Rune</title>
     </head>
