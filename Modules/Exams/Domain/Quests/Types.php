@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\Rune\Modules\Exams\Domain\Crystals;
+namespace Liloi\Rune\Modules\Exams\Domain\Quests;
 
 /**
  * Question's type.

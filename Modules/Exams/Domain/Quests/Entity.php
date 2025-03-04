@@ -1,12 +1,12 @@
 <?php
 
-namespace Liloi\Rune\Modules\Exams\Domain\Crystals;
+namespace Liloi\Rune\Modules\Exams\Domain\Quests;
 
 use Liloi\Tools\Entity as AbstractEntity;
 use Liloi\Stylo\Parser;
 
 /**
- * Crystal's entity.
+ * Quest's entity.
  *
  * @method string getTitle()
  * @method void setTitle(string $value)
@@ -17,14 +17,14 @@ use Liloi\Stylo\Parser;
  * @method string getProgram()
  * @method void setProgram(string $value)
  *
- * @method string getTheory()
- * @method void setTheory(string $value)
+ * @method string getDialog()
+ * @method void setDialog(string $value)
  */
 class Entity extends AbstractEntity
 {
     public function getKey(): string
     {
-        return $this->getField('key_crystal');
+        return $this->getField('key_quest');
     }
 
     public function getKeyMap(): ?string

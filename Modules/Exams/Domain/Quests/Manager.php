@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\Rune\Modules\Exams\Domain\Crystals;
+namespace Liloi\Rune\Modules\Exams\Domain\Quests;
 
 use Liloi\Rune\Domain\Manager as DomainManager;
 use Liloi\Judex\Assert;
@@ -19,22 +19,22 @@ class Manager extends DomainManager
      */
     public static function getTableName(): string
     {
-        return self::getTablePrefix() . 'crystals';
+        return self::getTablePrefix() . 'quests';
     }
 
-    public static function load(string $keyCrystal, string $key_map): Entity
+    public static function load(string $keyQuest, string $key_map): Entity
     {
         $name = self::getTableName();
-        Assert::notEmpty($keyCrystal);
+        Assert::notEmpty($keyQuest);
 
         $row = self::getAdapter()->getRow(sprintf(
-            'select * from %s where key_crystal="%s" and key_map="%s"',
-            $name, $keyCrystal, $key_map
+            'select * from %s where key_quest="%s" and key_map="%s"',
+            $name, $keyQuest, $key_map
         ));
 
         if(!$row)
         {
-            return self::create($keyCrystal, $key_map);
+            return self::create($keyQuest, $key_map);
         }
 
         return Entity::create($row);
@@ -46,20 +46,20 @@ class Manager extends DomainManager
         $data = $entity->get();
 
         // @todo: Get param name from const.
-        $keyOpponent = $data['key_crystal'];
+        $keyOpponent = $data['key_quest'];
 
         self::getAdapter()->update(
             $name,
             $data,
-            sprintf('key_crystal="%s" and key_map="%s"', $keyOpponent, $data['key_map'])
+            sprintf('key_quest="%s" and key_map="%s"', $keyOpponent, $data['key_map'])
         );
     }
 
-    public static function create(string $key_crystal, string $key_map): Entity
+    public static function create(string $key_quest, string $key_map): Entity
     {
         $name = self::getTableName();
         $data = [
-            'key_crystal' => $key_crystal,
+            'key_quest' => $key_quest,
             'key_map' => $key_map,
             'title' => 'Question title',
             'type' => 1,
