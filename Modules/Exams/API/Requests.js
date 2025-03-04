@@ -1,62 +1,62 @@
 Rune.Exams = {};
 
-Rune.Exams.Crystals = {
-    show: function (key_crystal, text)
+Rune.Exams.Quests = {
+    show: function (key_quest, text)
     {
         if(_.isUndefined(text))
         {
             text = '';
         }
 
-        API.request('Rune.Exams.Crystals.Show', {
-            'key_crystal': key_crystal,
+        API.request('Rune.Exams.Quests.Show', {
+            'key_quest': key_quest,
             'text': text
         }, function (data) {
-            $('#' + key_crystal).html(data.render);
+            $('#' + key_quest).html(data.render);
         }, function () {
 
         });
     },
 
-    battle: function (key_crystal)
+    battle: function (key_quest)
     {
-        API.request('Rune.Exams.Crystals.Battle', {
-            'key_crystal': key_crystal
+        API.request('Rune.Exams.Quests.Battle', {
+            'key_quest': key_quest
         }, function (data) {
-            $('#' + key_crystal).html(data.render);
+            $('#' + key_quest).html(data.render);
         }, function () {
 
         });
     },
 
-    edit: function (key_crystal)
+    edit: function (key_quest)
     {
-        API.request('Rune.Exams.Crystals.Edit', {
-            'key_crystal': key_crystal
+        API.request('Rune.Exams.Quests.Edit', {
+            'key_quest': key_quest
         }, function (data) {
-            $('#' + key_crystal).html(data.render);
+            $('#' + key_quest).html(data.render);
         }, function () {
 
         });
     },
 
-    save: function (key_crystal)
+    save: function (key_quest)
     {
         if(!confirm('Are you sure?'))
         {
             return;
         }
 
-        const jq_block = $('#' + key_crystal);
-        API.request('Rune.Exams.Crystals.Save', {
-            'key_crystal': key_crystal,
+        const jq_block = $('#' + key_quest);
+        API.request('Rune.Exams.Quests.Save', {
+            'key_quest': key_quest,
             'title': jq_block.find('[name="title"]').val(),
             'specie': jq_block.find('[name="specie"]').val(),
             'type': jq_block.find('[name="type"]').val(),
             'program': jq_block.find('[name="program"]').val(),
             'theory': jq_block.find('[name="theory"]').val()
         }, function (data) {
-            Rune.Exams.Crystals.show(key_crystal);
+            Rune.Exams.Quests.show(key_quest);
         }, function () {
 
         });

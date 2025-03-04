@@ -5,9 +5,9 @@ namespace Liloi\Rune\Modules\Exams\API\Battle;
 use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
 use Liloi\Rune\Domain\Maps\Manager as MapsManager;
-use Liloi\Rune\Modules\Exams\Domain\Crystals\Manager as OpponentsManager;
-use Liloi\Rune\Modules\Exams\Domain\Crystals\Types;
-use Liloi\Rune\Modules\Exams\Domain\Crystals\Entity;
+use Liloi\Rune\Modules\Exams\Domain\Quests\Manager as OpponentsManager;
+use Liloi\Rune\Modules\Exams\Domain\Quests\Types;
+use Liloi\Rune\Modules\Exams\Domain\Quests\Entity;
 
 class Method extends SuperMethod
 {
@@ -15,7 +15,7 @@ class Method extends SuperMethod
     {
         $URL = $_SERVER['REQUEST_URI'];
         $keyMap = MapsManager::URLtoATOM($URL);
-        $entity = OpponentsManager::load(self::getParameter('key_crystal'), $keyMap);
+        $entity = OpponentsManager::load(self::getParameter('key_quest'), $keyMap);
 
         $response = new Response();
         $response->set('render', self::renderTest($entity));

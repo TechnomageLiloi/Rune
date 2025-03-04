@@ -61,10 +61,10 @@ class Manager extends DomainManager
         $data = [
             'key_quest' => $key_quest,
             'key_map' => $key_map,
-            'title' => 'Question title',
+            'title' => 'Quest title',
             'type' => 1,
             'program' => '{}',
-            'theory' => 'Question theory',
+            'dialog' => 'Quest dialog',
         ];
 
         self::insert($name, $data);
