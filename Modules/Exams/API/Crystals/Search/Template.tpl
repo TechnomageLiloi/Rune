@@ -2,7 +2,7 @@
     <table>
         <?php foreach($crystals as $crystal): ?>
             <tr>
-                <td><?php echo $crystal->getKey(); ?></td>
+                <td style="width: 20%;"><?php echo $crystal->getKey(); ?></td>
                 <td><?php echo $crystal->getData(); ?></td>
             </tr>
         <?php endforeach; ?>

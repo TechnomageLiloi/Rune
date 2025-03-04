@@ -60,5 +60,16 @@ Rune.Exams.Quests = {
         }, function () {
 
         });
-    }
+    },
+
+    search: function (key_quest)
+    {
+        API.request('Rune.Exams.Crystals.Search', {
+            'key_quest': key_quest
+        }, function (data) {
+            $('#' + key_quest).html(data.render);
+        }, function () {
+
+        });
+    },
 }
