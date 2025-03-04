@@ -3,7 +3,7 @@
 
     <table style="width: 100%;">
         <tr>
-            <td style="width: 50%;"><?php echo $entity->getParseTheory(); ?></td>
+            <td style="width: 50%;"><?php echo $entity->getParseDialog(); ?></td>
             <td style="text-align: right;">
                 <video id="tube" src="<?php echo $entity->getElement('video'); ?>" controls></video>
             </td>

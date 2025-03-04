@@ -54,7 +54,7 @@ Rune.Exams.Quests = {
             'specie': jq_block.find('[name="specie"]').val(),
             'type': jq_block.find('[name="type"]').val(),
             'program': jq_block.find('[name="program"]').val(),
-            'theory': jq_block.find('[name="theory"]').val()
+            'dialog': jq_block.find('[name="dialog"]').val()
         }, function (data) {
             Rune.Exams.Quests.show(key_quest);
         }, function () {

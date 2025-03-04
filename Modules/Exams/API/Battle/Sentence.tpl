@@ -1,7 +1,7 @@
 <link href="<?php echo ROOT_URL; ?>/Engine/API/Questions/Test/Style.css" rel="stylesheet" />
 <div id="testing-<?php echo $entity->getID(); ?>" class="testing-sentence">
     <div class="theory" style="display: none;">
-        <?php echo $entity->getParseTheory(); ?>
+        <?php echo $entity->getParseDialog(); ?>
     </div>
     <a href="javascript:void(0)" onclick="$(this).parent().find('.theory').toggle();">Theory</a>
     <a href="javascript:void(0)" onclick="Testing.checkSentence('<?php echo $entity->getID(); ?>');">Check</a>

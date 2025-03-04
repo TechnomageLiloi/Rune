@@ -47,9 +47,9 @@ class Entity extends AbstractEntity
         return Types::$list[$this->getType()];
     }
 
-    public function getParseTheory(): string
+    public function getParseDialog(): string
     {
-        return Parser::parseString($this->getTheory());
+        return Parser::parseString($this->getDialog());
     }
 
     public function getElement(string $key)

@@ -18,7 +18,7 @@
             </td>
         </tr>
         <tr><td>Program</td><td><textarea name="program"><?php echo $entity->getProgram(); ?></textarea></td></tr>
-        <tr><td>Theory</td><td><textarea name="theory"><?php echo $entity->getTheory(); ?></textarea></td></tr>
+        <tr><td>Dialog</td><td><textarea name="dialog"><?php echo $entity->getDialog(); ?></textarea></td></tr>
     </table>
     <a href="javascript:void(0)" class="butn" onclick="Rune.Exams.Quests.save('<?php echo $entity->getKey(); ?>');">Save</a>
 </div>

@@ -1,4 +1,4 @@
-var Crystal = {
+var Quest = {
     ping: function (pong)
     {
         alert(pong);
@@ -6,6 +6,6 @@ var Crystal = {
 
     test: function (target, text)
     {
-        Rune.Exams.Crystals.show(target, text);
+        Rune.Exams.Quests.show(target, text);
     }
 };

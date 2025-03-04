@@ -20,7 +20,7 @@
 </script>
 <div id="testing-<?php echo $entity->getID(); ?>" class="testing-card">
     <h3>Timer</h3>
-    <?php echo $entity->getParseTheory(); ?>
+    <?php echo $entity->getParseDialog(); ?>
     <hr/>
     <script>countdown(900);</script>
 </div>
