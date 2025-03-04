@@ -20,7 +20,7 @@ class Method extends SuperMethod
         $data = json_decode(self::getParameter('data'), true, JSON_UNESCAPED_UNICODE);
 
         CrystalsManager::create(
-            self::getParameter('key_crystal'),
+            self::getParameter('key_quest'),
             $keyMap,
             $data
         );

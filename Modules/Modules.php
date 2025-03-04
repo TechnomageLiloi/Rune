@@ -19,6 +19,9 @@ class Modules
         $manager->add(new Method('Rune.Exams.Quests.Edit', '\Liloi\Rune\Modules\Exams\API\Edit\Method::execute'));
         $manager->add(new Method('Rune.Exams.Quests.Save', '\Liloi\Rune\Modules\Exams\API\Save\Method::execute'));
 
+        $manager->add(new Method('Rune.Exams.Crystals.Create', '\Liloi\Rune\Modules\Exams\API\Crystals\Create\Method::execute'));
+        $manager->add(new Method('Rune.Exams.Crystals.Search', '\Liloi\Rune\Modules\Exams\API\Crystals\Search\Method::execute'));
+
         return $manager;
     }
 }
